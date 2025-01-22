@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": "defaults" // Targets the default set of supported browsers
+        // Or specify browsers explicitly:
+        // "targets": "> 0.25%, not dead" // Browsers with >0.25% global usage and not "dead"
+        // "targets": { "chrome": "58", "ie": "11" } // Specific browser versions
+      }
+    ]
+  ]
+}
