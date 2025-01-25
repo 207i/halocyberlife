@@ -491,19 +491,19 @@ body {
 
 /* home */
 .home {
-  background-image: url(./images/Design\ 2.png);
+  background-image: url(./images/logoimagev1.jpeg;
 }
 
 @media (min-width: 35rem) {
   .home {
       background-position: center center;
-      background-image: url(./images/Design 2.png);
+      background-image: url(images/logoimagev1.jpeg);
     }
 }
 
 @media (min-width: 45rem) {
   .home {
-      background-image: url(./images/Design 2.png);
+      background-image: url(images/logoimagev1.jpeg);
   }
 
   .home p {
@@ -513,19 +513,19 @@ body {
 
 /* About-Us */
 .about-us {
-  background-image: url(images/kitchenpic005.jpeg);
+  background-image: url(images/logoimagev1.jpeg);
 }
 
 @media (min-width: 35rem) {
   .about-us {
       background-position: center center;
-      background-image: url(images/island & cabinets.jpeg);
+      background-image: url(images/logoimagev1.jpeg);
   }
 }
 
 @media (min-width: 45rem) {
   .about-us {
-      background-image: url(images/product1lupo.jpeg);
+      background-image: url(images/logoimagev1.jpeg);
   }
 } 
 
