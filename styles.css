@@ -89,7 +89,7 @@ body {
   font-size: var(--fs-400);
   color: hsl(var(--clr-white));
   background-size: cover;
-  background-image: url();
+  background-image: url(images/logoimagev1.jpeg);
   background-position: center;
   line-height: 1.5;
   min-height: 100vh;
