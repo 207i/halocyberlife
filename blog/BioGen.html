@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Ocean Generator™ v2 — Advanced Solar-Thermal Platform | Halocyberlife</title>
+  <title>Ocean Generator™ v2 — Continuation | Halocyberlife</title>
 
-  <meta name="description" content="Ocean Generator™ v2 is a modular solar-thermal platform exploring controlled phase-change systems for future energy and environmental applications. Patent filing in progress." />
-
+  <meta name="description" content="Ocean Generator™ v2 is a continuation concept exploring modular solar-thermal phase-control systems. Detailed disclosures and patent materials coming soon." />
   <meta name="author" content="Luis Amaya" />
   <meta name="robots" content="index, follow" />
 
@@ -17,7 +16,7 @@
       --text:#f9fafb;
       --muted:#9ca3af;
       --soft:#d1d5db;
-      --border: rgba(148,163,184,0.28);
+      --border:rgba(148,163,184,0.28);
       --accent:#22d3ee;
       --accent2:#8b5cf6;
       --radius:18px;
@@ -27,9 +26,9 @@
     *{box-sizing:border-box;margin:0;padding:0}
 
     body{
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      background: radial-gradient(circle at top, #111827 0%, #020617 55%, #000000 100%);
-      color: var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:radial-gradient(circle at top, #111827 0%, #020617 55%, #000000 100%);
+      color:var(--text);
       line-height:1.65;
     }
 
@@ -38,9 +37,10 @@
 
     .container{max-width:980px;margin:0 auto;padding:0 1.25rem}
 
+    /* ───────── HEADER ───────── */
     header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(2,6,23,0.82);
+      position:sticky;top:0;z-index:1000;
+      background:rgba(2,6,23,0.85);
       border-bottom:1px solid rgba(255,255,255,0.08);
       backdrop-filter:blur(12px);
     }
@@ -52,14 +52,24 @@
 
     .brand{
       display:flex;align-items:center;gap:.7rem;
-      font-weight:700;text-transform:uppercase;letter-spacing:.05em;
-      font-size:.9rem;
+      font-weight:700;text-transform:uppercase;
+      letter-spacing:.05em;font-size:.9rem;
     }
 
     .brand img{width:40px;height:40px;object-fit:contain}
 
+    .menu-btn{
+      display:none;
+      background:none;border:none;
+      color:#fff;font-size:1.5rem;
+      cursor:pointer;
+    }
+
+    nav{
+      display:flex;align-items:center;gap:.4rem;
+    }
+
     nav a{
-      margin-left:.4rem;
       padding:.45rem .9rem;
       border-radius:999px;
       border:1px solid rgba(255,255,255,0.18);
@@ -68,9 +78,25 @@
       text-transform:uppercase;
     }
 
-    main{padding:2.2rem 0 3rem}
+    @media (max-width:720px){
+      .menu-btn{display:block}
+      nav{
+        position:fixed;
+        inset:0;
+        display:none;
+        flex-direction:column;
+        justify-content:center;
+        background:radial-gradient(circle at center, #1e1b4b 0%, #020617 100%);
+        gap:1.8rem;
+      }
+      nav.open{display:flex}
+      nav a{font-size:1.4rem;width:80%;text-align:center}
+    }
 
-    .article-head{text-align:center;margin-bottom:1.8rem}
+    /* ───────── MAIN ───────── */
+    main{padding:2.5rem 0 3rem}
+
+    .article-head{text-align:center;margin-bottom:2rem}
 
     .meta{
       color:var(--muted);
@@ -81,9 +107,9 @@
     }
 
     h1{
-      font-size:clamp(2.1rem,3.6vw,3rem);
+      font-size:clamp(2.2rem,3.8vw,3.1rem);
       letter-spacing:-.02em;
-      margin-bottom:.6rem;
+      margin-bottom:.7rem;
     }
 
     .subtitle{
@@ -95,7 +121,7 @@
 
     .tag-row{
       display:flex;justify-content:center;flex-wrap:wrap;
-      gap:8px;margin-top:1rem;
+      gap:8px;margin-top:1.2rem;
     }
 
     .pill{
@@ -117,14 +143,14 @@
       border-radius:999px;
       border:1px solid rgba(255,255,255,0.22);
       background:linear-gradient(90deg,rgba(34,211,238,0.18),rgba(139,92,246,0.16));
-      text-transform:uppercase;
       font-size:.9rem;
       font-weight:600;
+      text-transform:uppercase;
     }
 
     .content{
       max-width:820px;
-      margin:2.5rem auto 0;
+      margin:3rem auto 0;
       font-size:1.03rem;
       color:rgba(209,213,219,0.92);
     }
@@ -138,8 +164,8 @@
     .content p{margin:.9rem 0}
 
     .notice{
-      margin:2.4rem 0;
-      padding:1.2rem 1.4rem;
+      margin:2.6rem 0;
+      padding:1.3rem 1.5rem;
       border-radius:16px;
       border:1px solid rgba(139,92,246,0.35);
       background:rgba(139,92,246,0.08);
@@ -166,7 +192,10 @@
       <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo">
       <span>Halocyberlife</span>
     </div>
-    <nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+    <nav id="mainNav">
       <a href="../index.html">Home</a>
       <a href="../blog.html">Articles</a>
     </nav>
@@ -176,52 +205,50 @@
 <main class="container">
 
   <section class="article-head">
-    <p class="meta">Concept Technology · Patent Pending</p>
+    <p class="meta">Continuation · Concept Platform · Patent Pending</p>
     <h1>Ocean Generator™ v2</h1>
     <p class="subtitle">
-      A modular solar-thermal platform exploring controlled phase-change systems for future energy and environmental applications.
+      A continuation concept exploring modular solar-thermal phase-controlled systems.  
+      Detailed disclosures and patent materials will be released in stages.
     </p>
 
     <div class="cta">
-      <span class="btn">Patent Filing In Progress</span>
+      <span class="btn">Patent Filing — Coming Soon</span>
     </div>
 
     <div class="tag-row">
       <span class="pill">Solar-thermal platform</span>
-      <span class="pill">Phase-controlled systems</span>
-      <span class="pill">Modular architecture</span>
-      <span class="pill">Pre-release</span>
+      <span class="pill">Phase-control architecture</span>
+      <span class="pill">Modular systems</span>
+      <span class="pill">Pre-disclosure</span>
     </div>
   </section>
 
   <section class="content">
-    <h2>What This Is</h2>
+    <h2>Purpose</h2>
     <p>
-      Ocean Generator™ v2 is an advanced exploration into modular solar-thermal architectures that leverage controlled phase transitions within sealed, environmentally isolated systems.
+      Ocean Generator™ v2 represents a forward continuation of research into controlled thermal phase behavior within modular, sealed systems designed for long-term autonomous operation.
     </p>
 
     <p>
-      The platform is designed to operate at the intersection of thermal dynamics, material science, and system-level efficiency — emphasizing stability, scalability, and long-term autonomous operation.
+      The platform is intentionally presented at a high level while intellectual property protections are finalized.
     </p>
-
-    <h2>What This Is Not</h2>
-    <p>
-      This is not a conventional desalination system, not a traditional power plant, and not a derivative of existing renewable infrastructure.
-    </p>
-
-    <p>
-      Public descriptions intentionally omit internal mechanisms while intellectual property protections are finalized.
-    </p>
-
-    <div class="notice">
-      <strong>Disclosure Notice:</strong><br>
-      Core operational principles, system internals, and performance characteristics are withheld pending patent submission and review.
-    </div>
 
     <h2>Status</h2>
     <p>
-      Ocean Generator™ v2 is currently in the intellectual property protection phase.  
-      Visuals, simulations, and detailed system descriptions will be released incrementally following patent confirmation.
+      This project is currently in the patent preparation phase.  
+      Public information is limited by design.
+    </p>
+
+    <div class="notice">
+      <strong>Notice:</strong><br>
+      Core system mechanisms, performance characteristics, and internal architectures are withheld pending patent submission and review.
+    </div>
+
+    <h2>What’s Next</h2>
+    <p>
+      Once patent protection is secured, this page will expand with diagrams, simulations, and system breakdowns.
+      Until then, this page serves as a continuation marker and future disclosure anchor.
     </p>
   </section>
 
@@ -234,6 +261,31 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  const menuBtn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mainNav");
+
+  menuBtn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    });
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && nav.classList.contains("open")) {
+      nav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+  });
 </script>
 
 </body>
