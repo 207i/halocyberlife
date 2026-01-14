@@ -400,7 +400,7 @@ body {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   background: var(--accent-soft);
-  color: #4c1d95;
+  color: aqua;
 }
 
 .section-dark .status-pill {
