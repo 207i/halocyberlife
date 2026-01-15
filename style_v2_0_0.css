@@ -951,3 +951,60 @@ body {
   break-inside: avoid;
   margin-bottom: 1.5rem;
 }
+
+   .orb-inner {
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255,255,255,0.35),
+      rgba(120,140,255,0.25) 35%,
+      rgba(30,40,90,0.85) 65%,
+      rgba(5,8,25,0.95) 100%
+    );
+}
+
+   .orb-inner::after {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 40px rgba(120,180,255,0.25),
+    0 0 60px rgba(120,180,255,0.2);
+  pointer-events: none;
+}
+.orb-outer {
+  z-index: 1;
+  transform: translateX(20px) scale(1.05);
+}
+
+.orb-inner {
+  z-index: 2;
+  transform: translateX(-40px) scale(0.9);
+}
+.orb-inner {
+  background-blend-mode: overlay;
+}
+
+.orb-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: url("/images/noise.png");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+.hero-visual {
+  perspective: 800px;
+}
+
+.orb-inner {
+  transform: translateZ(40px);
+}
+
+.orb-outer {
+  transform: translateZ(-20px);
+}
+
+
