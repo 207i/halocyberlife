@@ -931,3 +931,23 @@ body {
     display: none !important;
   }
 
+
+/* ===== MASONRY FIX (SOLUTION 2) ===== */
+
+/* Turn off grid behavior */
+.two-column-grid {
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+/* Flatten columns so cards flow naturally */
+.column-left,
+.column-right {
+  display: contents;
+}
+
+/* Prevent cards from breaking between columns */
+.mini-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
