@@ -8,6 +8,42 @@
   <meta name="description" content="BioLoop: Advanced gas-phase metabolite collection and CO2 recapture systems integrated into sanitary hardware." />
   
   <style>
+     /* =========================
+   BACK TO TOP BUTTON
+   ========================= */
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(139,92,246,0.4);
+      background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255,255,255,0.25),
+        rgba(139,92,246,0.35) 45%,
+        rgba(2,6,23,0.95) 75%
+      );
+      color: #fff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1200;
+      box-shadow:
+        0 0 25px rgba(139,92,246,0.45),
+        inset 0 0 12px rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 35px rgba(217,70,239,0.65),
+        inset 0 0 18px rgba(255,255,255,0.25);
+    }
     /* ───────────────────────────────────────────────────────────────────────── */
     /* UPDATED STYLING ATTRIBUTES (ELECTRIC PURPLE & CYAN NEON) */
     :root {
