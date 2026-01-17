@@ -582,6 +582,20 @@
     document.body.style.overflow = '';
   }
 });
+  /* ───────── BACK TO TOP BUTTON ───────── */
+  const backToTop = document.querySelector('.back-to-top');
+
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 600 ? 'grid' : 'none';
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+});    
 </script>
 </body>
 </html>
