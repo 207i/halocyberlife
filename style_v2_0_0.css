@@ -862,12 +862,12 @@ body {
 }
 
 /* Two-column grid for Insights & Tech */
-.two-column-grid {
+/* .two-column-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   margin-top: 40px;
-}
+} */
 
 /* Left and right columns */
 .column-left, .column-right {
