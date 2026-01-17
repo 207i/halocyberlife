@@ -642,6 +642,13 @@
     document.body.style.overflow = '';
   }
 });
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) {
+    backToTop.style.display = 'grid';
+  } else {
+    backToTop.style.display = 'none';
+  }
+});    
 </script>
 </body>
 </html>
