@@ -913,8 +913,7 @@ body {
   font-weight: 600;
   margin: 0;
   color: #fff;
-}
-
+ }
 /* ==============================
    Mobile tweak: 4 cards + 1 column
    ============================== */
@@ -930,7 +929,7 @@ body {
   .hide-mobile {
     display: none !important;
   }
-
+}
 
 /* ===== MASONRY FIX (SOLUTION 2) ===== */
 
