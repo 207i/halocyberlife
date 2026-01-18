@@ -421,29 +421,94 @@ Until then, it stands as a marker — not an explanation.
 
     <button class="back-to-top" aria-label="Back to top">↑</button>
   </footer>
-  
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("mainNav");
 
-menuBtn.addEventListener("click",()=>{
-  const open = nav.classList.toggle("open");
-  document.body.style.overflow = open ? "hidden" : "";
-});
+  <script>
+/* =========================================================
+   MASTER JS — BioGlow Page
+   Slider • Lightbox • Mobile Nav • Back To Top
+   ========================================================= */
 
-nav.querySelectorAll("a").forEach(a=>{
-  a.addEventListener("click",()=>{
-    nav.classList.remove("open");
-    document.body.style.overflow="";
-  });
-});
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){
-    nav.classList.remove("open");
-    document.body.style.overflow="";
+  /* ───────── SLIDER SYSTEM ───────── */
+  let index = 0;
+  const track = document.getElementById('visionTrack');
+  const slides = document.querySelectorAll('.vision-slide');
+
+  function moveSlide(n) {
+    if (!track || !slides.length) return;
+    index = (index + n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
   }
+
+  if (track && slides.length) {
+    setInterval(() => moveSlide(1), 6000);
+  }
+
+  /* ───────── LIGHTBOX SYSTEM ───────── */
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+
+  document.querySelectorAll('.lightbox-trigger').forEach(img => {
+    img.addEventListener('click', () => {
+      lb.classList.add('open');
+      lbImg.src = img.src;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (lb) {
+    lb.addEventListener('click', e => {
+      if (e.target === lb) closeLightbox();
+    });
+  }
+
+  /* ───────── MOBILE NAV TOGGLE ───────── */
+  const navToggle = document.querySelector('.neon-nav-toggle');
+  const nav = document.getElementById('primary-nav');
+
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.neon-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  /* ───────── BACK TO TOP BUTTON ───────── */
+  const backToTop = document.querySelector('.back-to-top');
+
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 600 ? 'grid' : 'none';
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
 });
 </script>
 <script src="../main_v2_0_0.js"></script>
