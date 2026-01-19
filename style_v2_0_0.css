@@ -1183,7 +1183,13 @@ body {
 
 /* Small phones */
 @media (max-width: 380px) {
+  .mobile-brand {
+    padding: 2px 8px 0;   
+  }
+
   .mobile-brand .slogan-logo {
-    height: 84px;
+    height: 264px;        
+    margin: 0;           
   }
 }
+
