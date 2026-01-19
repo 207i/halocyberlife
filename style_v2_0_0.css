@@ -1014,11 +1014,11 @@ body {
   color: #fff;
  }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .slogan-logo {
     display: none;
   }
-}
+} */
 
 /* ==============================
    Mobile tweak: 4 cards + 1 column
