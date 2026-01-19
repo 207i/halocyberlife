@@ -620,6 +620,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* ───────── LIGHTBOX SYSTEM ───────── */
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightboxImg');
+const closeBtn = lb?.querySelector('.lightbox__close');
+
+if (lb && lbImg && closeBtn) {
+
+  document.querySelectorAll('.lightbox-trigger').forEach(img => {
+    img.addEventListener('click', () => {
+      lb.classList.add('open');
+      lbImg.src = img.src;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    closeLightbox();
+  });
+
+  lb.addEventListener('click', e => {
+    if (e.target === lb) closeLightbox();
+  });
+}  
 </script>
 </body>
 </html>
