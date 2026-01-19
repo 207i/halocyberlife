@@ -118,9 +118,9 @@ body {
 }
 
 .slogan-logo {
-  height: 26px; /* slightly smaller so it feels like a sub-mark */
+  height: 56px; 
   width: auto;
-  opacity: 0.85; /* optional, makes it elegant */
+  opacity: 0.85; 
 }
 
 /* NAV */
