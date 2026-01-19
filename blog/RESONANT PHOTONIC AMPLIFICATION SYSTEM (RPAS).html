@@ -607,27 +607,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ───────── LIGHTBOX SYSTEM ───────── */
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightboxImg');
+const closeBtn = document.querySelector('.lightbox__close');
 
-  document.querySelectorAll('.lightbox-trigger').forEach(img => {
-    img.addEventListener('click', () => {
-      lb.classList.add('open');
-      lbImg.src = img.src;
-      document.body.style.overflow = 'hidden';
-    });
+document.querySelectorAll('.lightbox-trigger').forEach(img => {
+  img.addEventListener('click', () => {
+    lb.classList.add('open');
+    lbImg.src = img.src;
+    document.body.style.overflow = 'hidden';
   });
+});
 
-  function closeLightbox() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+function closeLightbox() {
+  lb.classList.remove('open');
+  lbImg.src = '';
+  document.body.style.overflow = '';
+}
 
-  if (lb) {
-    lb.addEventListener('click', e => {
-      if (e.target === lb) closeLightbox();
-    });
-  }
+if (closeBtn) {
+  closeBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    closeLightbox();
+  });
+}
+
+if (lb) {
+  lb.addEventListener('click', e => {
+    if (e.target === lb) closeLightbox();
+  });
+}
 
   /* ───────── MOBILE NAV TOGGLE ───────── */
   const navToggle = document.querySelector('.neon-nav-toggle');
