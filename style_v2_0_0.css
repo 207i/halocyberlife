@@ -1144,10 +1144,10 @@ body {
 }
 
 /* =========================
-   MOBILE SLOGAN LOGO (FINAL)
+   MOBILE SLOGAN LOGO — BOLD
    ========================= */
 
-/* Hidden by default (desktop) */
+/* Hidden on desktop */
 .mobile-brand {
   display: none;
 }
@@ -1158,26 +1158,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6px 12px;   /* 👈 MINIMAL top/bottom space */
+    padding: 10px 16px 8px; /* more breathing room */
   }
 
   .mobile-brand .logo-pair {
     display: flex;
     justify-content: center;
-    margin: 0;          /* 👈 clean, predictable */
   }
 
   .mobile-brand .slogan-logo {
-    display: block;
-    height: 64px;       /* 👈 BIG + readable */
+    height: 110px;          /* 🔥 BIG */
     width: auto;
-    opacity: 0.98;
+    opacity: 1;
+    filter: drop-shadow(0 0 22px rgba(139, 92, 246, 0.65));
   }
 }
 
-/* Extra boost for very small phones */
-@media (max-width: 420px) {
+/* Large phones */
+@media (max-width: 480px) {
   .mobile-brand .slogan-logo {
-    height: 56px;
+    height: 96px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .mobile-brand .slogan-logo {
+    height: 84px;
   }
 }
