@@ -1112,4 +1112,35 @@ body {
   transform: translateZ(-20px);
 }
 
+/* =========================
+   MOBILE SLOGAN LOGO
+   ========================= */
+
+/* Hidden by default (desktop) */
+.mobile-brand {
+  display: none;
+}
+
+/* Mobile: show slogan directly under nav */
+@media (max-width: 820px) {
+  .mobile-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 16px 6px;
+    background: transparent; /* keeps hero clean */
+  }
+
+  .mobile-brand .logo-pair {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-brand .slogan-logo {
+    display: block;
+    height: 36px;   /* adjust if you want it louder */
+    width: auto;
+    opacity: 0.95;
+  }
+}
 
