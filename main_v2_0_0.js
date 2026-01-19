@@ -191,6 +191,52 @@
     });
   }
 
+      // -----------------------------
+    // Lightbox (global, safe)
+    // -----------------------------
+    const lightbox = $("#lightbox");
+    const lightboxImg = $("#lightboxImg");
+    const closeBtn = $(".lightbox__close");
+    
+    if (lightbox && lightboxImg) {
+      // Open lightbox
+      $$(".lightbox-trigger").forEach((el) => {
+        el.addEventListener("click", () => {
+          lightbox.classList.add("open");
+          lightboxImg.src = el.src;
+          document.body.style.overflow = "hidden";
+        });
+      });
+    
+      // Close via X
+      if (closeBtn) {
+        closeBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          lightbox.classList.remove("open");
+          lightboxImg.src = "";
+          document.body.style.overflow = "";
+        });
+      }
+    
+      // Close by clicking backdrop
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("open");
+          lightboxImg.src = "";
+          document.body.style.overflow = "";
+        }
+      });
+    
+      // Close with ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("open")) {
+          lightbox.classList.remove("open");
+          lightboxImg.src = "";
+          document.body.style.overflow = "";
+        }
+      });
+    }
+
   // -----------------------------
   // Vision slider (optional / only loads if present)
   // -----------------------------
