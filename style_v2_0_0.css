@@ -97,6 +97,44 @@ body {
   text-decoration: none;
 }
 
+/* ───────────────── HEADER CORE ───────────────── */
+
+.neon-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Brand container */
+.neon-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Logo pair */
+.logo-pair {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Main icon logo (leftmost) */
+.main-logo {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* SLOGAN LOGO — make it POP */
+.slogan-logo {
+  height: 48px;          /* 👈 bigger than icon */
+  width: auto;
+  opacity: 0.95;
+  transform: translateY(1px);
+}
+
 .neon-logo { height: 40px; width: auto; }
 
 .neon-brand-text {
