@@ -103,6 +103,43 @@ body {
   }
 }
 
+/* ───────────────── MOBILE HEADER REFLOW ───────────────── */
+
+@media (max-width: 768px) {
+
+  /* Keep header tight */
+  .neon-header-inner {
+    height: 64px;
+  }
+
+  /* Hide logo inside header */
+  .neon-brand {
+    display: none;
+  }
+
+  /* New logo block BELOW header */
+  .mobile-brand {
+    display: flex;
+    justify-content: center;
+    padding: 18px 16px 6px;
+  }
+
+  .mobile-brand .logo-pair {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-brand .main-logo {
+    height: 44px;
+  }
+
+  .mobile-brand .slogan-logo {
+    height: 36px;
+    opacity: 0.9;
+  }
+}
+
 /* ───────────────── HEADER CORE ───────────────── */
 
 .neon-header-inner {
