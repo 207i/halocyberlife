@@ -593,7 +593,7 @@
     </div>
 <script>
 /* =========================================================
-   MASTER JS — BioGlow Page
+   MASTER JS — BioGlow / BioLumen Page (CLEAN)
    Slider • Lightbox • Mobile Nav • Back To Top
    ========================================================= */
 
@@ -617,24 +617,34 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ───────── LIGHTBOX SYSTEM ───────── */
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
+  const closeBtn = lb?.querySelector('.lightbox__close');
 
-  document.querySelectorAll('.lightbox-trigger').forEach(img => {
-    img.addEventListener('click', () => {
-      lb.classList.add('open');
-      lbImg.src = img.src;
-      document.body.style.overflow = 'hidden';
+  if (lb && lbImg && closeBtn) {
+
+    document.querySelectorAll('.lightbox-trigger').forEach(el => {
+      el.addEventListener('click', () => {
+        lb.classList.add('open');
+        lbImg.src = el.src;
+        document.body.style.overflow = 'hidden';
+      });
     });
-  });
 
-  function closeLightbox() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  if (lb) {
-    lb.addEventListener('click', e => {
-      if (e.target === lb) closeLightbox();
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
     });
+
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) {
+        closeLightbox();
+      }
+    });
+
+    function closeLightbox() {
+      lb.classList.remove('open');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
   }
 
   /* ───────── MOBILE NAV TOGGLE ───────── */
