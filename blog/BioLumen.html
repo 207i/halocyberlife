@@ -582,95 +582,99 @@
       <img src="" id="lightboxImg" class="lightbox__img">
     </div>
   </div>
-
-<script>
-/* =========================================================
-   MASTER JS — BioGlow Page
-   Slider • Lightbox • Mobile Nav • Back To Top
-   ========================================================= */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ───────── SLIDER SYSTEM ───────── */
-  let index = 0;
-  const track = document.getElementById('visionTrack');
-  const slides = document.querySelectorAll('.vision-slide');
-
-  function moveSlide(n) {
-    if (!track || !slides.length) return;
-    index = (index + n + slides.length) % slides.length;
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  if (track && slides.length) {
-    setInterval(() => moveSlide(1), 6000);
-  }
-
-  /* ───────── LIGHTBOX SYSTEM ───────── */
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-
-  document.querySelectorAll('.lightbox-trigger').forEach(img => {
-    img.addEventListener('click', () => {
-      lb.classList.add('open');
-      lbImg.src = img.src;
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  function closeLightbox() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  if (lb) {
-    lb.addEventListener('click', e => {
-      if (e.target === lb) closeLightbox();
-    });
-  }
-
-  /* ───────── MOBILE NAV TOGGLE ───────── */
-  const navToggle = document.querySelector('.neon-nav-toggle');
-  const nav = document.getElementById('primary-nav');
-
-  if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('active');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    document.querySelectorAll('.neon-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', false);
-        document.body.style.overflow = '';
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox__close" aria-label="Close image">✕</button>
+      <img id="lightboxImg" alt="" />
+    </div>
+    
+    <script>
+    /* =========================================================
+       MASTER JS — BioGlow Page
+       Slider • Lightbox • Mobile Nav • Back To Top
+       ========================================================= */
+    
+    document.addEventListener('DOMContentLoaded', () => {
+    
+      /* ───────── SLIDER SYSTEM ───────── */
+      let index = 0;
+      const track = document.getElementById('visionTrack');
+      const slides = document.querySelectorAll('.vision-slide');
+    
+      function moveSlide(n) {
+        if (!track || !slides.length) return;
+        index = (index + n + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+    
+      if (track && slides.length) {
+        setInterval(() => moveSlide(1), 6000);
+      }
+    
+      /* ───────── LIGHTBOX SYSTEM ───────── */
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+    
+      document.querySelectorAll('.lightbox-trigger').forEach(img => {
+        img.addEventListener('click', () => {
+          lb.classList.add('open');
+          lbImg.src = img.src;
+          document.body.style.overflow = 'hidden';
+        });
       });
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && nav.classList.contains('active')) {
-        nav.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', false);
+    
+      function closeLightbox() {
+        lb.classList.remove('open');
         document.body.style.overflow = '';
       }
+    
+      if (lb) {
+        lb.addEventListener('click', e => {
+          if (e.target === lb) closeLightbox();
+        });
+      }
+    
+      /* ───────── MOBILE NAV TOGGLE ───────── */
+      const navToggle = document.querySelector('.neon-nav-toggle');
+      const nav = document.getElementById('primary-nav');
+    
+      if (navToggle && nav) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('active');
+          navToggle.setAttribute('aria-expanded', isOpen);
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+    
+        document.querySelectorAll('.neon-nav a').forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', false);
+            document.body.style.overflow = '';
+          });
+        });
+    
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', false);
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    
+      /* ───────── BACK TO TOP BUTTON ───────── */
+      const backToTop = document.querySelector('.back-to-top');
+    
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          backToTop.style.display = window.scrollY > 600 ? 'grid' : 'none';
+        });
+    
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    
     });
-  }
-
-  /* ───────── BACK TO TOP BUTTON ───────── */
-  const backToTop = document.querySelector('.back-to-top');
-
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      backToTop.style.display = window.scrollY > 600 ? 'grid' : 'none';
-    });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-});
 </script>
 </body>
 </html>
