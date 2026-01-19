@@ -106,6 +106,23 @@ body {
   letter-spacing: 0.05em;
 }
 
+.logo-pair {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between the two logos */
+}
+
+.main-logo {
+  height: 40px; /* your existing logo size */
+  width: auto;
+}
+
+.slogan-logo {
+  height: 26px; /* slightly smaller so it feels like a sub-mark */
+  width: auto;
+  opacity: 0.85; /* optional, makes it elegant */
+}
+
 /* NAV */
 .neon-nav {
   display: flex;
