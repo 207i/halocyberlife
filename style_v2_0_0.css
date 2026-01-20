@@ -1242,3 +1242,23 @@ body {
   }
 }
 
+
+.mobile-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-brand .logo-pair {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mobile-brand .slogan-logo {
+  display: block;
+  margin: 0 auto;
+}
