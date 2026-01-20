@@ -1193,3 +1193,23 @@ body {
   }
 }
 
+/* FORCE PERFECT CENTERING FOR MOBILE SLOGAN */
+.mobile-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;          /* 🔥 kills top/bottom spacing */
+  margin: 0;
+}
+
+.mobile-brand .logo-pair {
+  display: block;      /* 🔥 removes flex side-effects */
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-brand .slogan-logo {
+  display: block;      /* removes inline-image gaps */
+  margin: 0 auto;      /* true horizontal centering */
+}
+
