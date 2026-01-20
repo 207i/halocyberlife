@@ -1126,8 +1126,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 14px 16px 6px;
-    background: transparent; /* keeps hero clean */
+    /* padding: 14px 16px 6px; */
+    background: transparent; 
   }
 
   .mobile-brand .logo-pair {
@@ -1137,7 +1137,7 @@ body {
 
   .mobile-brand .slogan-logo {
     display: block;
-    height: 36px;   /* adjust if you want it louder */
+    /* height: 36px;    */
     width: auto;
     opacity: 0.95;
   }
