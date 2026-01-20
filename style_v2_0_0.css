@@ -1223,7 +1223,7 @@ body {
 /* Large phones */
 @media (max-width: 480px) {
   .mobile-brand .slogan-logo {
-    height: 420px;
+    height: 20px;
   }
 }
 
