@@ -1177,7 +1177,7 @@ body {
 /* Large phones */
 @media (max-width: 480px) {
   .mobile-brand .slogan-logo {
-    height: 330px;
+    height: 420px;
   }
 }
 
