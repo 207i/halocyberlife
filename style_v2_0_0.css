@@ -1262,3 +1262,24 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+/* Kill inline-image spacing issues */
+.main-logo,
+.slogan-logo {
+  display: block;
+  margin: 0;
+}
+
+/* Logo container = exact center */
+.logo-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* control spacing here */
+}
+
+/* Prevent logo size from inflating header */
+.neon-brand {
+  line-height: 1;      /* 🔥 critical */
+}
+
