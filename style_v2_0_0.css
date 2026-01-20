@@ -145,13 +145,6 @@ body {
 
 /* ───────────────── HEADER CORE ───────────────── */
 
-.neon-header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-}
-
 /* Brand container */
 .neon-brand {
   display: flex;
