@@ -74,7 +74,7 @@ body {
 
 .neon-header {
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.4rem 0;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -87,6 +87,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: auto;
+  min-height: 56px; 
 }
 
 /* BRAND */
@@ -95,6 +97,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
+  line-height: 1; 
 }
 
 @media (min-width: 1024px) {
