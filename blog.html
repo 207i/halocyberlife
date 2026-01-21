@@ -177,6 +177,13 @@
       z-index: 9999; /* higher than nav */
     }
 
+    .back-to-top {
+      display: none;
+    }
+    .back-to-top.show {
+      display: flex;
+    }
+
   </style>
 </head>
 
@@ -324,6 +331,20 @@
     <button class="back-to-top" aria-label="Back to top">↑</button>
   </footer>
 <script>
+    const backToTop = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    
+    backToTop?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
   // Update footer year
   const yearEl = document.getElementById("year");
   if (yearEl) {
