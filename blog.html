@@ -599,19 +599,21 @@
     });
   });
 
-  // Mobile menu toggle
+  // Mobile menu toggle (INDEX-COMPATIBLE)
   const toggle = document.querySelector('.neon-nav-toggle');
   const nav = document.querySelector('.neon-nav');
-
+  
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
+      const isOpen = nav.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', isOpen);
     });
-
-    // Close menu when a nav link is clicked (mobile UX polish)
-      document.querySelectorAll('.neon-nav a').forEach(link => {
+  
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.neon-nav a').forEach(link => {
       link.addEventListener('click', () => {
-        nav.classList.remove('open');
+        nav.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
