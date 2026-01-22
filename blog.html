@@ -324,11 +324,25 @@
       display: flex;
     }
 
-    /* CENTER FOOTER CONTENT */
-    .site-footer {
-      display: flex;
-      justify-content: center;
+        /* CENTER FOOTER CONTENT ON MOBILE */
+    @media (max-width: 768px) {
+      .footer-inner {
+        text-align: center;
+      }
+    
+      .footer-brand {
+        justify-content: center;
+      }
+    
+      .footer-column {
+        align-items: center;
+      }
+    
+      .footer-links {
+        align-items: center;
+      }
     }
+
     
     .site-footer .footer-inner {
       width: 100%;
