@@ -92,13 +92,29 @@
     .brand { display: flex; align-items: center; gap: .7rem; font-weight: 700; text-transform: uppercase; font-size: .9rem; color: #fff; text-decoration: none; }
     .brand img { width: 40px; height: 40px; filter: drop-shadow(0 0 5px var(--accent-cyan)); }
     
-    nav { display: flex; gap: .5rem; }
-    nav a { 
-      padding: .5rem 1rem; border-radius: 999px; border: 1px solid rgba(139, 92, 246, 0.4);
-      font-size: .8rem; text-transform: uppercase; color: #fff; text-decoration: none; transition: 0.3s;
-      background: rgba(139, 92, 246, 0.1);
-    }
-    nav a:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); box-shadow: 0 0 15px rgba(34, 211, 238, 0.3); }
+    .neon-nav {
+  display: flex;
+  gap: .5rem;
+}
+
+.neon-nav a {
+  padding: .5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.neon-nav a:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+}
+
     /* MOBILE NAV */
 /* .menu-toggle {
   display: none;
