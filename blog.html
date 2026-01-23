@@ -249,7 +249,48 @@ h1 {
     </nav>
   </div>
 </header>
-
+ <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo small" class="footer-logo" />
+            <span class="footer-brand-text">Halocyberlife</span>
+          </div>
+          <p class="footer-text">Esoteric insights, experimental tech concepts, and future-conscious craftsmanship.</p>
+          <p class="footer-meta">v2.0.0 · © <span id="year"></span> Halocyberlife.com</p>
+        </div>
+  
+        <div class="footer-column">
+          <h3 class="footer-heading">Navigate</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html#insights">Latest Insights</a></li>
+            <li><a href="../blog.html">All Articles</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact_us.html">Contact</a></li>
+            <li><a href="../policypage.html">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h3 class="footer-heading">Contact &amp; Social</h3>
+          <div class="footer-social">
+             <a href="" aria-label="Email:">Email: luisamaya@halocyberlife.com/</a>
+          </div>
+          <div class="footer-social">
+            <a href="" aria-label="Email:">Email: info@halocyberlife.com/</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/halocyberlife/" aria-label="linkedin">LinkedIn: halocyberlife/</a>
+          </div>
+          <ul class="footer-links">
+            <li><span></span> <a href="https://www.halocyberlife.com/site_map.com">Site Map</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <button class="back-to-top" aria-label="Back to top">↑</button>
+    </footer>
 <script>
 const toggle = document.querySelector('.neon-nav-toggle');
 const nav = document.querySelector('.neon-nav');
@@ -267,6 +308,740 @@ toggle.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0HZN617CB1');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Articles & Insights | Halocyberlife</title>
+  <meta name="description" content="Explore esoteric articles, biophotonic research, and frequency-driven tech from Halocyberlife." />
+  <meta name="author" content="Luis Amaya" />
+
+  <style>
+    /* =========================
+   BACK TO TOP BUTTON
+   ========================= */
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(139,92,246,0.4);
+      background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255,255,255,0.25),
+        rgba(139,92,246,0.35) 45%,
+        rgba(2,6,23,0.95) 75%
+      );
+      color: #fff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1200;
+      box-shadow:
+        0 0 25px rgba(139,92,246,0.45),
+        inset 0 0 12px rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 35px rgba(217,70,239,0.65),
+        inset 0 0 18px rgba(255,255,255,0.25);
+    }
+
+    .back-to-top.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ───────────────────────────────────────────────────────────────────────── */
+    /* HALOCYBERLIFE ELECTRIC DESIGN SYSTEM */
+    :root {
+      --bg: #020617;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --soft: #d1d5db;
+      --border: rgba(139, 92, 246, 0.3);
+      --accent-cyan: #22d3ee;
+      --accent-purple: #8b5cf6;
+      --accent-magenta: #d946ef;
+      --radius: 18px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .neon-nav {
+      display: flex;
+      gap: .5rem;
+    }
+
+    .neon-nav a {
+      padding: .5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      font-size: .8rem;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+      background: rgba(139, 92, 246, 0.1);
+    }
+
+.neon-nav a:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+}
+
+    /* MOBILE NAV */
+/* .menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: .4rem .7rem;
+  border-radius: 10px;
+  cursor: pointer;
+} */
+
+  .neon-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 72px;
+    background: rgba(2,6,23,0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(139,92,246,0.25);
+  }
+
+  .neon-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .neon-header-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .neon-logo {
+    max-height: 40px;
+    width: auto;
+    display: block;
+  }
+
+  /* MOBILE NAV — MATCH INDEX */
+  @media (max-width: 820px) {
+
+  .neon-nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .neon-nav-toggle span {
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+  }
+
+  .neon-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1.25rem 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 999;
+  }
+
+   .neon-nav.active {
+      display: flex;
+    }
+
+  .neon-nav a {
+    width: 90%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.2rem;
+  }
+
+  @media (max-width: 820px) {
+
+  .neon-nav a {
+    width: 90%;
+    text-align: center;
+    font-size: 1rem;              /* BIGGER text */
+    padding: 0.9rem 1.4rem;       /* BIGGER tap area */
+    border-width: 2px;            /* STRONGER outline */
+  }
+ }  
+}
+
+    .hero { text-align: center; padding: 5rem 0 3rem; }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; margin-bottom: 1.5rem;
+      background: linear-gradient(to right, #fff, var(--accent-purple), var(--accent-magenta));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: var(--soft); font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
+
+    .hero {
+      padding-top: calc(5rem + 72px);
+    }
+
+    /* NAV COLOR UTILITIES — MATCH INDEX */
+
+.neon-link {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
+
+.color-blue {
+  color: #22d3ee;
+  border-color: rgba(34,211,238,0.35);
+}
+.color-blue:hover {
+  box-shadow: 0 0 16px rgba(34,211,238,0.6);
+}
+
+.color-purple {
+  color: #8b5cf6;
+  border-color: rgba(139,92,246,0.35);
+}
+.color-purple:hover {
+  box-shadow: 0 0 16px rgba(139,92,246,0.6);
+}
+
+.color-cyan {
+  color: #06b6d4;
+  border-color: rgba(6,182,212,0.35);
+}
+.color-cyan:hover {
+  box-shadow: 0 0 16px rgba(6,182,212,0.6);
+}
+
+.color-magenta {
+  color: #d946ef;
+  border-color: rgba(217,70,239,0.35);
+}
+.color-magenta:hover {
+  box-shadow: 0 0 16px rgba(217,70,239,0.6);
+}
+
+.color-gold {
+  color: #fbbf24;
+  border-color: rgba(251,191,36,0.35);
+}
+.color-gold:hover {
+  box-shadow: 0 0 16px rgba(251,191,36,0.6);
+}
+
+    /* FILTERS */
+    .filter-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 4rem; }
+    .chip { 
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05); color: var(--muted); font-size: .85rem; cursor: pointer; transition: 0.3s;
+    }
+    .chip:hover, .chip.active { border-color: var(--accent-cyan); color: #fff; background: rgba(34, 211, 238, 0.1); }
+
+    /* GRID & CARDS (21:9 RATIO) */
+    .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    @media (max-width: 820px) { .articles-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: rgba(139, 92, 246, 0.03); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; transition: 0.4s ease;
+      text-decoration: none; display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-8px); border-color: var(--accent-purple); background: rgba(139, 92, 246, 0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+    .card-img-wrap { width: 100%; aspect-ratio: 21 / 9; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .card:hover img { scale: 1.05; }
+
+    .card-body { padding: 1.5rem; flex-grow: 1; }
+    .card-meta { color: var(--accent-cyan); font-size: .75rem; font-weight: 700; text-transform: uppercase; margin-bottom: .5rem; letter-spacing: 1px; }
+    .card-title { font-size: 1.4rem; color: #fff; margin-bottom: .8rem; line-height: 1.3; }
+    .card-text { color: var(--muted); font-size: .95rem; margin-bottom: 1.5rem; }
+    
+    .card-cta { 
+        display: inline-block; color: var(--accent-purple); font-weight: 700; font-size: .9rem; 
+        text-transform: uppercase; transition: 0.3s;
+    }
+    .card:hover .card-cta { color: var(--accent-magenta); transform: translateX(5px); }
+
+    .site-footer .container {
+      margin-inline: auto;
+    }
+
+    /* FOOTER */
+       /* -------------------------------------------------------------------- */
+   
+          /* =========================
+         INLINE FOOTER SYSTEM
+         ========================= */
+      
+      .site-footer {
+        background: #020617;
+        border-top: 1px solid rgba(139, 92, 246, 0.25);
+        padding: 3rem 0 2.5rem;
+        margin-top: 5rem;
+        color: rgba(209,213,219,0.9);
+      }
+      
+      .footer-inner {
+        display: grid;
+        gap: 2.5rem;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+      
+      @media (min-width: 768px) {
+        .footer-inner {
+          grid-template-columns: 2fr 1fr 1.2fr;
+          align-items: start;
+        }
+      }
+      
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .footer-logo {
+        width: 34px;
+        height: auto;
+        filter: drop-shadow(0 0 6px rgba(139,92,246,0.5));
+      }
+      
+      .footer-brand-text {
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: #fff;
+      }
+      
+      .footer-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: rgba(209,213,219,0.85);
+      }
+      
+      .footer-meta {
+        font-size: 0.78rem;
+        color: rgba(148,163,184,0.7);
+        margin-top: 0.5rem;
+      }
+      
+      .footer-heading {
+        font-size: 0.95rem;
+        margin-bottom: 0.4rem;
+        color: #fff;
+      }
+      
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.88rem;
+      }
+      
+      .footer-links li + li {
+        margin-top: 0.35rem;
+      }
+      
+      .footer-links a {
+        color: rgba(209,213,219,0.85);
+        text-decoration: none;
+      }
+      
+      .footer-links a:hover {
+          color: var(--accent-cyan);
+        }
+        
+        .footer-social a {
+          font-size: 0.88rem;
+          color: var(--accent-purple);
+          text-decoration: none;
+        }
+
+      
+      .footer-social a:hover {
+        text-decoration: underline;
+      }
+
+        /* CENTER FOOTER CONTENT ON MOBILE */
+    @media (max-width: 768px) {
+      .footer-inner {
+        text-align: center;
+      }
+    
+      .footer-brand {
+        justify-content: center;
+      }
+    
+      .footer-column {
+        align-items: center;
+      }
+    
+      .footer-links {
+        align-items: center;
+      }
+    }
+
+    
+    .site-footer .footer-inner {
+      width: 100%;
+      max-width: 980px;
+    }
+
+    /* NAV COLOR UTILITIES — MATCH INDEX */
+
+.neon-link {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
+
+.color-blue {
+  color: #22d3ee;
+  border-color: rgba(34,211,238,0.35);
+}
+.color-blue:hover {
+  box-shadow: 0 0 16px rgba(34,211,238,0.6);
+}
+
+.color-purple {
+  color: #8b5cf6;
+  border-color: rgba(139,92,246,0.35);
+}
+.color-purple:hover {
+  box-shadow: 0 0 16px rgba(139,92,246,0.6);
+}
+
+.color-cyan {
+  color: #06b6d4;
+  border-color: rgba(6,182,212,0.35);
+}
+.color-cyan:hover {
+  box-shadow: 0 0 16px rgba(6,182,212,0.6);
+}
+
+.color-magenta {
+  color: #d946ef;
+  border-color: rgba(217,70,239,0.35);
+}
+.color-magenta:hover {
+  box-shadow: 0 0 16px rgba(217,70,239,0.6);
+}
+
+.color-gold {
+  color: #fbbf24;
+  border-color: rgba(251,191,36,0.35);
+}
+.color-gold:hover {
+  box-shadow: 0 0 16px rgba(251,191,36,0.6);
+}
+
+      </style>
+    </head>
+    <body>
+
+ <!-- HEADER / NAV -->
+<header class="neon-header">
+  <div class="container neon-header-inner">
+
+    <a href="index.html" class="neon-brand">
+      <div class="logo-pair">
+        <img 
+          src="./images/negative_white_halocyberlife_logo.png" 
+          alt="Halocyberlife logo" 
+          class="neon-logo main-logo"
+        />
+      </div>
+      <span class="neon-brand-text"></span>
+    </a>
+
+    <button
+      class="neon-nav-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-nav" class="neon-nav">
+      <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
+      <a href="/index.html#atelier" class="neon-link color-purple">HaloCraft</a>
+      <a href="/blog.html" class="neon-link color-cyan">Articles</a>
+      <a href="/about.html" class="neon-link color-magenta">About</a>
+      <a href="/contact_us.html" class="neon-link color-gold">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main class="container">
+    <section class="hero">
+      <h1>Articles & Transmissions</h1>
+      <p>Exploring the intersections of frequency, biophotonics, and esoteric architecture.</p>
+      
+      <div class="filter-chips">
+        <button class="chip active">All</button>
+        <button class="chip">Experiments & Tech</button>
+        <button class="chip">Inner Wisdom</button>
+        <button class="chip" onclick="location.href='/Patents.html'">
+          Patents
+        </button>
+      </div>
+    </section>
+
+    <div class="articles-grid">
+      <a href="./blog/BioGlow_resonance_light_energy.html" class="card">
+        <div class="card-img-wrap">
+          <img src="images/Resonance_Light.png" alt="BioGlow Resonance" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Experiments & Tech</p>
+          <h2 class="card-title">BioGlow: Resonance & Experimental Devices</h2>
+          <p class="card-text">A build-log documenting how resonance theory transforms into functional hardware and prototype luminescent modules.</p>
+          <span class="card-cta">Read Transmission →</span>
+        </div>
+      </a>
+
+      <a href="blog/BioLoop.html" class="card">
+        <div class="card-img-wrap">
+          <img src="blog/Images/blog_images/BioLoop_img/Toilet_Seat.png" alt="BioLoop System" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <p class="card-meta">System Integration</p>
+          <h2 class="card-title">BioLoop & Cyclic Biological Systems</h2>
+          <p class="card-text">Exploring closed-loop biological intelligence and the hidden geometric architecture of metabolic waste-to-energy pathways.</p>
+          <span class="card-cta">Read Transmission →</span>
+        </div>
+      </a>
+
+      <a href="blog/RESONANT PHOTONIC AMPLIFICATION SYSTEM (RPAS).html" class="card">
+        <div class="card-img-wrap">
+          <img src="blog/Images/blog_images/Resonance_Amplification/RPAS_Core_Amplification_Stack_Render.png" alt="RPAS System" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Photonics / Patent</p>
+          <h2 class="card-title">Resonant Photonic Amplification (RPAS)</h2>
+          <p class="card-text">Technical breakdown of frequency-driven amplification of ultraweak light using mechanical resonance stacking.</p>
+          <span class="card-cta">View Patent Data →</span>
+        </div>
+      </a>
+
+      <a href="blog/BioLumen.html" class="card">
+  <div class="card-img-wrap">
+    <img
+      src="./blog/Images/blog_images/BioLumen_img/Bio_Lumen_index_image.png"
+      alt="BioLumen™ system chamber with TRIA-CORE™ inward-facing collectors"
+      loading="lazy"
+    />
+  </div>
+
+      <div class="card-body">
+        <p class="card-meta">Patent • Bio-Photonic Energy</p>
+    
+        <h2 class="card-title">BioLumen™ — TRIA-CORE™ Biophotonic Extraction</h2>
+    
+        <p class="card-text">
+          A sealed biophotonic chamber surrounded by inward-facing TRIA-CORE collectors that funnel ultraweak
+          photon emissions toward a central capture zone—enhanced by resonance staging (sonic/EM) for measurable
+          extraction and conversion.
+        </p>
+    
+        <span class="card-cta">Explore Patent →</span>
+      </div>
+    </a>
+
+        <a href="blog/BioGen.html" class="card">
+          <div class="card-img-wrap">
+            <img src="blog/Images/BioGen/OceanGenv2_CondensationModule.png" alt="BioGen research platform" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <p class="card-meta">Continuation Platform</p>
+            <h2 class="card-title">BioGen™ — Autonomous Energy Research</h2>
+            <p class="card-text">
+              Biogen™ is an experimental systems platform focused on controlled phase dynamics,
+              energy containment, and long-duration autonomous operation.
+              Public details are intentionally limited pending patent filings.
+            </p>
+            <span class="card-cta">View Continuation →</span>
+          </div>
+        </a>
+
+       <a href="./blog/pyramid.html" class="card">
+        <div class="card-img-wrap">
+          <img src="images/Pyramid_image.png" alt="Hidden Architecture" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Inner Wisdom</p>
+          <h2 class="card-title">Pyramids & Hidden Architecture</h2>
+          <p class="card-text">Analyzing ancient structures not as tombs, but as geometric resonators designed for environmental frequency tuning.</p>
+          <span class="card-cta">Read Transmission →</span>
+        </div>
+      </a>
+    </div>
+    </main>
+    
+   <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo small" class="footer-logo" />
+            <span class="footer-brand-text">Halocyberlife</span>
+          </div>
+          <p class="footer-text">Esoteric insights, experimental tech concepts, and future-conscious craftsmanship.</p>
+          <p class="footer-meta">v2.0.0 · © <span id="year"></span> Halocyberlife.com</p>
+        </div>
+  
+        <div class="footer-column">
+          <h3 class="footer-heading">Navigate</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html#insights">Latest Insights</a></li>
+            <li><a href="../blog.html">All Articles</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact_us.html">Contact</a></li>
+            <li><a href="../policypage.html">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h3 class="footer-heading">Contact &amp; Social</h3>
+          <div class="footer-social">
+             <a href="" aria-label="Email:">Email: luisamaya@halocyberlife.com/</a>
+          </div>
+          <div class="footer-social">
+            <a href="" aria-label="Email:">Email: info@halocyberlife.com/</a>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/halocyberlife/" aria-label="linkedin">LinkedIn: halocyberlife/</a>
+          </div>
+          <ul class="footer-links">
+            <li><span></span> <a href="https://www.halocyberlife.com/site_map.com">Site Map</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <button class="back-to-top" aria-label="Back to top">↑</button>
+    </footer>
+<script>
+    const backToTop = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    
+    backToTop?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+  // Update footer year
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  // Filter chips (visual state only)
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const active = document.querySelector('.chip.active');
+      if (active) active.classList.remove('active');
+      chip.classList.add('active');
+    });
+  });
+
+  // Mobile menu toggle (INDEX-COMPATIBLE)
+  const toggle = document.querySelector('.neon-nav-toggle');
+  const nav = document.querySelector('.neon-nav');
+  
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.neon-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
+</body>
+</html>
 
 
 
