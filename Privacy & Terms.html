@@ -18,147 +18,165 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Main Styles -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style_v2_0_0.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- HEADER -->
-  <header class="neon-header">
-    <div class="container neon-header-inner">
-      <a href="/index.html" class="neon-brand">
-        <img src="/images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo" />
-        <span class="neon-brand-text">Halocyberlife</span>
-      </a>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-      <nav class="neon-nav">
-        <a href="/index.html#insights" class="neon-link">Insights</a>
-        <a href="/blog.html" class="neon-link">Articles</a>
-        <a href="/contact_us.html" class="neon-link">Contact</a>
-      </nav>
-    </div>
+<!-- ================= HEADER ================= -->
+<header class="neon-header">
+  <div class="container neon-header-inner">
+
+    <a href="/index.html" class="neon-brand">
+      <img src="/images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo" />
+    </a>
+
+    <!-- MOBILE TOGGLE -->
+    <button class="neon-nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- NAV -->
+    <nav class="neon-nav">
+      <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
+      <a href="/blog.html" class="neon-link color-cyan">Articles</a>
+      <a href="/contact_us.html" class="neon-link color-gold">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main id="main-content" class="container section section-light">
+
+  <header class="section-header">
+    <h1>Privacy &amp; Terms</h1>
+    <p>Transparency, respect, and responsible use.</p>
   </header>
 
-  <main id="main-content" class="container section section-light">
+  <!-- PRIVACY -->
+  <section class="policy-section">
+    <h2>Privacy Policy</h2>
 
-    <header class="section-header">
-      <h1>Privacy & Terms</h1>
-      <p>Transparency, respect, and responsible use.</p>
-    </header>
+    <p>
+      Halocyberlife respects your privacy. This site is designed primarily as a
+      <strong>knowledge hub and experimental archive</strong>, not a data-harvesting platform.
+    </p>
 
-    <!-- PRIVACY -->
-    <section class="policy-section">
-      <h2>Privacy Policy</h2>
+    <h3>Information We Collect</h3>
+    <ul class="bullet-list">
+      <li>Basic analytics (such as page views and device type) via Google Analytics</li>
+      <li>Email addresses only if you voluntarily subscribe or contact us</li>
+    </ul>
 
-      <p>
-        Halocyberlife respects your privacy. This site is designed primarily as a
-        <strong>knowledge hub and experimental archive</strong>, not a data-harvesting platform.
-      </p>
+    <p>
+      We do <strong>not</strong> sell, rent, or trade your personal information.
+      No invasive tracking. No hidden data brokers.
+    </p>
 
-      <h3>Information We Collect</h3>
-      <ul class="bullet-list">
-        <li>Basic analytics (such as page views and device type) via Google Analytics</li>
-        <li>Email addresses only if you voluntarily subscribe to the newsletter</li>
-      </ul>
+    <h3>Cookies</h3>
+    <p>
+      Cookies may be used for basic analytics and site functionality.
+      You can disable cookies in your browser at any time.
+    </p>
+  </section>
 
-      <p>
-        We do <strong>not</strong> sell, rent, or trade your personal information.
-        No invasive tracking. No hidden data brokers.
-      </p>
+  <!-- TERMS -->
+  <section class="policy-section">
+    <h2>Terms of Use</h2>
 
-      <h3>Cookies</h3>
-      <p>
-        Cookies may be used for basic analytics and site functionality.
-        You can disable cookies in your browser at any time.
-      </p>
-    </section>
+    <p>
+      By accessing Halocyberlife, you agree to use this site responsibly and respectfully.
+      The content spans experimental technology, speculative concepts,
+      philosophical inquiry, and early-stage ideas.
+    </p>
 
-    <!-- TERMS -->
-    <section class="policy-section">
-      <h2>Terms of Use</h2>
+    <h3>Intellectual Property</h3>
+    <p>
+      All original content, text, images, concepts, and system descriptions
+      are the intellectual property of Halocyberlife and its creator unless otherwise stated.
+    </p>
 
-      <p>
-        By accessing Halocyberlife, you agree to use this site responsibly and respectfully.
-        The content here spans experimental technology, speculative concepts,
-        philosophical inquiry, and early-stage ideas.
-      </p>
+    <ul class="bullet-list">
+      <li>Conceptual</li>
+      <li>Experimental</li>
+      <li>Patent-pending or intentionally limited in public detail</li>
+    </ul>
 
-      <h3>Intellectual Property</h3>
-      <p>
-        All original content, text, images, concepts, and system descriptions
-        are the intellectual property of Halocyberlife and its creator unless otherwise stated.
-      </p>
+    <p>
+      Reproduction, redistribution, or commercial use without permission is not allowed.
+    </p>
 
-      <p>
-        Some technologies and systems discussed on this site are:
-      </p>
+    <h3>No Guarantees</h3>
+    <p>
+      Content is provided for informational and educational purposes only.
+      Halocyberlife makes no guarantees regarding outcomes, performance,
+      or applicability of experimental ideas.
+    </p>
+  </section>
 
-      <ul class="bullet-list">
-        <li>Conceptual</li>
-        <li>Experimental</li>
-        <li>Patent-pending or intentionally limited in public detail</li>
-      </ul>
+  <!-- ETHICS -->
+  <section class="policy-section">
+    <h2>Ethical Use &amp; Intent</h2>
 
-      <p>
-        Reproduction, redistribution, or commercial use without permission is not allowed.
-      </p>
+    <p>
+      Halocyberlife exists to explore ideas responsibly —
+      not to mislead, exploit, or overpromise.
+    </p>
 
-      <h3>No Guarantees</h3>
-      <p>
-        Content is provided for informational and educational purposes only.
-        Halocyberlife makes no guarantees regarding outcomes, performance,
-        or applicability of experimental ideas.
-      </p>
-    </section>
+    <p>
+      Any future products, tools, or technologies will be introduced transparently,
+      ethically, and with respect for users, creators, and the wider community.
+    </p>
+  </section>
 
-    <!-- ETHICAL NOTE -->
-    <section class="policy-section">
-      <h2>Ethical Use & Intent</h2>
+  <!-- CONTACT -->
+  <section class="policy-section">
+    <h2>Contact</h2>
+    <p>
+      If you have questions about privacy, terms, or content usage:
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a>
+    </p>
+  </section>
 
-      <p>
-        Halocyberlife exists to explore ideas responsibly —
-        not to mislead, exploit, or overpromise.
-      </p>
+  <!-- ACTION -->
+  <div class="section-actions">
+    <a href="/index.html" class="btn ghost-btn">← Back to Home</a>
+  </div>
 
-      <p>
-        Any future products, tools, or technologies will be introduced transparently,
-        ethically, and with respect for users, creators, and the wider community.
-      </p>
-    </section>
+</main>
 
-    <!-- CONTACT -->
-    <section class="policy-section">
-      <h2>Contact</h2>
-      <p>
-        If you have questions about privacy, terms, or content usage, you may contact:
-      </p>
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a>
-      </p>
-    </section>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-meta">
+      © <span id="year"></span> Halocyberlife · Privacy &amp; Terms
+    </p>
+  </div>
+</footer>
 
-    <!-- BACK BUTTON -->
-    <div class="section-actions">
-      <a href="/index.html" class="btn ghost-btn">← Back to Home</a>
-    </div>
+<!-- ================= SCRIPTS ================= -->
+<script>
+  // footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-  </main>
+  // mobile nav
+  const toggle = document.querySelector('.neon-nav-toggle');
+  const nav = document.querySelector('.neon-nav');
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-meta">
-        © <span id="year"></span> Halocyberlife · Privacy & Terms
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
 
 </body>
 </html>
