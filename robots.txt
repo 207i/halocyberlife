@@ -1,18 +1,9 @@
 User-agent: *
 Allow: /
 
-# Allow important asset rendering (critical for SEO)
-Allow: /css/
-Allow: /js/
-Allow: /images/
-
-# Block non-public or backend-related paths
+# Block non-public or internal paths
 Disallow: /functions/
-Disallow: /functions/api/
-
-# Optional: block repo/meta files (not needed in search)
-Disallow: /README.md
-Disallow: /LICENSE
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://halocyberlife.com/sitemap.xml
