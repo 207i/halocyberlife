@@ -1,6 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0HZN617CB1');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Articles & Insights | Halocyberlife</title>
+  <meta name="description" content="Explore esoteric articles, biophotonic research, and frequency-driven tech from Halocyberlife." />
+  <meta name="author" content="Luis Amaya" />
+
+<style>
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(139,92,246,0.4);
+  background: radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,0.25),
+    rgba(139,92,246,0.35) 45%,
+    rgba(2,6,23,0.95) 75%);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1200;
+  box-shadow: 0 0 25px rgba(139,92,246,0.45),
+              inset 0 0 12px rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+}
+.back-to-top.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   DESIGN SYSTEM
+========================= */
+:root {
+  --bg: #020617;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --soft: #d1d5db;
+  --border: rgba(139,92,246,0.3);
+  --accent-cyan: #22d3ee;
+  --accent-purple: #8b5cf6;
+  --accent-magenta: #d946ef;
+  --radius: 18px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000 100%);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
+.neon-header {
+  position: sticky;
+  top: 0;
+  height: 72px;
+  background: rgba(2,6,23,0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(139,92,246,0.25);
+  z-index: 1000;
+}
+
+.neon-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.neon-logo {
+  max-height: 40px;
+}
+
+/* 🔧 FIXED NAV CORE */
+.neon-nav {
+  display: flex;
+  gap: .5rem;
+}
+
+.neon-nav a {
+  padding: .55rem 1.1rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .3s ease;
+  background: transparent; /* 🔥 FIX */
+}
+
+/* =========================
+   COLOR UTILITIES (INDEX MATCH)
+========================= */
+.neon-link {
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+}
+
+.color-blue {
+  color: #22d3ee;
+  border-color: rgba(34,211,238,.35);
+  background: rgba(34,211,238,.08);
+}
+.color-purple {
+  color: #8b5cf6;
+  border-color: rgba(139,92,246,.35);
+  background: rgba(139,92,246,.08);
+}
+.color-cyan {
+  color: #06b6d4;
+  border-color: rgba(6,182,212,.35);
+  background: rgba(6,182,212,.08);
+}
+.color-magenta {
+  color: #d946ef;
+  border-color: rgba(217,70,239,.35);
+  background: rgba(217,70,239,.08);
+}
+.color-gold {
+  color: #fbbf24;
+  border-color: rgba(251,191,36,.35);
+  background: rgba(251,191,36,.08);
+}
+
+.neon-nav a:hover {
+  box-shadow: 0 0 18px currentColor;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+.neon-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.neon-nav-toggle span {
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+@media (max-width: 820px) {
+  .neon-nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .neon-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    background: rgba(0,0,0,0.92);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+  }
+
+  .neon-nav.active {
+    display: flex;
+  }
+
+  .neon-nav a {
+    width: 90%;
+    text-align: center;
+    font-size: 1rem;
+    padding: .9rem 1.4rem;
+    border-width: 2px;
+  }
+}
+
+/* =========================
+   HERO / CONTENT
+========================= */
+.hero {
+  text-align: center;
+  padding-top: calc(5rem + 72px);
+  padding-bottom: 3rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(to right,#fff,var(--accent-purple),var(--accent-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* (everything below untouched — cards, grid, footer, etc.) */
+</style>
+</head>
+
+<body>
+
+<header class="neon-header">
+  <div class="container neon-header-inner">
+    <a href="index.html">
+      <img src="./images/negative_white_halocyberlife_logo.png" class="neon-logo" alt="Halocyberlife">
+    </a>
+
+    <button class="neon-nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="neon-nav">
+      <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
+      <a href="/index.html#atelier" class="neon-link color-purple">HaloCraft</a>
+      <a href="/blog.html" class="neon-link color-cyan">Articles</a>
+      <a href="/about.html" class="neon-link color-magenta">About</a>
+      <a href="/contact_us.html" class="neon-link color-gold">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+const toggle = document.querySelector('.neon-nav-toggle');
+const nav = document.querySelector('.neon-nav');
+
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
   <script>
