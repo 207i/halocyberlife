@@ -67,8 +67,11 @@
 
       e.preventDefault();
       const yOffset = -80; // offset for fixed header
+      requestAnimationFrame(() => {
       const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
+      });
+
 
       // Close nav if open
       if (neonNav?.classList.contains("open")) {
