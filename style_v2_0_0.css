@@ -1194,12 +1194,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;          /* 🔥 kills top/bottom spacing */
+  padding: 0;          
   margin: 0;
 }
 
 .mobile-brand .logo-pair {
-  display: block;      /* 🔥 removes flex side-effects */
+  display: block;     
   margin: 0;
   padding: 0;
 }
@@ -1276,7 +1276,7 @@ body {
 
 /* Prevent logo size from inflating header */
 .neon-brand {
-  line-height: 1;      /* 🔥 critical */
+  line-height: 1;     
 }
 
 
