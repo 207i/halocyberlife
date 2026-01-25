@@ -47,7 +47,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Main Styles -->
-  <link rel="stylesheet" href="style_v2_0_0.css" />
+  <link rel="preload" href="style_v2_0_0.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="style_v2_0_0.css">
+  </noscript>
+
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
