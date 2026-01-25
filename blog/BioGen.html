@@ -651,8 +651,36 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === lb) closeLightbox();
     });
   }
-
 });
+
+  /* ───────── MOBILE NAV TOGGLE ───────── */
+const navToggle = document.querySelector('.neon-nav-toggle');
+const nav = document.getElementById('primary-nav');
+
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.neon-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && nav.classList.contains('active')) {
+      nav.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 </script>
 </body>
 </html>
