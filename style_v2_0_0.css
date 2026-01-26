@@ -139,13 +139,6 @@ body {
 
 /* ───────────────── HEADER CORE ───────────────── */
 
-/* Brand container */
-.neon-brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
 /* Logo pair */
 .logo-pair {
   display: flex;
