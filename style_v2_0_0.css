@@ -100,12 +100,6 @@ body {
   line-height: 1; 
 }
 
-@media (min-width: 1024px) {
-  .slogan-logo {
-    height: 56px;
-  }
-}
-
 /* ───────────────── MOBILE HEADER REFLOW ───────────────── */
 
 @media (max-width: 768px) {
