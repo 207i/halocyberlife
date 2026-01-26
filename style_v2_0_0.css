@@ -1290,11 +1290,6 @@ body {
   gap: 12px; /* control spacing here */
 }
 
-/* Prevent logo size from inflating header */
-.neon-brand {
-  line-height: 1;     
-}
-
 /* Mobile nav hidden by default */
 .neon-nav {
   display: none;
