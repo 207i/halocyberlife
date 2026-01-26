@@ -25,22 +25,6 @@
   }
 
   // -----------------------------
-// Close neon nav when any nav link is clicked (mobile)
-// -----------------------------
-// PASTE THIS NEW BLOCK INSTEAD:
-if (neonNav && neonToggle) {
-  $$("a", neonNav).forEach((a) => {
-    a.addEventListener("click", () => {
-      // Logic for mobile only: check if the menu is actually visible/open
-      if (window.innerWidth <= 820) {
-        neonNav.classList.remove("open");
-        neonNav.classList.remove("active"); 
-        neonToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  });
-}
-  // -----------------------------
   // Site nav toggle (modern nav with .main-nav)
   // -----------------------------
   const siteToggle = $(".nav-toggle");
@@ -343,7 +327,6 @@ if (neonNav && neonToggle) {
     }
   }
 })();
-
 
 
 
