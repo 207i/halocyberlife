@@ -1252,26 +1252,6 @@ body {
   gap: 12px; /* control spacing here */
 }
 
-/* Mobile nav hidden by default */
-.neon-nav {
-  display: none;
-}
-
-/* Show nav when toggle is expanded */
-.neon-nav-toggle[aria-expanded="true"] + .neon-nav {
-  display: flex;
-}
-
-@media (max-width: 768px) {
-  .neon-nav {
-    display: none;
-    flex-direction: column;
-  }
-
-  .neon-nav.active {
-    display: flex;
-  }
-}
 /* =========================
    DESKTOP NAV (FIX)
    ========================= */
