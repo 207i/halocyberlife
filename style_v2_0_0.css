@@ -146,12 +146,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-.logo-pair {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* space between the two logos */
-}
-
 .main-logo {
   height: 40px; /* your existing logo size */
   width: auto;
