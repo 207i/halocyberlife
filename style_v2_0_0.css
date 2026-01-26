@@ -1328,3 +1328,12 @@ body {
     display: flex;
   }
 }
+/* =========================
+   DESKTOP NAV (FIX)
+   ========================= */
+
+.neon-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
