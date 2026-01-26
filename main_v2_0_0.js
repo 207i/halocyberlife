@@ -25,6 +25,20 @@
   }
 
   // -----------------------------
+// Close neon nav when any nav link is clicked (mobile)
+// -----------------------------
+if (neonNav && neonToggle) {
+  $$("a", neonNav).forEach((a) => {
+    a.addEventListener("click", () => {
+      if (neonNav.classList.contains("open")) {
+        neonNav.classList.remove("open");
+        neonToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+}
+
+  // -----------------------------
   // Site nav toggle (modern nav with .main-nav)
   // -----------------------------
   const siteToggle = $(".nav-toggle");
