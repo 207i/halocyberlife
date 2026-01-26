@@ -1127,9 +1127,9 @@ body {
 .brand-h1-logo {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 90%;
   
-  /* 🔽 Reduce size by exactly 10% */
+  /* Reduce size by exactly 10% */
   transform: scale(0.9);
 
   /* Keeps it visually centered */
