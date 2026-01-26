@@ -114,23 +114,6 @@ body {
     display: none;
   }
 
-  /* New logo block BELOW header */
-  /* .mobile-brand {
-    display: flex;
-    justify-content: center;
-    padding: 18px 16px 6px;
-  } */
-
-  /* .mobile-brand .logo-pair {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  } */
-
-  /* .mobile-brand .main-logo {
-    height: 44px;
-  } */
-
   .mobile-brand .slogan-logo {
     height: 356px;
     opacity: 0.9;
@@ -138,13 +121,6 @@ body {
 }
 
 /* ───────────────── HEADER CORE ───────────────── */
-
-/* Logo pair */
-.logo-pair {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
 
 /* Main icon logo (leftmost) */
 .main-logo {
