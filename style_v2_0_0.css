@@ -129,14 +129,6 @@ body {
   flex-shrink: 0;
 }
 
-/* SLOGAN LOGO — make it POP */
-.slogan-logo {
-  height: 48px;          /* 👈 bigger than icon */
-  width: auto;
-  opacity: 0.95;
-  transform: translateY(1px);
-}
-
 .neon-logo { height: 40px; width: auto; }
 
 .neon-brand-text {
