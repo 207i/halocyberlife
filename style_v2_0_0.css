@@ -1279,4 +1279,13 @@ body {
   line-height: 1;     
 }
 
+/* Mobile nav hidden by default */
+.neon-nav {
+  display: none;
+}
+
+/* Show nav when toggle is expanded */
+.neon-nav-toggle[aria-expanded="true"] + .neon-nav {
+  display: flex;
+}
 
