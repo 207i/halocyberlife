@@ -1108,6 +1108,35 @@ body {
 }
 
 /* =========================
+   PRIMARY BRAND LOGO (H1)
+   ========================= */
+
+.brand-h1-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; /* keeps your spacing */
+}
+
+.brand-h1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.brand-h1-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  
+  /* 🔽 Reduce size by exactly 10% */
+  transform: scale(0.9);
+
+  /* Keeps it visually centered */
+  transform-origin: center center;
+}
+
+/* =========================
    MOBILE SLOGAN LOGO
    ========================= */
 
