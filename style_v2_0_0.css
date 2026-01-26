@@ -1289,3 +1289,13 @@ body {
   display: flex;
 }
 
+@media (max-width: 768px) {
+  .neon-nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  .neon-nav.active {
+    display: flex;
+  }
+}
