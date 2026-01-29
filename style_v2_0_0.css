@@ -1312,6 +1312,25 @@ body {
 /* .neon-nav {
   display: none;
 } */
+/* Desktop default */
+.neon-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Mobile only */
+@media (max-width: 820px) {
+  .neon-nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  .neon-nav.open {
+    display: flex;
+  }
+}
+
 
 /* Show nav when toggle is expanded */
 .neon-nav-toggle[aria-expanded="true"] + .neon-nav {
