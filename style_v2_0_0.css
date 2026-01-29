@@ -1309,9 +1309,9 @@ body {
 }
 
 /* Mobile nav hidden by default */
-.neon-nav {
+/* .neon-nav {
   display: none;
-}
+} */
 
 /* Show nav when toggle is expanded */
 .neon-nav-toggle[aria-expanded="true"] + .neon-nav {
