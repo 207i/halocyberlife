@@ -1,671 +1,287 @@
-<!-- ================================
-  pyramids.html — HaloCyberLife Pyramid Story Page (v1)
-  Drop-in single-file page: HTML + CSS + JS
-  - Neon / dark aesthetic
-  - Story-first, mysterious tone
-  - Smooth scroll, back-to-top
-  - Sticky mini “evidence” callouts
-================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Pyramids — The Hidden Function Story | HaloCyberLife</title>
-  <meta name="description" content="A mysterious, story-driven exploration of the pyramids as multi-function systems: resonance, chambers, airflow, chemistry, and hidden architecture—presented as speculative research." />
+  <title>What If the Pyramids Were Never Just Tombs? | HaloCyberLife</title>
+  <meta name="description" content="Precision, chambers, resonance, and material anomalies suggest the pyramids may have functioned as engineered systems—not just monuments." />
   <meta name="author" content="Luis Amaya" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://halocyberlife.com/blog/pyramids_hidden_function.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pyramids — The Hidden Function Story | HaloCyberLife" />
-  <meta property="og:description" content="A story-driven, speculative research article exploring pyramid function: resonance, chambers, airflow, and chemistry." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://halocyberlife.com/blog/pyramids_hidden_function.html" />
-  <meta property="og:image" content="https://halocyberlife.com/images/blog/pyramids_hero.jpg" />
-
   <style>
-    /* =========================
-       HALO NEON SYSTEM (Lite)
-    ========================= */
     :root{
       --bg:#050814;
       --bg2:#0b1020;
       --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
       --line:rgba(255,255,255,.12);
       --text:#f3f6ff;
       --muted:#aab3d6;
 
       --cyan:#22d3ee;
       --purple:#8b5cf6;
-      --magenta:#ec4899;
       --gold:#fbbf24;
 
-      --shadow: 0 12px 36px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1040px;
+      --radius:18px;
+      --shadow:0 12px 36px rgba(0,0,0,.45);
+      --max:860px;
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family: "Times New Roman", Times, serif;
+      font-family: Georgia, "Times New Roman", serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 70% 10%, rgba(139,92,246,.22), transparent 55%),
-        radial-gradient(900px 600px at 30% 20%, rgba(34,211,238,.16), transparent 55%),
-        radial-gradient(900px 600px at 70% 70%, rgba(236,72,153,.14), transparent 60%),
-        linear-gradient(180deg, #030511, var(--bg) 30%, #02030a);
-      overflow-x:hidden;
+        radial-gradient(900px 500px at 70% 10%, rgba(139,92,246,.22), transparent 55%),
+        radial-gradient(800px 500px at 30% 20%, rgba(34,211,238,.16), transparent 55%),
+        linear-gradient(180deg, #030511, var(--bg));
     }
 
-    a{color:inherit; text-decoration:none}
-    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    a{color:var(--cyan); text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 36px)); margin:0 auto}
 
-    /* =========================
-       TOP NAV (Simple)
-    ========================= */
     header{
       position:sticky;
       top:0;
       z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(5,8,20,.58);
+      background: rgba(5,8,20,.6);
       border-bottom:1px solid var(--line);
     }
     .nav{
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:14px;
+      align-items:center;
       padding:14px 0;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:700; letter-spacing:.5px;
+      font-weight:700;
+      letter-spacing:.6px;
     }
-    .badge{
-      width:34px; height:34px; border-radius:10px;
-      display:grid; place-items:center;
-      background: rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      box-shadow: 0 0 0 1px rgba(34,211,238,.08), 0 0 22px rgba(34,211,238,.10);
+    .nav a{
+      margin-left:14px;
       font-size:14px;
+      color:var(--text);
     }
-    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
-    .pill{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:14px;
-      transition:.18s ease;
-    }
-    .pill:hover{transform: translateY(-1px); border-color: rgba(34,211,238,.35)}
-    .pill.cyan{box-shadow: 0 0 0 1px rgba(34,211,238,.12), 0 0 18px rgba(34,211,238,.12)}
-    .pill.purple{box-shadow: 0 0 0 1px rgba(139,92,246,.12), 0 0 18px rgba(139,92,246,.12)}
-    .pill.magenta{box-shadow: 0 0 0 1px rgba(236,72,153,.12), 0 0 18px rgba(236,72,153,.12)}
-    .pill.gold{box-shadow: 0 0 0 1px rgba(251,191,36,.12), 0 0 18px rgba(251,191,36,.10)}
 
-    /* =========================
-       HERO
-    ========================= */
     .hero{
-      padding:44px 0 22px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .hero-card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-      min-height: 330px;
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(600px 260px at 20% 20%, rgba(34,211,238,.22), transparent 55%),
-                  radial-gradient(520px 260px at 85% 30%, rgba(139,92,246,.22), transparent 55%);
-      pointer-events:none;
-    }
-    .hero-inner{
-      position:relative;
-      padding:26px;
+      padding:54px 0 30px;
     }
     h1{
-      margin:0 0 10px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height:1.08;
-      letter-spacing:.2px;
+      font-size:clamp(30px,4.5vw,46px);
+      line-height:1.1;
+      margin:0 0 14px;
     }
     .sub{
-      color:var(--muted);
-      font-size:16px;
+      font-size:18px;
       line-height:1.6;
-      max-width: 70ch;
+      color:var(--muted);
+      max-width:60ch;
     }
     .meta{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top:14px;
-      color: rgba(243,246,255,.86);
-      font-size:14px;
-    }
-    .chip{
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.20);
-      padding:7px 10px;
-      border-radius:999px;
-    }
-    .side-card{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
+      margin-top:16px;
       display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .side-title{
-      font-weight:700;
-      letter-spacing:.3px;
-      margin:0;
-      font-size:16px;
-    }
-    .side-note{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-      margin:0;
-    }
-    .toc{
-      display:grid;
-      gap:10px;
-      margin-top:6px;
-    }
-    .toc a{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      transition:.18s ease;
-      font-size:14px;
-    }
-    .toc a:hover{
-      transform: translateY(-1px);
-      border-color: rgba(34,211,238,.35);
-    }
-    .toc span{color:var(--muted)}
-
-    /* =========================
-       ARTICLE LAYOUT
-    ========================= */
-    main{padding: 10px 0 70px}
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 320px;
-      gap:18px;
-      align-items:start;
-    }
-    .article{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-    .section{
-      padding: 14px 0;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .section:first-child{border-top:none; padding-top:0}
-    h2{
-      margin:0 0 8px;
-      font-size: 22px;
-      letter-spacing:.2px;
-    }
-    p{
-      margin:0 0 12px;
-      color: rgba(243,246,255,.90);
-      line-height:1.72;
-      font-size:16px;
-    }
-    .pull{
-      margin:14px 0 12px;
-      padding:14px 16px;
-      border-radius: 14px;
-      background: rgba(0,0,0,.20);
-      border:1px solid rgba(34,211,238,.18);
-      color: rgba(243,246,255,.92);
-      box-shadow: 0 0 0 1px rgba(34,211,238,.08);
-    }
-    .pull strong{color: var(--cyan)}
-    .bullet{
-      margin: 10px 0 12px;
-      padding-left: 18px;
-      color: rgba(243,246,255,.90);
-      line-height:1.7;
-      font-size:16px;
-    }
-    .bullet li{margin:8px 0}
-
-    .note{
-      border-left: 3px solid rgba(251,191,36,.55);
-      background: rgba(251,191,36,.08);
-      padding: 12px 14px;
-      border-radius: 12px;
-      color: rgba(243,246,255,.92);
-      margin: 14px 0;
-      font-size: 15px;
-    }
-
-    /* =========================
-       RIGHT SIDEBAR (Evidence cards)
-    ========================= */
-    .sidebar{
-      position:sticky;
-      top:84px;
-      display:grid;
-      gap:12px;
-    }
-    .evidence{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      border-radius: 16px;
-      padding:14px;
-      box-shadow: var(--shadow);
-    }
-    .tagrow{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
-    .tag{
-      font-size:12px;
-      padding:6px 9px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.18);
-      color: rgba(243,246,255,.88);
-    }
-    .tag.cyan{border-color: rgba(34,211,238,.35)}
-    .tag.purple{border-color: rgba(139,92,246,.35)}
-    .tag.magenta{border-color: rgba(236,72,153,.35)}
-    .tag.gold{border-color: rgba(251,191,36,.35)}
-    .evidence h3{
-      margin:0 0 6px;
-      font-size:15px;
-      letter-spacing:.2px;
-    }
-    .evidence p{
-      margin:0;
-      font-size:14px;
-      color: var(--muted);
-      line-height:1.55;
-    }
-
-    /* =========================
-       FOOTER + Back to top
-    ========================= */
-    footer{
-      border-top:1px solid var(--line);
-      background: rgba(0,0,0,.18);
-      padding:18px 0;
-      color: var(--muted);
-      font-size:14px;
-    }
-    .footrow{
-      display:flex;
-      justify-content:space-between;
       gap:12px;
       flex-wrap:wrap;
-      align-items:center;
+      font-size:14px;
+      color:rgba(243,246,255,.85);
     }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      border-radius: 999px;
-      padding: 10px 14px;
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      cursor:pointer;
-      transition:.18s ease;
-      font-family: inherit;
-      color: rgba(243,246,255,.92);
+      background:rgba(255,255,255,.05);
     }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(34,211,238,.35)}
-    .topbtn{
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border:1px solid rgba(34,211,238,.30);
-      background: rgba(5,8,20,.72);
-      color: rgba(243,246,255,.95);
-      display:grid;
-      place-items:center;
-      box-shadow: 0 0 18px rgba(34,211,238,.14);
-      cursor:pointer;
-      opacity:0;
-      transform: translateY(12px);
-      transition: .2s ease;
-      z-index: 60;
-    }
-    .topbtn.show{opacity:1; transform: translateY(0)}
-    .divider{height:1px; background: rgba(255,255,255,.08); margin: 18px 0}
 
-    /* =========================
-       Responsive
-    ========================= */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr}
-      .grid{grid-template-columns: 1fr}
-      .sidebar{position:relative; top:auto}
+    main{
+      padding:10px 0 80px;
+    }
+    article{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+    section{
+      margin-bottom:34px;
+    }
+    h2{
+      font-size:24px;
+      margin:0 0 10px;
+    }
+    p{
+      font-size:17px;
+      line-height:1.7;
+      margin:0 0 14px;
+    }
+
+    .pull{
+      margin:18px 0;
+      padding:16px 18px;
+      border-radius:14px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(34,211,238,.22);
+      color:rgba(243,246,255,.92);
+    }
+
+    ul{
+      padding-left:18px;
+      margin:10px 0 14px;
+    }
+    li{
+      margin:8px 0;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    .note{
+      border-left:3px solid rgba(251,191,36,.55);
+      background:rgba(251,191,36,.08);
+      padding:14px;
+      border-radius:12px;
+      font-size:15px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.2);
+      padding:20px 0;
+      font-size:14px;
+      color:var(--muted);
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="https://halocyberlife.com/">
-        <div class="badge">H</div>
-        <div>HALOCYBERLIFE</div>
-      </a>
 
-      <nav class="navlinks" aria-label="Primary">
-        <a class="pill cyan" href="https://halocyberlife.com/">Home</a>
-        <a class="pill purple" href="https://halocyberlife.com/blog.html">Articles</a>
-        <a class="pill magenta" href="https://halocyberlife.com/about.html">About</a>
-        <a class="pill gold" href="https://halocyberlife.com/contact_us.html">Contact</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="brand">HALOCYBERLIFE</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog.html">Articles</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>What If the Pyramids Were Never Just Tombs?</h1>
+    <p class="sub">
+      Precision, chambers, resonance, and material anomalies suggest the pyramids may have functioned as engineered systems—not just monuments.
+    </p>
+    <div class="meta">
+      <span class="chip">Speculative Research</span>
+      <span class="chip">Architecture · Materials · Resonance</span>
+      <span class="chip">Luis Amaya</span>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-card">
-        <div class="hero-inner">
-          <h1>Pyramids: The Hidden Function Story</h1>
-          <p class="sub">
-            What if the pyramid was never meant to be a “tomb”… but a **machine**—a structure with chambers, airflow,
-            resonance behavior, and chemical artifacts that don’t fit the simple story?
-          </p>
-          <div class="meta">
-            <span class="chip">Speculative Research</span>
-            <span class="chip">Architecture · Resonance · Materials</span>
-            <span class="chip">Author: Luis Amaya</span>
-          </div>
-          <div class="divider"></div>
-          <p class="sub">
-            This article is written as a **mystery**: clues first, conclusions last. We follow the evidence,
-            we mark assumptions, and we keep imagination on a leash.
-          </p>
+<main>
+  <div class="container">
+    <article>
+
+      <section>
+        <h2>The Detail That Doesn’t Fit</h2>
+        <p>
+          The accepted story of the pyramids is efficient: tombs, symbols, afterlife. It’s also fragile.
+        </p>
+        <p>
+          Precision at this scale—internal geometry, alignment, material choice—exceeds what symbolic architecture typically demands.
+          When effort exceeds meaning, function becomes a reasonable question.
+        </p>
+        <div class="pull">
+          If the pyramids were only meant to be seen, why design them so carefully on the inside?
         </div>
-      </div>
+      </section>
 
-      <aside class="side-card">
-        <p class="side-title">Quick Navigation</p>
-        <p class="side-note">Jump to the chapters. Each one adds a piece of the puzzle.</p>
-        <div class="toc">
-          <a href="#chapter1">Chapter 1: The Problem <span>01</span></a>
-          <a href="#chapter2">Chapter 2: The Chambers <span>02</span></a>
-          <a href="#chapter3">Chapter 3: The Signal <span>03</span></a>
-          <a href="#chapter4">Chapter 4: The Chemistry <span>04</span></a>
-          <a href="#chapter5">Chapter 5: The Hypothesis <span>05</span></a>
-          <a href="#chapter6">Chapter 6: What We Can Test <span>06</span></a>
+      <section>
+        <h2>What the Structure Actually Shows</h2>
+        <ul>
+          <li><strong>Constricted corridors</strong> that regulate movement and airflow.</li>
+          <li><strong>Isolated chambers</strong> capable of maintaining different internal conditions.</li>
+          <li><strong>Vertical continuity</strong> suggesting pressure, convection, or routing behavior.</li>
+        </ul>
+        <p>
+          Architecture isn’t decoration—it’s instruction. These structures guide behavior, whether human or environmental.
+        </p>
+      </section>
+
+      <section>
+        <h2>When Geometry Starts Acting Like a Filter</h2>
+        <p>
+          Resonance isn’t mystical. It’s what happens when shape and energy agree.
+        </p>
+        <p>
+          Enclosed volumes can amplify certain frequencies, dampen others, and create stable zones of air movement.
+          Even unintentionally, geometry can turn chaos into pattern.
+        </p>
+        <div class="pull">
+          A chamber that “rings” behaves differently than a silent one.
         </div>
-      </aside>
-    </div>
-  </section>
+      </section>
 
-  <main>
-    <div class="container grid">
-      <article class="article" aria-label="Pyramid article content">
+      <section>
+        <h2>The Part Archaeology Avoids</h2>
+        <p>
+          Around pyramid sites, material evidence occasionally hints at something more practical than ritual alone.
+        </p>
+        <ul>
+          <li>Mineral residues that cluster in specific locations.</li>
+          <li>Claims of mercury or cinnabar at Mesoamerican pyramid sites.</li>
+          <li>Advanced sealing and environmental control in Egyptian interiors.</li>
+        </ul>
+        <p>
+          Interpretation varies—but dismissing material behavior entirely may be premature.
+        </p>
+      </section>
 
-        <section class="section" id="chapter1">
-          <h2>Chapter 1 — The Problem</h2>
-          <p>
-            If you stand before a pyramid and accept the simplest explanation, the story ends immediately.
-            But if you notice what doesn’t fit—the precision, the internal complexity, the material anomalies—
-            the story doesn’t end. It opens.
-          </p>
-          <div class="pull">
-            <strong>Rule of this investigation:</strong> treat missing variables as targets, not blockers.
-          </div>
-          <p>
-            Here’s the question that matters:
-            <em>Did these structures only preserve bodies… or did they also shape air, sound, heat, and matter?</em>
-          </p>
-        </section>
-
-        <section class="section" id="chapter2">
-          <h2>Chapter 2 — The Chambers</h2>
-          <p>
-            A pyramid is not a hollow mountain. It is a designed interior: passages, voids, chambers.
-            Architecture is language—and chambers are sentences.
-          </p>
-          <ul class="bullet">
-            <li><strong>Constricted corridors</strong> suggest controlled movement—of people, air, or pressure.</li>
-            <li><strong>Isolated rooms</strong> suggest isolation of conditions (humidity, acoustic behavior, temperature).</li>
-            <li><strong>Vertical continuity</strong> suggests transport: convection, pressure gradients, or routing.</li>
-          </ul>
-          <p class="note">
-            This article is **speculative**. Where we infer, we say so. Where we know, we separate it.
-          </p>
-        </section>
-
-        <section class="section" id="chapter3">
-          <h2>Chapter 3 — The Signal</h2>
-          <p>
-            Resonance is not magic. It is what happens when geometry and energy agree.
-            The moment a structure “rings,” it becomes more than stone—it becomes a filter for behavior.
-          </p>
-          <p>
-            A chamber can amplify certain frequencies and suppress others. It can create standing waves.
-            It can turn air into a structured medium instead of chaotic flow.
-          </p>
-          <div class="pull">
-            <strong>Speculative idea:</strong> chambers may have been tuned—deliberately or as a side-effect—creating stable zones
-            where certain processes become easier: drying, condensation control, particulate settling, even chemical reactions.
-          </div>
-        </section>
-
-        <section class="section" id="chapter4">
-          <h2>Chapter 4 — The Chemistry</h2>
-          <p>
-            Here’s where the mystery gets interesting: sometimes the artifacts around pyramid sites hint at material behavior
-            that goes beyond burial tradition.
-          </p>
-          <ul class="bullet">
-            <li>Unusual minerals and residues can indicate processing, storage, or environmental conditioning.</li>
-            <li>Some sites in Mesoamerica have claims of mercury-related discoveries—whether liquid or cinnabar—often tied to ritual, symbolism, or preservation. (Interpretations vary.)</li>
-            <li>Egyptian sites show deep knowledge of materials, sealing, and long-term environmental control.</li>
-          </ul>
-          <p>
-            Even if we ignore the most extreme theories, a practical question remains:
-            <em>Could these structures stabilize conditions for material preservation or transformation?</em>
-          </p>
-        </section>
-
-        <section class="section" id="chapter5">
-          <h2>Chapter 5 — The Hypothesis</h2>
-          <p>
-            A “multi-function pyramid” hypothesis doesn’t need aliens, lasers, or fantasy.
-            It needs only this: a structure that can create **repeatable internal conditions**.
-          </p>
-          <p>
-            Repeatable conditions are the foundation of engineering:
-            stable airflow, stable humidity, stable temperature gradients, stable acoustic zones.
-          </p>
-          <div class="pull">
-            <strong>Working hypothesis:</strong> some pyramids may have served as engineered environments—capable of preservation,
-            atmospheric conditioning, or material handling—alongside cultural or ceremonial functions.
-          </div>
-        </section>
-
-        <section class="section" id="chapter6">
-          <h2>Chapter 6 — What We Can Test</h2>
-          <p>
-            If a claim can’t be tested, it becomes a myth. The goal is to keep the mystery—without losing the method.
-          </p>
-          <ul class="bullet">
-            <li>Acoustic modeling of chamber resonance and standing-wave zones.</li>
-            <li>Airflow simulations (CFD) through corridors and voids.</li>
-            <li>Humidity/condensation behavior under day-night cycles.</li>
-            <li>Material residue analysis mapped to chamber location and airflow paths.</li>
-          </ul>
-          <p class="note">
-            If you want a clean way to present this on HaloCyberLife:
-            publish this as a <strong>Concept Series</strong> and label each theory as “Testable” or “Speculative.”
-          </p>
-        </section>
-
-        <section class="section" id="closing">
-          <h2>Closing — The Door Stays Open</h2>
-          <p>
-            The pyramids are a riddle made of geometry. If we treat them only as monuments, the riddle is solved too quickly.
-            If we treat them as systems, the questions become sharper—and more interesting.
-          </p>
-          <p>
-            And sometimes, the best research begins with a sentence like this:
-            <em>“What if the obvious story is only the surface?”</em>
-          </p>
-          <div class="pull">
-            Want the next chapter? We can map a full “multi-function pyramid” model with diagrams:
-            airflow, resonance zones, condensation control, and hypothetical material-routing paths.
-          </div>
-        </section>
-
-      </article>
-
-      <aside class="sidebar" aria-label="Evidence sidebar">
-        <div class="evidence">
-          <div class="tagrow">
-            <span class="tag cyan">CLUE</span>
-            <span class="tag">Precision</span>
-          </div>
-          <h3>Precision implies intent</h3>
-          <p>When effort exceeds symbolism, ask what function required that effort.</p>
+      <section>
+        <h2>A Boring (and More Interesting) Possibility</h2>
+        <p>
+          No power plants. No lost super-tech. Just engineered environments.
+        </p>
+        <p>
+          Structures capable of producing repeatable internal conditions—airflow, humidity, temperature, acoustic stability.
+          The same requirements that underpin modern controlled processes.
+        </p>
+        <div class="pull">
+          Multi-function does not mean single-purpose.
         </div>
+      </section>
 
-        <div class="evidence">
-          <div class="tagrow">
-            <span class="tag purple">HYPOTHESIS</span>
-            <span class="tag">Resonance</span>
-          </div>
-          <h3>Chambers can tune behavior</h3>
-          <p>Geometry can amplify, filter, and stabilize conditions—even unintentionally.</p>
+      <section>
+        <h2>What Would We Test?</h2>
+        <ul>
+          <li>Acoustic modeling of chamber resonance.</li>
+          <li>CFD airflow simulations through passages.</li>
+          <li>Condensation and humidity cycling.</li>
+          <li>Residue mapping along airflow paths.</li>
+        </ul>
+        <div class="note">
+          This isn’t about replacing one myth with another. It’s about asking better questions.
         </div>
+      </section>
 
-        <div class="evidence">
-          <div class="tagrow">
-            <span class="tag magenta">OBSERVATION</span>
-            <span class="tag">Materials</span>
-          </div>
-          <h3>Material traces matter</h3>
-          <p>Residues and minerals aren’t “just decoration” if they cluster around airflow paths.</p>
-        </div>
+    </article>
+  </div>
+</main>
 
-        <div class="evidence">
-          <div class="tagrow">
-            <span class="tag gold">NEXT</span>
-            <span class="tag">Diagrams</span>
-          </div>
-          <h3>Upgrade this into visuals</h3>
-          <p>We can generate a diagram set: chamber map, airflow, resonance zones, and “what to test.”</p>
-        </div>
+<footer>
+  <div class="container">
+    © <span id="year"></span> HaloCyberLife™ · Speculative Blog Article
+  </div>
+</footer>
 
-        <button class="btn" id="copyLinkBtn" type="button" title="Copy this page link">
-          Copy Page Link
-        </button>
-      </aside>
-    </div>
-  </main>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-  <footer>
-    <div class="container footrow">
-      <div>© <span id="year"></span> HaloCyberLife™ · Speculative Research Article</div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn" href="https://halocyberlife.com/blog.html">Back to Articles</a>
-        <a class="btn" href="#chapter1">Start</a>
-      </div>
-    </div>
-  </footer>
-
-  <button class="topbtn" id="topbtn" aria-label="Back to top" title="Back to top">↑</button>
-
-  <script>
-    // =========================
-    // Smooth scroll for in-page anchors
-    // =========================
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href').slice(1);
-        const target = document.getElementById(id);
-        if (!target) return;
-        e.preventDefault();
-
-        const headerOffset = 72;
-        const rect = target.getBoundingClientRect();
-        const y = window.scrollY + rect.top - headerOffset;
-
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      });
-    });
-
-    // =========================
-    // Back-to-top button
-    // =========================
-    const topbtn = document.getElementById('topbtn');
-    const toggleTop = () => {
-      if (window.scrollY > 520) topbtn.classList.add('show');
-      else topbtn.classList.remove('show');
-    };
-    window.addEventListener('scroll', toggleTop, { passive: true });
-    toggleTop();
-    topbtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // =========================
-    // Footer year
-    // =========================
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // =========================
-    // Copy page link
-    // =========================
-    const copyBtn = document.getElementById('copyLinkBtn');
-    copyBtn?.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        copyBtn.textContent = 'Link Copied ✓';
-        setTimeout(() => (copyBtn.textContent = 'Copy Page Link'), 1400);
-      } catch {
-        alert('Copy failed. You can manually copy the URL from the address bar.');
-      }
-    });
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
