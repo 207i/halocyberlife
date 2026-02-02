@@ -1,299 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0HZN617CB1');
-  </script>
-
-  <!-- HaloCyberlife · Blog Article -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Harmonic Resonance: Sound Healing for Inner Balance | Halocyberlife</title>
-  <meta name="description" content="Explore harmonic resonance through a grounded lens: nervous system regulation, coherence, and simple sound practices you can use daily." />
+  <title>Harmonic Resonance — How Sound Tunes the Nervous System | HaloCyberLife</title>
+  <meta name="description" content="Harmonic resonance explained without mysticism: how sound, rhythm, and vibration help regulate the nervous system, stabilize attention, and restore inner coherence." />
   <meta name="author" content="Luis Amaya" />
-  <meta name="keywords" content="harmonic resonance, sound healing, frequency, nervous system, coherence, meditation, breathwork, vibration" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://halocyberlife.com/blogs/harmonicresonance.html" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://halocyberlife.com/Blogs/harmonicresonance.html" />
+  <!-- Main Site CSS -->
+  <link rel="stylesheet" href="/css/style_v2_0_0.css">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Harmonic Resonance: Sound Healing for Inner Balance" />
-  <meta property="og:description" content="A grounded guide to sound healing: resonance, coherence, and daily practices that actually work." />
-  <meta property="og:url" content="https://halocyberlife.com/Blogs/harmonicresonance.html" />
-  <meta property="og:image" content="https://halocyberlife.com/images/HarmonicResonance.png" />
+  <!-- Page Styles -->
+  <style>
+    :root{
+      --bg:#050814;
+      --line:rgba(255,255,255,.12);
+      --text:#f3f6ff;
+      --muted:#aab3d6;
+      --cyan:#22d3ee;
+      --radius:18px;
+      --shadow:0 12px 36px rgba(0,0,0,.45);
+    }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Harmonic Resonance: Sound Healing for Inner Balance" />
-  <meta name="twitter:description" content="Resonance, nervous system regulation, and simple sound practices to stabilize your inner world." />
-  <meta name="twitter:image" content="https://halocyberlife.com/images/HarmonicResonance.png" />
+    body{
+      margin:0;
+      font-family: Inter, system-ui, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 70% 10%, rgba(139,92,246,.22), transparent 55%),
+        radial-gradient(800px 500px at 30% 20%, rgba(34,211,238,.16), transparent 55%),
+        linear-gradient(180deg, #030511, var(--bg));
+    }
 
-  <!-- Favicons -->
-  <link rel="icon" href="../images/favicons/favicon-32x32.png" sizes="32x32" type="image/png" />
-  <link rel="icon" href="../images/favicons/favicon-192x192.png" sizes="192x192" type="image/png" />
-  <link rel="apple-touch-icon" href="../images/favicons/apple-touch-icon.png" />
+    /* ===== NAV ===== */
+    .neon-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(5,8,20,.85);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    .neon-header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      padding:14px 0;
+    }
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../style_v2_0_0.css" />
+    .neon-logo{
+      height:34px;
+      width:auto;
+    }
+
+    .neon-nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+
+    .neon-link{
+      position:relative;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      text-decoration:none;
+      padding:6px 0;
+    }
+
+    .neon-link:nth-child(1){color:#60a5fa}
+    .neon-link:nth-child(2){color:#a78bfa}
+    .neon-link:nth-child(3){color:#22d3ee}
+    .neon-link:nth-child(4){color:#f472b6}
+    .neon-link:nth-child(5){color:#fbbf24}
+
+    .neon-link::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0%;
+      height:2px;
+      background:currentColor;
+      box-shadow:0 0 14px currentColor;
+      transition:width .25s ease;
+    }
+
+    .neon-link:hover::after{width:100%}
+
+    .neon-nav-toggle{
+      display:none;
+      background:none;
+      border:none;
+      cursor:pointer;
+    }
+
+    .neon-nav-toggle span{
+      display:block;
+      width:24px;
+      height:2px;
+      background:#22d3ee;
+      margin:5px 0;
+      box-shadow:0 0 10px rgba(34,211,238,.6);
+    }
+
+    @media (max-width:900px){
+      .neon-nav-toggle{display:block}
+
+      .neon-nav{
+        position:absolute;
+        top:100%;
+        left:50%;
+        transform:translateX(-50%);
+        width:100%;
+        max-width:420px;
+        display:none;
+        flex-direction:column;
+        background:rgba(5,8,20,.96);
+        backdrop-filter:blur(14px);
+        border-bottom:1px solid rgba(255,255,255,.1);
+      }
+
+      .neon-nav.open{display:flex}
+
+      .neon-link{
+        width:100%;
+        text-align:center;
+        padding:16px 0;
+        border-top:1px solid rgba(255,255,255,.08);
+      }
+    }
+
+    /* ===== ARTICLE ===== */
+    .article-wrap{
+      width:min(900px, calc(100% - 36px));
+      margin:0 auto;
+      padding:90px 0;
+    }
+
+    article{
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:44px;
+    }
+
+    .article-header{
+      text-align:center;
+      margin-bottom:56px;
+    }
+
+    .meta{
+      font-size:13px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+    h1{
+      font-size:clamp(36px,5vw,52px);
+      margin-bottom:16px;
+    }
+
+    .intro{
+      font-size:18px;
+      color:var(--muted);
+      max-width:700px;
+      margin:0 auto;
+      line-height:1.6;
+    }
+
+    section{margin-bottom:56px}
+    h2{font-size:26px;margin-bottom:12px}
+
+    p{
+      font-size:17px;
+      line-height:1.75;
+      margin-bottom:14px;
+    }
+
+    ul{padding-left:20px}
+    li{margin:10px 0}
+
+    .pull{
+      margin:26px 0;
+      padding:20px;
+      border-radius:14px;
+      background:rgba(0,0,0,.28);
+      border:1px solid rgba(34,211,238,.35);
+      font-style:italic;
+    }
+
+    .image-slot{
+      margin:36px 0;
+      padding:48px;
+      border-radius:16px;
+      border:1px dashed rgba(255,255,255,.25);
+      text-align:center;
+      color:var(--muted);
+    }
+
+    /* ===== BACK TO TOP ===== */
+    #backToTop{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      border:1px solid rgba(34,211,238,.45);
+      background:rgba(5,8,20,.75);
+      color:#22d3ee;
+      font-size:18px;
+      cursor:pointer;
+      opacity:0;
+      pointer-events:none;
+      transition:.3s;
+      z-index:1000;
+    }
+
+    #backToTop.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px;
+      text-align:center;
+      color:var(--muted);
+    }
+  </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- HEADER / NAV (matches your blog template style) -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <a href="../index.html" class="brand-link">
-          <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="brand-logo" />
-          <span class="brand-text">Halocyberlife</span>
-        </a>
+<header class="neon-header">
+  <div class="container neon-header-inner">
+    <a href="/index.html">
+      <img src="/images/negative_white_halocyberlife_logo.png" class="neon-logo" alt="Halocyberlife">
+    </a>
+
+    <button class="neon-nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="neon-nav">
+      <a href="/index.html#insights" class="neon-link">Insights</a>
+      <a href="/index.html#atelier" class="neon-link">HaloCraft</a>
+      <a href="/blog.html" class="neon-link">Articles</a>
+      <a href="/about.html" class="neon-link">About</a>
+      <a href="/contact_us.html" class="neon-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="article-wrap">
+    <article>
+
+      <header class="article-header">
+        <p class="meta">Vibration · Biology · Coherence</p>
+        <h1>Harmonic Resonance</h1>
+        <p class="intro">
+          Sound healing isn’t magic — and it isn’t new.
+          It’s what happens when rhythm, vibration, and attention
+          help your nervous system remember how to settle.
+        </p>
+      </header>
+
+      <section>
+        <h2>Your Body Is Already Listening</h2>
+        <p>
+          Long before thoughts form, your body is responding to rhythm.
+          Breath, heartbeat, muscle tone — all of it runs on timing.
+        </p>
+        <p>
+          When life gets loud, that timing drifts.
+          You don’t break — you desynchronize.
+        </p>
+        <div class="pull">
+          Harmonic resonance doesn’t force calm.
+          It invites your system back into rhythm.
+        </div>
+      </section>
+
+      <div class="image-slot">
+        IMAGE SLOT — Nervous system + wave visualization
       </div>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-      </button>
-
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="../index.html#insights" class="nav-link">Insights</a></li>
-          <li class="nav-item"><a href="../index.html#atelier" class="nav-link">HaloCraft Atelier</a></li>
-          <li class="nav-item"><a href="../blog.html" class="nav-link" aria-current="page">All Articles</a></li>
-          <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="../contact_us.html" class="nav-link">Contact</a></li>
+      <section>
+        <h2>What “Resonance” Really Means</h2>
+        <p>
+          Resonance is what happens when something vibrates more easily
+          because the timing matches.
+        </p>
+        <p>
+          Push a swing at the right moment and it moves effortlessly.
+          Push it randomly and you just get tired.
+        </p>
+        <ul>
+          <li>Breathing stabilizes</li>
+          <li>Heart rhythm smooths</li>
+          <li>Muscles release</li>
+          <li>Thoughts slow down</li>
         </ul>
-      </nav>
-    </div>
-  </header>
+      </section>
 
-  <main id="main-content">
-    <!-- ARTICLE -->
-    <section class="section section-dark">
-      <div class="container">
-        <article class="blog-article">
-
-          <header class="section-header" style="margin-bottom: 1.5rem;">
-            <p class="card-meta">Vibrational Energy · June 05, 2025</p>
-            <h1>Harmonic Resonance: Sound Healing for Inner Balance</h1>
-            <p class="card-text" style="max-width: 760px; margin: 0.5rem auto 0;">
-              Sound healing isn’t magic and it isn’t a trend — it’s physics meeting biology.
-              When tone and rhythm support your nervous system, your inner world becomes easier to regulate,
-              your thoughts get clearer, and your body stops living on emergency mode.
-            </p>
-          </header>
-
-          <div class="card-image-wrap" style="max-width: 760px; margin: 0 auto 2rem;">
-            <img
-              src="../images/HarmonicResonance.png"
-              alt="A glowing singing bowl emitting soft waves of light, symbolizing harmonic resonance and calm"
-              class="card-image"
-              loading="lazy"
-            />
-          </div>
-
-          <div class="blog-body" style="max-width: 760px; margin: 0 auto; font-size: 0.98rem;">
-            <p>
-              We live in a world that constantly pulls attention outward — notifications, stress, noise, pressure.
-              Over time, your nervous system adapts by staying “slightly activated” all day.
-              That’s why people feel tired but wired, calm but anxious, awake but foggy.
-            </p>
-
-            <p>
-              Harmonic resonance is one of the fastest ways to bring your system back into a coherent rhythm —
-              not by force, but by <strong>entrainment</strong>: the tendency of biological systems to synchronize with stable patterns.
-            </p>
-
-            <hr style="border: none; border-top: 1px solid rgba(148,163,184,0.35); margin: 2rem 0;" />
-
-            <h2>What Harmonic Resonance Actually Means</h2>
-            <p>
-              Resonance is when something vibrates more strongly because it’s being stimulated at a compatible frequency.
-              Think of pushing a swing: the timing matters more than the strength.
-            </p>
-
-            <p>
-              In the body, “resonance” shows up as:
-            </p>
-            <ul>
-              <li>Breathing rhythm stabilizing</li>
-              <li>Heart rate variability improving (coherence)</li>
-              <li>Muscle tension dropping</li>
-              <li>Thoughts slowing down</li>
-              <li>Emotional charge discharging safely</li>
-            </ul>
-
-            <p>
-              The goal isn’t to “escape feelings.” The goal is to <strong>regulate</strong> —
-              so your mind becomes a tool again instead of a storm.
-            </p>
-
-            <hr style="border: none; border-top: 1px solid rgba(148,163,184,0.35); margin: 2rem 0;" />
-
-            <h2>Sound Healing: A Grounded View</h2>
-            <p>
-              Sound healing can be spiritual, but it doesn’t have to be mystical to work.
-              Here’s the grounded mechanism:
-            </p>
-            <ul>
-              <li><strong>Vibration</strong> influences tension and breath</li>
-              <li><strong>Rhythm</strong> influences nervous system timing</li>
-              <li><strong>Attention</strong> locks onto the tone and stops spiraling</li>
-              <li><strong>Repetition</strong> trains your baseline state over time</li>
-            </ul>
-
-            <p>
-              This is why a simple humming practice can calm you down faster than “thinking positive.”
-              Your body listens before your mind believes.
-            </p>
-
-            <hr style="border: none; border-top: 1px solid rgba(148,163,184,0.35); margin: 2rem 0;" />
-
-            <h2>3 Practices You Can Use Today</h2>
-
-            <h3>1) The 60-Second Humming Reset</h3>
-            <p>
-              Humming is a cheat code. It’s gentle, private, and it stabilizes your breath.
-            </p>
-            <ul>
-              <li>Inhale through the nose for 4 seconds</li>
-              <li>Exhale slowly while humming for 6–8 seconds</li>
-              <li>Repeat for 6–8 breaths</li>
-            </ul>
-            <p>
-              If your mind is loud, keep your attention on the vibration in your face and chest.
-            </p>
-
-            <h3>2) “One Tone” Focus (2–3 Minutes)</h3>
-            <p>
-              Use a singing bowl, a tuning fork, a tone app, or even a steady ambient track.
-              Your job is simple: don’t chase thoughts — return to the tone.
-            </p>
-            <ul>
-              <li>Play one steady tone</li>
-              <li>Let your breath slow naturally</li>
-              <li>Every time you drift, return to the sound</li>
-            </ul>
-
-            <h3>3) Coherence Breathing + Tone (5 Minutes)</h3>
-            <p>
-              This one combines your “inner tech” with sound.
-            </p>
-            <ul>
-              <li>Inhale 5 seconds</li>
-              <li>Exhale 5 seconds</li>
-              <li>Keep a soft tone in the background (or hum gently)</li>
-            </ul>
-            <p>
-              By minute 3–4, your body usually drops into a calmer baseline.
-            </p>
-
-            <hr style="border: none; border-top: 1px solid rgba(148,163,184,0.35); margin: 2rem 0;" />
-
-            <h2>How This Connects to Halocyberlife</h2>
-            <p>
-              Halocyberlife is built around a simple principle:
-              <strong>Fields → Resonance → Function</strong>.
-            </p>
-
-            <p>
-              That applies to your inner world and to technology.
-              If you can stabilize your nervous system and your attention,
-              you can build, create, and execute with far less friction.
-            </p>
-
-            <p>
-              This is also why I write about intention and the Halo Field —
-              sound is one of the cleanest ways to “tune” your internal system.
-            </p>
-
-            <div style="margin-top: 2.5rem; padding: 1.2rem 1.4rem; border-radius: 16px; background: rgba(15,23,42,0.8); border: 1px solid rgba(148,163,184,0.35);">
-              <h3 style="margin-bottom: 0.4rem;">Continue the Journey</h3>
-              <p style="margin-bottom: 0.6rem;">
-                If this resonated, explore these next:
-              </p>
-              <ul>
-                <li><a href="./powerofintent.html" class="card-cta">The Alchemy of Intention: Crafting Your Reality</a></li>
-                <li><a href="./halofield.html" class="card-cta">The Halo Field: How Your Energy, Focus &amp; Intent Shape Reality</a></li>
-              </ul>
-            </div>
-
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER CTA -->
-    <section id="newsletter" class="section section-dark newsletter-section">
-      <div class="container newsletter-inner">
-        <div class="newsletter-copy">
-          <h2>Stay in the Halo Field</h2>
-          <p>Get new articles, experiments, and early access to physical drops. No spam, just signal.</p>
-        </div>
-        <div class="newsletter-form">
-          <iframe
-            src="https://embeds.beehiiv.com/f40c03c1-8e91-4175-9bc5-7dd5a092c366?slim=true"
-            data-test-id="beehiiv-embed"
-            height="52"
-            frameborder="0"
-            scrolling="no"
-            style="width: 100%; margin: 0; border-radius: 6px; background-color: transparent;"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-column">
-        <div class="footer-brand">
-          <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo small" class="footer-logo" />
-          <span class="footer-brand-text">Halocyberlife</span>
-        </div>
-        <p class="footer-text">Esoteric insights, experimental tech concepts, and future-conscious craftsmanship.</p>
-        <p class="footer-meta">v2.0.0 · © <span id="year"></span> Halocyberlife.com</p>
+      <div class="image-slot">
+        IMAGE SLOT — Swing / waveform metaphor
       </div>
 
-      <div class="footer-column">
-        <h3 class="footer-heading">Navigate</h3>
-        <ul class="footer-links">
-          <li><a href="../index.html#insights">Latest Insights</a></li>
-          <li><a href="../blog.html">All Articles</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../contact_us.html">Contact</a></li>
-          <li><a href="../policypage.html">Privacy &amp; Terms</a></li>
+      <section>
+        <h2>Sound Healing (Without the Woo)</h2>
+        <p>
+          Sound works because your body entrains before your mind agrees.
+        </p>
+        <ul>
+          <li>Vibration loosens tension</li>
+          <li>Rhythm guides breath</li>
+          <li>Attention stops spiraling</li>
+          <li>Repetition trains a baseline</li>
         </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3 class="footer-heading">Contact &amp; Social</h3>
-        <ul class="footer-links">
-          <li><span>Email:</span> <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a></li>
-        </ul>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/halocyberlife/" aria-label="linkedin">LinkedIn: halocyberlife/</a>
+        <div class="pull">
+          You don’t calm down by thinking harder.
+          You calm down by giving your system something stable to follow.
         </div>
+      </section>
+
+      <div class="image-slot">
+        IMAGE SLOT — Singing bowl / tone field
       </div>
-    </div>
 
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-  </footer>
+      <section>
+        <h2>Three Simple Ways to Tune Yourself</h2>
 
-  <script src="../main_v2_0_0.js"></script>
+        <h3>1) The Humming Reset</h3>
+        <p>Inhale 4 seconds. Hum out 6–8 seconds. Repeat 6 times.</p>
+
+        <h3>2) One-Tone Focus</h3>
+        <p>Play one steady tone. When your mind wanders, return to sound.</p>
+
+        <h3>3) Coherence Breathing</h3>
+        <p>Inhale 5. Exhale 5. Add a soft tone or hum.</p>
+      </section>
+
+      <section>
+        <h2>Why This Matters to HaloCyberLife</h2>
+        <p>
+          Every system here follows the same law:
+        </p>
+        <div class="pull">
+          Fields → Resonance → Function
+        </div>
+        <p>
+          Your body is the first system you ever operated.
+          Tune it — and everything downstream works better.
+        </p>
+      </section>
+
+      <section>
+        <h2>You’re Not Broken — You’re Just Out of Phase</h2>
+        <p>
+          That feeling of being “off” isn’t failure.
+          It’s feedback.
+        </p>
+        <div class="pull">
+          Welcome back to rhythm.
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> HaloCyberLife™
+</footer>
+
+<button id="backToTop">↑</button>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const toggle = document.querySelector(".neon-nav-toggle");
+  const nav = document.querySelector(".neon-nav");
+  toggle.addEventListener("click",()=>nav.classList.toggle("open"));
+
+  const back = document.getElementById("backToTop");
+  window.addEventListener("scroll",()=>{
+    back.classList.toggle("show", window.scrollY > 400);
+  });
+  back.addEventListener("click",()=>{
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+</script>
+
 </body>
 </html>
