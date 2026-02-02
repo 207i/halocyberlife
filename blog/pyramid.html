@@ -18,8 +18,6 @@
       --text:#f3f6ff;
       --muted:#aab3d6;
       --cyan:#22d3ee;
-      --purple:#8b5cf6;
-      --gold:#fbbf24;
       --radius:18px;
       --shadow:0 12px 36px rgba(0,0,0,.45);
       --max:880px;
@@ -43,7 +41,6 @@
     header{
       position:sticky;
       top:0;
-      z-index:50;
       backdrop-filter: blur(10px);
       background: rgba(5,8,20,.6);
       border-bottom:1px solid var(--line);
@@ -60,32 +57,15 @@
     .nav a{margin-left:14px; font-size:14px; color:var(--text)}
 
     .hero{padding:56px 0 32px}
-    h1{font-size:clamp(32px,4.8vw,48px); line-height:1.1; margin:0 0 16px}
+    h1{font-size:clamp(32px,4.8vw,48px); margin:0 0 16px}
 
     .sub{
       font-size:18px;
-      line-height:1.6;
       color:var(--muted);
       max-width:60ch;
     }
 
-    .meta{
-      margin-top:16px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      font-size:14px;
-      color:rgba(243,246,255,.85);
-    }
-
-    .chip{
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-    }
-
-    main{padding:10px 0 90px}
+    main{padding:20px 0 90px}
 
     article{
       border:1px solid var(--line);
@@ -96,16 +76,16 @@
     }
 
     section{margin-bottom:38px}
-    h2{font-size:25px; margin:0 0 12px}
+    h2{font-size:25px; margin-bottom:12px}
 
     p{
       font-size:17px;
       line-height:1.75;
-      margin:0 0 14px;
+      margin-bottom:14px;
     }
 
-    ul{padding-left:18px; margin:12px 0}
-    li{margin:8px 0; font-size:16px; line-height:1.6}
+    ul{padding-left:18px}
+    li{margin:8px 0}
 
     .pull{
       margin:20px 0;
@@ -120,43 +100,34 @@
       background:rgba(251,191,36,.08);
       padding:16px;
       border-radius:12px;
-      font-size:15px;
+    }
+
+    .blog-image-section{
+      margin:4rem auto;
+      max-width:1100px;
+      padding:0 1.5rem;
+      text-align:center;
+    }
+
+    .blog-image-section img{
+      width:100%;
+      border-radius:18px;
+      box-shadow:0 25px 60px rgba(0,0,0,.45);
+    }
+
+    .blog-image-section figcaption{
+      margin-top:1rem;
+      font-size:.95rem;
+      color:#9ca3af;
     }
 
     footer{
       border-top:1px solid var(--line);
       background:rgba(0,0,0,.2);
-      padding:20px 0;
-      font-size:14px;
-      color:var(--muted);
+      padding:20px;
       text-align:center;
+      color:var(--muted);
     }
-
-    .blog-image-section{
-  margin:4rem auto;
-  max-width:1100px;
-  padding:0 1.5rem;
-}
-
-.blog-image-section figure{
-  margin:0;
-  text-align:center;
-}
-
-.blog-image-section img{
-  width:100%;
-  height:auto;
-  border-radius:18px;
-  box-shadow:0 25px 60px rgba(0,0,0,.45);
-}
-
-.blog-image-section figcaption{
-  margin-top:1rem;
-  font-size:.95rem;
-  color:#9ca3af;
-  line-height:1.6;
-}
-
   </style>
 </head>
 
@@ -180,83 +151,12 @@
       A disciplined examination of pyramid geometry, chambers, airflow, resonance, and materials—
       exploring whether these structures functioned as engineered environments rather than monuments alone.
     </p>
-    <div class="meta">
-      <span class="chip">Speculative Research</span>
-      <span class="chip">Architecture · Physics · Materials</span>
-      <span class="chip">8–10 minute read</span>
-    </div>
   </div>
 </section>
 
 <main>
   <div class="container">
     <article>
-
-      <meta itemprop="about" content="Pyramids, ancient architecture, geometry, resonance, airflow, passive engineering systems">
-
-      <section>
-        <h2>The Question We Rarely Ask</h2>
-        <p>
-          The conventional explanation for the pyramids is tidy: symbolic tombs designed for ritual
-          and remembrance. It is also incomplete.
-        </p>
-        <p>
-          The internal precision of these structures—alignment, chamber placement, material selection,
-          and geometric consistency—far exceeds what symbolic architecture typically requires.
-        </p>
-        <div class="pull">
-          This article does not argue for a specific function,
-          but for the possibility that function existed at all.
-        </div>
-      </section>
-
-      <section>
-        <h2>Architecture as Environmental Behavior Control</h2>
-        <p>
-          To understand why function is plausible, we must examine how the structure behaves.
-        </p>
-        <p>
-          Architecture does not merely enclose space—it constrains movement, shapes pressure,
-          and stabilizes environmental conditions.
-        </p>
-        <ul>
-          <li>Corridors narrow where regulation is required.</li>
-          <li>Chambers isolate internal environments.</li>
-          <li>Vertical continuity enables convection and pressure gradients.</li>
-        </ul>
-        <p>
-          These are not symbolic traits. They are functional ones.
-        </p>
-      </section>
-
-      <section>
-        <h2>Resonance as a Physical Architectural Effect</h2>
-        <p>
-          Resonance is not mystical. It emerges wherever shape and energy interact predictably.
-        </p>
-        <p>
-          Enclosed stone volumes naturally amplify, dampen, or stabilize vibration—affecting
-          sound, temperature, and mechanical behavior.
-        </p>
-        <div class="pull">
-          Geometry does not need intent to create effect.
-        </div>
-      </section>
-
-        <h2>Material Evidence and Environmental Control</h2>
-      <section class="blog-image-section">
-        <figure>
-          <img
-            src="../images/blog/Glowing_pyramid_energy_spiral.png"
-            alt="Conceptual cutaway showing spiral airflow, resonance paths, and vertical continuity inside a pyramid"
-            loading="lazy"
-          />
-          <figcaption>
-            <strong>Figure 1.</strong> Conceptual cutaway illustrating how internal geometry could guide
-            airflow, pressure, or resonance through vertical continuity and enclosed chambers.
-          </figcaption>
-        </figure>
-      </section>
 
       <section>
         <h2>Material Evidence and Environmental Control</h2>
@@ -268,118 +168,42 @@
           <li>Mercury and cinnabar reports in Mesoamerican sites</li>
           <li>Advanced sealing and moisture isolation in Egyptian pyramids</li>
         </ul>
-        <p>
-          Interpretation varies, but material behavior deserves consideration.
-        </p>
-      </section>
-
-     <h2>A Construction Detail That Changes Everything</h2>
-     <section class="blog-image-section">
-        <figure>
-          <img
-            src="../images/blog/Pyramid_Partially_Polished.png"
-            alt="Stepped pyramid showing layered construction prior to final surface refinement"
-            loading="lazy"
-          />
-          <figcaption>
-            <strong>Figure 2.</strong> Layered construction model showing how pyramids could be built
-            incrementally, with precision applied only during the final finishing stage.
-          </figcaption>
-        </figure>
-      </section>
-
-      <section>
-        <h2>Engineered Environments Rather Than Machines</h2>
-        <p>
-          The least sensational explanation may be the most accurate.
-        </p>
-        <p>
-          No generators. No lost technology. Just geometry producing stable internal conditions:
-          airflow regulation, acoustic stability, temperature moderation, and moisture control.
-        </p>
-        <div class="pull">
-          Multi-function does not imply single purpose.
-        </div>
-      </section>
-
-      <section>
-        <h2>Why This Question Still Matters</h2>
-        <p>
-          Modern engineering favors active systems—motors, sensors, constant energy input.
-        </p>
-        <p>
-          Passive systems trade complexity for geometry, replacing control with constraint.
-        </p>
-        <p>
-          If shape alone can regulate environments at scale, design—not technology—may be
-          the missing variable.
-        </p>
-      </section>
-
-      <section>
-        <h2>What Could Be Tested</h2>
-        <ul>
-          <li>Computational airflow modeling</li>
-          <li>Acoustic resonance mapping</li>
-          <li>Condensation and humidity cycling</li>
-          <li>Residue distribution along airflow paths</li>
-        </ul>
-        <div class="note">
-          This approach replaces mythology with measurable inquiry.
-        </div>
       </section>
 
       <section class="blog-image-section">
         <figure>
-          <img
-            src="../images/blog/Pyramid_Partially_Polished.png"
-            alt="Pyramid with upper casing stones in place and lower sections unfinished, showing top-down finishing process"
-            loading="lazy"
-          />
+          <img src="../images/blog/Glowing_pyramid_energy_spiral.png" alt="Internal system cutaway">
           <figcaption>
-            <strong>Figure 3.</strong> Reconstruction showing a pyramid during final finishing stages,
-            where the slope and angle are established first and surface polishing progresses downward.
-            This suggests that refinement followed structural completion rather than guiding it.
+            <strong>Figure 1.</strong> Internal geometry suggesting airflow, pressure routing, or resonance behavior.
           </figcaption>
         </figure>
       </section>
 
-      <hr style="border:none;border-top:1px solid rgba(255,255,255,.1);margin:50px 0;">
       <section>
         <h2>A Construction Detail That Changes Everything</h2>
         <p>
-          A spiral or stepped construction method offers a practical alternative
-          to massive external ramps.
-        </p>
-        <p>
-          Building layer by layer allows short vertical movement, self-supported scaffolding,
-          and precision applied only at the final stage.
-        </p>
-        <div class="pull">
-          Build rough first. Finish precisely later.
-        </div>
-        <p>
-          The pyramid’s final form may not describe how it was built,
-          but how it was completed.
+          A stepped or spiral construction method allows rough assembly first,
+          with precision applied only after the structure reaches full height.
         </p>
       </section>
 
-      <hr style="border:none;border-top:1px solid rgba(255,255,255,.1);margin:50px 0;">
+      <section class="blog-image-section">
+        <figure>
+          <img src="../images/blog/PLACEHOLDER_CONSTRUCTION.png" alt="Stepped construction placeholder">
+          <figcaption>
+            <strong>Figure 2.</strong> Conceptual construction sequence (placeholder image — replace with stepped build visual).
+          </figcaption>
+        </figure>
+      </section>
 
-      <section>
-        <h2>What This Leaves Us With</h2>
-        <p>
-          The pyramids do not need to be extraordinary to be important.
-          They only need to be functional.
-        </p>
-        <p>
-          Whether they controlled air, sound, moisture, or materials remains unresolved.
-          But their geometry behaves less like sculpture and more like system design.
-        </p>
-        <div class="pull">
-          Sometimes progress begins not with new answers—
-          but with permission to look again.
-        </div>
+      <section class="blog-image-section">
+        <figure>
+          <img src="../images/blog/Pyramid_Partially_Polished.png" alt="Top-down finishing process">
+          <figcaption>
+            <strong>Figure 3.</strong> Top-down finishing process where final slope and polish progress downward
+            after structural completion.
+          </figcaption>
+        </figure>
       </section>
 
     </article>
@@ -387,7 +211,7 @@
 </main>
 
 <footer>
-  © <span id="year"></span> HaloCyberLife™ · Speculative Research
+  © <span id="year"></span> HaloCyberLife™
 </footer>
 
 <script>
