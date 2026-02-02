@@ -291,37 +291,79 @@
     display:none;
     flex-direction:column;
 
-    background:rgba(5,8,20,.96);
-    backdrop-filter: blur(12px);
+    background:
+      radial-gradient(600px 300px at 50% 0%, rgba(139,92,246,.25), transparent 60%),
+      linear-gradient(180deg, rgba(5,8,20,.98), rgba(5,8,20,.92));
 
-    border-bottom:1px solid rgba(255,255,255,.08);
-    box-shadow:0 18px 40px rgba(0,0,0,.45);
+    backdrop-filter: blur(14px);
 
-    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    box-shadow:
+      0 30px 60px rgba(0,0,0,.6),
+      inset 0 1px 0 rgba(255,255,255,.06);
+
+    padding:8px 0;
   }
 
   .neon-nav.open{
     display:flex;
   }
 
+  /* Base link style */
   .neon-link{
-    width:100%;
-    text-align:left;
-
-    padding:14px 22px;
-
-    font-size:15px;
-    letter-spacing:.06em;
+    padding:16px 26px;
+    font-size:16px;
+    letter-spacing:.12em;
     text-transform:uppercase;
+    font-weight:500;
 
-    color:#c7d2fe;
+    position:relative;
+    color:#e5e7eb;
+
+    transition:
+      color .25s ease,
+      background .25s ease,
+      text-shadow .25s ease;
   }
 
-  .neon-link:hover{
-    background:rgba(34,211,238,.08);
+  /* --- INDIVIDUAL HALO COLORS --- */
+  .neon-link:nth-child(1){
+    color:#60a5fa;
+    text-shadow:0 0 14px rgba(96,165,250,.6);
+  }
+
+  .neon-link:nth-child(2){
+    color:#a78bfa;
+    text-shadow:0 0 14px rgba(167,139,250,.6);
+  }
+
+  .neon-link:nth-child(3){
     color:#22d3ee;
+    text-shadow:0 0 14px rgba(34,211,238,.7);
+  }
+
+  .neon-link:nth-child(4){
+    color:#f472b6;
+    text-shadow:0 0 14px rgba(244,114,182,.6);
+  }
+
+  .neon-link:nth-child(5){
+    color:#fbbf24;
+    text-shadow:0 0 14px rgba(251,191,36,.7);
+  }
+
+  /* Hover / tap glow */
+  .neon-link:hover{
+    background:rgba(255,255,255,.04);
+    text-shadow:0 0 22px currentColor;
+  }
+
+  /* Divider glow */
+  .neon-link + .neon-link{
+    border-top:1px solid rgba(255,255,255,.08);
   }
 }
+
    
   </style>
 </head>
