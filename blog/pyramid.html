@@ -347,11 +347,19 @@
 <footer>
   © <span id="year"></span> HaloCyberLife™
 </footer>
-
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+<script>
+  const toggle = document.querySelector('.neon-nav-toggle');
+  const nav = document.querySelector('.neon-nav');
 
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
+</script>
 </body>
 </html>
 
