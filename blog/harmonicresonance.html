@@ -137,6 +137,39 @@
       }
     }
 
+    /* ===== BLOG IMAGE POLISH ===== */
+    .image-slot{
+      margin:56px 0;
+      padding:0;
+      border:none;
+      background:none;
+      text-align:center;
+    }
+    
+    .blog-image{
+      width:100%;
+      max-width:760px;
+      display:block;
+      margin:0 auto;
+      border-radius:18px;
+    
+      /* depth + glow */
+      box-shadow:
+        0 25px 60px rgba(0,0,0,.55),
+        0 0 40px rgba(139,92,246,.25);
+    
+      /* subtle lift */
+      transform:translateY(0);
+      transition:transform .35s ease, box-shadow .35s ease;
+    }
+    
+    .blog-image:hover{
+      transform:translateY(-4px);
+      box-shadow:
+        0 35px 80px rgba(0,0,0,.65),
+        0 0 60px rgba(34,211,238,.35);
+    }
+
     /* ===== ARTICLE ===== */
     .article-wrap{
       width:min(900px, calc(100% - 36px));
@@ -295,7 +328,7 @@
 
      <div class="image-slot">
         <img
-          src="/Images/Harmonic_Resonance_Images/Harmonic_Resonance.png"
+          src="./Images/Harmonic_Resonance_Images/Harmonic_Resonance.png"
           alt="Nervous system resonance visualization showing wave coherence and harmonic balance"
           loading="lazy"
           class="blog-image"
