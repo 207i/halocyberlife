@@ -168,16 +168,18 @@
 /* Comet dot */
 .comet{
   position: absolute;
-  top: 70%;               /* start lower */
-  left: -20%;             /* start off-screen */
+  top: 70%;
+  left: -20%;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: rgba(255,255,255,.95);
-  opacity: 0;
   pointer-events: none;
-  z-index: 3;             /* above planets */
-  animation: comet-fly 14s linear infinite;
+  opacity: 0;
+  z-index: 3;
+
+  animation: comet-fly 20s linear infinite;
+
   box-shadow:
     0 0 12px rgba(255,255,255,.9),
     0 0 28px rgba(34,211,238,.35),
@@ -232,6 +234,19 @@
   z-index: 3;
 }
 
+  .comet-1{
+    animation-delay: 0s;
+  }
+  
+  .comet-2{
+    animation-delay: 6.5s;
+    transform: scale(0.85);
+  }
+  
+  .comet-3{
+    animation-delay: 13s;
+    transform: scale(0.7);
+  }
   </style>
 </head>
 <body>
@@ -307,7 +322,11 @@
         <div class="orb orb-inner"></div>
       
         <div class="comet-layer">
-          <div class="comet"></div>
+          <div class="comet comet-1"></div>
+          <div class="comet comet-2"></div>
+          <div class="comet comet-3"></div>
+        </div>
+
         </div>
       
         <p class="hero-tagline">“Technologies create ecosystems. Products come and go inside them.”</p>
