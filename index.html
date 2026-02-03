@@ -55,7 +55,44 @@
   <noscript>
     <link rel="stylesheet" href="style_v2_0_0.css">
   </noscript>
+  <style>
+    /* ===== SCROLLING MARQUEE ===== */
 
+.marquee{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(5,8,20,.65);
+  backdrop-filter: blur(8px);
+}
+
+.marquee-track{
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee span{
+  padding: 14px 32px;
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #aab3d6;
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
