@@ -685,54 +685,45 @@
 </footer>
 <button id="backToTop" aria-label="Back to top">↑</button>
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script>
-  const toggle = document.querySelector('.neon-nav-toggle');
-  const nav = document.querySelector('.neon-nav');
+  // ===== YEAR =====
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
+  // ===== BACK TO TOP =====
+  const backToTop = document.getElementById("backToTop");
+
+  if (backToTop) {
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("show", window.scrollY > 400);
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // ===== NAV TOGGLE (SINGLE SOURCE OF TRUTH) =====
+  const navToggle = document.querySelector(".neon-nav-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("active");
+      navToggle.setAttribute("aria-expanded", open);
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
     });
   }
 </script>
-<script>
-  const backToTop = document.getElementById("backToTop");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
-  });
-
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-  const navToggle = document.querySelector('.neon-nav-toggle');
-const nav = document.getElementById('primary-nav');
-
-if (navToggle && nav) {
-  navToggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('active');
-    navToggle.setAttribute('aria-expanded', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  document.querySelectorAll('.neon-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', false);
-      document.body.style.overflow = '';
-    });
-  });
-}
-
-</script>
 </body>
 </html>
