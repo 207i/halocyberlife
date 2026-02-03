@@ -224,6 +224,13 @@
     opacity: 0;
   }
 }
+.comet-layer{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;      /* ONLY comet gets clipped */
+  pointer-events: none;
+  z-index: 3;
+}
 
   </style>
 </head>
