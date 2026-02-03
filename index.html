@@ -157,7 +157,96 @@
   0%,100%{ opacity: 0.85; }
   50%{ opacity: 1; }
 }
-  
+
+    /* ===== COMET SYSTEM (HERO ONLY) ===== */
+
+/* Make sure the comet stays inside hero-visual */
+.hero-visual{
+  overflow: hidden;       /* keeps comet inside */
+}
+
+/* Comet dot */
+.comet{
+  position: absolute;
+  top: 70%;               /* start lower */
+  left: -20%;             /* start off-screen */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.95);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;             /* above planets */
+  animation: comet-fly 14s linear infinite;
+  box-shadow:
+    0 0 12px rgba(255,255,255,.9),
+    0 0 28px rgba(34,211,238,.35),
+    0 0 42px rgba(139,92,246,.25);
+}
+
+/* Comet tail */
+.comet::after{
+  content:"";
+  position:absolute;
+  left:-160px;
+  top:50%;
+  transform: translateY(-50%);
+  width:160px;
+  height:2px;
+  background: linear-gradient(
+    to left,
+    rgba(255,255,255,.7),
+    rgba(34,211,238,.35),
+    rgba(139,92,246,.18),
+    transparent
+  );
+  filter: blur(.2px);
+}
+
+/* Flight path */
+@keyframes comet-fly{
+  0%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  6%{
+    opacity: 1;
+  }
+  52%{
+    transform: translate(140vw, -70vh); /* fly across hero */
+    opacity: 1;
+  }
+  62%{
+    opacity: 0;
+  }
+  100%{
+    transform: translate(140vw, -70vh);
+    opacity: 0;
+  }
+}
+.comet{
+  animation: comet-fly 20s linear infinite;
+}
+@keyframes comet-fly{
+  0%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  6%{ opacity: 1; }
+  52%{
+    transform: translate(140vw, -70vh);
+    opacity: 1;
+  }
+  62%{ opacity: 0; }
+  100%{
+    transform: translate(140vw, -70vh);
+    opacity: 0;
+  }
+}
+.comet{
+  animation: comet-fly 14s linear infinite;
+}
+
   </style>
 </head>
 <body>
@@ -228,9 +317,13 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
+       <div class="hero-visual" aria-hidden="true">
           <div class="orb orb-outer"></div>
           <div class="orb orb-inner"></div>
+        
+          <!-- COMET (NEW) -->
+          <div class="comet" aria-hidden="true"></div>
+        
           <p class="hero-tagline">“Technologies create ecosystems. Products come and go inside them.”</p>
         </div>
       </div>
