@@ -376,6 +376,36 @@
   }
 }
    /* ===== HALO FIELD IMAGE STYLING ===== */
+/* ===== HALO FIELD IMAGE — HARD SIZE CONTROL ===== */
+
+.halo-figure{
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.halo-image-wrap{
+  width: 100%;
+  max-width: 720px;
+  height: 420px;              
+  overflow: hidden;          
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 20px 48px rgba(0,0,0,.55);
+  background: rgba(0,0,0,.2);
+}
+
+/* Image fills the box instead of controlling layout */
+.halo-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        
+  object-position: center top;
+  display: block;
+}
+    
 
 .article-figure{
   margin: 56px auto;
@@ -386,19 +416,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* THE IMPORTANT PART */
-.halo-image{
-  width: 100%;
-  max-width: 720px;
-  max-height: 420px;         
-  object-fit: cover;          
-  object-position: center top;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 20px 48px rgba(0,0,0,.55);
-  background: rgba(0,0,0,.2);
 }
 
 /* Caption polish */
