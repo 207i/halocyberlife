@@ -368,7 +368,14 @@ body {
   min-height: 260px;
 }
 
-.orb { position: absolute; border-radius: 999px; }
+.orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px; 
+}
+
 
 .orb-outer {
   width: 260px;
@@ -397,6 +404,28 @@ body {
   text-align: center;
   font-size: 0.8rem;
   color: var(--text-soft);
+}
+
+.orb-inner {
+  width: 180px;
+  height: 180px;
+  z-index: 5;
+
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(34, 211, 238, .7),
+    rgba(6, 95, 113, .85) 55%,
+    rgba(5, 8, 20, .95) 70%
+  );
+
+  transform:
+    translate(-50%, -50%)
+    translateZ(40px)
+    scale(0.9);
+
+  animation:
+    slow-spin-reverse 90s linear infinite,
+    pulse-glow 8s ease-in-out infinite;
 }
 
 @media (max-width: 767px) {
