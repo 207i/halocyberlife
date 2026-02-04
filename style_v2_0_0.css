@@ -273,10 +273,10 @@ body {
     text-align: center;
     z-index: 999; /* <- optional, ensures menu stays on top */
   }
-
+/* 
   .neon-nav.open {
     display: flex !important;
-  }
+  } */
 }
 
 
