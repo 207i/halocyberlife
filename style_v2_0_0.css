@@ -1314,9 +1314,9 @@ body {
 } */
 
 /* Show nav when toggle is expanded */
-.neon-nav-toggle[aria-expanded="true"] + .neon-nav {
-  display: flex;
-}
+   /* .neon-nav-toggle[aria-expanded="true"] + .neon-nav {
+     display: flex;
+   } */
 
 @media (max-width: 768px) {
   .neon-nav {
