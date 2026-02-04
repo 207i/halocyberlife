@@ -279,7 +279,26 @@
     translateZ(40px)
     scale(0.9);
 }
-  
+
+    @media (max-width: 767px) {
+  .orb-outer,
+  .orb-inner {
+    transform: none !important;
+    margin: 0 auto;
+  }
+
+  .orb {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scale(0.9) !important;
+  }
+
+  .hero-visual {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
   </style>
 </head>
 <body>
