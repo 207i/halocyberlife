@@ -214,24 +214,25 @@
 /* Flight path */
 @keyframes comet-fly{
   0%{
-    transform: translate(0, 0);
+    transform: translate(-20vw, 30vh);
     opacity: 0;
   }
   6%{
     opacity: 1;
   }
-  52%{
-    transform: translate(140vw, -70vh); /* fly across hero */
+  50%{
+    transform: translate(60vw, -10vh); /* passes BETWEEN planets */
     opacity: 1;
   }
-  62%{
+  70%{
     opacity: 0;
   }
   100%{
-    transform: translate(140vw, -70vh);
+    transform: translate(120vw, -50vh);
     opacity: 0;
   }
 }
+
 .comet-layer{
   position: absolute;
   inset: 0;
