@@ -365,15 +365,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 260px;
+  text-align: center;           
+  min-height: 280px;
+  perspective: 800px;
 }
 
 .orb {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 999px; 
+  transform: translate(-50%, -50%); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
