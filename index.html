@@ -701,5 +701,22 @@
     <button class="back-to-top" aria-label="Back to top">↑</button>
   </footer>
   <script src="main_v2_0_0.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+  const toggle = document.querySelector(".neon-nav-toggle");
+  const nav = document.querySelector(".neon-nav");
+
+  toggle.addEventListener("click", () => {
+
+    nav.classList.toggle("active");
+
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", !expanded);
+
+  });
+
+});
+</script>
 </body>
 </html>
