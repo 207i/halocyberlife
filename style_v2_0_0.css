@@ -71,6 +71,10 @@ body {
   top: 1rem;
 }
 
+main {
+  padding-top: var(--header-height);
+}
+
 /* ---------- Header / Neon Nav (legacy) ---------- */
 
 .neon-header {
