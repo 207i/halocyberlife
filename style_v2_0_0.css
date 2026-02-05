@@ -5,7 +5,6 @@
 /* ---------- Root / Reset ---------- */
 
 :root {
-  --header-height: 75px;
   --bg-main: #050814;
   --bg-elevated: #0b1020;
   --bg-elevated-soft: #101628;
@@ -69,10 +68,6 @@ body {
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
-}
-
-main {
-  padding-top: var(--header-height);
 }
 
 /* ---------- Header / Neon Nav (legacy) ---------- */
@@ -278,10 +273,10 @@ main {
     text-align: center;
     z-index: 999; /* <- optional, ensures menu stays on top */
   }
-
+/* 
   .neon-nav.open {
     display: flex !important;
-  }
+  } */
 }
 
 
@@ -370,15 +365,19 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 260px;
+  text-align: center;           
+  min-height: 280px;
+  perspective: 800px;
 }
 
 .orb {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 999px; 
+  transform: translate(-50%, -50%); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -831,14 +830,14 @@ main {
   }
 }
 
-/* @media (max-width: 820px){
+@media (max-width: 820px){
   .nav-toggle{ display: flex; flex-direction: column; gap: 5px; background: transparent; border: 0; cursor: pointer; }
   .nav-toggle-line{ width: 24px; height: 3px; background: #fff; border-radius: 3px; }
 
   .main-nav{ position: absolute; top: 100%; left: 0; right: 0; display: none; padding: 1rem 0; background: rgba(0,0,0,0.92); }
   .main-nav.open{ display: block; }
   .main-nav .nav-list{ flex-direction: column; gap: .9rem; justify-content: center; }
-} */
+}
 
 /* =========================
    CONTACT PAGE POLISH
@@ -1149,6 +1148,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px; /* keeps your spacing */
 }
 
 .brand-h1 {
@@ -1362,32 +1362,11 @@ main {
   }
 }
 
-/* ==========================================
-   FINAL MOBILE REPAIR - PASTE AT BOTTOM
-   ========================================== */
-@media (max-width: 820px) {
-  /* This hides the menu until clicked */
-  .neon-nav {
-    display: none !important; 
-    position: absolute;
-    top: 60px; 
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: #050814; /* Solid background for clarity */
-    padding: 2rem 0;
-    z-index: 99999;
-    border-bottom: 2px solid #8b5cf6;
-  }
 
-  /* This SHOWS the menu when your JS adds the "open" class */
-  .neon-nav.open {
-    display: flex !important;
-  }
 
-  /* This makes your ☰ button visible */
-  .neon-nav-toggle {
-    display: flex !important;
-    z-index: 100000;
-  }
-}
+
+
+
+
+
+
