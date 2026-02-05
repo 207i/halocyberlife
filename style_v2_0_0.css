@@ -370,9 +370,30 @@ body {
 
 .orb { position: absolute; border-radius: 999px; }
 
+/* Hero visual - The Centered Container */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  perspective: 1000px; 
+}
+
+/* Base Orb Settings */
+.orb { 
+  position: absolute; 
+  border-radius: 999px; 
+  top: 50%;   
+  left: 50%;  
+}
+
 .orb-outer {
   width: 260px;
   height: 260px;
+  /* This line pulls the planet back to the dead center */
+  transform: translate(-50%, -50%) translateZ(-20px); 
+  
   background: radial-gradient(circle at 30% 0,
     rgba(56, 189, 248, 0.55),
     rgba(15, 23, 42, 0.4) 55%,
@@ -383,6 +404,9 @@ body {
 .orb-inner {
   width: 160px;
   height: 160px;
+  /* This line pulls the planet back to the dead center */
+  transform: translate(-50%, -50%) translateZ(40px);
+
   background: radial-gradient(circle at 50% 30%,
     #ffffff,
     rgba(139, 92, 246, 0.3),
