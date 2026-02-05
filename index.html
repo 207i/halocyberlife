@@ -333,6 +333,33 @@
       .neon-nav {
         pointer-events: auto; /* Re-enables clicking for the actual links */
       }
+
+      @media (max-width: 767px) {
+  /* Ensure the nav is hidden by default and positioned correctly */
+  .neon-nav {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust based on your header height */
+    left: 0;
+    width: 100%;
+    background: rgba(5, 8, 20, 0.98);
+    padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* This is the missing piece that makes it visible */
+  .neon-nav.open {
+    display: flex !important;
+  }
+  
+  /* Make sure the hamburger button is visible and on top */
+  .neon-nav-toggle {
+    display: block;
+    z-index: 100001;
+    position: relative;
+  }
+}    
   </style>
 </head>
 <body>
