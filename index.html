@@ -299,6 +299,21 @@
   }
 }
 
+    /* Ensure the header is always on the very top layer */
+    .neon-header {
+      position: fixed; /* or relative, depending on your layout */
+      z-index: 9999; 
+    }
+    
+    /* Ensure the nav itself stays above the hero orbs when open */
+    .neon-nav {
+      z-index: 10000;
+    }
+    
+    /* Prevent the hero visual from capturing clicks meant for the menu */
+    .hero-visual {
+      pointer-events: none; /* This allows clicks to pass through to elements behind/under it */
+    }
   </style>
 </head>
 <body>
