@@ -314,6 +314,25 @@
     .hero-visual {
       pointer-events: none; /* This allows clicks to pass through to elements behind/under it */
     }
+    /*--------==================================================------*/
+    /* 1. Force Header to the top of all stacking contexts */
+      .neon-header {
+        position: fixed; 
+        top: 0;
+        width: 100%;
+        z-index: 99999 !important; /* Extremely high to beat the 3D transforms */
+      }
+      
+      /* 2. The "Click-Through" fix */
+      .hero-visual {
+        pointer-events: none; /* Allows your finger to "reach through" the orbs to hit the menu */
+        z-index: 1;
+      }
+      
+      /* 3. Ensure the nav links are clickable again */
+      .neon-nav {
+        pointer-events: auto; /* Re-enables clicking for the actual links */
+      }
   </style>
 </head>
 <body>
