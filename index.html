@@ -701,6 +701,33 @@
     <button class="back-to-top" aria-label="Back to top">↑</button>
   </footer>
   <script src="main_v2_0_0.js"></script>
- 
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".neon-nav-toggle");
+  const nav = document.querySelector(".neon-nav");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", (e) => {
+      // 1. Stop the click from closing the menu immediately
+      e.stopPropagation();
+      
+      // 2. Toggle the 'open' class
+      nav.classList.toggle("open");
+
+      // 3. Update Accessibility for screen readers
+      const isOpen = nav.classList.contains("open");
+      toggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // 4. Close menu if you click anywhere else on the screen
+    document.addEventListener("click", (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
