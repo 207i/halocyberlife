@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics (GA4) -->
   <script defer src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
   <script>
     window.addEventListener('load', () => {
@@ -12,776 +11,203 @@
     });
     </script>
 
-
-  <!-- Core Meta -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO -->
   <title>HaloCyberLife™ | Esoteric Wisdom & Future Technology</title>
   <meta name="description" content="HaloCyberLife explores frequency intelligence, consciousness, ancient architecture, and future technology through research, patents, and practical insights." />
   <meta name="author" content="Luis Amaya" />
-  <meta name="robots" content="index, follow" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://halocyberlife.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Halocyberlife | Esoteric Insights, Frequency Wisdom & Future Tools" />
-  <meta property="og:description" content="A living archive for seekers and builders—frequency, consciousness, ancient architecture, and future tech." />
-  <meta property="og:url" content="https://halocyberlife.com/" />
-  <meta property="og:image" content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png" />
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Halocyberlife | Esoteric Insights, Frequency Wisdom & Future Tools" />
-  <meta name="twitter:description" content="A portal for seekers and builders exploring frequency, consciousness, ancient architecture, and future technology." />
-  <meta name="twitter:image" content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png" />
-
-  <!-- Icons -->
   <link rel="icon" href="/images/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Main Styles -->
   <link rel="preload" href="style_v2_0_0.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-  <noscript>
-    <link rel="preload" href="style_v2_0_0.css?v=203" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  </noscript>
   <style>
-    /* ===== SCROLLING MARQUEE ===== */
-
-.marquee{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,.08);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  background: rgba(5,8,20,.65);
-  backdrop-filter: blur(8px);
-}
-
-.marquee-track{
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 40s linear infinite;
-}
-
-.marquee span{
-  padding: 14px 32px;
-  font-size: 13px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #aab3d6;
-  white-space: nowrap;
-}
-
-@keyframes marquee-scroll{
-  from{
-    transform: translateX(0);
-  }
-  to{
-    transform: translateX(-50%);
-  }
-}
-
-  /* ===== PLANET / ORB MOTION SYSTEM ===== */
-
-.hero-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 260px;
-  perspective: 800px;
-  pointer-events: none;
-}
-
-
-/* Base orb styling (you already have shapes) */
-.orb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  will-change: transform;
-}
-
-/* OUTER PLANET */
-.orb-outer{
-  width: 320px;
-  height: 320px;
-  z-index: 1;
-  background:
-    radial-gradient(circle at 30% 30%,
-      rgba(139,92,246,.6),
-      rgba(88,28,135,.85) 55%,
-      rgba(5,8,20,.95) 70%);
-  animation:
-    slow-spin 120s linear infinite,
-    slow-drift 24s ease-in-out infinite alternate;
-}
-
-/* INNER PLANET */
-.orb-inner{
-  width: 180px;
-  height: 180px;
-  z-index: 5;
-  background:
-    radial-gradient(circle at 35% 35%,
-      rgba(34,211,238,.7),
-      rgba(6,95,113,.85) 55%,
-      rgba(5,8,20,.95) 70%);
-  animation:
-    slow-spin-reverse 90s linear infinite,
-    pulse-glow 8s ease-in-out infinite;
-}
-
-/* ===== ANIMATIONS ===== */
-
-@keyframes slow-spin{
-  from{ transform: rotate(0deg); }
-  to{ transform: rotate(360deg); }
-}
-
-@keyframes slow-spin-reverse{
-  from{ transform: rotate(360deg); }
-  to{ transform: rotate(0deg); }
-}
-
-@keyframes slow-drift{
-  from{ transform: translateY(0); }
-  to{ transform: translateY(-14px); }
-}
-
-@keyframes pulse-glow{
-  0%,100%{ opacity: 0.85; }
-  50%{ opacity: 1; }
-}
-
-    /* ===== COMET SYSTEM (HERO ONLY) ===== */
-
-.hero-visual{
-  position: relative;
-  pointer-events: none;
-}
-
-/* Comet dot */
-.comet{
-  position: absolute;
-  top: 70%;
-  left: -20%;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.95);
-  pointer-events: none;
-  opacity: 0;
-  z-index: 3;
-
-  animation: comet-fly 20s linear infinite;
-
-  box-shadow:
-    0 0 12px rgba(255,255,255,.9),
-    0 0 28px rgba(34,211,238,.35),
-    0 0 42px rgba(139,92,246,.25);
-}
-
-/* Comet tail */
-.comet::after{
-  content:"";
-  position:absolute;
-  left:-160px;
-  top:50%;
-  transform: translateY(-50%);
-  width:160px;
-  height:2px;
-  background: linear-gradient(
-    to left,
-    rgba(255,255,255,.7),
-    rgba(34,211,238,.35),
-    rgba(139,92,246,.18),
-    transparent
-  );
-  filter: blur(.2px);
-}
-
-/* Flight path */
-@keyframes comet-fly{
-  0%{
-    transform: translate(-20vw, 30vh);
-    opacity: 0;
-  }
-  6%{
-    opacity: 1;
-  }
-  50%{
-    transform: translate(60vw, -10vh); /* passes BETWEEN planets */
-    opacity: 1;
-  }
-  70%{
-    opacity: 0;
-  }
-  100%{
-    transform: translate(120vw, -50vh);
-    opacity: 0;
-  }
-}
-
-.comet-layer{
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 3; 
-}
-
-
-  .comet-1{
-    animation-delay: 0s;
-  }
-  
-  .comet-2{
-    animation-delay: 6.5s;
-    transform: scale(0.85);
-  }
-  
-  .comet-3{
-    animation-delay: 13s;
-    transform: scale(0.7);
-  }
-
-  .hero-visual .orb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero-visual .orb-outer {
-  transform:
-    translate(-50%, -50%)
-    translateZ(-20px)
-    scale(1.05);
-}
-
-.hero-visual .orb-inner {
-  transform:
-    translate(-50%, -50%)
-    translateZ(40px)
-    scale(0.9);
-}
-
+    /* ===== FIX 1: MOBILE NAV DISPLAY LOGIC ===== */
     @media (max-width: 767px) {
-  .orb-outer,
-  .orb-inner {
-    transform: none !important;
-    margin: 0 auto;
-  }
-
-  .orb {
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) scale(0.9) !important;
-  }
-
-  .hero-visual {
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-    /* Ensure the header is always on the very top layer */
-    .neon-header {
-      position: fixed; /* or relative, depending on your layout */
-      z-index: 9999; 
-    }
-    
-    /* Ensure the nav itself stays above the hero orbs when open */
-    .neon-nav {
-      z-index: 10000;
-    }
-    
-    /* Prevent the hero visual from capturing clicks meant for the menu */
-    .hero-visual {
-      pointer-events: none; /* This allows clicks to pass through to elements behind/under it */
-    }
-    /*--------==================================================------*/
-    /* 1. Force Header to the top of all stacking contexts */
-      .neon-header {
-        position: fixed; 
-        top: 0;
-        width: 100%;
-        z-index: 99999 !important; /* Extremely high to beat the 3D transforms */
-      }
-      
-      /* 2. The "Click-Through" fix */
-      .hero-visual {
-        pointer-events: none; /* Allows your finger to "reach through" the orbs to hit the menu */
-        z-index: 1;
-      }
-      
-      /* 3. Ensure the nav links are clickable again */
       .neon-nav {
-        pointer-events: auto; /* Re-enables clicking for the actual links */
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Sits right under header */
+        left: 0;
+        width: 100%;
+        background: rgba(5, 8, 20, 0.95);
+        backdrop-filter: blur(15px);
+        padding: 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
       }
 
-      @media (max-width: 767px) {
-  /* Ensure the nav is hidden by default and positioned correctly */
-  .neon-nav {
-    display: none; 
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* Adjust based on your header height */
-    left: 0;
-    width: 100%;
-    background: rgba(5, 8, 20, 0.98);
-    padding: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+      /* This is the class the JS toggles */
+      .neon-nav.open {
+        display: flex !important;
+      }
 
-  /* This is the missing piece that makes it visible */
-  .neon-nav.open {
-    display: flex !important;
-  }
-  
-  /* Make sure the hamburger button is visible and on top */
-  .neon-nav-toggle {
-    display: block;
-    z-index: 100001;
-    position: relative;
-  }
-}    
+      .neon-nav-toggle {
+        display: flex !important;
+        z-index: 100001; /* Above everything */
+        pointer-events: auto !important; /* Forces clickability */
+      }
+    }
+
+    /* ===== FIX 2: PREVENT HERO OVERLAP ===== */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      perspective: 800px;
+      pointer-events: none; /* Let clicks pass through to background */
+      z-index: 1; 
+    }
+
+    .neon-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 99999 !important;
+      background: rgba(5, 8, 20, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    /* ===== MARQUEE & ANIMATIONS (Your existing code) ===== */
+    .marquee {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(5,8,20,.65);
+      backdrop-filter: blur(8px);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 40s linear infinite;
+    }
+
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .orb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      will-change: transform;
+    }
+
+    .orb-outer {
+      width: 320px;
+      height: 320px;
+      z-index: 1;
+      background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.6), rgba(88,28,135,.85) 55%, rgba(5,8,20,.95) 70%);
+      animation: slow-spin 120s linear infinite, slow-drift 24s ease-in-out infinite alternate;
+    }
+
+    .orb-inner {
+      width: 180px;
+      height: 180px;
+      z-index: 5;
+      background: radial-gradient(circle at 35% 35%, rgba(34,211,238,.7), rgba(6,95,113,.85) 55%, rgba(5,8,20,.95) 70%);
+      animation: slow-spin-reverse 90s linear infinite, pulse-glow 8s ease-in-out infinite;
+    }
+
+    @keyframes slow-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes slow-spin-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+    @keyframes slow-drift { from { transform: translateY(0); } to { transform: translateY(-14px); } }
+    @keyframes pulse-glow { 0%,100% { opacity: 0.85; } 50% { opacity: 1; } }
+
+    /* COMET SYSTEM */
+    .comet-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 3; }
+    .comet {
+      position: absolute;
+      width: 6px; height: 6px; border-radius: 50%; background: #fff;
+      box-shadow: 0 0 12px #fff, 0 0 28px rgba(34,211,238,0.5);
+      animation: comet-fly 20s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes comet-fly {
+      0% { transform: translate(-20vw, 30vh); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0; }
+      100% { transform: translate(120vw, -50vh); }
+    }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
 
-      <!-- HEADER / NAV -->
-      <header class="neon-header">
-  <div class="container neon-header-inner">
+<header class="neon-header">
+  <div class="container neon-header-inner" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
     
-    <a href="/index.html" class="neon-brand" aria-label="HaloCyberlife Home">
-      <div class="logo-pair">
-        <img 
-          src="./images/negative_white_halocyberlife_logo.png" 
-          alt="Halocyberlife Icon" 
-          class="neon-logo main-logo"
-        />
-        </div>
+    <a href="/index.html" class="neon-brand">
+      <img src="./images/negative_white_halocyberlife_logo.png" alt="Logo" style="height: 40px;" />
     </a>
 
-    <button 
-      class="neon-nav-toggle" 
-      aria-label="Toggle menu" 
-      aria-expanded="false" 
-      aria-controls="primary-nav"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="neon-nav-toggle" aria-label="Toggle menu" style="display: none; background: none; border: none; cursor: pointer; padding: 10px;">
+      <div style="width: 25px; height: 2px; background: white; margin: 4px 0;"></div>
+      <div style="width: 25px; height: 2px; background: white; margin: 4px 0;"></div>
+      <div style="width: 25px; height: 2px; background: white; margin: 4px 0;"></div>
     </button>
 
     <nav id="primary-nav" class="neon-nav">
-      <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
-      <a href="/index.html#atelier" class="neon-link color-purple">HaloCraft</a>
-      <a href="/blog.html" class="neon-link color-cyan">Articles</a>
-      <a href="/about.html" class="neon-link color-magenta">About</a>
-      <a href="/contact_us.html" class="neon-link color-gold">Contact</a>
+      <a href="/index.html#insights" class="neon-link">Insights</a>
+      <a href="/index.html#atelier" class="neon-link">HaloCraft</a>
+      <a href="/blog.html" class="neon-link">Articles</a>
+      <a href="/about.html" class="neon-link">About</a>
+      <a href="/contact_us.html" class="neon-link">Contact</a>
     </nav>
-
   </div>
 </header>
 
-<!-- PRIMARY BRAND H1 (LOGO ONLY) -->
-<section class="brand-h1-section" aria-label="HaloCyberLife brand">
-  <div class="brand-h1">
-    <img
-      src="./images/HaloCyberLife_logo_TM.png"
-      alt="HaloCyberLife™ logo"
-      class="brand-h1-logo" />
-  </div>
-</section>
-
-   <!-- MOBILE BRANDING -->
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h2 class="hero-kicker">Version 2.0.0 · Knowledge First</h2>
-
-          <h1 class="hero-title">
-            Your Portal to Esoteric Wisdom,<br />
-            Frequency Intelligence &amp; Future Tools.
-          </h1>
-
-          <p class="hero-subtitle">
-            Halocyberlife is a living archive for seekers, builders, and energy workers.
-            Dive into insights on consciousness, sound, ancient architecture, and the technologies of tomorrow —
-            while the next-wave HaloCraft atelier quietly comes online in the background.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#insights" class="btn primary-btn">Read Latest Insights</a>
-            <a href="#newsletter" class="btn ghost-btn">Stay in the Halo Field</a>
-          </div>
+<main style="padding-top: 80px;">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h2 class="hero-kicker">Version 2.0.0 · Knowledge First</h2>
+        <h1 class="hero-title">Your Portal to Esoteric Wisdom,<br />Frequency Intelligence & Future Tools.</h1>
+        <div class="hero-actions">
+          <a href="#insights" class="btn primary-btn">Read Latest Insights</a>
         </div>
-
-    <div class="hero-visual" aria-hidden="true">
-
-      <!-- PLANET CENTER LOCK -->
-      <div style="
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        width:0;
-        height:0;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-      ">
+      </div>
+      <div class="hero-visual">
         <div class="orb orb-outer"></div>
         <div class="orb orb-inner"></div>
-      </div>
-    
-      <div class="comet-layer">
-        <div class="comet comet-1"></div>
-        <div class="comet comet-2"></div>
-        <div class="comet comet-3"></div>
-      </div>
-    
-    </div>
-
-      
-        <p class="hero-tagline">“Technologies create ecosystems. Products come and go inside them.”</p>
-      </div>
-    </section>
-
-    <div class="marquee">
-        <div class="marquee-track">
-          <span>⚡ HaloCyberLife — Systems in Active Development</span>
-          <span>🧠 Research · Resonance · Conscious Technology</span>
-          <span>🚧 Live Build: New Modules Coming Online</span>
-          <span>🌌 Exploring Energy, Architecture & Fields</span>
-      
-          <!-- duplicate for seamless loop -->
-          <span>⚡ HaloCyberLife — Systems in Active Development</span>
-          <span>🧠 Research · Resonance · Conscious Technology</span>
-          <span>🚧 Live Build: New Modules Coming Online</span>
-          <span>🌌 Exploring Energy, Architecture & Fields</span>
+        <div class="comet-layer">
+          <div class="comet"></div>
         </div>
       </div>
+    </div>
+  </section>
   
-    <!-- ABOUT -->
-    <section class="section section-light">
-      <div class="container section-split">
-        <div class="section-text">
-          <h2>What Is Halocyberlife?</h2>
-          <p>
-            Halocyberlife is a portal: part esoteric library, part lab notebook, part future storehouse of tools.
-            The mission right now is simple — <strong>give value first</strong>.
-          </p>
-          <ul class="bullet-list">
-            <li>Frequency, sound, and energy-based approaches to healing</li>
-            <li>Ancient architectures and forgotten technologies re-examined</li>
-            <li>Consciousness, intention, and inner transformation</li>
-            <li>Experimental concepts that bridge science, mysticism, and design</li>
-          </ul>
-          <p>
-            When the timing is right, this blog will connect to a small-batch atelier of handcrafted leather keychains,
-            QR-enabled dog tags, crystal soaps, and other physical tools tuned to the same philosophy.
-          </p>
-        </div>
-
-        <div class="section-card">
-          <h3>Current Phase</h3>
-          <p>
-            <strong>Status:</strong> Blog &amp; knowledge hub live.
-            Physical products: <span class="status-pill">Coming Soon</span>
-          </p>
-          <p>
-            You’re early. The ideas, insights, and experiments are active now —
-            while the HaloCraft leather goods and ritual soaps are being developed behind the scenes.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- INSIGHTS & TECHNOLOGIES -->
-<section id="insights" class="section section-dark">
-  <div class="container">
-
-    <header class="section-header" style="color: royalblue"> 
-      <h2>Insights &amp; Technologies</h2>
-      <p>Latest articles and emerging technologies — thoughtfully paired for seekers and builders.</p>
-    </header>
-
-    <div class="two-column-grid">
-
-      <!-- LEFT COLUMN (HIDDEN ON MOBILE) -->
-      <div class="column-left hide-mobile" aria-label="Insights (hidden on mobile)">
-
-        <article class="mini-card">
-          <a href="https://halocyberlife.com/blog/BioGlow_resonance_light_energy.html">
-            <img src="blog/Images/blog_images/Layers_Bio_Glow.png"
-                 alt="Resonance Light &amp; Energy"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Resonance Light • Jun 22, 2025</p>
-              <h3>RPAS / BioGlow™ system</h3>
-            </div>
-          </a>
-        </article>
-
-        <!-- <article class="mini-card">
-          <a href="./blog/harmonicresonance.html">
-            <img src="images/HarmonicResonance.png"
-                 alt="Harmonic Resonance"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Vibrational Energy • Jun 05, 2025</p>
-              <h3>Harmonic Resonance: Sound Healing</h3>
-            </div>
-          </a>
-        </article> -->
-
-        <!-- <article class="mini-card">
-          <a href="./blog/powerofintent.html">
-            <img src="images/powerofintent.png"
-                 alt="Power of Intent"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Spiritual Insight • Jun 15, 2025</p>
-              <h3>The Alchemy of Intent &amp; Reality</h3>
-            </div>
-          </a>
-        </article> -->
-      </div>
-
-      <!-- RIGHT COLUMN (ALWAYS SHOWS) -->
-      <div class="column-right" aria-label="Technologies">
-        <article class="mini-card tech-card">
-          <a href="./blog/BioGlow_resonance_light_energy.html">
-            <img src="./blog/Images/BioGlow_images/Park_Illuminatino.png"
-                 alt="BioGlow"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Patent • Tech Innovation</p>
-              <h3>BioGlow™ resonance_light_energy</h3>
-            </div>
-          </a>
-        </article>
-
-        <article class="mini-card tech-card">
-          <a href="./blog/RESONANT PHOTONIC AMPLIFICATION SYSTEM (RPAS).html">
-            <img src="blog/Images/blog_images/Futuristic_minimalist_room_with_glowing_walls.png"
-                 alt="BioGlow Surface Tech"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Patent • Tech Innovation</p>
-              <h3>RESONANT PHOTONIC AMPLIFICATION SYSTEM (RPAS)</h3>
-            </div>
-          </a>
-        </article>
-
-        <article class="mini-card tech-card">
-          <a href="./blog/BioLoop.html">
-            <img src="blog/Images/blog_images/BioLoop_img/Toilet_Seat.png"
-                 alt="BioLoop Toilet Rim Intake"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Patent • Micro-Biogas Tech</p>
-              <h3>Toilet Rim Intake with Micro-Vent Capture</h3>
-            </div>
-          </a>
-        </article>
-
-        <article class="mini-card tech-card">
-          <a href="./blog/BioLumen.html">
-            <img src="blog/Images/blog_images/BioLumen_img/Bio_Lumen_index_image.png"
-                 alt="BioLumen™ Energy System"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Patent • Bio-Energy</p>
-              <h3>BioLumen™ Photonic Energy System</h3>
-            </div>
-          </a>
-        </article>
-
-        <article class="mini-card">
-          <a href="./blog/halofield.html">
-            <img src="./images/Human Resonance Field Visualization.png"
-                 alt="Halo Field"
-                 class="mini-card-image" />
-            <div class="mini-card-body">
-              <p class="mini-card-meta">Energy Field • Jun 20, 2025</p>
-              <h3>The Halo Field &amp; Conscious Frequency</h3>
-            </div>
-          </a>
-        </article>
-      </div>
-    </div>
-
-    <div class="section-actions">
-      <a href="./blog.html" class="btn ghost-btn">Explore All Articles</a>
-    </div>
-
-  </div>
-</section>
-
-    <!-- HALOCRAFT -->
-    <section id="atelier" class="section section-light">
-      <div class="container">
-        <header class="section-header">
-          <h2>HaloCraft Atelier · Coming Soon</h2>
-          <p>
-            A small, intentional workshop of handmade tools:
-            leather keychains, QR dog tags, crystal-infused soaps, and other artifacts designed to travel with you.
-          </p>
-        </header>
-
-        <div class="card-grid card-grid-small">
-          <article class="card card-soft">
-            <div class="card-image-wrap">
-              <img src="images/Human_Keychain.png" alt="Personalized leather keychain banner" class="card-image" />
-            </div>
-            <div class="card-body">
-              <p class="card-meta">Leather • Prototype</p>
-              <h3 class="card-title">Personalized Leather Keychain Banner</h3>
-              <p class="card-text">
-                Compact, durable, and engraved with a name, sigil, or mantra.
-                Built to be a pocket-sized anchor for your intention.
-              </p>
-              <span class="status-pill pill-soft">Store Launch Pending</span>
-            </div>
-          </article>
-
-          <article class="card card-soft">
-            <div class="card-image-wrap">
-              <img src="./images/Dog_Tag_leather.png" alt="Leather QR dog tag" class="card-image" />
-            </div>
-            <div class="card-body">
-              <p class="card-meta">Leather + Tech</p>
-              <h3 class="card-title">Smart QR Code Pet Tags</h3>
-              <p class="card-text">
-                Traditional craftsmanship meets modern tracking.
-                Scanable QR tags for pets that feel like amulets, not hardware.
-              </p>
-              <span class="status-pill pill-soft">In Development</span>
-            </div>
-          </article>
-
-          <article class="card card-soft">
-            <div class="card-image-wrap">
-              <img src="./images/Handmade_Soap_w_crystals.png" alt="Crystal gem soap bars" class="card-image" />
-            </div>
-            <div class="card-body">
-              <p class="card-meta">Bath Rituals</p>
-              <h3 class="card-title">Crystal Gem Soaps</h3>
-              <p class="card-text">
-                Handmade soaps with embedded crystal forms and tuned frequencies —
-                where physical cleansing meets symbolic reset.
-              </p>
-              <span class="status-pill pill-soft">Planned Release</span>
-            </div>
-          </article>
-        </div>
-
-        <div class="section-actions">
-          <p class="section-note">
-            The atelier will open in phases. Join the newsletter below to be notified when small-batch drops go live.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <section id="newsletter" class="section section-dark newsletter-section">
-      <div class="container newsletter-inner">
-        <div class="newsletter-copy">
-          <h2>Stay in the Halo Field</h2>
-          <p>Get new articles, experiments, and early access to physical drops. No spam, just signal.</p>
-        </div>
-        <div class="newsletter-form">
-          <iframe
-            src="https://embeds.beehiiv.com/f40c03c1-8e91-4175-9bc5-7dd5a092c366?slim=true"
-            data-test-id="beehiiv-embed"
-            height="52"
-            frameborder="0"
-            scrolling="no"
-            style="width: 100%; margin: 0; border-radius: 6px; background-color: transparent;">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-column">
-        <div class="footer-brand">
-          <img src="images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo small" class="footer-logo" />
-          <span class="footer-brand-text">Halocyberlife</span>
-        </div>
-        <p class="footer-text">Esoteric insights, experimental tech concepts, and future-conscious craftsmanship.</p>
-        <p class="footer-meta">v2.0.0 · © <span id="year"></span> Halocyberlife.com</p>
-      </div>
-
-      <div class="footer-column">
-        <h3 class="footer-heading">Navigate</h3>
-        <ul class="footer-links">
-          <li><a href="#insights">Latest Insights</a></li>
-          <li><a href="./blog.html">All Articles</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./contact_us.html">Contact</a></li>
-          <li><a href="./Privacy & Terms.html">Privacy &amp; Terms</a></li>
-          <li><a href="./sitemap.html">Site Map</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3 class="footer-heading">Contact &amp; Social</h3>
-         <div class="footer-social">
-          <a href="mailto:luisamaya@halocyberlife.com" aria-label="linkedin">luisamaya@halocyberlife.com/</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/halocyberlife/" aria-label="linkedin">Linkedin: halocyberlife/</a>
-        </div>
-        <!-- <a href="./sitemap.html" class="neon-link color-gold">Site Map</a> -->
-          <div class="footer-social">
-          <a href="./sitemap.html" aria-label="sitemap">Site Map</a>
-         </div>
-      </div>
-    </div>
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-  </footer>
-  <script src="main_v2_0_0.js"></script>
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".neon-nav-toggle");
   const nav = document.querySelector(".neon-nav");
 
   if (toggle && nav) {
-    // 1. Toggle Menu on Click
     toggle.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpen = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", isOpen);
+      console.log("Menu toggled:", isOpen);
     });
 
-    // 2. Close menu when clicking any link (HaloCraft, Insights, etc.)
+    // Close on link click
     nav.querySelectorAll('.neon-link').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove("open");
@@ -789,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // 3. Close menu if you click anywhere else on the screen
+    // Close on click outside
     document.addEventListener("click", (e) => {
       if (!nav.contains(e.target) && !toggle.contains(e.target)) {
         nav.classList.remove("open");
@@ -801,3 +227,11 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
