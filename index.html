@@ -104,7 +104,44 @@
   pointer-events: none;
 }
 
+/* 1. Reset & Center the Orbs */
+.orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  will-change: transform;
+}
 
+/* 2. Outer Planet Visuals */
+.orb-outer {
+  width: 320px;
+  height: 320px;
+  z-index: 1;
+  background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.6), rgba(88,28,135,.85) 55%, rgba(5,8,20,.95) 70%);
+  animation: orb-spin-outer 120s linear infinite;
+}
+
+/* 3. Inner Planet Visuals */
+.orb-inner {
+  width: 180px;
+  height: 180px;
+  z-index: 5;
+  background: radial-gradient(circle at 35% 35%, rgba(34,211,238,.7), rgba(6,95,113,.85) 55%, rgba(5,8,20,.95) 70%);
+  animation: orb-spin-inner 90s linear infinite;
+}
+
+/* 4. The Master Animations (Handles Centering + 3D Depth + Rotation) */
+@keyframes orb-spin-outer {
+  from { transform: translate(-50%, -50%) translateZ(-40px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) translateZ(-40px) rotate(360deg); }
+}
+
+@keyframes orb-spin-inner {
+  from { transform: translate(-50%, -50%) translateZ(60px) rotate(360deg); }
+  to   { transform: translate(-50%, -50%) translateZ(60px) rotate(0deg); }
+}
+    
 /* ===== ANIMATIONS ===== */
 
 @keyframes slow-spin{
