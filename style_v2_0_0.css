@@ -5,6 +5,7 @@
 /* ---------- Root / Reset ---------- */
 
 :root {
+  --header-height: 75px;
   --bg-main: #050814;
   --bg-elevated: #0b1020;
   --bg-elevated-soft: #101628;
