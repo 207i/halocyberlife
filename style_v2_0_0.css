@@ -1073,14 +1073,23 @@ body {
     0 0 60px rgba(120,180,255,0.2);
   pointer-events: none;
 }
-.orb-outer {
+
+.hero-visual .orb-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   z-index: 1;
-  transform: translateX(20px) scale(1.05);
+  /* Centering + Depth + Scale all in one line */
+  transform: translate(-50%, -50%) translateZ(-20px) scale(1.05);
 }
 
-.orb-inner {
+.hero-visual .orb-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   z-index: 2;
-  transform: translateX(-40px) scale(0.9);
+  /* Centering + Depth + Scale all in one line */
+  transform: translate(-50%, -50%) translateZ(40px) scale(0.9);
 }
 .orb-inner {
   background-blend-mode: overlay;
