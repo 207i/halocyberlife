@@ -701,25 +701,6 @@
     <button class="back-to-top" aria-label="Back to top">↑</button>
   </footer>
   <script src="main_v2_0_0.js"></script>
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".neon-nav-toggle");
-  const nav = document.querySelector(".neon-nav");
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", (e) => {
-      // Prevent click from bubbling if needed
-      e.stopPropagation();
-      
-      // Toggle the 'open' class to match your CSS logic
-      nav.classList.toggle("open");
-
-      // Update Accessibility state
-      const isOpen = nav.classList.contains("open");
-      toggle.setAttribute("aria-expanded", isOpen);
-    });
-  }
-});
-  </script>
+ 
 </body>
 </html>
