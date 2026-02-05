@@ -1127,20 +1127,6 @@ body {
   /* Remove the individual translateZ from previous blocks and put them here */
 }
 
-.orb-outer {
-  width: 260px;
-  height: 260px;
-  /* Adds centering AND the depth in one line */
-  transform: translate(-50%, -50%) translateZ(-20px); 
-}
-
-.orb-inner {
-  width: 160px;
-  height: 160px;
-  /* Adds centering AND the forward depth in one line */
-  transform: translate(-50%, -50%) translateZ(40px);
-}
-
 /* =========================
    PRIMARY BRAND LOGO (H1)
    ========================= */
