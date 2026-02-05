@@ -1124,7 +1124,6 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: url("/images/noise.png");
   opacity: 0.05;
   mix-blend-mode: overlay;
 }
