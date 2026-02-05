@@ -1095,16 +1095,41 @@ body {
   opacity: 0.05;
   mix-blend-mode: overlay;
 }
+/* 1. Ensure the container is a square or consistent width on mobile */
 .hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;       /* Ensure it spans full width */
+  min-height: 320px; /* Give it enough breathing room */
   perspective: 800px;
+  perspective-origin: center; /* Forces the 3D vanishing point to the middle */
+  pointer-events: none;
+  overflow: visible;  /* Prevents glow from clipping */
 }
 
-.orb-inner {
-  transform: translateZ(40px);
+/* 2. Standardize the Orb centering */
+.hero-visual .orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Combine the centering transform with your 3D translateZ */
+  /* Remove the individual translateZ from previous blocks and put them here */
 }
 
 .orb-outer {
-  transform: translateZ(-20px);
+  width: 260px;
+  height: 260px;
+  /* Adds centering AND the depth in one line */
+  transform: translate(-50%, -50%) translateZ(-20px); 
+}
+
+.orb-inner {
+  width: 160px;
+  height: 160px;
+  /* Adds centering AND the forward depth in one line */
+  transform: translate(-50%, -50%) translateZ(40px);
 }
 
 /* =========================
