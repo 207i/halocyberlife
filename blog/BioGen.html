@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Ocean Generator™ — Modular Floating Solar-Thermal System</title>
-  <meta name="description"
-    content="A floating, modular solar-thermal system that captures sunlight using optical collectors, transports photons through fiber-optic channels, and converts energy into electricity and freshwater." />
+  <title>BioGen™ — Resonant Photonic Energy System</title>
+  <meta name="description" content="A non-contact photonic resonance system for industrial-scale steam and power generation. Utilizing encoded light frequencies to drive molecular phase-shifts.">
 
   <style>
     :root{
@@ -19,382 +17,137 @@
       --border:rgba(139,92,246,.35);
       --radius:18px;
     }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
+    * {box-sizing:border-box; margin:0; padding:0;}
+    body {
       font-family: Inter, system-ui, sans-serif;
       background: radial-gradient(circle at top, #1e1b4b 0%, #020617 60%);
       color:var(--text);
       line-height:1.6;
     }
-
-    .container{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 1.25rem;
-    }
-
-    header{
-      padding:3.5rem 0 2rem;
-      text-align:center;
-    }
-
-    h1{
-      font-size:clamp(2.4rem,5vw,3.6rem);
+    .container { max-width:1100px; margin:0 auto; padding:0 1.25rem; }
+    header { padding:5rem 0 3rem; text-align:center; }
+    h1 {
+      font-size:clamp(2.4rem,6vw,4.2rem);
       background:linear-gradient(90deg,#fff,var(--accent2),#d946ef);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       margin-bottom:1rem;
     }
-
-    .subtitle{
-      color:var(--muted);
-      max-width:880px;
-      margin:0 auto;
-      font-size:1.15rem;
-    }
-
-    section{margin:4.5rem 0}
-
-    h2{
-      text-align:center;
-      font-size:2rem;
-      margin-bottom:1.5rem;
-      letter-spacing:.04em;
-    }
-
-    p.lead{
-      text-align:center;
-      max-width:900px;
-      margin:0 auto 2rem;
-      color:#d1d5db;
-      font-size:1.1rem;
-    }
-
-    .panel{
+    .subtitle { color:var(--muted); max-width:800px; margin:0 auto; font-size:1.2rem; }
+    section { margin:6rem 0; }
+    .panel {
       background:linear-gradient(180deg,#0b1020,#020617);
       border:1px solid var(--border);
       border-radius:var(--radius);
-      padding:2rem;
+      padding:2.5rem;
       box-shadow:0 20px 60px rgba(0,0,0,.45);
     }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:2rem;
-    }
-
-    @media(max-width:900px){
-      .grid-2{grid-template-columns:1fr}
-    }
-
-    figure{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:#000;
-    }
-
-    figure img{
-      width:100%;
-      display:block;
-    }
-
-    figcaption{
-      padding:1rem 1.25rem;
-      background:#020617;
-      color:var(--muted);
-      font-size:.95rem;
-      border-top:1px solid var(--border);
-    }
-
-    .flow{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:1rem;
-      margin-top:2rem;
-      text-align:center;
-    }
-
-    .flow div{
-      padding:1rem;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(139,92,246,.08);
-      font-size:.9rem;
-    }
-
-    footer{
-      margin-top:6rem;
-      padding:3rem 0;
-      border-top:1px solid var(--border);
-      text-align:center;
-      color:var(--muted);
+    .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:3rem; align-items:center; }
+    @media(max-width:900px){ .grid-2 {grid-template-columns:1fr;} }
+    figure { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:#000; }
+    figure img { width:100%; display:block; }
+    figcaption { padding:1rem; background:#020617; color:var(--muted); font-size:.9rem; border-top:1px solid var(--border); }
+    .badge {
+      display:inline-block;
+      padding:4px 12px;
+      border-radius:99px;
+      background:rgba(139,92,246,0.2);
+      border:1px solid var(--accent2);
+      color:var(--accent);
+      font-size:0.8rem;
+      margin-bottom:1rem;
     }
   </style>
 </head>
 
 <body>
-<!-- NAVIGATION BAR WITH LOGO -->
-<nav style="background:#0b1020; border-bottom:1px solid var(--border); padding:1rem 0;">
-  <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
-    
-    <!-- LOGO -->
-    <a href="/" style="display:flex; align-items:center; gap:0.75rem; text-decoration:none;">
-      <img src="./Images/BioGen/logo.png" alt="Ocean Generator Logo"
-           style="height:40px; width:auto; border-radius:8px;">
-      <span style="font-size:1.2rem; font-weight:bold; color:var(--text); letter-spacing:0.02em;">
-        Ocean Generator™
-      </span>
-    </a>
 
-    <!-- NAV LINKS -->
-    <div style="display:flex; gap:1.5rem; font-size:0.95rem;">
-      <a href="#overview" style="color:var(--muted); text-decoration:none;">Overview</a>
-      <a href="#exterior" style="color:var(--muted); text-decoration:none;">Exterior</a>
-      <a href="#collector" style="color:var(--muted); text-decoration:none;">Collector</a>
-      <a href="#interior" style="color:var(--muted); text-decoration:none;">Interior</a>
-      <a href="#photon" style="color:var(--muted); text-decoration:none;">Photon</a>
-      <a href="#steam" style="color:var(--muted); text-decoration:none;">Steam</a>
-      <a href="#power" style="color:var(--muted); text-decoration:none;">Power</a>
-      <a href="#water" style="color:var(--muted); text-decoration:none;">Water</a>
-    </div>
-  </div>
-</nav>
 <header class="container">
-  <h1>Ocean Generator™</h1>
+  <div class="badge">NEXT-GEN ENERGY ARCHITECTURE</div>
+  <h1>BioGen™</h1>
   <p class="subtitle">
-    A floating, modular solar-thermal system that captures sunlight using optical
-    collectors, transports photons through fiber-optic channels, and converts energy
-    into electricity and freshwater — designed for open ocean deployment.
+    Moving beyond traditional thermal conduction. We utilize <strong>Photonic Resonance</strong> 
+    to drive high-efficiency molecular phase-shifts for global power and water independence.
   </p>
 </header>
 
-<!-- SYSTEM OVERVIEW -->
-<section class="container">
-  <h2>System Overview</h2>
-  <p class="lead">
-    Ocean Generator™ is not a single machine — it is a distributed energy field composed
-    of floating collection pods, optical transport channels, sealed thermal cores, and
-    shared electrical output infrastructure.
-  </p>
-
-  <div class="flow">
-    <div>Sunlight Capture</div>
-    <div>Optical Transport</div>
-    <div>Photon Concentration</div>
-    <div>Steam Generation</div>
-    <div>Power + Water Output</div>
+<section class="container" id="resonance">
+  <div class="panel grid-2">
+    <div>
+      <h2 style="font-size:2rem; margin-bottom:1.5rem;">The Photonic Artery</h2>
+      <p style="margin-bottom:1rem;">
+        Traditional solar-thermal systems fail at the point of contact. The <strong>BioGen™</strong> 
+        architecture solves this through a 180-degree optical bypass. 
+      </p>
+      <p>
+        By transporting energy through high-purity glass conduits and bridging it via a 
+        <strong>Non-Contact Air Gap</strong>, we deliver pure photonic energy into the 
+        conversion core without the mechanical stress of heat feedback.
+      </p>
+    </div>
+    <figure>
+      <img src="./Images/BioGen/Resonant_Coupling_Macro.png" alt="BioGen Non-Contact Optical Coupling">
+      <figcaption>FIG. 3: The 1-inch Optical Air Gap delivering resonant energy to the boiler base.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- EXTERIOR -->
 <section class="container">
-  <h2>Exterior Floating Array</h2>
-
-  <div class="panel grid-2">
+  <div class="grid-2">
     <figure>
-      <img src="./Images/BioGen/OceanGenv2_ModularPlatform.png"
-           alt="Ocean Generator floating pod exterior">
-      <figcaption>
-        Floating modular pods anchored near shore or in open water.
-        Curved TRIA-derived collectors track and capture sunlight while
-        protecting internal systems from waves and corrosion.
-      </figcaption>
+      <img src="./Images/BioGen/Molecular_Vibration.png" alt="Molecular Resonance Diagram">
+      <figcaption>Molecular Phase-Shift: Frequency-driven vaporization.</figcaption>
     </figure>
-  
     <div>
+      <h2 style="font-size:2rem; margin-bottom:1.5rem;">Resonant Frequency Modulation</h2>
       <p>
-        Each pod operates as an independent energy module while remaining connected
-        to neighboring pods for redundancy, power sharing, and grid export.
+        We don't just use light to create heat; we use the <strong>RPAS (Resonant Photonic Amplification System)</strong> 
+        to "tune" incoming photons. 
       </p>
-      <p>
-        The collector geometry is optimized for wide-angle solar intake,
-        allowing energy capture throughout the day without mechanical tracking.
+      <p style="margin-top:1rem; color:var(--accent);">
+        When light is encoded to match the molecular vibration of the target medium, 
+        energy transfer occurs at the atomic level. This is "Molecular Boiling"—instant, 
+        high-pressure steam generation with zero conduction loss.
       </p>
     </div>
   </div>
 </section>
 
-<!-- SOLAR AND LIGHT COLLECTOR -->
 <section class="container">
-  <h2>Solar & Light Collector</h2>
-
   <div class="panel">
-    <figure>
-      <img src="./Images/BioGen/solar_and_light_collector.png"
-           alt="Solar collector and light concentration concept diagram">
-      <figcaption>
-        Conceptual illustration showing how wide-angle sunlight is collected by
-        the outer optical surfaces and directed inward toward the central concentration core.
-      </figcaption>
-    </figure>
-
-    <p style="margin-top:1.5rem">
-      This schematic shows the relationship between the collection shell and
-      the light routing system. It visualizes the early-stage optical geometry
-      before photon stabilization and compression inside the TRIA array.
-    </p>
-  </div>
-</section>
-  
-<!-- INTERIOR -->
-<section class="container">
-  <h2>Interior Conversion Core</h2>
-
-  <div class="panel grid-2">
-    <div>
-      <p>
-        Captured sunlight is routed through thick fiber-optic glass channels,
-        transporting photons directly into the base of a sealed boiler.
-      </p>
-      <p>
-        A final concentrating lens intensifies photon density, heating the boiler
-        from below and creating controlled steam generation without exposing
-        sensitive components to seawater.
-      </p>
+    <div style="text-align:center; max-width:800px; margin:0 auto 3rem;">
+      <h2>Continuous Energy Field</h2>
+      <p>Energy doesn't stop when the sun sets. The BioGen™ system utilizes a hybrid 
+      emitter bay to maintain the resonant loop 24/7.</p>
     </div>
-
-    <figure>
-      <img src="./Images/BioGen/OceanGenv2_Isolation.png"
-           alt="Ocean Generator interior cross section">
-      <figcaption>
-        Interior cross-section showing optical photon routing,
-        thermal boiler, steam rise, generator coupling,
-        and freshwater condensation path.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- PHOTON CONCENTRATION -->
-<section class="container">
-  <h2>Photon Concentration</h2>
-
-  <div class="panel grid-2">
-    <figure>
-      <img src="./Images/BioGen/Electric_Sea_Boiler.png"
-           alt="Diagram of photon concentration system">
-      <figcaption>
-        Captured sunlight is aligned and densified via the TRIA photonic interface,
-        then further concentrated by a crown-shaped lens into a high-intensity beam
-        that delivers thermal energy to the sealed boiler core.
-      </figcaption>
-    </figure>
-
-    <div>
+    <div class="grid-2">
       <p>
-        The photon concentration stage is key to maintaining high thermal efficiency.
-        Unlike standard photovoltaic systems, this approach maximizes photon density
-        and minimizes energy loss during transmission.
+        The <strong>Night-Mode Emitter Bay</strong> swaps the solar input for an artificial 
+        photonic source, ensuring the boiler maintains critical pressure throughout the 
+        diurnal cycle. This modularity allows for deployment in any climate, on any coastline.
       </p>
-      <p>
-        This optical compression allows for compact thermal chambers and modular deployment
-        across floating platforms without complex moving parts.
-      </p>
+      <figure>
+        <img src="./Images/BioGen/Emitter_Bay_Night.png" alt="BioGen Night Mode Emitter">
+        <figcaption>Integrated Emitter Bay for continuous 24/7 steam production.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- STEAM GENERATION -->
-<section class="container">
-  <h2>Steam Generation</h2>
-
-  <div class="panel grid-2">
-    <div>
-      <p>
-        The concentrated light beam heats the exterior surface of a sealed
-        high-pressure boiler. Inside, gravity-fed clean water is rapidly
-        vaporized into steam.
-      </p>
-      <p>
-        The system maintains pressure and thermal buffering using advanced
-        composite materials and vented steam paths — optimizing both safety
-        and energy conversion rate.
-      </p>
-    </div>
-
-    <figure>
-      <img src="./Images/BioGen/Steam_Generation.png"
-           alt="Steam generation boiler system">
-      <figcaption>
-        Close-up cutaway of the steam generation core showing external
-        photonic heating, internal steam buildup, and vapor routing toward
-        the turbine shaft.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- POWER OUTPUT -->
-<section class="container">
-  <h2>Power Output</h2>
-
-  <div class="panel grid-2">
-         <!-- TRIA SYSTEM VISUAL -->
-    <figure style="margin-top:2rem;">
-      <img src="./Images/BioGen/Tria_System.png" alt="TRIA Photonic Interface" />
-      <figcaption>
-        Visualization of the TRIA Photonic Interface — a mirrored alignment lattice that 
-        stabilizes, condenses, and redirects incoming photons toward the lens concentrator.
-      </figcaption>
-    </figure>
-    <div>
-      <p>
-        Onboard battery arrays store excess energy, enabling steady power
-        delivery to off-grid installations, microgrids, or coastal infrastructure.
-      </p>
-      <p>
-        All electrical systems are isolated and marine-rated for corrosion resistance,
-        and managed by a self-correcting control module.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- WATER OUTPUT -->
-<section class="container">
-  <h2>Water Output</h2>
-
-  <div class="panel grid-2">
-    <div>
-      <p>
-        Seawater enters the system through filtered inlets and undergoes
-        multi-stage purification, including reverse osmosis, UV sterilization,
-        and fine-particle membrane separation.
-      </p>
-      <p>
-        Clean water is then either routed to the boiler or stored
-        in an internal reservoir for offloading as potable freshwater.
-      </p>
-    </div>
-
-    <figure>
-      <img src="./Images/BioGen/Power_Water.png"
-           alt="Ocean Generator water desalination system">
-      <figcaption>
-        Cross-section of the water filtration path, including
-        desalination units and freshwater storage tank output port.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- OPEN SOURCE -->
-<section class="container">
-  <h2>Open System Philosophy</h2>
-  <p class="lead">
-    While individual components may resemble known technologies, the integrated
-    architecture — optical transport, floating modular deployment, and sealed
-    conversion — represents a system-level innovation intended for open exploration,
-    collaboration, and global deployment.
-  </p>
-</section>
-
-<footer>
-  © 2026 HaloCyberLife — Ocean Generator™ System Architecture
+<footer class="container" style="text-align:center; padding:4rem 0; border-top:1px solid var(--border); color:var(--muted);">
+  <p>© 2026 HaloCyberLife — BioGen™ & RPAS™ System Architecture</p>
+  <p style="font-size:0.8rem; margin-top:1rem;">Proprietary Technology. Patent Pending.</p>
 </footer>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
