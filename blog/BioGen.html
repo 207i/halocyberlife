@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>BioGen™ — Resonant Photonic Energy System</title>
-  <meta name="description" content="A non-contact photonic resonance system for industrial-scale steam and power generation. Utilizing encoded light frequencies to drive molecular phase-shifts.">
+  <meta name="description"
+    content="A floating, modular photonic resonance system that captures sunlight, encodes photons through the RPAS, and converts energy into high-output electricity and freshwater." />
 
   <style>
     :root{
@@ -17,137 +19,233 @@
       --border:rgba(139,92,246,.35);
       --radius:18px;
     }
-    * {box-sizing:border-box; margin:0; padding:0;}
-    body {
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
       font-family: Inter, system-ui, sans-serif;
       background: radial-gradient(circle at top, #1e1b4b 0%, #020617 60%);
       color:var(--text);
       line-height:1.6;
     }
-    .container { max-width:1100px; margin:0 auto; padding:0 1.25rem; }
-    header { padding:5rem 0 3rem; text-align:center; }
-    h1 {
-      font-size:clamp(2.4rem,6vw,4.2rem);
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.25rem;
+    }
+
+    header{
+      padding:3.5rem 0 2rem;
+      text-align:center;
+    }
+
+    h1{
+      font-size:clamp(2.4rem,5vw,3.6rem);
       background:linear-gradient(90deg,#fff,var(--accent2),#d946ef);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       margin-bottom:1rem;
     }
-    .subtitle { color:var(--muted); max-width:800px; margin:0 auto; font-size:1.2rem; }
-    section { margin:6rem 0; }
-    .panel {
+
+    .subtitle{
+      color:var(--muted);
+      max-width:880px;
+      margin:0 auto;
+      font-size:1.15rem;
+    }
+
+    section{margin:4.5rem 0}
+
+    h2{
+      text-align:center;
+      font-size:2rem;
+      margin-bottom:1.5rem;
+      letter-spacing:.04em;
+    }
+
+    p.lead{
+      text-align:center;
+      max-width:900px;
+      margin:0 auto 2rem;
+      color:#d1d5db;
+      font-size:1.1rem;
+    }
+
+    .panel{
       background:linear-gradient(180deg,#0b1020,#020617);
       border:1px solid var(--border);
       border-radius:var(--radius);
-      padding:2.5rem;
+      padding:2rem;
       box-shadow:0 20px 60px rgba(0,0,0,.45);
     }
-    .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:3rem; align-items:center; }
-    @media(max-width:900px){ .grid-2 {grid-template-columns:1fr;} }
-    figure { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:#000; }
-    figure img { width:100%; display:block; }
-    figcaption { padding:1rem; background:#020617; color:var(--muted); font-size:.9rem; border-top:1px solid var(--border); }
-    .badge {
-      display:inline-block;
-      padding:4px 12px;
-      border-radius:99px;
-      background:rgba(139,92,246,0.2);
-      border:1px solid var(--accent2);
-      color:var(--accent);
-      font-size:0.8rem;
-      margin-bottom:1rem;
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:2rem;
+    }
+
+    @media(max-width:900px){
+      .grid-2{grid-template-columns:1fr}
+    }
+
+    figure{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#000;
+    }
+
+    figure img{
+      width:100%;
+      display:block;
+    }
+
+    figcaption{
+      padding:1rem 1.25rem;
+      background:#020617;
+      color:var(--muted);
+      font-size:.95rem;
+      border-top:1px solid var(--border);
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:1rem;
+      margin-top:2rem;
+      text-align:center;
+    }
+
+    .flow div{
+      padding:1rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(139,92,246,.08);
+      font-size:.9rem;
+    }
+
+    footer{
+      margin-top:6rem;
+      padding:3rem 0;
+      border-top:1px solid var(--border);
+      text-align:center;
+      color:var(--muted);
     }
   </style>
 </head>
 
 <body>
+<nav style="background:#0b1020; border-bottom:1px solid var(--border); padding:1rem 0;">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" style="display:flex; align-items:center; gap:0.75rem; text-decoration:none;">
+      <img src="./Images/BioGen/logo.png" alt="BioGen Logo" style="height:40px; width:auto; border-radius:8px;">
+      <span style="font-size:1.2rem; font-weight:bold; color:var(--text); letter-spacing:0.02em;">BioGen™</span>
+    </a>
+    <div style="display:flex; gap:1.5rem; font-size:0.95rem;">
+      <a href="#resonance" style="color:var(--muted); text-decoration:none;">Resonance</a>
+      <a href="#coupling" style="color:var(--muted); text-decoration:none;">Coupling</a>
+      <a href="#power" style="color:var(--muted); text-decoration:none;">Output</a>
+    </div>
+  </div>
+</nav>
 
 <header class="container">
-  <div class="badge">NEXT-GEN ENERGY ARCHITECTURE</div>
   <h1>BioGen™</h1>
   <p class="subtitle">
-    Moving beyond traditional thermal conduction. We utilize <strong>Photonic Resonance</strong> 
-    to drive high-efficiency molecular phase-shifts for global power and water independence.
+    A floating, modular photonic resonance system. By encoding sunlight through the 
+    <strong>RPAS</strong>, we achieve molecular phase-shifts for zero-contact, high-kilowatt power generation.
   </p>
 </header>
 
+<section class="container">
+  <h2>The Process Architecture</h2>
+  <div class="flow">
+    <div>Photonic Intake</div>
+    <div>RPAS Modulation</div>
+    <div>Resonant Coupling</div>
+    <div>Molecular Steam</div>
+    <div>Power + Water</div>
+  </div>
+</section>
+
 <section class="container" id="resonance">
+  <h2>Non-Contact Photonic Coupling</h2>
+  <p class="lead">
+    By moving energy through a <strong>Photonic Artery</strong>, we solve the primary failure point of solar-thermal: 
+    thermal stress at the point of contact.
+  </p>
+
+  <div class="panel grid-2">
+    <figure>
+      <img src="./Images/BioGen/Resonant_Coupling_Macro.png" alt="Non-contact air gap visualization">
+      <figcaption>
+        Energy jumping the 1-inch Optical Air Gap. This prevents glass-to-metal thermal feedback 
+        and allows for 500°C+ operations without component degradation.
+      </figcaption>
+    </figure>
+  
+    <div>
+      <p style="margin-bottom: 1rem;">
+        The system utilizes a 180-degree optical bypass to transport photons directly 
+        to the conversion core. 
+      </p>
+      <p>
+        The final stage uses a precision-ground concentrating lens to focus 
+        the <strong>RPAS-encoded</strong> light stream across an atmospheric gap 
+        and into the base of the resonator boiler.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="coupling">
+  <h2>Resonant Molecular Phase-Shift</h2>
   <div class="panel grid-2">
     <div>
-      <h2 style="font-size:2rem; margin-bottom:1.5rem;">The Photonic Artery</h2>
-      <p style="margin-bottom:1rem;">
-        Traditional solar-thermal systems fail at the point of contact. The <strong>BioGen™</strong> 
-        architecture solves this through a 180-degree optical bypass. 
+      <p style="margin-bottom: 1rem;">
+        Standard heating is slow conduction. BioGen™ is <strong>Frequency Intelligence.</strong> 
       </p>
       <p>
-        By transporting energy through high-purity glass conduits and bridging it via a 
-        <strong>Non-Contact Air Gap</strong>, we deliver pure photonic energy into the 
-        conversion core without the mechanical stress of heat feedback.
+        By modulating the light stream to match the natural resonance of the water molecules, 
+        we trigger a phase-shift (liquid to gas) at the atomic level. This bypasses 
+        the inefficiency of traditional thermal "soak" times.
       </p>
     </div>
+
     <figure>
-      <img src="./Images/BioGen/Resonant_Coupling_Macro.png" alt="BioGen Non-Contact Optical Coupling">
-      <figcaption>FIG. 3: The 1-inch Optical Air Gap delivering resonant energy to the boiler base.</figcaption>
+      <img src="./Images/BioGen/Molecular_Vibration.png" alt="Resonant vibration of water molecules">
+      <figcaption>
+        Light-driven resonance: The photons act as the "key" to unlock instant steam production.
+      </figcaption>
     </figure>
   </div>
 </section>
 
-<section class="container">
-  <div class="grid-2">
+<section class="container" id="power">
+  <h2>Continuous Energy Extraction</h2>
+  <div class="panel grid-2">
     <figure>
-      <img src="./Images/BioGen/Molecular_Vibration.png" alt="Molecular Resonance Diagram">
-      <figcaption>Molecular Phase-Shift: Frequency-driven vaporization.</figcaption>
+      <img src="./Images/BioGen/Emitter_Bay_Night.png" alt="BioGen Night Mode">
+      <figcaption>
+        The Hybrid Emitter Bay: Swapping solar input for artificial photonic 
+        streams to maintain the resonant loop through the night.
+      </figcaption>
     </figure>
     <div>
-      <h2 style="font-size:2rem; margin-bottom:1.5rem;">Resonant Frequency Modulation</h2>
       <p>
-        We don't just use light to create heat; we use the <strong>RPAS (Resonant Photonic Amplification System)</strong> 
-        to "tune" incoming photons. 
-      </p>
-      <p style="margin-top:1rem; color:var(--accent);">
-        When light is encoded to match the molecular vibration of the target medium, 
-        energy transfer occurs at the atomic level. This is "Molecular Boiling"—instant, 
-        high-pressure steam generation with zero conduction loss.
+        To ensure high-kilowatt delivery around the clock, BioGen™ features a dual-input 
+        rotary turret. When solar flux drops, the system seamlessly activates the Emitter Bay, 
+        keeping the steam pressure constant regardless of weather or time.
       </p>
     </div>
   </div>
 </section>
 
-<section class="container">
-  <div class="panel">
-    <div style="text-align:center; max-width:800px; margin:0 auto 3rem;">
-      <h2>Continuous Energy Field</h2>
-      <p>Energy doesn't stop when the sun sets. The BioGen™ system utilizes a hybrid 
-      emitter bay to maintain the resonant loop 24/7.</p>
-    </div>
-    <div class="grid-2">
-      <p>
-        The <strong>Night-Mode Emitter Bay</strong> swaps the solar input for an artificial 
-        photonic source, ensuring the boiler maintains critical pressure throughout the 
-        diurnal cycle. This modularity allows for deployment in any climate, on any coastline.
-      </p>
-      <figure>
-        <img src="./Images/BioGen/Emitter_Bay_Night.png" alt="BioGen Night Mode Emitter">
-        <figcaption>Integrated Emitter Bay for continuous 24/7 steam production.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<footer class="container" style="text-align:center; padding:4rem 0; border-top:1px solid var(--border); color:var(--muted);">
-  <p>© 2026 HaloCyberLife — BioGen™ & RPAS™ System Architecture</p>
-  <p style="font-size:0.8rem; margin-top:1rem;">Proprietary Technology. Patent Pending.</p>
+<footer>
+  © 2026 HaloCyberLife — BioGen™ & RPAS™ System Architecture
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
