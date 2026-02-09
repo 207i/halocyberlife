@@ -1372,3 +1372,31 @@ body {
     display: flex;
   }
 }
+
+/* Specific styling for the Acquisition Button */
+.acquire-btn {
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); /* Green 'Success' gradient */
+  color: #000 !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+  transition: all 0.3s ease;
+}
+
+.acquire-btn:hover {
+  box-shadow: 0 0 25px rgba(74, 222, 128, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Label for the dimensions to emphasize the 2x1 scale */
+.dimension-tag {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: var(--accent2);
+  text-transform: uppercase;
+  border: 1px solid var(--accent2);
+  padding: 2px 6px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
