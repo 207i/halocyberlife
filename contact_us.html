@@ -19,15 +19,24 @@
 
   <link rel="canonical" href="https://halocyberlife.com/contact_us.html">
 
-  <meta property="og:title" content="Contact Halocyberlife">
-  <meta property="og:description" content="Reach out to Halocyberlife creator Luis Amaya for collaborations, questions, or project proposals.">
-  <meta property="og:url" content="https://halocyberlife.com/contact_us.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://halocyberlife.com/images/logo_patent_6star.png">
-
   <link rel="stylesheet" href="style_v2_0_0.css">
-  
   <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
+  <style>
+    .terminal-box {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      min-height: 50px;
+    }
+    #formStatus { color: var(--muted); font-size: 0.85rem; }
+    .pulse-button:active { transform: scale(0.98); }
+    .success-glow { color: #4ade80 !important; text-shadow: 0 0 8px #4ade80; }
+    .error-glow { color: #f87171 !important; text-shadow: 0 0 8px #f87171; }
+  </style>
 </head>
 
 <body>
@@ -39,17 +48,15 @@
           <span class="brand-text">Halocyberlife</span>
         </a>
       </div>
-
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="nav-toggle-line"></span>
         <span class="nav-toggle-line"></span>
       </button>
-
-      <nav class="main-nav contact-nav" aria-label="Contact navigation">
+      <nav class="main-nav contact-nav">
         <ul class="nav-list">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="./about.html" class="nav-link">About</a></li>
-          <li><a href="./contact_us.html" class="nav-link nav-contact-active" aria-current="page">Contact</a></li>
+          <li><a href="./contact_us.html" class="nav-link nav-contact-active">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -58,20 +65,19 @@
   <main class="section section-dark">
     <div class="container">
       <header class="section-header">
-        <h1>Contact Halocyberlife</h1>
-        <p>Reach out for collaborations, questions, or future-tech conversations.</p>
+        <h1 class="glitch-text">Contact Halocyberlife</h1>
+        <p>Initiate a direct uplink for collaborations or frequency explorations.</p>
       </header>
 
       <section class="section-split" style="margin-top: 2rem;">
         <div class="section-text">
-          <h2>Let’s Build, Decode, and Explore</h2>
-          <p>This is the channel to reach <strong>Luis Amaya</strong> directly for frequency-based concepts and experimental technologies.</p>
-          
-          <div class="section-card" style="margin-top: 1.5rem;">
-            <h3>Direct Contact</h3>
+          <h2>System Interface</h2>
+          <p>Direct communication with <strong>Luis Amaya</strong> for projects involving esoteric architecture and frequency-based tech.</p>
+          <div class="section-card" style="margin-top: 1.5rem; border-left: 3px solid var(--accent2);">
+            <h3>Uplink Details</h3>
             <ul class="bullet-list">
-              <li><strong>Email:</strong> <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a></li>
-              <li><strong>Topics:</strong> esoteric knowledge, frequency tools, app ideas, collaborations.</li>
+              <li><strong>Node:</strong> <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a></li>
+              <li><strong>Protocols:</strong> BioGen, Halo Ecosystem, App Dev.</li>
             </ul>
           </div>
         </div>
@@ -79,31 +85,27 @@
         <div>
           <form class="contact-form card card-soft" id="contactForm">
             <div class="card-body">
-              <h2 class="card-title">Send a Message</h2>
-              
+              <h2 class="card-title">Initiate Transmission</h2>
               <div class="form-group">
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="fi-sender-firstName" required placeholder="Your name">
+                <label>Operator Identity</label>
+                <input type="text" name="fi-sender-firstName" required placeholder="Your name">
               </div>
-
               <div class="form-group">
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="fi-sender-email" required placeholder="you@example.com">
+                <label>Return Frequency (Email)</label>
+                <input type="email" name="fi-sender-email" required placeholder="you@example.com">
               </div>
-
               <div class="form-group">
-                <label for="subject">Subject*</label>
-                <input type="text" id="subject" name="fi-text-subject" required placeholder="Short summary">
+                <label>Signal Subject</label>
+                <input type="text" name="fi-text-subject" required placeholder="Topic of interest">
               </div>
-
               <div class="form-group">
-                <label for="message">Message*</label>
-                <textarea id="message" name="fi-text-message" rows="6" required placeholder="Write your message..."></textarea>
+                <label>Data Payload</label>
+                <textarea name="fi-text-message" rows="5" required placeholder="Enter message..."></textarea>
               </div>
-
-              <button type="submit" class="btn primary-btn" style="margin-top: 0.5rem;">SEND MESSAGE</button>
-              
-              <p id="formStatus" style="margin-top: 0.75rem; font-size: 0.85rem; color: #9da1d2;"></p>
+              <button type="submit" class="btn primary-btn pulse-button" style="width: 100%;">EXECUTE SEND</button>
+              <div id="terminalOutput" class="terminal-box">
+                <span id="formStatus">> System Ready...</span>
+              </div>
             </div>
           </form>
         </div>
@@ -115,73 +117,57 @@
     <div class="container footer-inner">
       <div class="footer-column">
         <div class="footer-brand">
-          <img src="images/negative_white_halocyberlife_logo.png" class="footer-logo" alt="Halocyberlife logo">
+          <img src="images/negative_white_halocyberlife_logo.png" class="footer-logo">
           <span class="footer-brand-text">Halocyberlife</span>
         </div>
-        <p class="footer-text">Esoteric insights and visionary tools crafted by Luis Amaya.</p>
         <p class="footer-meta">© <span id="year"></span> Halocyberlife.com</p>
       </div>
     </div>
   </footer>
 
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  <button id="backToTop" class="back-to-top">↑</button>
 
   <script src="main_v2_0_0.js"></script>
-  
   <script>
-    // 1. Initialize Forminit with your ID
     const forminit = new Forminit();
     const FORM_ID = "f295jh7t54d";
 
     document.getElementById("contactForm").addEventListener("submit", async (e) => {
       e.preventDefault();
-      
       const status = document.getElementById("formStatus");
       const btn = e.target.querySelector('button');
-      
-      // Prevent double submissions
       if (btn.disabled) return;
 
-      // UI Feedback
       btn.textContent = 'TRANSMITTING...';
       btn.disabled = true;
-      status.textContent = "Initiating handshake with Forminit...";
-      status.style.color = "#9da1d2";
+      status.innerHTML = "> Syncing frequency...<br>> Securing tunnel...";
+      status.className = "";
 
       const formData = new FormData(e.target);
-      
       try {
         const { data, error } = await forminit.submit(FORM_ID, formData);
-
         if (error) {
-          status.textContent = "Error: " + error.message;
-          status.style.color = "#f87171";
+          status.innerHTML = "> ERROR: Uplink Failed.<br>> Reason: " + error.message;
+          status.classList.add("error-glow");
           btn.textContent = 'RETRY SEND';
           btn.disabled = false;
         } else {
-          status.textContent = "SUCCESS: Message sent into the frequency!";
-          status.style.color = "#4ade80";
-          btn.textContent = 'MESSAGE SENT';
+          status.innerHTML = "> SUCCESS: Data Packet Relayed.<br>> BioGen Interface Confirmed.";
+          status.classList.add("success-glow");
+          btn.textContent = 'TRANSMISSION COMPLETE';
           e.target.reset();
         }
       } catch (err) {
-        status.textContent = "Transmission failed. Check connection.";
-        status.style.color = "#f87171";
+        status.innerHTML = "> CRITICAL: Protocol Interrupted.";
+        status.classList.add("error-glow");
         btn.disabled = false;
-        btn.textContent = 'SEND MESSAGE';
       }
     });
 
-    // 2. Auto-update year
-    const yearDisplay = document.getElementById('year');
-    if(yearDisplay) yearDisplay.textContent = new Date().getFullYear();
-
-    // 3. Simple Back to Top (in case it's not in main_v2_0_0.js)
+    document.getElementById('year').textContent = new Date().getFullYear();
     const btt = document.getElementById('backToTop');
     if(btt) {
-        window.addEventListener('scroll', () => {
-            btt.style.display = window.scrollY > 400 ? 'flex' : 'none';
-        });
+        window.addEventListener('scroll', () => { btt.style.display = window.scrollY > 400 ? 'flex' : 'none'; });
         btt.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
     }
   </script>
