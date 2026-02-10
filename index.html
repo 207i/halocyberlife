@@ -390,7 +390,115 @@
     translateZ(40px)
     scale(0.9);
 }
-  
+
+   /* ===== 3D PLANET & WEAVING COMET SYSTEM (SOLIDIFIED) ===== */
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  perspective: 1200px; 
+  transform-style: preserve-3d; 
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+/* 1. OUTER PLANET (Deepest - Purple) */
+.orb-outer {
+  width: 320px;
+  height: 320px;
+  /* Changed to solid colors at the start to prevent comet bleed-through */
+  background: radial-gradient(circle at 30% 30%, rgb(139, 92, 246), rgb(88, 28, 135) 55%, rgb(5, 8, 20) 80%);
+  animation: orb-spin-outer 120s linear infinite;
+}
+
+/* 2. INNER PLANET (Foreground - Cyan) */
+.orb-inner {
+  width: 180px;
+  height: 180px;
+  /* Solid core (rgb instead of rgba) makes it 100% opaque */
+  background: radial-gradient(circle at 35% 35%, rgb(34, 211, 238), rgb(6, 95, 113) 55%, rgb(5, 8, 20) 80%);
+  animation: orb-spin-inner 90s linear infinite;
+}
+
+@keyframes orb-spin-outer {
+  from { transform: translate(-50%, -50%) translateZ(-150px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) translateZ(-150px) rotate(360deg); }
+}
+
+@keyframes orb-spin-inner {
+  from { transform: translate(-50%, -50%) translateZ(150px) rotate(360deg); }
+  to   { transform: translate(-50%, -50%) translateZ(150px) rotate(0deg); }
+}
+
+/* ===== THE COMETS (UPDATED BRIGHTNESS) ===== */
+
+.comet-layer {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  overflow: hidden; /* Keeps mobile tidy */
+}
+
+.comet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0;
+}
+
+/* WEAVING PATH (Z = 0) - FORCED BRIGHTNESS ON EXIT */
+@keyframes fly-weave {
+  0%   { 
+    transform: translate(-30vw, 15vh) translateZ(0px); 
+    opacity: 0; 
+    filter: brightness(0.5); /* Dim when entering */
+  }
+  15%  { opacity: 1; }
+  /* 50% is the "Eclipse" point behind the inner planet */
+  50%  { 
+    transform: translate(20vw, 0vh) translateZ(0px); 
+    filter: brightness(1.2); /* Bright pop as it exits center */
+    box-shadow: 0 0 20px #fff, 0 0 40px #22d3ee;
+  }
+  85%  { opacity: 1; }
+  100% { 
+    transform: translate(130vw, -15vh) translateZ(0px); 
+    opacity: 0; 
+  }
+}
+
+.comet-2 {
+  animation: fly-weave 15s linear infinite;
+  animation-delay: 6s;
+}
+
+/* Other Comets keep standard fly patterns but with solid paths */
+.comet-1 { animation: fly-back 12s linear infinite; }
+.comet-3 { animation: fly-front 18s linear infinite; animation-delay: 10s; }
+
+@keyframes fly-back {
+  0%   { transform: translate(-30vw, 25vh) translateZ(-250px); opacity: 0; }
+  20%  { opacity: 0.6; }
+  100% { transform: translate(130vw, -30vh) translateZ(-250px); opacity: 0; }
+}
+
+@keyframes fly-front {
+  0%   { transform: translate(-30vw, -15vh) translateZ(250px); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translate(130vw, 45vh) translateZ(250px); opacity: 0; }
+} 
   </style>
 </head>
 <body>
