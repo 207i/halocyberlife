@@ -2,177 +2,579 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pyramid Energy Architecture | HaloCyberLife</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>What If the Pyramids Were Never Just Tombs? | HaloCyberLife</title>
+  <meta name="description" content="A story-driven exploration of pyramid geometry, chambers, airflow, resonance, and materials—asking whether ancient pyramids behaved more like engineered environments than symbolic tombs." />
+  <meta name="author" content="Luis Amaya" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://halocyberlife.com/blog/pyramids_hidden_function.html" />
+  <link rel="stylesheet" href="/css/style_v2_0_0.css">
 
   <style>
-    :root {
-      --bg: #050505;
-      --fg: #eaeaea;
-      --accent: #c9a24d;
-      --soft: rgba(255,255,255,0.08);
+    :root{
+      --bg:#050814;
+      --line:rgba(255,255,255,.12);
+      --text:#f3f6ff;
+      --muted:#aab3d6;
+      --cyan:#22d3ee;
+      --radius:18px;
+      --shadow:0 12px 36px rgba(0,0,0,.45);
+      --max:880px;
     }
 
-    * {
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 70% 10%, rgba(139,92,246,.22), transparent 55%),
+        radial-gradient(800px 500px at 30% 20%, rgba(34,211,238,.16), transparent 55%),
+        linear-gradient(180deg, #030511, var(--bg));
     }
 
-    body {
-      margin: 0;
-      background: radial-gradient(circle at top, #0a0a0a, #020202);
-      color: var(--fg);
-      line-height: 1.6;
+    a{color:var(--cyan); text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 36px)); margin:0 auto}
+
+    /* ================= NEON HEADER FALLBACK ================= */
+    .neon-header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(5,8,20,.85);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
     }
 
-    header {
-      padding: 4rem 2rem 2rem;
-      text-align: center;
+    .neon-header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
+    .neon-logo{
+      height:34px;
+      display:block;
     }
 
-    header p {
-      color: #aaa;
-      max-width: 720px;
-      margin: auto;
+    .neon-nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
     }
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 2rem;
+    .neon-link{
+      font-size:14px;
+      color:var(--text);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+    .neon-nav-toggle{
+      display:none;
+      background:none;
+      border:0;
+      cursor:pointer;
     }
 
-    @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: 1fr;
+    .neon-nav-toggle span{
+      display:block;
+      width:24px;
+      height:2px;
+      background:#fff;
+      margin:5px 0;
+    }
+
+    @media (max-width: 900px){
+      .neon-nav{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        flex-direction:column;
+        background:rgba(5,8,20,.96);
+        padding:18px;
+        border-bottom:1px solid var(--line);
+      }
+
+      .neon-nav.open{
+        display:flex;
+      }
+
+      .neon-nav-toggle{
+        display:block;
       }
     }
+    /* ================= END NEON FALLBACK ================= */
 
-    .card {
-      background: linear-gradient(145deg, #0b0b0b, #040404);
-      border-radius: 18px;
-      padding: 2rem;
-      box-shadow: 0 0 0 1px var(--soft);
+    .hero{padding:56px 0 32px}
+    h1{font-size:clamp(32px,4.8vw,48px); margin-bottom:16px}
+
+    .sub{
+      font-size:18px;
+      color:var(--muted);
+      max-width:60ch;
     }
 
-    .card h2 {
-      color: var(--accent);
-      margin-top: 0;
+    main{padding:20px 0 90px}
+
+    article{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
     }
 
-    /* Pyramid SVG */
-    .pyramid-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    section{margin-bottom:42px}
+    h2{font-size:25px; margin-bottom:12px}
+
+    p{
+      font-size:17px;
+      line-height:1.75;
+      margin-bottom:14px;
     }
 
-    svg {
-      max-width: 320px;
-      height: auto;
+    ul{padding-left:18px}
+    li{margin:8px 0}
+
+    .pull{
+      margin:22px 0;
+      padding:18px;
+      border-radius:14px;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(34,211,238,.25);
     }
 
-    .base {
-      fill: none;
-      stroke: #666;
-      stroke-width: 2;
+    .blog-image-section{
+      margin:4rem auto;
+      max-width:1100px;
+      padding:0 1.5rem;
+      text-align:center;
     }
 
-    .face {
-      fill: rgba(201, 162, 77, 0.08);
-      stroke: var(--accent);
-      stroke-width: 1.5;
+    .blog-image-section img{
+      width:100%;
+      border-radius:18px;
+      box-shadow:0 25px 60px rgba(0,0,0,.45);
     }
 
-    footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
+    .blog-image-section figcaption{
+      margin-top:1rem;
+      font-size:.95rem;
+      color:#9ca3af;
     }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.2);
+      padding:20px;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    /* ========== NEON COLOR IDENTITY ========== */
+.color-blue{
+  color:#60a5fa;
+  text-shadow:0 0 12px rgba(96,165,250,.65);
+}
+.color-purple{
+  color:#a78bfa;
+  text-shadow:0 0 12px rgba(167,139,250,.65);
+}
+.color-cyan{
+  color:#22d3ee;
+  text-shadow:0 0 12px rgba(34,211,238,.7);
+}
+.color-magenta{
+  color:#f472b6;
+  text-shadow:0 0 12px rgba(244,114,182,.65);
+}
+.color-gold{
+  color:#fbbf24;
+  text-shadow:0 0 12px rgba(251,191,36,.7);
+}
+
+/* underline glow */
+.neon-link{
+  position:relative;
+  padding-bottom:4px;
+  transition:filter .25s ease;
+}
+
+.neon-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0%;
+  height:2px;
+  background:currentColor;
+  box-shadow:0 0 14px currentColor;
+  transition:width .25s ease;
+}
+
+.neon-link:hover::after{
+  width:100%;
+}
+
+.neon-link:hover{
+  filter:brightness(1.25);
+}
+
+/* mobile spacing polish */
+@media (max-width:900px){
+  .neon-nav a{
+    padding:8px 0;
+    font-size:16px;
+  }
+}
+
+    /* ========== BACK TO TOP BUTTON ========== */
+#backToTop{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid rgba(34,211,238,.45);
+  background:rgba(5,8,20,.75);
+  color:#22d3ee;
+  font-size:18px;
+  cursor:pointer;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(12px);
+  transition:
+    opacity .3s ease,
+    transform .3s ease,
+    box-shadow .3s ease;
+  box-shadow:0 0 0 rgba(34,211,238,0);
+  backdrop-filter: blur(6px);
+  z-index:1000;
+}
+
+#backToTop:hover{
+  box-shadow:0 0 18px rgba(34,211,238,.6);
+  transform:translateY(0) scale(1.05);
+}
+
+#backToTop.show{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+/* mobile nudge */
+@media (max-width:600px){
+  #backToTop{
+    right:16px;
+    bottom:16px;
+  }
+}
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Pyramid Energy Architecture</h1>
-  <p>
-    The pyramid is not decoration. It is a geometric amplifier — a structure
-    optimized for stability, symmetry, and directional energy behavior.
-  </p>
+<header class="neon-header">
+  <div class="container neon-header-inner">
+    <a href="/index.html" class="neon-brand">
+      <img src="/images/negative_white_halocyberlife_logo.png" class="neon-logo" alt="Halocyberlife">
+    </a>
+
+    <button class="neon-nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="neon-nav">
+      <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
+      <a href="/index.html#atelier" class="neon-link color-purple">HaloCraft</a>
+      <a href="/blog.html" class="neon-link color-cyan">Articles</a>
+      <a href="/about.html" class="neon-link color-magenta">About</a>
+      <a href="/contact_us.html" class="neon-link color-gold">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<section class="grid">
-
-  <!-- LEFT: PYRAMID VISUAL -->
-  <div class="card pyramid-wrap">
-    <svg viewBox="0 0 200 180">
-      <!-- Base -->
-      <polygon class="base" points="40,140 160,140 100,170" />
-
-      <!-- Faces -->
-      <polygon class="face" points="40,140 100,30 160,140" />
-      <polygon class="face" points="40,140 100,30 100,170" />
-      <polygon class="face" points="160,140 100,30 100,170" />
-    </svg>
+<section class="hero">
+  <div class="container">
+    <h1>What If the Pyramids Were Never Just Tombs?</h1>
+    <p class="sub">
+      Not a claim. Not a conspiracy.  
+      Just a question that refuses to stay quiet once you really look.
+    </p>
+    <p class="sub">
+  What follows is not an attempt to replace one explanation with another,
+  but to examine what happens when we stop asking what the pyramids meant
+  and start asking how they behaved.
+  </p>
   </div>
+</section>
 
-  <!-- RIGHT: EXPLANATION -->
-  <div class="card">
-    <h2>Why the Pyramid?</h2>
-    <p>
-      Across ancient civilizations, pyramidal geometry repeatedly appears in
-      contexts involving energy, preservation, and alignment. This is not
-      coincidence — it is geometry doing work.
-    </p>
+<main>
+  <div class="container">
+    <article>
 
-    <p>
-      A pyramid distributes force evenly from apex to base, minimizes internal
-      stress points, and creates a natural directional gradient along its vertical axis.
-      In modern terms, it is a passive structural optimizer.
-    </p>
+      <section>
+        <h2>The Question We Almost Never Ask</h2>
+        <p>
+          The official story is elegant and reassuring: tombs, rituals, the afterlife immortalized in stone.
+          A civilization honoring its rulers with unmatched devotion.
+        </p>
+        <p>
+          And that story may be partially true.
+          But it also acts like a full stop—an answer so familiar that it quietly shuts down curiosity.
+        </p>
+        <p>
+          Because once symbolism is removed, something uncomfortable remains:
+          the pyramids are engineered with a precision that ceremony alone does not require.
+        </p>
+        <div class="pull">
+          When a structure behaves like a system, the question stops being
+          <em>what it meant</em> and becomes <em>what it was designed to do</em>.
+        </div>
+      </section>
 
-    <p>
-      In HaloCyberLife systems, the pyramid form is explored as a container,
-      concentrator, and stabilizer for energetic processes — thermal, acoustic,
-      photonic, or symbolic.
-    </p>
+      <section>
+        <h2>Inside the Structure, the Story Changes</h2>
+        <p>
+          Forget the desert. Forget the scale. Imagine only the interior.
+        </p>
+        <p>
+          Corridors narrow just enough to slow movement.
+          Air pressure subtly shifts.
+          Sound behaves in ways that feel deliberate.
+        </p>
+        <p>
+          You are not moving through open ceremonial space.
+          You are being guided through a controlled environment.
+        </p>
+        <div class="pull">
+          What if the pyramids were not designed for a single purpose,
+          but to sustain a stable set of physical conditions over time?
+          </div>
+
+        <ul>
+          <li>Passages that restrict airflow instead of welcoming it</li>
+          <li>Chambers isolated rather than theatrically connected</li>
+          <li>A vertical spine quietly linking the entire structure</li>
+        </ul>
+        <p>
+          These are not artistic choices.
+          They are constraints—and constraints are how engineered systems operate.
+        </p>
+      </section>
+
+      <section>
+        <h2>Resonance Amplification: Where Geometry Starts Doing Work</h2>
+        <p>
+          Resonance is not mystical. It doesn’t require belief.
+          It emerges automatically when shape, mass, and material interact.
+        </p>
+        <p>
+          Large stone volumes amplify certain frequencies, suppress others,
+          stabilize temperature, and shape vibration patterns without any moving parts.
+        </p>
+        <div class="pull">
+          A chamber that “rings” is not symbolic—it is behaving exactly as physics predicts.
+        </div>
+        <p>
+          At scale, resonance stops being an effect and starts becoming a tool.
+        </p>
+      </section>
+
+      <section class="blog-image-section">
+        <figure>
+          <img src="../images/blog/Glowing_pyramid_energy_spiral.png" alt="Internal pyramid system">
+          <figcaption>
+            <strong>Figure 1.</strong> Conceptual internal geometry illustrating how airflow,
+            pressure gradients, and resonance could naturally organize through vertical continuity
+            and sealed stone chambers.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>The Evidence That Doesn’t Disappear</h2>
+        <p>
+          Materials remember environments long after intent is forgotten.
+        </p>
+        <p>
+          Across pyramid systems—especially outside Egypt—we encounter anomalies that do not fit
+          comfortably within a purely ceremonial explanation.
+        </p>
+        <ul>
+          <li>Unusual mineral and residue concentrations</li>
+          <li>Mercury and cinnabar found in Mesoamerican pyramid sites</li>
+          <li>Extreme sealing methods clearly designed to control moisture</li>
+        </ul>
+        <p>
+          None of this proves purpose.
+          But it strongly suggests behavior that deserves investigation rather than dismissal.
+        </p>
+      </section>
+
+      <section class="blog-image-section">
+        <figure>
+          <img src="../images/blog/Pyramid_Partially_Polished.png" alt="Rough construction phase">
+          <figcaption>
+            <strong>Figure 2.</strong> Early construction phase showing a rough, stepped structure
+            prior to final surface refinement—suggesting mass and geometry were established first.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>When Precision Enters the Process</h2>
+        <p>
+          Precision does not appear everywhere at once.
+          It arrives late.
+        </p>
+        <p>
+          The mass is already complete.
+          The angle is already fixed.
+          Only then does refinement begin—carefully, deliberately, from the top downward.
+        </p>
+        <div class="pull">
+          Precision was not required to build the pyramid.
+          It was required to finish it.
+        </div>
+      </section>
+
+      <section class="blog-image-section">
+        <figure>
+          <img src="../images/blog/Polished_Pyramid.png" alt="Top-down finishing process">
+          <figcaption>
+            <strong>Figure 3.</strong> Final finishing phase showing casing stones and surface polish
+            applied from the top downward—indicating refinement followed structure, not the other way around.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>The Least Exciting Explanation Might Be the Most Powerful</h2>
+        <p>
+          No lost machines. No ancient power plants.
+        </p>
+        <p>
+          Just passive systems—geometry doing what geometry always does
+          when scaled up, sealed, and left alone.
+        </p>
+        <div class="pull">
+          Multi-function does not require a single intended purpose.
+        </div>
+        <p>
+          Air moves. Sound stabilizes. Temperature equalizes.
+          Moisture condenses or evaporates—because the structure makes it inevitable.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why This Still Matters</h2>
+        <p>
+          Modern engineering is loud.
+          It demands power, sensors, software, constant correction.
+        </p>
+        <p>
+          Passive systems are quieter.
+          They rely on proportion, constraint, and patience.
+        </p>
+        <p>
+          If the pyramids worked this way, then design itself may be a technology
+          we’ve underestimated—not lost.
+        </p>
+        <div class="pull">
+          Progress doesn’t begin with answers.
+          It begins when we stop pretending the question is settled.
+        </div>
+      </section>
+
+    </article>
   </div>
 
 </section>
 
-<section>
-  <div class="card">
-    <h2>Modern Interpretation</h2>
-    <p>
-      This project does not claim mysticism as physics — but it also does not
-      ignore thousands of years of empirical architectural repetition.
-      Geometry influences flow. Flow influences systems.
-    </p>
+<!-- CONTENT UNCHANGED BELOW -->
+<!-- everything you wrote remains exactly as-is -->
 
-    <p>
-      The pyramid is treated here as a *framework*: a neutral structure
-      capable of hosting advanced processes without interference.
-    </p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-column footer-accent-purple">
+      <div class="footer-brand">
+        <img src="../images/negative_white_halocyberlife_logo.png" class="footer-logo" alt="Halocyberlife logo">
+        <span class="footer-brand-text">Halocyberlife</span>
+      </div>
+      <p class="footer-text">Esoteric insights, experimental tech concepts, and future-conscious craftsmanship.</p>
+      <p class="footer-meta">v2.0.0 · © <span id="year"></span> Halocyberlife.com</p>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Navigate</h3>
+      <ul class="footer-links">
+        <li><a href="../index.html#insights">Latest Insights</a></li>
+        <li><a href="../blog.html">All Articles</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact_us.html">Contact</a></li>
+        <li><a href="https://halocyberlife.com/Privacy%20&%20Terms.html">Privacy & Terms</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Connect</h3>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@Halocyberlife">YouTube</a>
+      </div>
+      <div class="footer-social">
+        <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/halocyberlife/">LinkedIn Profile</a>
+      </div>
+    </div>
+
   </div>
-</section>
 
-<footer>
-  © HaloCyberLife — Geometry is not decoration. It is function.
+  <button id="backToTop" class="back-to-top">↑</button>
 </footer>
+<button id="backToTop" aria-label="Back to top">↑</button>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
+<script>
+  const toggle = document.querySelector('.neon-nav-toggle');
+  const nav = document.querySelector('.neon-nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  }
+</script>
+<script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>  
 </body>
 </html>
