@@ -56,55 +56,45 @@
     <link rel="preload" href="style_v2_0_0.css?v=203" as="style" onload="this.onload=null;this.rel='stylesheet'">
   </noscript>
   <style>
-    /* ===== SCROLLING MARQUEE ===== */
-
-.marquee{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,.08);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  background: rgba(5,8,20,.65);
-  backdrop-filter: blur(8px);
-}
-
-.marquee-track{
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 40s linear infinite;
-}
-
-.marquee span{
-  padding: 14px 32px;
-  font-size: 13px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #aab3d6;
-  white-space: nowrap;
-}
-
-@keyframes marquee-scroll{
-  from{
-    transform: translateX(0);
+  /* ===== SCROLLING MARQUEE ===== */
+  .marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: rgba(5,8,20,.65);
+    backdrop-filter: blur(8px);
   }
-  to{
-    transform: translateX(-50%);
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
   }
-}
 
-  /* ===== PLANET / ORB MOTION SYSTEM ===== */
+  .marquee span {
+    padding: 14px 32px;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #aab3d6;
+    white-space: nowrap;
+  }
 
-/* ===== 3D PLANET & WEAVING COMET SYSTEM ===== */
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 
+  /* ===== 3D PLANET & WEAVING COMET SYSTEM ===== */
   .hero-visual {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    /* The 'camera' distance - allows Z-depth to work */
     perspective: 1200px; 
-    /* This tells the browser to render children in true 3D space */
     transform-style: preserve-3d; 
     pointer-events: none;
   }
@@ -117,21 +107,21 @@
     will-change: transform;
   }
 
-  /* 1. OUTER PLANET (Deepest Layer) */
+  /* 1. OUTER PLANET (Deepest - Solid Purple) */
   .orb-outer {
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.6), rgba(88,28,135,.85) 55%, rgba(5,8,20,.95) 70%);
-    /* Set back to -150px */
+    /* Solid RGB core prevents comet bleed-through */
+    background: radial-gradient(circle at 30% 30%, rgb(139, 92, 246), rgb(88, 28, 135) 55%, rgb(5, 8, 20) 80%);
     animation: orb-spin-outer 120s linear infinite;
   }
 
-  /* 2. INNER PLANET (Front Layer) */
+  /* 2. INNER PLANET (Foreground - Solid Cyan) */
   .orb-inner {
     width: 180px;
     height: 180px;
-    background: radial-gradient(circle at 35% 35%, rgba(34,211,238,.7), rgba(6,95,113,.85) 55%, rgba(5,8,20,.95) 70%);
-    /* Set forward to +150px */
+    /* Solid core makes it 100% opaque to hide the comet trace */
+    background: radial-gradient(circle at 35% 35%, rgb(34, 211, 238), rgb(6, 95, 113) 55%, rgb(5, 8, 20) 80%);
     animation: orb-spin-inner 90s linear infinite;
   }
 
@@ -146,11 +136,11 @@
   }
 
   /* ===== THE COMETS ===== */
-
   .comet-layer {
     position: absolute;
     inset: 0;
     transform-style: preserve-3d;
+    overflow: hidden; 
   }
 
   .comet {
@@ -159,7 +149,6 @@
     height: 6px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 0 15px #fff, 0 0 30px var(--cyan);
     opacity: 0;
   }
 
@@ -174,332 +163,65 @@
     background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
   }
 
-  /* COMET 1: Passes BEHIND everything */
-  .comet-1 {
-    animation: fly-back 15s linear infinite;
-  }
+  /* COMET 1: Passes BEHIND (Z = -250) */
+  .comet-1 { animation: fly-back 15s linear infinite; }
 
-  /* COMET 2: THE WEAVER - Passes BETWEEN planets at Z:0 */
+  /* COMET 2: THE WEAVER (Z = 0) - BRIGHTENS ON EXIT */
   .comet-2 {
     animation: fly-weave 18s linear infinite;
     animation-delay: 6s;
   }
 
-  /* COMET 3: Passes in FRONT of everything */
-  .comet-3 {
-    animation: fly-front 20s linear infinite;
-    animation-delay: 12s;
-  }
+  /* COMET 3: Passes in FRONT (Z = 250) */
+  .comet-3 { animation: fly-front 20s linear infinite; animation-delay: 12s; }
 
-  /* Back Path (Z = -250) */
   @keyframes fly-back {
-    0%   { transform: translate(-20vw, 20vh) translateZ(-250px); opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { transform: translate(120vw, -40vh) translateZ(-250px); opacity: 0; }
+    0%   { transform: translate(-30vw, 20vh) translateZ(-250px); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.6; }
+    100% { transform: translate(130vw, -40vh) translateZ(-250px); opacity: 0; }
   }
 
-  /* WEAVING PATH (Z = 0) */
   @keyframes fly-weave {
-    0%   { transform: translate(-20vw, 10vh) translateZ(0px); opacity: 0; }
-    10%  { opacity: 1; }
-    50%  { transform: translate(50vw, 0vh) translateZ(0px); } /* Crossing the center point */
-    90%  { opacity: 1; }
-    100% { transform: translate(120vw, -10vh) translateZ(0px); opacity: 0; }
+    0%   { 
+      transform: translate(-30vw, 10vh) translateZ(0px); 
+      opacity: 0; 
+      filter: brightness(0.6); 
+    }
+    15%  { opacity: 1; }
+    /* The "Emergence" Point - becomes bright when it clears the center */
+    50%  { 
+      transform: translate(50vw, 0vh) translateZ(0px); 
+      filter: brightness(1.6); 
+      box-shadow: 0 0 20px #fff, 0 0 40px #22d3ee;
+    }
+    85%  { opacity: 1; }
+    100% { transform: translate(130vw, -10vh) translateZ(0px); opacity: 0; }
   }
 
-  /* Front Path (Z = 250) */
   @keyframes fly-front {
-    0%   { transform: translate(-20vw, -10vh) translateZ(250px); opacity: 0; }
+    0%   { transform: translate(-30vw, -10vh) translateZ(250px); opacity: 0; }
     10%  { opacity: 1; }
     90%  { opacity: 1; }
-    100% { transform: translate(120vw, 40vh) translateZ(250px); opacity: 0; }
-  }
-    
-/* ===== ANIMATIONS ===== */
-
-@keyframes slow-spin{
-  from{ transform: rotate(0deg); }
-  to{ transform: rotate(360deg); }
-}
-
-@keyframes slow-spin-reverse{
-  from{ transform: rotate(360deg); }
-  to{ transform: rotate(0deg); }
-}
-
-@keyframes slow-drift{
-  from{ transform: translateY(0); }
-  to{ transform: translateY(-14px); }
-}
-
-@keyframes pulse-glow{
-  0%,100%{ opacity: 0.85; }
-  50%{ opacity: 1; }
-}
-
-    /* ===== THE NEW MASTER ORB SYSTEM ===== */
-
-.orb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  will-change: transform;
-}
-
-/* OUTER PLANET */
-.orb-outer {
-  width: 320px;
-  height: 320px;
-  z-index: 1;
-  background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.6), rgba(88,28,135,.85) 55%, rgba(5,8,20,.95) 70%);
-  /* This one animation handles centering, 3D depth, and spinning */
-  animation: orb-spin-outer 120s linear infinite;
-}
-
-/* INNER PLANET */
-.orb-inner {
-  width: 180px;
-  height: 180px;
-  z-index: 5;
-  background: radial-gradient(circle at 35% 35%, rgba(34,211,238,.7), rgba(6,95,113,.85) 55%, rgba(5,8,20,.95) 70%);
-  /* This one handles centering and reverse spinning */
-  animation: orb-spin-inner 90s linear infinite;
-}
-
-/* THE FIX: These keyframes keep them centered while they rotate */
-@keyframes orb-spin-outer {
-  from { transform: translate(-50%, -50%) translateZ(-40px) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) translateZ(-40px) rotate(360deg); }
-}
-
-@keyframes orb-spin-inner {
-  from { transform: translate(-50%, -50%) translateZ(60px) rotate(360deg); }
-  to   { transform: translate(-50%, -50%) translateZ(60px) rotate(0deg); }
-}
-    /* ===== COMET SYSTEM (HERO ONLY) ===== */
-
-.hero-visual{
-  position: relative;
-  pointer-events: none;
-}
-
-/* Comet dot */
-.comet{
-  position: absolute;
-  top: 70%;
-  left: -20%;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.95);
-  pointer-events: none;
-  opacity: 0;
-  z-index: 3;
-
-  animation: comet-fly 20s linear infinite;
-
-  box-shadow:
-    0 0 12px rgba(255,255,255,.9),
-    0 0 28px rgba(34,211,238,.35),
-    0 0 42px rgba(139,92,246,.25);
-}
-
-/* Comet tail */
-.comet::after{
-  content:"";
-  position:absolute;
-  left:-160px;
-  top:50%;
-  transform: translateY(-50%);
-  width:160px;
-  height:2px;
-  background: linear-gradient(
-    to left,
-    rgba(255,255,255,.7),
-    rgba(34,211,238,.35),
-    rgba(139,92,246,.18),
-    transparent
-  );
-  filter: blur(.2px);
-}
-
-/* Flight path */
-@keyframes comet-fly{
-  0%{
-    transform: translate(-20vw, 30vh);
-    opacity: 0;
-  }
-  6%{
-    opacity: 1;
-  }
-  50%{
-    transform: translate(60vw, -10vh); /* passes BETWEEN planets */
-    opacity: 1;
-  }
-  70%{
-    opacity: 0;
-  }
-  100%{
-    transform: translate(120vw, -50vh);
-    opacity: 0;
-  }
-}
-
-.comet-layer{
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 3; 
-}
-
-
-  .comet-1{
-    animation-delay: 0s;
-  }
-  
-  .comet-2{
-    animation-delay: 6.5s;
-    transform: scale(0.85);
-  }
-  
-  .comet-3{
-    animation-delay: 13s;
-    transform: scale(0.7);
+    100% { transform: translate(130vw, 40vh) translateZ(250px); opacity: 0; }
   }
 
-  .hero-visual .orb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero-visual .orb-outer {
-  transform:
-    translate(-50%, -50%)
-    translateZ(-20px)
-    scale(1.05);
-}
-
-.hero-visual .orb-inner {
-  transform:
-    translate(-50%, -50%)
-    translateZ(40px)
-    scale(0.9);
-}
-
-   /* ===== 3D PLANET & WEAVING COMET SYSTEM (SOLIDIFIED) ===== */
-
-.hero-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-  perspective: 1200px; 
-  transform-style: preserve-3d; 
-  pointer-events: none;
-}
-
-.orb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  will-change: transform;
-}
-
-/* 1. OUTER PLANET (Deepest - Purple) */
-.orb-outer {
-  width: 320px;
-  height: 320px;
-  /* Changed to solid colors at the start to prevent comet bleed-through */
-  background: radial-gradient(circle at 30% 30%, rgb(139, 92, 246), rgb(88, 28, 135) 55%, rgb(5, 8, 20) 80%);
-  animation: orb-spin-outer 120s linear infinite;
-}
-
-/* 2. INNER PLANET (Foreground - Cyan) */
-.orb-inner {
-  width: 180px;
-  height: 180px;
-  /* Solid core (rgb instead of rgba) makes it 100% opaque */
-  background: radial-gradient(circle at 35% 35%, rgb(34, 211, 238), rgb(6, 95, 113) 55%, rgb(5, 8, 20) 80%);
-  animation: orb-spin-inner 90s linear infinite;
-}
-
-@keyframes orb-spin-outer {
-  from { transform: translate(-50%, -50%) translateZ(-150px) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) translateZ(-150px) rotate(360deg); }
-}
-
-@keyframes orb-spin-inner {
-  from { transform: translate(-50%, -50%) translateZ(150px) rotate(360deg); }
-  to   { transform: translate(-50%, -50%) translateZ(150px) rotate(0deg); }
-}
-
-/* ===== THE COMETS (UPDATED BRIGHTNESS) ===== */
-
-.comet-layer {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-  overflow: hidden; /* Keeps mobile tidy */
-}
-
-.comet {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ffffff;
-  opacity: 0;
-}
-
-/* WEAVING PATH (Z = 0) - FORCED BRIGHTNESS ON EXIT */
-@keyframes fly-weave {
-  0%   { 
-    transform: translate(-30vw, 15vh) translateZ(0px); 
-    opacity: 0; 
-    filter: brightness(0.5); /* Dim when entering */
+  /* ===== GENERAL UTILITY ANIMATIONS ===== */
+  @keyframes slow-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
-  15%  { opacity: 1; }
-  /* 50% is the "Eclipse" point behind the inner planet */
-  50%  { 
-    transform: translate(20vw, 0vh) translateZ(0px); 
-    filter: brightness(1.2); /* Bright pop as it exits center */
-    box-shadow: 0 0 20px #fff, 0 0 40px #22d3ee;
+
+  @keyframes slow-drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-14px); }
   }
-  85%  { opacity: 1; }
-  100% { 
-    transform: translate(130vw, -15vh) translateZ(0px); 
-    opacity: 0; 
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.85; }
+    50% { opacity: 1; }
   }
-}
-
-.comet-2 {
-  animation: fly-weave 15s linear infinite;
-  animation-delay: 6s;
-}
-
-/* Other Comets keep standard fly patterns but with solid paths */
-.comet-1 { animation: fly-back 12s linear infinite; }
-.comet-3 { animation: fly-front 18s linear infinite; animation-delay: 10s; }
-
-@keyframes fly-back {
-  0%   { transform: translate(-30vw, 25vh) translateZ(-250px); opacity: 0; }
-  20%  { opacity: 0.6; }
-  100% { transform: translate(130vw, -30vh) translateZ(-250px); opacity: 0; }
-}
-
-@keyframes fly-front {
-  0%   { transform: translate(-30vw, -15vh) translateZ(250px); opacity: 0; }
-  20%  { opacity: 1; }
-  100% { transform: translate(130vw, 45vh) translateZ(250px); opacity: 0; }
-} 
-  </style>
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
