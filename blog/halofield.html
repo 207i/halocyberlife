@@ -269,6 +269,26 @@
       text-align:center;
       color:var(--muted);
     }
+
+    article {
+      background: rgba(255, 255, 255, 0.03); /* Slightly more subtle */
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 5vw, 60px); /* Responsive padding */
+    }
+
+    /* Make the pull quotes pop with the Halo Cyan */
+    .pull {
+      margin: 40px 0;
+      padding: 24px;
+      border-radius: 14px;
+      background: rgba(34, 211, 238, 0.05);
+      border-left: 4px solid var(--cyan);
+      font-size: 1.1rem;
+      color: #fff;
+    }
   </style>
 </head>
 
