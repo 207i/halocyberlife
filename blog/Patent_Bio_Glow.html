@@ -494,8 +494,28 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
   });
-</script>
 
+  // Back to Top Logic
+  const backToTopBtn = document.querySelector('.back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Also ensuring the footer year is dynamic
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
 
