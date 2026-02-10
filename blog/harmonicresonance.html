@@ -272,6 +272,65 @@
       text-align:center;
       color:var(--muted);
     }
+
+    /* Fix Header Spacing */
+    .neon-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Unified Footer Styling */
+    footer.site-footer {
+      margin-top: 100px;
+      padding: 60px 0 30px;
+      background: rgba(5, 8, 20, 0.95);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(15px);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .footer-column h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      line-height: 2;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-social a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
