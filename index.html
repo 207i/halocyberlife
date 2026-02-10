@@ -94,53 +94,127 @@
 
   /* ===== PLANET / ORB MOTION SYSTEM ===== */
 
-.hero-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 260px;
-  perspective: 800px;
-  pointer-events: none;
-}
+/* ===== 3D PLANET & WEAVING COMET SYSTEM ===== */
 
-/* 1. Reset & Center the Orbs */
-.orb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  will-change: transform;
-}
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    /* The 'camera' distance - allows Z-depth to work */
+    perspective: 1200px; 
+    /* This tells the browser to render children in true 3D space */
+    transform-style: preserve-3d; 
+    pointer-events: none;
+  }
 
-/* 2. Outer Planet Visuals */
-.orb-outer {
-  width: 320px;
-  height: 320px;
-  z-index: 1;
-  background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.6), rgba(88,28,135,.85) 55%, rgba(5,8,20,.95) 70%);
-  animation: orb-spin-outer 120s linear infinite;
-}
+  .orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    will-change: transform;
+  }
 
-/* 3. Inner Planet Visuals */
-.orb-inner {
-  width: 180px;
-  height: 180px;
-  z-index: 5;
-  background: radial-gradient(circle at 35% 35%, rgba(34,211,238,.7), rgba(6,95,113,.85) 55%, rgba(5,8,20,.95) 70%);
-  animation: orb-spin-inner 90s linear infinite;
-}
+  /* 1. OUTER PLANET (Deepest Layer) */
+  .orb-outer {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle at 30% 30%, rgba(139,92,246,.6), rgba(88,28,135,.85) 55%, rgba(5,8,20,.95) 70%);
+    /* Set back to -150px */
+    animation: orb-spin-outer 120s linear infinite;
+  }
 
-/* 4. The Master Animations (Handles Centering + 3D Depth + Rotation) */
-@keyframes orb-spin-outer {
-  from { transform: translate(-50%, -50%) translateZ(-40px) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) translateZ(-40px) rotate(360deg); }
-}
+  /* 2. INNER PLANET (Front Layer) */
+  .orb-inner {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle at 35% 35%, rgba(34,211,238,.7), rgba(6,95,113,.85) 55%, rgba(5,8,20,.95) 70%);
+    /* Set forward to +150px */
+    animation: orb-spin-inner 90s linear infinite;
+  }
 
-@keyframes orb-spin-inner {
-  from { transform: translate(-50%, -50%) translateZ(60px) rotate(360deg); }
-  to   { transform: translate(-50%, -50%) translateZ(60px) rotate(0deg); }
-}
+  @keyframes orb-spin-outer {
+    from { transform: translate(-50%, -50%) translateZ(-150px) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) translateZ(-150px) rotate(360deg); }
+  }
+
+  @keyframes orb-spin-inner {
+    from { transform: translate(-50%, -50%) translateZ(150px) rotate(360deg); }
+    to   { transform: translate(-50%, -50%) translateZ(150px) rotate(0deg); }
+  }
+
+  /* ===== THE COMETS ===== */
+
+  .comet-layer {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+  }
+
+  .comet {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 15px #fff, 0 0 30px var(--cyan);
+    opacity: 0;
+  }
+
+  .comet::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
+  }
+
+  /* COMET 1: Passes BEHIND everything */
+  .comet-1 {
+    animation: fly-back 15s linear infinite;
+  }
+
+  /* COMET 2: THE WEAVER - Passes BETWEEN planets at Z:0 */
+  .comet-2 {
+    animation: fly-weave 18s linear infinite;
+    animation-delay: 6s;
+  }
+
+  /* COMET 3: Passes in FRONT of everything */
+  .comet-3 {
+    animation: fly-front 20s linear infinite;
+    animation-delay: 12s;
+  }
+
+  /* Back Path (Z = -250) */
+  @keyframes fly-back {
+    0%   { transform: translate(-20vw, 20vh) translateZ(-250px); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(120vw, -40vh) translateZ(-250px); opacity: 0; }
+  }
+
+  /* WEAVING PATH (Z = 0) */
+  @keyframes fly-weave {
+    0%   { transform: translate(-20vw, 10vh) translateZ(0px); opacity: 0; }
+    10%  { opacity: 1; }
+    50%  { transform: translate(50vw, 0vh) translateZ(0px); } /* Crossing the center point */
+    90%  { opacity: 1; }
+    100% { transform: translate(120vw, -10vh) translateZ(0px); opacity: 0; }
+  }
+
+  /* Front Path (Z = 250) */
+  @keyframes fly-front {
+    0%   { transform: translate(-20vw, -10vh) translateZ(250px); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translate(120vw, 40vh) translateZ(250px); opacity: 0; }
+  }
     
 /* ===== ANIMATIONS ===== */
 
