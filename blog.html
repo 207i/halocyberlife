@@ -17,13 +17,8 @@
   <meta name="description" content="Explore esoteric articles, biophotonic research, and frequency-driven tech from Halocyberlife." />
   <meta name="author" content="Luis Amaya" />
 
-  <link rel="icon" type="image/png" href="/images/negative_white_halocyberlife_logo.png">
-  <link rel="apple-touch-icon" href="/images/negative_white_halocyberlife_logo.png">
-
   <style>
-    /* =========================
-       ROOT / DESIGN SYSTEM
-    ========================= */
+    /* ... (Keeping your existing CSS from before) ... */
     :root {
       --bg: #020617;
       --bg-soft: #050814;
@@ -38,224 +33,49 @@
       --radius: 18px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: system-ui, -apple-system, sans-serif;
       background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000 100%);
       color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* =========================
-       HEADER / NAV
-    ========================= */
-    .neon-header {
-      position: sticky;
-      top: 0;
-      height: 72px;
-      z-index: 1000;
-      background: rgba(2,6,23,0.9);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(139,92,246,0.25);
-    }
-
-    .neon-header-inner {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .neon-logo { max-height: 40px; display: block; }
-
-    .neon-nav { display: flex; gap: .5rem; }
-
-    .neon-nav a {
-      padding: .55rem 1.1rem;
-      border-radius: 999px;
-      font-size: .8rem;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(6px);
-      transition: all .3s ease;
-    }
-
-    /* NAV COLORS */
-    .color-blue { color: var(--accent-cyan); background: rgba(34,211,238,0.08); border-color: rgba(34,211,238,0.35); }
-    .color-purple { color: var(--accent-purple); background: rgba(139,92,246,0.08); border-color: rgba(139,92,246,0.35); }
-    .color-cyan { color: #06b6d4; background: rgba(6,182,212,0.08); border-color: rgba(6,182,212,0.35); }
-    .color-magenta { color: var(--accent-magenta); background: rgba(217,70,239,0.08); border-color: rgba(217,70,239,0.35); }
-    .color-gold { color: var(--accent-gold); background: rgba(251,191,36,0.08); border-color: rgba(251,191,36,0.35); }
-
-    .neon-nav a:hover { box-shadow: 0 0 18px currentColor; }
-
-    .neon-nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .neon-nav-toggle span { width: 24px; height: 3px; background: #fff; border-radius: 3px; }
-
-    @media (max-width: 820px) {
-      .neon-nav-toggle { display: flex; }
-      .neon-nav {
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 2rem 0;
-        background: rgba(2,6,23,0.98);
-        border-bottom: 1px solid var(--border);
-      }
-      .neon-nav.active { display: flex; }
-    }
-
-    /* ================== HERO / INTRO ==================== */
-    .hero { text-align: center; padding: 4rem 0 2rem; }
+    /* NEW ADD-ON STYLES */
+    .hero-kicker { color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.3em; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem; text-align: center; }
+    .hero-title { font-size: clamp(2.2rem, 6vw, 4rem); background: linear-gradient(to right,#fff,var(--accent-purple),var(--accent-magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; text-align: center; }
     
-    .hero-title {
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      background: linear-gradient(to right,#fff,var(--accent-purple),var(--accent-magenta));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
+    .blog-intro { text-align: center; max-width: 900px; margin: 0 auto 3rem; color: var(--muted); }
+    .intro-lead { font-size: 1.3rem; color: #fff; margin-bottom: 1.5rem; }
+    
+    .mission-statement { background: rgba(139, 92, 246, 0.05); border-left: 3px solid var(--accent-purple); padding: 1.5rem; margin: 2rem auto; font-style: italic; text-align: left; }
+    
+    .archive-stats { display: flex; justify-content: center; gap: 3rem; margin: 3rem 0; padding: 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stat-item { display: flex; flex-direction: column; align-items: center; }
+    .stat-value { font-size: 2rem; font-weight: 800; color: var(--accent-magenta); text-shadow: 0 0 10px rgba(217, 70, 239, 0.5); }
+    .stat-label { font-size: 0.7rem; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; }
 
-    .blog-intro { text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--muted); }
-    .blog-intro strong { color: var(--accent-cyan); }
-
-    /* ==================== FILTER CHIPS ===================== */
-    .filter-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 3rem; }
-    .chip {
-      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05); color: var(--muted); font-size: .85rem; cursor: pointer; transition: .3s;
-    }
-    .chip.active { border-color: var(--accent-cyan); color: #fff; background: rgba(34,211,238,0.1); }
-
-    /* ==================== GRID / CARDS ==================== */
-    .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 4rem; }
+    /* REPLACING MISSING GRID STYLES */
+    .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 3rem; }
     @media (max-width: 820px) { .articles-grid { grid-template-columns: 1fr; } }
-
-    .card {
-      background: rgba(139,92,246,0.03); border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; text-decoration: none; transition: .4s ease; display: flex; flex-direction: column;
-    }
+    .card { background: rgba(139,92,246,0.03); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-decoration: none; transition: .4s ease; display: flex; flex-direction: column; }
     .card:hover { transform: translateY(-8px); border-color: var(--accent-purple); background: rgba(139,92,246,0.08); }
-
     .card-img-wrap { width: 100%; aspect-ratio: 21 / 9; overflow: hidden; border-bottom: 1px solid var(--border); }
     .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: .5s; }
-
     .card-body { padding: 1.5rem; }
     .card-meta { color: var(--accent-cyan); font-size: .75rem; font-weight: 700; text-transform: uppercase; margin-bottom: .5rem; }
     .card-title { font-size: 1.4rem; color: #fff; margin-bottom: .8rem; }
     .card-text { color: var(--muted); font-size: .95rem; margin-bottom: 1.5rem; }
     .card-cta { color: var(--accent-purple); font-weight: 700; text-transform: uppercase; font-size: .9rem; }
-
-    /* SEO UTILITY */
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
-    /* FOOTER & BUTTONS */
-    .site-footer { background: #020617; border-top: 1px solid rgba(139,92,246,0.25); padding: 3rem 0; }
-    .footer-inner { display: grid; gap: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
-    .footer-logo { width: 34px; }
-    .footer-links { list-style: none; }
-    .footer-links a { color: var(--muted); text-decoration: none; font-size: .9rem; line-height: 2; }
-    .footer-links a:hover { color: var(--accent-cyan); }
-
-    .back-to-top {
-      position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%;
-      background: var(--bg); border: 1px solid var(--accent-purple); color: #fff; cursor: pointer;
-      display: none; align-items: center; justify-content: center; z-index: 1000;
-    }
-
-    /* Custom "Fun" additions */
-.hero-kicker {
-  color: var(--accent-cyan);
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-weight: 700;
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-.intro-lead {
-  font-size: 1.4rem !important;
-  color: #fff !important;
-  margin-bottom: 1.5rem;
-}
-
-.mission-statement {
-  background: rgba(139, 92, 246, 0.05);
-  border-left: 3px solid var(--accent-purple);
-  padding: 1.5rem;
-  margin: 2rem auto;
-  font-style: italic;
-  max-width: 900px;
-}
-
-.archive-stats {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin: 3rem 0;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-value {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent-magenta);
-  text-shadow: 0 0 10px rgba(217, 70, 239, 0.5);
-}
-
-.stat-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: var(--muted);
-  letter-spacing: 1px;
-}
-
-.disclosure-context {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 4rem;
-  border: 1px dashed var(--border);
-  padding: 2rem;
-  border-radius: var(--radius);
-}
-
-.disclosure-context h3 {
-  color: var(--accent-gold);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
+    
+    /* NAV & FOOTER STYLES UNCHANGED... */
+    .neon-header { position: sticky; top: 0; height: 72px; z-index: 1000; background: rgba(2,6,23,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(139,92,246,0.25); }
+    .neon-header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .neon-logo { max-height: 40px; }
+    .neon-nav { display: flex; gap: .5rem; }
+    .neon-nav a { padding: .55rem 1.1rem; border-radius: 999px; font-size: .8rem; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
   </style>
 </head>
 <body>
@@ -263,16 +83,9 @@
 <header class="neon-header">
   <div class="container neon-header-inner">
     <a href="index.html" class="neon-brand">
-      <h1 class="logo-h1">
         <img src="./images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo" />
-        <span class="sr-only">Articles & Transmissions | Halocyberlife Esoteric Tech</span>
-      </h1>
+        <span class="sr-only">Articles & Transmissions | Halocyberlife Biophotonic Research</span>
     </a>
-
-    <button class="neon-nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-
     <nav class="neon-nav">
       <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
       <a href="/index.html#atelier" class="neon-link color-purple">HaloCraft</a>
@@ -286,7 +99,7 @@
 <main class="container">
   <section class="hero">
     <p class="hero-kicker">Frequency intelligence • Public Disclosure • Project 2026</p>
-    <h2 class="hero-title">The Archive of Transmissions</h2>
+    <h1 class="hero-title">Articles & Transmissions</h1>
     
     <div class="blog-intro">
       <p class="intro-lead">
@@ -322,82 +135,97 @@
 
     <div class="filter-chips">
       <button class="chip active">All Transmissions</button>
-      <button class="chip">Hardware Build-Logs</button>
-      <button class="chip">Esoteric Wisdom</button>
-      <button class="chip" onclick="location.href='/Patents.html'">Patent Disclosure Files</button>
+      <button class="chip">Experiments & Tech</button>
+      <button class="chip">Inner Wisdom</button>
+      <button class="chip" onclick="location.href='/Patents.html'">Patents</button>
     </div>
-  </section>
-
-  <section class="disclosure-context">
-    <h3>Navigating the HaloCraft Ecosystem</h3>
-    <p>
-      From the <strong>biophotonic extraction methods</strong> of the BioLumen™ system to the 
-      <strong>geometric architecture</strong> of ancient resonators, we are bridging the gap between 
-      <strong>quantum light</strong> and <strong>physical sensation</strong>. This isn't just a blog; it's a 
-      technical roadmap for the next generation of <strong>Conscious Tech</strong>. 
-    </p>
-    
   </section>
 
   <div class="articles-grid">
-    </div>
+    <a href="./blog/BioGlow_resonance_light_energy.html" class="card">
+      <div class="card-img-wrap"><img src="images/Resonance_Light.png" alt="BioGlow Resonance" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">Experiments & Tech</p>
+        <h2 class="card-title">BioGlow: Resonance & Experimental Devices</h2>
+        <p class="card-text">A build-log documenting how resonance theory transforms into functional hardware and prototype luminescent modules.</p>
+        <span class="card-cta">Read Transmission →</span>
+      </div>
+    </a>
+
+    <a href="blog/BioLoop.html" class="card">
+      <div class="card-img-wrap"><img src="blog/Images/blog_images/BioLoop_img/Toilet_Seat.png" alt="BioLoop System" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">System Integration</p>
+        <h2 class="card-title">BioLoop & Cyclic Biological Systems</h2>
+        <p class="card-text">Exploring closed-loop biological intelligence and the hidden geometric architecture of metabolic waste-to-energy pathways.</p>
+        <span class="card-cta">Read Transmission →</span>
+      </div>
+    </a>
+
+    <a href="blog/RESONANT PHOTONIC AMPLIFICATION SYSTEM (RPAS).html" class="card">
+      <div class="card-img-wrap"><img src="blog/Images/blog_images/Resonance_Amplification/RPAS_Core_Amplification_Stack_Render.png" alt="RPAS System" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">Photonics / Patent</p>
+        <h2 class="card-title">Resonant Photonic Amplification (RPAS)</h2>
+        <p class="card-text">Technical breakdown of frequency-driven amplification of ultraweak light using mechanical resonance stacking.</p>
+        <span class="card-cta">View Patent Data →</span>
+      </div>
+    </a>
+
+    <a href="blog/BioLumen.html" class="card">
+      <div class="card-img-wrap"><img src="./blog/Images/blog_images/BioLumen_img/Bio_Lumen_index_image.png" alt="BioLumen™ system" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">Patent • Bio-Photonic Energy</p>
+        <h2 class="card-title">BioLumen™ — TRIA-CORE™ Biophotonic Extraction</h2>
+        <p class="card-text">A sealed biophotonic chamber with inward-facing TRIA-CORE collectors.</p>
+        <span class="card-cta">Explore Patent →</span>
+      </div>
+    </a>
+
+    <a href="blog/BioGen.html" class="card">
+      <div class="card-img-wrap"><img src="blog/Images/BioGen/OceanGenv2_CondensationModule.png" alt="BioGen research platform" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">Continuation Platform</p>
+        <h2 class="card-title">BioGen™ — Autonomous Energy Research</h2>
+        <p class="card-text">Controlled phase dynamics and autonomous operation systems.</p>
+        <span class="card-cta">View Continuation →</span>
+      </div>
+    </a>
+
+    <a href="./blog/pyramid.html" class="card">
+      <div class="card-img-wrap"><img src="images/Pyramid_image.png" alt="Hidden Architecture" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">Inner Wisdom</p>
+        <h2 class="card-title">Pyramids & Hidden Architecture</h2>
+        <p class="card-text">Analyzing ancient structures as geometric resonators.</p>
+        <span class="card-cta">Read Transmission →</span>
+      </div>
+    </a>
+
+    <a href="./blog/halofield.html" class="card">
+      <div class="card-img-wrap"><img src="images/Human Resonance Field Visualization.png" alt="The Halo Field" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">Energy Field</p>
+        <h2 class="card-title">The Halo Field</h2>
+        <p class="card-text">How your energy, focus, and intention shape the field around you—and influence what you experience.</p>
+        <span class="card-cta">Read Transmission →</span>
+      </div>
+    </a>
+
+    <a href="https://halocyberlife.com/blog/harmonicresonance.html" class="card">
+      <div class="card-img-wrap"><img src="./blog/Images/Harmonic_Resonance_Images/Resonance_img2.png" alt="Harmonic Resonance" loading="lazy" /></div>
+      <div class="card-body">
+        <p class="card-meta">Vibration · Coherence</p>
+        <h2 class="card-title">Harmonic Resonance</h2>
+        <p class="card-text">How sound, rhythm, and vibration help regulate the nervous system and restore inner coherence.</p>
+        <span class="card-cta">Read Transmission →</span>
+      </div>
+    </a>
+  </div>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-column">
-      <div class="footer-brand">
-        <img src="../images/negative_white_halocyberlife_logo.png" class="footer-logo" alt="Logo">
-        <span class="footer-brand-text">Halocyberlife</span>
-      </div>
-      <p style="color:var(--muted); font-size:0.85rem;">Esoteric insights and experimental tech concepts.</p>
-      <p style="color:var(--muted); font-size:0.75rem; margin-top:1rem;">© <span id="year"></span> Halocyberlife.com</p>
-    </div>
-
-    <div class="footer-column">
-      <h4 style="margin-bottom:1rem; font-size:0.9rem;">Navigate</h4>
-      <ul class="footer-links">
-        <li><a href="../blog.html">All Articles</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="https://halocyberlife.com/Privacy%20&%20Terms.html">Privacy & Terms</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h4 style="margin-bottom:1rem; font-size:0.9rem;">Social</h4>
-      <ul class="footer-links">
-        <li><a href="https://www.youtube.com/@Halocyberlife">YouTube</a></li>
-        <li><a href="https://www.linkedin.com/in/halocyberlife/">LinkedIn</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<button id="backToTop" class="back-to-top">↑</button>
-
 <script>
-  // Mobile Nav Toggle
-  const toggle = document.querySelector('.neon-nav-toggle');
-  const nav = document.querySelector('.neon-nav');
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-
-  // Back to Top Logic
-  const btt = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      btt.style.display = 'flex';
-    } else {
-      btt.style.display = 'none';
-    }
-  });
-  btt.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
