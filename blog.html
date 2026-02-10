@@ -470,6 +470,41 @@ body {
   .footer-accent-purple{
     color: var(--accent-purple);
   }
+
+   /* 1. This hides the SEO text from the screen but shows it to Google */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 2. This styles the new intro text */
+.blog-intro {
+  padding: 2rem 0 0;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.blog-intro p {
+  color: #9ca3af; /* muted gray */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 3. This makes your visible title look like an H1 even though it's an H2 */
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff;
+  margin-top: 1rem;
+} 
   </style>
 </head>
 <body>
