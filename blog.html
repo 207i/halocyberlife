@@ -13,18 +13,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Articles & Insights | Halocyberlife</title>
-  <meta name="description" content="Explore esoteric articles, biophotonic research, and frequency-driven tech from Halocyberlife." />
-  <meta name="author" content="Luis Amaya" />
+  <title>Articles & Transmissions | Halocyberlife Disclosure Hub</title>
+  <meta name="description" content="Official archive of biophotonic research, esoteric tech disclosures, and frequency-driven hardware experiments from Halocyberlife." />
 
   <style>
-    /* ... (Keeping your existing CSS from before) ... */
     :root {
       --bg: #020617;
       --bg-soft: #050814;
       --text: #f9fafb;
       --muted: #9ca3af;
-      --soft: #d1d5db;
       --border: rgba(139,92,246,0.3);
       --accent-purple: #8b5cf6;
       --accent-cyan: #22d3ee;
@@ -33,48 +30,80 @@
       --radius: 18px;
     }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: system-ui, -apple-system, sans-serif;
       background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000 100%);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* NEW ADD-ON STYLES */
-    .hero-kicker { color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.3em; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem; text-align: center; }
-    .hero-title { font-size: clamp(2.2rem, 6vw, 4rem); background: linear-gradient(to right,#fff,var(--accent-purple),var(--accent-magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; text-align: center; }
+    /* --- NAV FIXES --- */
+    .neon-header { position: sticky; top: 0; height: 72px; z-index: 1000; background: rgba(2,6,23,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .neon-header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .neon-logo { max-height: 40px; display: block; }
+
+    .neon-nav { display: flex; gap: .5rem; }
+    .neon-nav a {
+      padding: .5rem 1rem; border-radius: 999px; font-size: .75rem; text-transform: uppercase;
+      text-decoration: none; border: 1px solid rgba(255,255,255,0.1); color: var(--text); transition: .3s;
+    }
+    .neon-nav a:hover { box-shadow: 0 0 15px var(--accent-purple); border-color: var(--accent-purple); }
+
+    .neon-nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .neon-nav-toggle span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+    @media (max-width: 820px) {
+      .neon-nav-toggle { display: flex; }
+      .neon-nav {
+        position: absolute; top: 72px; left: 0; right: 0; display: none; flex-direction: column;
+        background: rgba(2,6,23,0.98); padding: 2rem; border-bottom: 1px solid var(--border); text-align: center;
+      }
+      .neon-nav.active { display: flex; }
+    }
+
+    /* --- HERO & MISSION --- */
+    .hero { padding: 4rem 0 2rem; text-align: center; }
+    .hero-kicker { color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.3em; font-weight: 700; font-size: 0.75rem; margin-bottom: 1rem; }
+    .hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); background: linear-gradient(to right,#fff,var(--accent-purple),#fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; }
     
-    .blog-intro { text-align: center; max-width: 900px; margin: 0 auto 3rem; color: var(--muted); }
-    .intro-lead { font-size: 1.3rem; color: #fff; margin-bottom: 1.5rem; }
-    
-    .mission-statement { background: rgba(139, 92, 246, 0.05); border-left: 3px solid var(--accent-purple); padding: 1.5rem; margin: 2rem auto; font-style: italic; text-align: left; }
-    
-    .archive-stats { display: flex; justify-content: center; gap: 3rem; margin: 3rem 0; padding: 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .stat-item { display: flex; flex-direction: column; align-items: center; }
-    .stat-value { font-size: 2rem; font-weight: 800; color: var(--accent-magenta); text-shadow: 0 0 10px rgba(217, 70, 239, 0.5); }
+    .blog-intro { max-width: 850px; margin: 0 auto; }
+    .intro-lead { font-size: 1.25rem; margin-bottom: 2rem; }
+
+    .mission-statement {
+      background: rgba(139, 92, 246, 0.05); border-left: 4px solid var(--accent-purple);
+      padding: 2rem; margin: 3rem auto; text-align: left; max-width: 900px;
+    }
+    .mission-statement strong { color: var(--accent-magenta); }
+
+    /* --- STATS & CHIPS --- */
+    .archive-stats { display: flex; justify-content: center; gap: 4rem; margin: 3rem 0; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-value { font-size: 2.2rem; font-weight: 800; color: var(--accent-magenta); display: block; }
     .stat-label { font-size: 0.7rem; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; }
 
-    /* REPLACING MISSING GRID STYLES */
-    .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 3rem; }
-    @media (max-width: 820px) { .articles-grid { grid-template-columns: 1fr; } }
-    .card { background: rgba(139,92,246,0.03); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-decoration: none; transition: .4s ease; display: flex; flex-direction: column; }
-    .card:hover { transform: translateY(-8px); border-color: var(--accent-purple); background: rgba(139,92,246,0.08); }
-    .card-img-wrap { width: 100%; aspect-ratio: 21 / 9; overflow: hidden; border-bottom: 1px solid var(--border); }
-    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: .5s; }
-    .card-body { padding: 1.5rem; }
-    .card-meta { color: var(--accent-cyan); font-size: .75rem; font-weight: 700; text-transform: uppercase; margin-bottom: .5rem; }
-    .card-title { font-size: 1.4rem; color: #fff; margin-bottom: .8rem; }
-    .card-text { color: var(--muted); font-size: .95rem; margin-bottom: 1.5rem; }
-    .card-cta { color: var(--accent-purple); font-weight: 700; text-transform: uppercase; font-size: .9rem; }
+    .filter-chips { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4rem; }
+    .chip { padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); background: none; color: var(--muted); cursor: pointer; font-size: 0.8rem; }
+    .chip.active { background: rgba(34,211,238,0.1); border-color: var(--accent-cyan); color: #fff; }
+
+    /* --- GRID --- */
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
+    @media (max-width: 600px) { .articles-grid { grid-template-columns: 1fr; } }
     
-    /* NAV & FOOTER STYLES UNCHANGED... */
-    .neon-header { position: sticky; top: 0; height: 72px; z-index: 1000; background: rgba(2,6,23,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(139,92,246,0.25); }
-    .neon-header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-    .neon-logo { max-height: 40px; }
-    .neon-nav { display: flex; gap: .5rem; }
-    .neon-nav a { padding: .55rem 1.1rem; border-radius: 999px; font-size: .8rem; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); }
+    .card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-decoration: none; transition: .4s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-10px); border-color: var(--accent-purple); background: rgba(139,92,246,0.05); }
+    .card-img-wrap { width: 100%; aspect-ratio: 16/8; overflow: hidden; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .card-body { padding: 1.5rem; }
+    .card-title { font-size: 1.5rem; color: #fff; margin: 0.5rem 0; }
+    .card-meta { color: var(--accent-cyan); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+    .card-text { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    .card-cta { color: var(--accent-purple); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
   </style>
 </head>
@@ -84,14 +113,19 @@
   <div class="container neon-header-inner">
     <a href="index.html" class="neon-brand">
         <img src="./images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo" />
-        <span class="sr-only">Articles & Transmissions | Halocyberlife Biophotonic Research</span>
+        <span class="sr-only">Halocyberlife Home</span>
     </a>
-    <nav class="neon-nav">
-      <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
-      <a href="/index.html#atelier" class="neon-link color-purple">HaloCraft</a>
-      <a href="/blog.html" class="neon-link color-cyan">Articles</a>
-      <a href="/about.html" class="neon-link color-magenta">About</a>
-      <a href="/contact_us.html" class="neon-link color-gold">Contact</a>
+    
+    <button class="neon-nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="neon-nav" id="neonNav">
+      <a href="/index.html#insights">Insights</a>
+      <a href="/index.html#atelier">HaloCraft</a>
+      <a href="/blog.html" style="color:var(--accent-cyan)">Articles</a>
+      <a href="/about.html">About</a>
+      <a href="/contact_us.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -143,7 +177,7 @@
 
   <div class="articles-grid">
     <a href="./blog/BioGlow_resonance_light_energy.html" class="card">
-      <div class="card-img-wrap"><img src="images/Resonance_Light.png" alt="BioGlow Resonance" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="images/Resonance_Light.png" alt="BioGlow Resonance"></div>
       <div class="card-body">
         <p class="card-meta">Experiments & Tech</p>
         <h2 class="card-title">BioGlow: Resonance & Experimental Devices</h2>
@@ -153,7 +187,7 @@
     </a>
 
     <a href="blog/BioLoop.html" class="card">
-      <div class="card-img-wrap"><img src="blog/Images/blog_images/BioLoop_img/Toilet_Seat.png" alt="BioLoop System" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="blog/Images/blog_images/BioLoop_img/Toilet_Seat.png" alt="BioLoop System"></div>
       <div class="card-body">
         <p class="card-meta">System Integration</p>
         <h2 class="card-title">BioLoop & Cyclic Biological Systems</h2>
@@ -163,7 +197,7 @@
     </a>
 
     <a href="blog/RESONANT PHOTONIC AMPLIFICATION SYSTEM (RPAS).html" class="card">
-      <div class="card-img-wrap"><img src="blog/Images/blog_images/Resonance_Amplification/RPAS_Core_Amplification_Stack_Render.png" alt="RPAS System" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="blog/Images/blog_images/Resonance_Amplification/RPAS_Core_Amplification_Stack_Render.png" alt="RPAS System"></div>
       <div class="card-body">
         <p class="card-meta">Photonics / Patent</p>
         <h2 class="card-title">Resonant Photonic Amplification (RPAS)</h2>
@@ -173,37 +207,37 @@
     </a>
 
     <a href="blog/BioLumen.html" class="card">
-      <div class="card-img-wrap"><img src="./blog/Images/blog_images/BioLumen_img/Bio_Lumen_index_image.png" alt="BioLumen™ system" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="./blog/Images/blog_images/BioLumen_img/Bio_Lumen_index_image.png" alt="BioLumen™"></div>
       <div class="card-body">
         <p class="card-meta">Patent • Bio-Photonic Energy</p>
         <h2 class="card-title">BioLumen™ — TRIA-CORE™ Biophotonic Extraction</h2>
-        <p class="card-text">A sealed biophotonic chamber with inward-facing TRIA-CORE collectors.</p>
+        <p class="card-text">A sealed biophotonic chamber with inward-facing TRIA-CORE collectors for ultra-weak light extraction.</p>
         <span class="card-cta">Explore Patent →</span>
       </div>
     </a>
 
     <a href="blog/BioGen.html" class="card">
-      <div class="card-img-wrap"><img src="blog/Images/BioGen/OceanGenv2_CondensationModule.png" alt="BioGen research platform" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="blog/Images/BioGen/OceanGenv2_CondensationModule.png" alt="BioGen research platform"></div>
       <div class="card-body">
         <p class="card-meta">Continuation Platform</p>
         <h2 class="card-title">BioGen™ — Autonomous Energy Research</h2>
-        <p class="card-text">Controlled phase dynamics and autonomous operation systems.</p>
+        <p class="card-text">Controlled phase dynamics and autonomous operation systems for environmental energy harvesting.</p>
         <span class="card-cta">View Continuation →</span>
       </div>
     </a>
 
     <a href="./blog/pyramid.html" class="card">
-      <div class="card-img-wrap"><img src="images/Pyramid_image.png" alt="Hidden Architecture" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="images/Pyramid_image.png" alt="Pyramid Resonance"></div>
       <div class="card-body">
         <p class="card-meta">Inner Wisdom</p>
         <h2 class="card-title">Pyramids & Hidden Architecture</h2>
-        <p class="card-text">Analyzing ancient structures as geometric resonators.</p>
+        <p class="card-text">Analyzing ancient structures as geometric resonators and their effect on local energy fields.</p>
         <span class="card-cta">Read Transmission →</span>
       </div>
     </a>
 
     <a href="./blog/halofield.html" class="card">
-      <div class="card-img-wrap"><img src="images/Human Resonance Field Visualization.png" alt="The Halo Field" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="images/Human Resonance Field Visualization.png" alt="The Halo Field"></div>
       <div class="card-body">
         <p class="card-meta">Energy Field</p>
         <h2 class="card-title">The Halo Field</h2>
@@ -213,7 +247,7 @@
     </a>
 
     <a href="https://halocyberlife.com/blog/harmonicresonance.html" class="card">
-      <div class="card-img-wrap"><img src="./blog/Images/Harmonic_Resonance_Images/Resonance_img2.png" alt="Harmonic Resonance" loading="lazy" /></div>
+      <div class="card-img-wrap"><img src="./blog/Images/Harmonic_Resonance_Images/Resonance_img2.png" alt="Harmonic Resonance"></div>
       <div class="card-body">
         <p class="card-meta">Vibration · Coherence</p>
         <h2 class="card-title">Harmonic Resonance</h2>
@@ -224,8 +258,24 @@
   </div>
 </main>
 
+<footer style="margin-top: 5rem; padding: 3rem 0; border-top: 1px solid var(--border); text-align: center;">
+  <div class="container">
+    <p style="color:var(--muted); font-size:0.8rem;">© <span id="year"></span> Halocyberlife • Esoteric Tech & Biophotonic Intelligence</p>
+  </div>
+</footer>
+
 <script>
+  // Mobile Nav Logic
+  const navToggle = document.getElementById('navToggle');
+  const neonNav = document.getElementById('neonNav');
+  
+  navToggle.addEventListener('click', () => {
+    neonNav.classList.toggle('active');
+  });
+
+  // Set Current Year
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
