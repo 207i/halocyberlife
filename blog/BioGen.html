@@ -1,125 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioGen™ | Volumetric Induction</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BioGen™ — High-Output Resonant Energy</title>
+  <style>
+    /* THE CORE VIBE */
+    :root {
+      --bg: #020617;
+      --panel: #0b1020;
+      --accent: #22d3ee;
+      --accent2: #8b5cf6;
+      --magenta: #ff5df7;
+      --gold: #ffe27a;
+      --border: rgba(139, 92, 246, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #02040a 100%);
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+    
+    /* NAV GLOWS */
+    .neon-link {
+      padding: 0.55rem 1.25rem;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 2px solid currentColor;
+      transition: 0.2s ease;
+    }
+    .neon-link:hover {
+      box-shadow: 0 0 18px currentColor, inset 0 0 10px currentColor;
+      background: #fff;
+      color: #000 !important;
+      transform: translateY(-2px);
+    }
+    
+    /* THE 3D ORB ENGINE */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      perspective: 1000px;
+    }
+    .orb { position: absolute; border-radius: 999px; top: 50%; left: 50%; }
+    .orb-outer {
+      width: 280px; height: 280px;
+      transform: translate(-50%, -50%) translateZ(-30px);
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.2), transparent 70%);
+      border: 1px solid var(--border);
+    }
+    .orb-inner {
+      width: 170px; height: 170px;
+      transform: translate(-50%, -50%) translateZ(40px);
+      background: radial-gradient(circle at 30% 30%, #fff, var(--accent2), transparent 80%);
+      box-shadow: 0 0 60px var(--accent2);
+    }
+
+    @media (max-width: 820px) {
+      .neon-nav { display: none; } /* Add logic for mobile toggle later if needed */
+    }
+  </style>
 </head>
+
 <body>
 
-    <a href="#main-content" class="skip-link">Skip to content</a>
+<header class="neon-header" style="position: sticky; top: 0; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 72px;">
+    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+      <img src="../images/icon_logo.png" style="height: 40px;" alt="Logo">
+      <img src="../images/slogan_logo.png" style="height: 48px; opacity: 0.9;" alt="Slogan">
+    </a>
 
-    <header class="neon-header">
-        <div class="neon-header-inner">
-            <a href="index.html" class="neon-brand">
-                <div class="logo-pair">
-                    <img src="../images/icon_logo.png" class="main-logo" alt="HaloCyberlife Icon">
-                    <img src="../images/slogan_logo.png" class="slogan-logo" alt="BioGen Slogan">
-                </div>
-            </a>
+    <nav class="neon-nav" style="display: flex; gap: 1rem;">
+      <a href="about.html" class="neon-link" style="color: var(--accent);">About</a>
+      <a href="articles.html" class="neon-link" style="color: var(--accent2);">Articles</a>
+      <a href="contact.html" class="neon-link" style="color: var(--magenta);">Contact</a>
+      <a href="portal.html" class="neon-link" style="color: var(--gold);">Portal</a>
+    </nav>
+  </div>
+</header>
 
-            <button class="neon-nav-toggle" id="menu-toggle" aria-label="Open Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-
-            <nav class="neon-nav" id="main-nav">
-                <a href="about.html" class="neon-link color-cyan">About</a>
-                <a href="articles.html" class="neon-link color-purple">Articles</a>
-                <a href="contact.html" class="neon-link color-magenta">Contact</a>
-                <a href="portal.html" class="neon-link color-gold">Portal</a>
-            </nav>
+<main>
+  <section style="padding: 5rem 0 3rem;">
+    <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center;">
+      <div>
+        <p style="text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); font-size: 0.8rem; margin-bottom: 1rem;">BioGen™ V6.2 // Active Resonance</p>
+        <h1 style="font-size: 3.2rem; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(90deg, #fff, var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Unlimited Flux.<br>Zero Feedback.</h1>
+        <p style="color: #9ca3af; font-size: 1.1rem; margin-bottom: 2rem; max-width: 480px;">
+          Bypassing the Thermal Trap. Our <strong>180° Photonic Artery</strong> isolates energy delivery from backflow, driving industrial steam via $2.47\text{ kHz}$ volumetric induction.
+        </p>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#support" style="padding: 0.8rem 2rem; background: linear-gradient(135deg, var(--accent2), var(--accent)); color: #000; text-decoration: none; border-radius: 99px; font-weight: 800; text-transform: uppercase; font-size: 0.85rem;">Secure a Node</a>
+          <a href="#" style="padding: 0.8rem 2rem; border: 1px solid var(--border); color: #fff; text-decoration: none; border-radius: 99px; font-size: 0.85rem;">View Tech Specs</a>
         </div>
-    </header>
+      </div>
 
-    <main id="main-content">
-        <section class="hero container">
-            <div class="hero-inner">
-                <div class="hero-text">
-                    <p class="hero-kicker">Project 2026: RPAS™-X</p>
-                    <h1 class="hero-title">Unlimited Flux.<br>Zero Feedback.</h1>
-                    <p class="hero-subtitle">
-                        Utilizing the $2.47\text{ kHz}$ Photonic Hammer to induce volumetric state-changes 
-                        without boundary-layer thermal decay.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#acquisition" class="btn primary-btn">Secure a Node</a>
-                        <a href="patent.html" class="btn ghost-btn">View Patent</a>
-                    </div>
-                </div>
+      <div class="hero-visual">
+        <div class="orb orb-outer"></div>
+        <div class="orb orb-inner"></div>
+        <div style="z-index: 10; text-align: center;">
+          <p style="font-family: monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 4px; text-transform: uppercase;">Resonance Lock</p>
+          <p style="font-size: 1.5rem; font-weight: 200;">2.47 kHz</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="hero-visual">
-                    <div class="orb orb-outer"></div>
-                    <div class="orb orb-inner"></div>
-                    <p class="hero-tagline">Resonance Lock: Active</p>
-                </div>
-            </div>
-        </section>
+  <section id="support" style="padding: 4rem 0;">
+    <div class="container">
+      <div style="background: var(--panel); border: 1px solid var(--border); border-radius: 24px; padding: 4rem; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 20px; right: 20px; font-family: monospace; font-size: 0.6rem; color: var(--accent2); border: 1px solid var(--accent2); padding: 4px 8px; text-transform: uppercase;">
+          Module: 2" x 1" Sapphire
+        </div>
+        
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Fuel the Evolution</h2>
+        <p style="color: #9ca3af; max-width: 600px; margin: 0 auto 2.5rem;">
+          Your support directly engineers the serialized frequency nodes that make BioGen possible. Help us scale the world's first non-contact induction boiler.
+        </p>
+        
+        <a href="YOUR_STRIPE_LINK" style="padding: 1.2rem 3.5rem; background: #4ade80; color: #000; text-decoration: none; border-radius: 12px; font-weight: 900; font-size: 1.1rem; box-shadow: 0 0 20px rgba(74, 222, 128, 0.4); display: inline-block;">
+          SUPPORT THE RESEARCH
+        </a>
+        <p style="font-size: 0.75rem; color: #4b5563; margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">Secure Processing via Stripe</p>
+      </div>
+    </div>
+  </section>
+</main>
 
-        <section class="section section-dark">
-            <div class="container section-split">
-                <div class="section-text">
-                    <span class="status-pill">Thermal Isolation</span>
-                    <h2>The 180° Photonic Artery</h2>
-                    <p>
-                        Our monolithic fused-silica waveguide isolates the modulation core from 
-                        convective backflow using a total internal reflection (TIR) U-bend.
-                    </p>
-                    <ul class="bullet-list">
-                        <li>99.9% Photonic Transmission</li>
-                        <li>Zero Conductive Heat-Leak</li>
-                        <li>Passive Argon Dielectric Gap</li>
-                    </ul>
-                </div>
-                <div class="section-card">
-                    <h3>Sub-System V6.2</h3>
-                    <p>The "Thermal Trap" architecture ensures the AFS Brain remains at stable operating temperatures while the induction core reaches phase-transition states.</p>
-                </div>
-            </div>
-        </section>
+<footer style="padding: 4rem 0; border-top: 1px solid var(--border); background: #02040a;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <div>
+      <img src="../images/icon_logo.png" style="height: 30px; margin-bottom: 1rem;" alt="Logo">
+      <p style="font-size: 0.8rem; color: #6b7280;">© 2026 HaloCyberlife. All rights reserved.</p>
+    </div>
+    <div style="display: flex; gap: 3rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <h4 style="font-size: 0.9rem; color: var(--accent); margin-bottom: 0.5rem;">Explore</h4>
+        <a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.85rem;">The Lab</a>
+        <a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.85rem;">Articles</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <h4 style="font-size: 0.9rem; color: var(--accent2); margin-bottom: 0.5rem;">Legal</h4>
+        <a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.85rem;">Patent Status</a>
+        <a href="#" style="color: #9ca3af; text-decoration: none; font-size: 0.85rem;">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-        <section id="acquisition" class="section container">
-            <div class="section-header">
-                <h2>Fuel the Evolution</h2>
-                <p>Scaling the Halocyberlife Ecosystem</p>
-            </div>
-
-            <div class="node-card" style="max-width: 600px; margin: 0 auto;">
-                <span class="dimension-tag">Scale: 2" x 1" Module</span>
-                <h3>BioGen Frequency Node</h3>
-                <p style="margin-bottom: 2rem;">
-                    Contributions directly fund the physical engineering of serialized sapphire 
-                    induction modules and legal patent protection.
-                </p>
-                <a href="YOUR_STRIPE_LINK" class="acquire-btn">Support the Research</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="footer-info">
-                <div class="footer-brand">
-                    <img src="../images/icon_logo.png" class="footer-logo" alt="Logo">
-                    <span class="footer-brand-text">HaloCyberlife</span>
-                </div>
-                <p class="footer-text">Experimental tech concepts and future-conscious craftsmanship.</p>
-                <p class="footer-meta">v2.0.3 · © 2026</p>
-            </div>
-            </div>
-    </footer;>
-
-    <script>
-        // MOBILE MENU TOGGLE
-        const toggle = document.getElementById('menu-toggle');
-        const nav = document.getElementById('main-nav');
-
-        toggle.addEventListener('click', () => {
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-            toggle.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
 
