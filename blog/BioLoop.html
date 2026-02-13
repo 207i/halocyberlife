@@ -5,701 +5,230 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BioLoop — Waste Gas & Metabolite Extraction | Halocyberlife</title>
-  <meta name="description" content="BioLoop: Advanced gas-phase metabolite collection and CO2 recapture systems integrated into sanitary hardware." />
+  <meta name="description" content="BioLoop: Proprietary gas-phase metabolite collection and CO2 recapture systems. 2x1 Serialized Frequency Nodes integrated into sanitary manifolds." />
   
   <style>
-     /* =========================
-   BACK TO TOP BUTTON
-   ========================= */
-    
-    .back-to-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1px solid rgba(139,92,246,0.4);
-      background: radial-gradient(
-        circle at 30% 30%,
-        rgba(255,255,255,0.25),
-        rgba(139,92,246,0.35) 45%,
-        rgba(2,6,23,0.95) 75%
-      );
-      color: #fff;
-      font-size: 1.3rem;
-      cursor: pointer;
-      display: none;
-      z-index: 1200;
-      box-shadow:
-        0 0 25px rgba(139,92,246,0.45),
-        inset 0 0 12px rgba(255,255,255,0.15);
-      backdrop-filter: blur(6px);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s;
-    }
-    
-    .back-to-top:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 0 35px rgba(217,70,239,0.65),
-        inset 0 0 18px rgba(255,255,255,0.25);
-    }
-    /* ───────────────────────────────────────────────────────────────────────── */
-    /* UPDATED STYLING ATTRIBUTES (ELECTRIC PURPLE & CYAN NEON) */
+    /* =========================
+       CORE NEON ARCHITECTURE 
+       ========================= */
     :root {
       --bg: #020617;
       --text: #f9fafb;
       --muted: #9ca3af;
       --soft: #d1d5db;
-      --border: rgba(139, 92, 246, 0.3); /* Purple tinted border */
-      --accent: #22d3ee; /* Cyan */
-      --accent2: #8b5cf6; /* Electric Purple */
-      --accent-magenta: #d946ef; /* High-energy Magenta */
+      --border: rgba(139, 92, 246, 0.3); 
+      --accent: #22d3ee; 
+      --accent2: #8b5cf6; 
+      --accent-magenta: #d946ef; 
       --radius: 18px;
       --shadow: 0 18px 60px rgba(139, 92, 246, 0.25);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      /* Updated gradient to include deeper indigo/purple tones */
       background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000000 100%);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* ───────────────────────────────────────────────────────────────────────── */
-    /* HEADER SYNC */
-   /* --- NEW NEON HEADER & MOBILE NAV --- */
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* =========================
+       PROPRIETARY DATA OVERLAY
+       ========================= */
+    .data-strip {
+      background: rgba(139, 92, 246, 0.1);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       HEADER & NAV (NEON SYNC)
+       ========================= */
     .neon-header {
       position: sticky; top: 0; z-index: 1000;
       background: rgba(2, 6, 23, 0.9);
       border-bottom: 1px solid rgba(139, 92, 246, 0.3);
       backdrop-filter: blur(12px);
     }
-
-    .neon-header-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      max-width: 980px; margin: 0 auto; padding: 0.75rem 1.25rem;
-    }
-
-    .neon-brand { 
-      display: flex; align-items: center; gap: 10px; 
-      text-decoration: none; color: #fff; font-weight: 700; 
-      text-transform: uppercase; font-size: 0.9rem;
-    }
-
+    .neon-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.25rem; }
+    .neon-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
     .neon-logo { width: 40px; filter: drop-shadow(0 0 5px var(--accent2)); }
-
-    /* Desktop Navigation */
     .neon-nav { display: flex; gap: 0.5rem; }
-
-    .neon-link {
-      padding: 0.5rem 1rem; border-radius: 99px; text-decoration: none; 
-      font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); 
-      transition: 0.3s; color: #fff; text-transform: uppercase;
-    }
-
-    /* Your Signature Neon Colors */
+    .neon-link { padding: 0.5rem 1rem; border-radius: 99px; text-decoration: none; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; color: #fff; text-transform: uppercase; }
     .color-blue { color: #22d3ee; border-color: rgba(34, 211, 238, 0.3); }
     .color-cyan { color: #06b6d4; border-color: rgba(6, 182, 212, 0.3); }
     .color-gold { color: #fbbf24; border-color: rgba(251, 191, 36, 0.3); }
+    .neon-link:hover { box-shadow: 0 0 15px currentColor; background: rgba(255,255,255,0.05); }
 
-    .neon-link:hover {
-       background: rgba(255,255,255,0.05);
-       box-shadow: 0 0 15px currentColor; /* Glows with the link's color */
-    }
-
-    /* Hamburger Toggle Button */
-    .neon-nav-toggle {
-      display: none; background: none; border: none; cursor: pointer; padding: 10px;
-    }
-    .neon-nav-toggle span {
-      display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; transition: 0.3s;
-    }
-
-    /* --- MOBILE OVERLAY LOGIC --- */
-    /* --- MOBILE OVERLAY LOGIC --- */
-@media (max-width: 768px) {
-  .neon-nav-toggle { display: block; z-index: 1001; }
-  
-  .neon-nav {
-    display: none; 
-    /* MOVE THE HIDING LOGIC HERE */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.35s ease;
-
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-    background: radial-gradient(circle at center, #1e1b4b 0%, #020617 100%); 
-    flex-direction: column; justify-content: center; align-items: center; 
-    gap: 2rem; z-index: 1000;
-  }
-
-  /* ENSURE VISIBILITY WHEN ACTIVE */
-  .neon-nav.active { 
-    display: flex; 
-    opacity: 1; 
-    pointer-events: auto; 
-  }
-
-  .neon-link { 
-    font-size: 1.6rem; width: 80%; text-align: center; 
-    padding: 1rem; border-width: 2px;
-  }
-}
-
-      /* .neon-nav {
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.35s ease;
-      } */
-      
-      .neon-nav.active {
-        opacity: 1;
-        pointer-events: auto;
-      }
-     /*Nav to show X */
-    .neon-nav-toggle[aria-expanded="true"] span:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
-      }
-      .neon-nav-toggle[aria-expanded="true"] span:nth-child(2) {
-        opacity: 0;
-      }
-      .neon-nav-toggle[aria-expanded="true"] span:nth-child(3) {
-        transform: translateY(-6px) rotate(-45deg);
-      }
-
-    /* ───────────────────────────────────────────────────────────────────────── */
-    /* ARTICLE HEAD */
-    .container { width: 100%; max-width: 980px; margin: 0 auto; padding: 0 1.25rem; }
-    .article-head { text-align: center; margin: 3rem auto 2.5rem; }
-    .meta { color: var(--accent); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
-    
+    /* =========================
+       HERO & VISION SLIDER
+       ========================= */
+    .article-head { text-align: center; margin: 4rem auto 3rem; }
     h1 { 
-      font-size: clamp(2.2rem, 5vw, 3.2rem); 
-      line-height: 1.1;
-      letter-spacing: -0.02em; 
-      margin-bottom: 1.5rem;
+      font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; letter-spacing: -0.03em; margin-bottom: 1.5rem;
       background: linear-gradient(to right, #fff, var(--accent2), var(--accent-magenta));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .subtitle { color: var(--soft); max-width: 820px; margin: 0 auto; font-size: 1.1rem; font-weight: 300; }
+    .vision-slider { margin: 3rem auto; position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .vision-track { display: flex; transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .vision-slide { flex: 0 0 100%; position: relative; }
+    .vision-slide img { width: 100%; height: 600px; object-fit: cover; }
+    .vision-slide figcaption { position: absolute; bottom: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(2,6,23,0.95)); color: #fff; }
 
-    /* CTA BUTTONS */
-    .cta { display: flex; gap: 12px; justify-content: center; margin: 2rem 0; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px;
-      border-radius: 999px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06);
-      font-size: .9rem; font-weight: 700; text-transform: uppercase; color: #fff; text-decoration: none; cursor: pointer; transition: 0.3s;
-    }
-    .btn.primary { 
-      border: none;
-      background: linear-gradient(135deg, var(--accent2) 0%, var(--accent-magenta) 100%);
-      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(217, 70, 239, 0.4); border-color: #fff; }
-
-    /* PILL TAGS */
-    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 10px; }
-    .pill { 
-      padding: 6px 14px; border-radius: 999px; 
-      background: rgba(139, 92, 246, 0.1); 
-      border: 1px solid rgba(139, 92, 246, 0.3); 
-      font-size: .85rem; color: #e9d5ff;
-    }
-
-    /* ───────────────────────────────────────────────────────────────────────── */
-    /* VISION SLIDER */
-    .vision-slider { margin: 3rem auto; position: relative; }
-    .vision-viewport { 
-      overflow: hidden; border-radius: var(--radius); 
-      border: 1px solid rgba(139, 92, 246, 0.4); 
-      background: #000; box-shadow: var(--shadow); position: relative; 
-    }
-    .vision-track { display: flex; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
-    .vision-slide { flex: 0 0 100%; }
-    .vision-slide img { width: 100%; height: clamp(300px, 50vw, 600px); object-fit: cover; display: block; }
-    .vision-slide figcaption { 
-      padding: 1.5rem; font-size: 1rem; 
-      background: rgba(2,6,23,0.85); color: var(--soft); 
-      border-top: 1px solid rgba(139, 92, 246, 0.2); 
-    }
-    .vision-btn { 
-      position: absolute; top: 50%; transform: translateY(-50%); 
-      width: 48px; height: 48px; border-radius: 999px; 
-      border: 1px solid rgba(255,255,255,0.2); 
-      background: rgba(139, 92, 246, 0.2); color: #fff; 
-      font-size: 1.5rem; cursor: pointer; z-index: 5; 
-      display: grid; place-items: center; backdrop-filter: blur(4px);
-    }
-    .vision-prev { left: 20px; } .vision-next { right: 20px; }
-
-    /* ───────────────────────────────────────────────────────────────────────── */
-    /* GRID CARDS */
-    .cards-grid { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
-    @media (max-width: 760px) { .cards-grid { grid-template-columns: 1fr; } }
-
+    /* =========================
+       FEATURE GRID (THE STUFF)
+       ========================= */
+    .cards-grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin: 4rem 0; }
     .feature-card { 
-      border: 1px solid var(--border); border-radius: var(--radius); 
-      background: rgba(139, 92, 246, 0.03); overflow: hidden; 
-      transition: 0.3s ease; display: flex; flex-direction: column; 
+      background: rgba(139, 92, 246, 0.03); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .feature-card:hover { transform: translateY(-5px); border-color: var(--accent2); background: rgba(139, 92, 246, 0.08); }
-    .card-media { width: 100%; height: 220px; object-fit: cover; display: block; cursor: zoom-in; border-bottom: 1px solid rgba(139, 92, 246, 0.2); }
+    .feature-card:hover { transform: scale(1.02); border-color: var(--accent); box-shadow: 0 0 30px rgba(34, 211, 238, 0.2); }
+    .card-media { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid var(--border); }
     .card-body { padding: 1.5rem; }
-    .feature-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff; }
-    .feature-card p { color: var(--muted); font-size: 0.95rem; }
-    .tag { 
-      display: inline-block; margin-top: 1rem; padding: 4px 12px; border-radius: 999px; 
-      border: 1px solid var(--accent2); background: rgba(139, 92, 246, 0.15); 
-      color: #e9d5ff; font-size: .75rem; font-weight: 700; text-transform: uppercase; 
+    .serialized-id { font-family: monospace; font-size: 0.7rem; color: var(--accent2); margin-bottom: 0.5rem; display: block; }
+
+    /* =========================
+       BACK TO TOP
+       ========================= */
+    .back-to-top {
+      position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%;
+      background: var(--accent2); color: #fff; border: none; cursor: pointer; display: none; z-index: 1000;
+      box-shadow: 0 0 20px var(--accent2);
     }
 
-    /* ───────────────────────────────────────────────────────────────────────── */
-    /* LIGHTBOX */
-    .lightbox { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); z-index: 10000; padding: 20px; }
-    .lightbox.open { display: grid; }
-    .lightbox__panel { 
-      width: min(1100px, 100%); background: #000; border-radius: 20px; 
-      border: 2px solid var(--accent2); box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
-      overflow: hidden; position: relative; 
-    }
-    .lightbox__img { width: 100%; max-height: 80vh; object-fit: contain; }
-    .lightbox__close { position: absolute; top: 15px; right: 15px; background: rgba(139, 92, 246, 0.3); border: 1px solid rgba(255,255,255,0.2); color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; z-index: 10; display: grid; place-items: center; }
-
-    footer { border-top: 1px solid rgba(139, 92, 246, 0.2); padding: 4rem 0; text-align: center; color: var(--muted); margin-top: 5rem; }
-    
-         /* =========================
-         INLINE FOOTER SYSTEM
-         ========================= */
-      
-      .site-footer {
-        background: #020617;
-        border-top: 1px solid rgba(139, 92, 246, 0.25);
-        padding: 3rem 0 2.5rem;
-        margin-top: 5rem;
-        color: rgba(209,213,219,0.9);
-      }
-      
-      .footer-inner {
-        display: grid;
-        gap: 2.5rem;
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 0 1.25rem;
-      }
-      
-      @media (min-width: 768px) {
-        .footer-inner {
-          grid-template-columns: 2fr 1fr 1.2fr;
-          align-items: start;
-        }
-      }
-      
-      .footer-column {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-      }
-      
-      .footer-brand {
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
-        margin-bottom: 0.5rem;
-      }
-      
-      .footer-logo {
-        width: 34px;
-        height: auto;
-        filter: drop-shadow(0 0 6px rgba(139,92,246,0.5));
-      }
-      
-      .footer-brand-text {
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        color: #fff;
-      }
-      
-      .footer-text {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        color: rgba(209,213,219,0.85);
-      }
-      
-      .footer-meta {
-        font-size: 0.78rem;
-        color: rgba(148,163,184,0.7);
-        margin-top: 0.5rem;
-      }
-      
-      .footer-heading {
-        font-size: 0.95rem;
-        margin-bottom: 0.4rem;
-        color: #fff;
-      }
-      
-      .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 0.88rem;
-      }
-      
-      .footer-links li + li {
-        margin-top: 0.35rem;
-      }
-      
-      .footer-links a {
-        color: rgba(209,213,219,0.85);
-        text-decoration: none;
-      }
-      
-      .footer-links a:hover {
-        color: var(--accent2);
-        text-decoration: underline;
-      }
-      
-      .footer-social a {
-        font-size: 0.88rem;
-        color: var(--accent);
-        text-decoration: none;
-      }
-      
-      .footer-social a:hover {
-        text-decoration: underline;
-      } 
+    footer { border-top: 1px solid var(--border); padding: 4rem 0; text-align: center; margin-top: 6rem; background: #010409; }
   </style>
 </head>
 
 <body>
-  <header class="neon-header">
-  <div class="container neon-header-inner">
-    <a href="../index.html" class="neon-brand">
-      <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo" />
-      <span class="neon-brand-text">Halocyberlife</span>
-    </a>
-
-    <button class="neon-nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="primary-nav" class="neon-nav">
-      <a href="../index.html" class="neon-link color-blue">Home</a>
-      <a href="../blog.html" class="neon-link color-cyan">Articles</a>
-      <a href="../contact_us.html" class="neon-link color-gold">Contact</a>
-    </nav>
+  <div class="data-strip">
+    <marquee scrollamount="5">BIOLOOP EXTRACTION CORE // SERIALIZED FREQUENCY NODES [2" X 1"] // STATUS: ACTIVE // MANIFOLD PRESSURE: NOMINAL // CO2 RECAPTURE: 85.4%</marquee>
   </div>
-</header>
+
+  <header class="neon-header">
+    <div class="container neon-header-inner">
+      <a href="../index.html" class="neon-brand">
+        <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo" />
+        <span>Halocyberlife</span>
+      </a>
+      <nav class="neon-nav">
+        <a href="../index.html" class="neon-link color-blue">Home</a>
+        <a href="../blog.html" class="neon-link color-cyan">Articles</a>
+        <a href="../contact_us.html" class="neon-link color-gold">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main class="container">
     <section class="article-head">
-      <p class="meta">BioLoop Series · Gas Extraction</p>
-      <h1>BioLoop | Waste Gas & Resource Recovery</h1>
-      <p class="subtitle">Capturing gas-phase metabolites and CO₂ recapture through specialized sanitary hardware interfaces and extraction manifolds.</p>
+      <p class="meta" style="color: var(--accent-magenta); font-weight: bold; letter-spacing: 3px;">BIOLOOP SERIES // GAS PHASE</p>
+      <h1>Proprietary Resource Recovery</h1>
+      <p class="subtitle" style="font-size: 1.4rem; color: var(--soft); max-width: 900px; margin: 0 auto;">
+        Integrating the <strong>Resonant Manifold</strong> into high-end sanitary hardware to harvest gas-phase metabolites and concentrated CO₂ at the source.
+      </p>
       
-      <div class="cta">
-        <a class="btn primary" href="./Patent_BioLoop.html">View Official Patent ↗</a>
-        <a class="btn" href="#possibilities">View Architecture</a>
-      </div>
-
-      <div class="tag-row">
-        <span class="pill"><strong>Interface:</strong> Toilet Seat Coupling</span>
-        <span class="pill"><strong>Cycle:</strong> Gas Recovery</span>
-        <span class="pill"><strong>Module:</strong> Extraction Manifold</span>
-        <a href="../Patents.html" class="pill"><strong>Patents</strong></a>
+      <div style="margin-top: 3rem; display: flex; gap: 20px; justify-content: center;">
+        <a href="./Patent_BioLoop.html" class="btn" style="background: var(--accent2); padding: 15px 30px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);">VIEW OFFICIAL PATENT ↗</a>
+        <a href="#support-node" class="btn" style="border: 1px solid var(--accent); padding: 15px 30px; border-radius: 50px; text-decoration: none; color: var(--accent); font-weight: bold;">FUND PHASE 02</a>
       </div>
     </section>
 
     <section class="vision-slider">
-      <div class="vision-viewport">
-        <div class="vision-track" id="visionTrack">
-          <figure class="vision-slide">
-            <img src="./Images/blog_images/BioLoop_img/BioLoop_Architecture.png">
-            <figcaption><strong>BioLoop Integration:</strong> The bridge between sanitary hardware and resource harvesting core.</figcaption>
-          </figure>
-          <figure class="vision-slide">
-            <img src="./Images/blog_images/BioLoop_img/Toilet_Seat.png">
-            <figcaption><strong>Seat Interface Coupling:</strong> Establishing a seal for localized gas and moisture capture.</figcaption>
-          </figure>
-          <figure class="vision-slide">
-             <img src="./Images/blog_images/BioLoop_img/Gas_Capture.png">
-             <figcaption><strong>Extraction Manifold:</strong> Internal ducting system routing harvested gases to processing.</figcaption>
-          </figure>
-        </div>
-        <button class="vision-btn vision-prev" onclick="moveSlide(-1)">‹</button>
-        <button class="vision-btn vision-next" onclick="moveSlide(1)">›</button>
+      <div class="vision-track" id="visionTrack">
+        <figure class="vision-slide">
+          <img src="./Images/blog_images/BioLoop_img/BioLoop_Architecture.png" alt="BioLoop Full Architecture">
+          <figcaption><strong>System Schematic:</strong> The bridge between the human signal source and the recovery manifold.</figcaption>
+        </figure>
+        <figure class="vision-slide">
+          <img src="./Images/blog_images/BioLoop_img/Gas_Capture.png" alt="Extraction Manifold">
+          <figcaption><strong>Internal Manifold:</strong> Routing harvested metabolites through serialized 2" x 1" nodes.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <article style="max-width:820px; margin: 4rem auto; text-align:center;">
-       <p style="font-size:1.2rem; color:var(--soft);">BioLoop represents the architectural integration of resource harvesting within daily utilities. By utilizing a <strong>Toilet Seat Interface</strong>, the system captures gas-phase metabolites and concentrated CO₂ before they dissipate, feeding them back into the nutrient cycle.</p>
-    </article>
+    <section class="cards-grid">
+      <article class="feature-card">
+        <img class="card-media" src="./Images/blog_images/BioLoop_img/Toilet_Seat.png">
+        <div class="card-body">
+          <span class="serialized-id">NODE_TYPE: SEAT_COUPLING_V4</span>
+          <h3>Interface Coupling</h3>
+          <p>The primary seal established at the sanitary interface, designed for localized gas and moisture capture before atmospheric dissipation.</p>
+        </div>
+      </article>
 
-    <figure style="margin: 4rem auto; text-align: center;">
-      <img src="./Images/blog_images/BioLoop_img/BioLoop_Architecture.png" style="width: 80%; border-radius:16px; border:1px solid var(--border);" />
-      <figcaption style="margin-top:1.5rem; color:var(--muted); font-size:0.9rem; max-width:700px; margin-inline:auto;">
-        <strong>Figure: BioLoop Gas-Phase Pathway</strong> — Monitoring the bridge between the signal source and the recovery surface.
-      </figcaption>
-    </figure>
+      <article class="feature-card" style="border-color: var(--accent-magenta);">
+        <img class="card-media" src="./Images/blog_images/BioLoop_img/Gas_Capture.png">
+        <div class="card-body">
+          <span class="serialized-id">SPEC: 2" X 1" SERIALIZED FREQUENCY NODE</span>
+          <h3 style="color: var(--accent-magenta);">Extraction Manifold</h3>
+          <p>A precision-engineered internal ducting system. Every 2"x1" node is serialized to track extraction efficiency across the Resonant Manifold.</p>
+        </div>
+      </article>
 
-    <section id="possibilities">
-      <h2 style="text-align:center; margin-bottom:3rem; text-transform: uppercase; letter-spacing: 0.2em; font-size:1.8rem;">Architecture & Subsystems</h2>
-      <div class="cards-grid">
-        
-        <article class="feature-card">
-          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Toilet_Seat.png">
-          <div class="card-body">
-            <h3>Seat Interface Coupling</h3>
-            <p>The primary collection point designed to form a seal for efficient gas capture during use.</p>
-            <span class="tag">Hardware</span>
-          </div>
-        </article>
+      <article class="feature-card">
+        <img class="card-media" src="./Images/blog_images/BioLoop_img/Moisture_Capture.png">
+        <div class="card-body">
+          <span class="serialized-id">CORE: CO2_RECAPTURE_V2.1</span>
+          <h3>Metabolite Capture</h3>
+          <p>Utilizing active filtering layers to isolate biological signatures, feeding the nutrient cycle back into the BioGlow ecosystem.</p>
+        </div>
+      </article>
+    </section>
 
-        <article class="feature-card">
-          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Moisture_Capture.png">
-          <div class="card-body">
-            <h3>CO₂ Recapture</h3>
-            <p>Active filtering layers that isolate and concentrate carbon dioxide for reuse in the BioGlow ecosystem.</p>
-            <span class="tag">Carbon Loop</span>
-          </div>
-        </article>
-
-        <article class="feature-card">
-          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Gas_Capture.png">
-          <div class="card-body">
-            <h3>Extraction Manifold</h3>
-            <p>A specialized internal ducting system that routes harvested gases to the processing core.</p>
-            <span class="tag">Gas Distribution</span>
-          </div>
-        </article>
-
-        <article class="feature-card">
-          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Buffer_Int.png">
-          <div class="card-body">
-            <h3>Metabolite Sensing</h3>
-            <p>Real-time monitoring of gas-phase biological signatures to optimize harvest efficiency.</p>
-            <span class="tag">Monitoring</span>
-          </div>
-        </article>
-
-        <article class="feature-card" style="grid-column: 1 / -1; border-color: var(--accent2);">
-           <div style="position:relative; width:100%; padding-bottom:56.25%;">
-            <iframe src="https://www.youtube.com/embed/-umJKbpAGxc" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
-           </div>
-        </article>
-
-        <article class="feature-card">
-          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Buffer.png">
-          <div class="card-body">
-            <h3>Modern Integration</h3>
-            <p>Integrating resource-harvesting manifolds into high-end sanitary hardware design.</p>
-            <span class="tag">Interior Design</span>
-          </div>
-        </article>
-
-        <article class="feature-card">
-          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Outside_Outlet.png">
-          <div class="card-body">
-            <h3>Interface Coupling</h3>
-            <p>The bridge between the human waste signal source and the recovery system.</p>
-            <span class="tag">Coupling</span>
-          </div>
-        </article>
-      </div>
-     <section id="support-node" style="padding: 6rem 0; border-top: 1px solid var(--border); background: rgba(2, 6, 23, 0.6);">
-  <div class="container" style="display: flex; justify-content: center;">
-    
-    <div style="max-width: 800px; width: 100%; background: #050814; border: 1px solid var(--accent2); padding: 4rem 2rem; border-radius: 4px; text-align: center; box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);">
-      
-      <div style="margin-bottom: 2rem;">
-        <img src="./Images/BioGlow_images/logo_v4_2.png" alt="Halocyberlife" style="width: 85px; filter: drop-shadow(0 0 10px var(--accent2));">
-        <p style="font-family: monospace; font-size: 0.7rem; color: var(--accent2); margin-top: 1rem; letter-spacing: 5px;">BIOLOOP // MANIFOLD_INTEL</p>
-      </div>
-
-      <h2 style="font-size: 2.6rem; color: #fff; margin-bottom: 1.5rem; letter-spacing: -0.01em; text-transform: uppercase;">Finalize the BioLoop Manifold</h2>
-      
-      <p style="color: #d1d5db; line-height: 1.8; margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 620px; margin-inline: auto;">
-        We are transitioning from schematic to scale. Your support secures the legal patent framework for the <strong>BioLoop Gas-Extraction Interface</strong> and funds the precision manufacturing of our <strong>2" x 1" Serialized Frequency Nodes</strong>.
+    <section id="support-node" style="margin: 6rem 0; padding: 4rem; background: rgba(5, 8, 20, 0.8); border: 2px solid var(--accent2); border-radius: var(--radius); text-align: center; box-shadow: 0 0 50px rgba(139, 92, 246, 0.2);">
+      <img src="./Images/BioGlow_images/logo_v4_2.png" style="width: 100px; margin-bottom: 2rem; filter: drop-shadow(0 0 10px var(--accent2));">
+      <h2 style="font-size: 3rem; text-transform: uppercase; margin-bottom: 1.5rem;">Secure the Patent Framework</h2>
+      <p style="font-size: 1.2rem; color: var(--soft); max-width: 700px; margin: 0 auto 3rem;">
+        We are transitioning from schematic to physical scale. Your support funds the <strong>legal IP defense</strong> for the BioLoop Interface and the <strong>tooling</strong> for the 2" x 1" Serialized Nodes.
       </p>
-
-      
-
-      <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="btn primary" style="padding: 1.4rem 3.5rem; font-size: 1rem; letter-spacing: 2px; border: 1px solid var(--accent-magenta); background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);">
-        FUND THE EXTRACTION CORE
-      </a>
-      
-      <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid rgba(139, 92, 246, 0.2); padding-top: 2rem;">
-        <div style="text-align: right; padding-right: 20px; border-right: 1px solid rgba(139, 92, 246, 0.2);">
-          <h4 style="color: var(--accent); font-size: 0.8rem; text-transform: uppercase;">Phase 01</h4>
-          <p style="font-size: 0.85rem; color: #9ca3af;">Patent Defense & IP Filing</p>
-        </div>
-        <div style="text-align: left; padding-left: 20px;">
-          <h4 style="color: var(--accent-magenta); font-size: 0.8rem; text-transform: uppercase;">Phase 02</h4>
-          <p style="font-size: 0.85rem; color: #9ca3af;">2"x1" Node Physical Tooling</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      <a href="STRIPE_LINK" style="display: inline-block; background: linear-gradient(135deg, var(--accent2), var(--accent-magenta)); padding: 20px 50px; color: white; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 5px; letter-spacing: 2px;">FUND THE EXTRACTION CORE</a>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-column">
-          <div class="footer-brand">
-            <img src="./Images/BioGlow_images/logo_v4_2.png" alt="Halocyberlife logo small" class="footer-logo" />
-            <span class="footer-brand-text">Halocyberlife</span>
-          </div>
-          <p class="footer-text">Esoteric insights, experimental tech concepts, and future-conscious craftsmanship.</p>
-          <p class="footer-meta">v2.0.0 · © <span id="year"></span> Halocyberlife.com</p>
-        </div>
-  
-        <div class="footer-column">
-          <h3 class="footer-heading">Navigate</h3>
-          <ul class="footer-links">
-            <li><a href="../index.html#insights">Latest Insights</a></li>
-            <li><a href="../blog.html">All Articles</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../contact_us.html">Contact</a></li>
-            <li><a href="../Privacy & Terms.html">Privacy &amp; Terms</a></li>
-          </ul>
-        </div>
-  
-         <div class="footer-column">
-          <h3 class="footer-heading">Contact &amp; Social</h3>
-           <div class="footer-social">
-             <a href="https://www.youtube.com/@Halocyberlife" aria-label="Youtube">Youtube</a>
-          </div>
-          <div class="footer-social">
-             <a href="" aria-label="Email:">Email: luisamaya@halocyberlife.com/</a>
-          </div>
-          <div class="footer-social">
-            <a href="" aria-label="Email:">Email: info@halocyberlife.com/</a>
-          </div>
-          <div class="footer-social">
-            <a href="https://www.linkedin.com/in/halocyberlife/" aria-label="linkedin">LinkedIn: halocyberlife/</a>
-          </div>
-          <ul class="footer-links">
-            <li><span></span> <a href="https://www.halocyberlife.com/site_map.com">Site Map</a></li>
-          </ul>
-        </div>
-      </div>
-  
-      <button class="back-to-top" aria-label="Back to top">↑</button>
-    </footer>
   </main>
 
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox__close">✕</button>
-    <div class="lightbox__panel">
-      <img src="" id="lightboxImg" class="lightbox__img">
-    </div>
-  </div>
-<script>
-/* =========================================================
-   MASTER JS — BioGlow Page
-   Slider • Lightbox • Mobile Nav • Back To Top
-   ========================================================= */
+  <footer>
+    <p>© 2026 Halocyberlife // BioLoop Proprietary System // v2.0.4</p>
+  </footer>
 
-document.addEventListener('DOMContentLoaded', () => {
+  <button class="back-to-top">↑</button>
 
-  /* ───────── SLIDER SYSTEM ───────── */
-  let index = 0;
-  const track = document.getElementById('visionTrack');
-  const slides = document.querySelectorAll('.vision-slide');
+  <script>
+    // SMOOTH SCROLL & BACK TO TOP
+    const btt = document.querySelector('.back-to-top');
+    window.onscroll = () => { btt.style.display = window.scrollY > 500 ? 'block' : 'none'; };
+    btt.onclick = () => { window.scrollTo({top: 0, behavior: 'smooth'}); };
 
-  function moveSlide(n) {
-    if (!track || !slides.length) return;
-    index = (index + n + slides.length) % slides.length;
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  if (track && slides.length) {
-    setInterval(() => moveSlide(1), 6000);
-  }
-
-  /* ───────── LIGHTBOX SYSTEM ───────── */
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightboxImg');
-const closeBtn = document.querySelector('.lightbox__close');
-
-document.querySelectorAll('.lightbox-trigger').forEach(img => {
-  img.addEventListener('click', () => {
-    lb.classList.add('open');
-    lbImg.src = img.src;
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeLightbox() {
-  lb.classList.remove('open');
-  lbImg.src = '';
-  document.body.style.overflow = '';
-}
-
-if (closeBtn) {
-  closeBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    closeLightbox();
-  });
-}
-
-if (lb) {
-  lb.addEventListener('click', e => {
-    if (e.target === lb) closeLightbox();
-  });
-}
-
-  /* ───────── MOBILE NAV TOGGLE ───────── */
-  const navToggle = document.querySelector('.neon-nav-toggle');
-  const nav = document.getElementById('primary-nav');
-
-  if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('active');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    document.querySelectorAll('.neon-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', false);
-        document.body.style.overflow = '';
-      });
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && nav.classList.contains('active')) {
-        nav.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', false);
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-  /* ───────── BACK TO TOP BUTTON ───────── */
-  const backToTop = document.querySelector('.back-to-top');
-
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      backToTop.style.display = window.scrollY > 600 ? 'grid' : 'none';
-    });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-});
-</script>
+    // SLIDER LOGIC
+    let currentSlide = 0;
+    const track = document.getElementById('visionTrack');
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % 2;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }, 5000);
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
