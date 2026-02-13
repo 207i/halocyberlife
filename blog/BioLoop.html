@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BioLoop — Waste Gas & Metabolite Extraction | Halocyberlife</title>
-  <meta name="description" content="BioLoop: Proprietary gas-phase metabolite collection and CO2 recapture systems. 2x1 Serialized Frequency Nodes integrated into sanitary manifolds." />
+  <meta name="description" content="BioLoop: Advanced gas-phase metabolite collection and CO2 recapture systems integrated into serialized 2x1 nodes and extraction manifolds." />
   
   <style>
     /* =========================
-       CORE NEON ARCHITECTURE 
+       HALOCYBERLIFE MASTER CSS
        ========================= */
     :root {
       --bg: #020617;
@@ -30,34 +30,15 @@
       background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000000 100%);
       color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+    .container { width: 100%; max-width: 980px; margin: 0 auto; padding: 0 1.25rem; }
 
-    /* =========================
-       PROPRIETARY DATA OVERLAY
-       ========================= */
-    .data-strip {
-      background: rgba(139, 92, 246, 0.1);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 0;
-      font-family: 'Courier New', monospace;
-      font-size: 0.75rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    /* =========================
-       HEADER & NAV (NEON SYNC)
-       ========================= */
+    /* --- NEON HEADER --- */
     .neon-header {
       position: sticky; top: 0; z-index: 1000;
       background: rgba(2, 6, 23, 0.9);
-      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+      border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
     .neon-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.25rem; }
@@ -70,51 +51,47 @@
     .color-gold { color: #fbbf24; border-color: rgba(251, 191, 36, 0.3); }
     .neon-link:hover { box-shadow: 0 0 15px currentColor; background: rgba(255,255,255,0.05); }
 
-    /* =========================
-       HERO & VISION SLIDER
-       ========================= */
-    .article-head { text-align: center; margin: 4rem auto 3rem; }
+    /* --- HERO & META --- */
+    .article-head { text-align: center; margin: 3rem auto 2.5rem; }
+    .meta { color: var(--accent); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
     h1 { 
-      font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+      font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem;
       background: linear-gradient(to right, #fff, var(--accent2), var(--accent-magenta));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .vision-slider { margin: 3rem auto; position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
-    .vision-track { display: flex; transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .vision-slide { flex: 0 0 100%; position: relative; }
-    .vision-slide img { width: 100%; height: 600px; object-fit: cover; }
-    .vision-slide figcaption { position: absolute; bottom: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(2,6,23,0.95)); color: #fff; }
+    .subtitle { color: var(--soft); max-width: 820px; margin: 0 auto; font-size: 1.1rem; font-weight: 300; }
 
-    /* =========================
-       FEATURE GRID (THE STUFF)
-       ========================= */
-    .cards-grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin: 4rem 0; }
-    .feature-card { 
-      background: rgba(139, 92, 246, 0.03); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .feature-card:hover { transform: scale(1.02); border-color: var(--accent); box-shadow: 0 0 30px rgba(34, 211, 238, 0.2); }
-    .card-media { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid var(--border); }
+    /* --- VISION SLIDER --- */
+    .vision-slider { margin: 3rem auto; position: relative; }
+    .vision-viewport { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: #000; box-shadow: var(--shadow); position: relative; }
+    .vision-track { display: flex; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .vision-slide { flex: 0 0 100%; }
+    .vision-slide img { width: 100%; height: clamp(300px, 50vw, 600px); object-fit: cover; display: block; }
+    .vision-slide figcaption { padding: 1.5rem; font-size: 1rem; background: rgba(2,6,23,0.85); color: var(--soft); border-top: 1px solid var(--border); }
+    .vision-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(139, 92, 246, 0.2); color: #fff; font-size: 1.5rem; cursor: pointer; z-index: 5; display: grid; place-items: center; backdrop-filter: blur(4px); }
+    .vision-prev { left: 20px; } .vision-next { right: 20px; }
+
+    /* --- GRID & CARDS --- */
+    .cards-grid { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
+    @media (max-width: 760px) { .cards-grid { grid-template-columns: 1fr; } }
+    .feature-card { border: 1px solid var(--border); border-radius: var(--radius); background: rgba(139, 92, 246, 0.03); overflow: hidden; transition: 0.3s ease; display: flex; flex-direction: column; }
+    .feature-card:hover { transform: translateY(-5px); border-color: var(--accent2); background: rgba(139, 92, 246, 0.08); }
+    .card-media { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid var(--border); cursor: zoom-in; }
     .card-body { padding: 1.5rem; }
-    .serialized-id { font-family: monospace; font-size: 0.7rem; color: var(--accent2); margin-bottom: 0.5rem; display: block; }
+    .tag { display: inline-block; margin-top: 1rem; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--accent2); background: rgba(139, 92, 246, 0.15); color: #e9d5ff; font-size: .75rem; font-weight: 700; text-transform: uppercase; }
 
-    /* =========================
-       BACK TO TOP
-       ========================= */
-    .back-to-top {
-      position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%;
-      background: var(--accent2); color: #fff; border: none; cursor: pointer; display: none; z-index: 1000;
-      box-shadow: 0 0 20px var(--accent2);
-    }
+    /* --- LIGHTBOX --- */
+    .lightbox { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); z-index: 10000; padding: 20px; }
+    .lightbox.open { display: grid; }
+    .lightbox__panel { width: min(1100px, 100%); background: #000; border-radius: 20px; border: 2px solid var(--accent2); overflow: hidden; position: relative; }
+    .lightbox__img { width: 100%; max-height: 80vh; object-fit: contain; }
 
-    footer { border-top: 1px solid var(--border); padding: 4rem 0; text-align: center; margin-top: 6rem; background: #010409; }
+    /* --- BACK TO TOP --- */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border); background: rgba(2,6,23,0.95); color: #fff; font-size: 1.3rem; cursor: pointer; display: none; z-index: 1200; box-shadow: 0 0 25px rgba(139,92,246,0.45); }
   </style>
 </head>
 
 <body>
-  <div class="data-strip">
-    <marquee scrollamount="5">BIOLOOP EXTRACTION CORE // SERIALIZED FREQUENCY NODES [2" X 1"] // STATUS: ACTIVE // MANIFOLD PRESSURE: NOMINAL // CO2 RECAPTURE: 85.4%</marquee>
-  </div>
-
   <header class="neon-header">
     <div class="container neon-header-inner">
       <a href="../index.html" class="neon-brand">
@@ -131,96 +108,163 @@
 
   <main class="container">
     <section class="article-head">
-      <p class="meta" style="color: var(--accent-magenta); font-weight: bold; letter-spacing: 3px;">BIOLOOP SERIES // GAS PHASE</p>
-      <h1>Proprietary Resource Recovery</h1>
-      <p class="subtitle" style="font-size: 1.4rem; color: var(--soft); max-width: 900px; margin: 0 auto;">
-        Integrating the <strong>Resonant Manifold</strong> into high-end sanitary hardware to harvest gas-phase metabolites and concentrated CO₂ at the source.
-      </p>
+      <p class="meta">BioLoop Series // 2" x 1" Serialized Extraction</p>
+      <h1>BioLoop | Waste Gas & Resource Recovery</h1>
+      <p class="subtitle">Advanced gas-phase metabolite collection and CO₂ recapture systems integrated through high-precision extraction manifolds and sanitary hardware interfaces.</p>
       
-      <div style="margin-top: 3rem; display: flex; gap: 20px; justify-content: center;">
-        <a href="./Patent_BioLoop.html" class="btn" style="background: var(--accent2); padding: 15px 30px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);">VIEW OFFICIAL PATENT ↗</a>
-        <a href="#support-node" class="btn" style="border: 1px solid var(--accent); padding: 15px 30px; border-radius: 50px; text-decoration: none; color: var(--accent); font-weight: bold;">FUND PHASE 02</a>
+      <div style="display: flex; gap: 12px; justify-content: center; margin: 2rem 0;">
+        <a href="./Patent_BioLoop.html" style="text-decoration: none; background: linear-gradient(135deg, var(--accent2) 0%, var(--accent-magenta) 100%); color: #fff; padding: 12px 24px; border-radius: 99px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);">View Official Patent ↗</a>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 10px;">
+        <span class="pill" style="padding: 6px 14px; border-radius: 99px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--border); font-size: .85rem; color: #e9d5ff;">Interface: Toilet Seat Coupling</span>
+        <span class="pill" style="padding: 6px 14px; border-radius: 99px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--border); font-size: .85rem; color: #e9d5ff;">Module: Extraction Manifold</span>
+        <span class="pill" style="padding: 6px 14px; border-radius: 99px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--border); font-size: .85rem; color: #e9d5ff;">Form: 2" x 1" Serialized Nodes</span>
       </div>
     </section>
 
     <section class="vision-slider">
-      <div class="vision-track" id="visionTrack">
-        <figure class="vision-slide">
-          <img src="./Images/blog_images/BioLoop_img/BioLoop_Architecture.png" alt="BioLoop Full Architecture">
-          <figcaption><strong>System Schematic:</strong> The bridge between the human signal source and the recovery manifold.</figcaption>
-        </figure>
-        <figure class="vision-slide">
-          <img src="./Images/blog_images/BioLoop_img/Gas_Capture.png" alt="Extraction Manifold">
-          <figcaption><strong>Internal Manifold:</strong> Routing harvested metabolites through serialized 2" x 1" nodes.</figcaption>
-        </figure>
+      <div class="vision-viewport">
+        <div class="vision-track" id="visionTrack">
+          <figure class="vision-slide">
+            <img src="./Images/blog_images/BioLoop_img/BioLoop_Architecture.png">
+            <figcaption><strong>BioLoop Architecture:</strong> The bridge between the human waste signal source and the recovery system core.</figcaption>
+          </figure>
+          <figure class="vision-slide">
+            <img src="./Images/blog_images/BioLoop_img/Toilet_Seat.png">
+            <figcaption><strong>Seat Interface Coupling:</strong> Specialized hardware designed to establish a hermetic seal for gas capture.</figcaption>
+          </figure>
+          <figure class="vision-slide">
+            <img src="./Images/blog_images/BioLoop_img/Gas_Capture.png">
+            <figcaption><strong>Extraction Manifold:</strong> Internalized ducting system for routing harvested gas-phase metabolites.</figcaption>
+          </figure>
+          <figure class="vision-slide">
+            <img src="./Images/blog_images/BioLoop_img/Moisture_Capture.png">
+            <figcaption><strong>Moisture & CO₂ Core:</strong> Active recovery layers isolating biological signatures for cycle reintegration.</figcaption>
+          </figure>
+        </div>
+        <button class="vision-btn vision-prev" onclick="moveSlide(-1)">‹</button>
+        <button class="vision-btn vision-next" onclick="moveSlide(1)">›</button>
       </div>
     </section>
 
-    <section class="cards-grid">
-      <article class="feature-card">
-        <img class="card-media" src="./Images/blog_images/BioLoop_img/Toilet_Seat.png">
-        <div class="card-body">
-          <span class="serialized-id">NODE_TYPE: SEAT_COUPLING_V4</span>
-          <h3>Interface Coupling</h3>
-          <p>The primary seal established at the sanitary interface, designed for localized gas and moisture capture before atmospheric dissipation.</p>
-        </div>
-      </article>
-
-      <article class="feature-card" style="border-color: var(--accent-magenta);">
-        <img class="card-media" src="./Images/blog_images/BioLoop_img/Gas_Capture.png">
-        <div class="card-body">
-          <span class="serialized-id">SPEC: 2" X 1" SERIALIZED FREQUENCY NODE</span>
-          <h3 style="color: var(--accent-magenta);">Extraction Manifold</h3>
-          <p>A precision-engineered internal ducting system. Every 2"x1" node is serialized to track extraction efficiency across the Resonant Manifold.</p>
-        </div>
-      </article>
-
-      <article class="feature-card">
-        <img class="card-media" src="./Images/blog_images/BioLoop_img/Moisture_Capture.png">
-        <div class="card-body">
-          <span class="serialized-id">CORE: CO2_RECAPTURE_V2.1</span>
-          <h3>Metabolite Capture</h3>
-          <p>Utilizing active filtering layers to isolate biological signatures, feeding the nutrient cycle back into the BioGlow ecosystem.</p>
-        </div>
-      </article>
-    </section>
-
-    <section id="support-node" style="margin: 6rem 0; padding: 4rem; background: rgba(5, 8, 20, 0.8); border: 2px solid var(--accent2); border-radius: var(--radius); text-align: center; box-shadow: 0 0 50px rgba(139, 92, 246, 0.2);">
-      <img src="./Images/BioGlow_images/logo_v4_2.png" style="width: 100px; margin-bottom: 2rem; filter: drop-shadow(0 0 10px var(--accent2));">
-      <h2 style="font-size: 3rem; text-transform: uppercase; margin-bottom: 1.5rem;">Secure the Patent Framework</h2>
-      <p style="font-size: 1.2rem; color: var(--soft); max-width: 700px; margin: 0 auto 3rem;">
-        We are transitioning from schematic to physical scale. Your support funds the <strong>legal IP defense</strong> for the BioLoop Interface and the <strong>tooling</strong> for the 2" x 1" Serialized Nodes.
+    <article style="max-width:820px; margin: 4rem auto; text-align:center;">
+      <h2 style="color: var(--accent2); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;">The BioLoop Process</h2>
+      <p style="font-size:1.2rem; color:var(--soft); line-height: 1.8;">
+        BioLoop represents the architectural integration of resource harvesting within daily utilities. By utilizing a <strong>Toilet Seat Interface</strong> and our proprietary <strong>2" x 1" Serialized Nodes</strong>, the system captures gas-phase metabolites and concentrated CO₂ before they dissipate, feeding them directly back into the BioGlow nutrient cycle.
       </p>
-      <a href="STRIPE_LINK" style="display: inline-block; background: linear-gradient(135deg, var(--accent2), var(--accent-magenta)); padding: 20px 50px; color: white; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 5px; letter-spacing: 2px;">FUND THE EXTRACTION CORE</a>
+    </article>
+
+    <section id="possibilities">
+      <h2 style="text-align:center; margin-bottom:3rem; text-transform: uppercase; letter-spacing: 0.2em; font-size:1.8rem;">Architecture & Subsystems</h2>
+      <div class="cards-grid">
+        <article class="feature-card">
+          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Toilet_Seat.png">
+          <div class="card-body">
+            <h3>Seat Interface Coupling</h3>
+            <p>The primary collection point designed to form a seal for efficient gas capture during use.</p>
+            <span class="tag">Hardware</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Moisture_Capture.png">
+          <div class="card-body">
+            <h3>CO₂ Recapture</h3>
+            <p>Active filtering layers that isolate and concentrate carbon dioxide for reuse in the BioGlow ecosystem.</p>
+            <span class="tag">Carbon Loop</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Gas_Capture.png">
+          <div class="card-body">
+            <h3>Extraction Manifold</h3>
+            <p>A specialized internal ducting system routing harvested gases to the processing core through serialized nodes.</p>
+            <span class="tag">Gas Distribution</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Buffer_Int.png">
+          <div class="card-body">
+            <h3>Metabolite Sensing</h3>
+            <p>Real-time monitoring of gas-phase biological signatures to optimize harvest efficiency across the 2"x1" array.</p>
+            <span class="tag">Monitoring</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Buffer.png">
+          <div class="card-body">
+            <h3>Modern Integration</h3>
+            <p>Seamlessly integrating resource-harvesting manifolds into high-end sanitary hardware design.</p>
+            <span class="tag">Interior Design</span>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <img class="card-media lightbox-trigger" src="./Images/blog_images/BioLoop_img/Outside_Outlet.png">
+          <div class="card-body">
+            <h3>Interface Coupling</h3>
+            <p>The final bridge between the human waste signal source and the recovery system outlet.</p>
+            <span class="tag">Coupling</span>
+          </div>
+        </article>
+      </div>
     </section>
 
+    <section id="support-node" style="padding: 6rem 0; border-top: 1px solid var(--border); margin-top: 4rem;">
+      <div style="max-width: 800px; width: 100%; background: #050814; border: 1px solid var(--accent2); padding: 4rem 2rem; border-radius: 4px; text-align: center; margin: 0 auto;">
+        <img src="./Images/BioGlow_images/logo_v4_2.png" alt="Halocyberlife" style="width: 85px; filter: drop-shadow(0 0 10px var(--accent2));">
+        <h2 style="font-size: 2.6rem; color: #fff; margin: 1.5rem 0; text-transform: uppercase;">Finalize the BioLoop Manifold</h2>
+        <p style="color: #d1d5db; line-height: 1.8; margin-bottom: 2.5rem; font-size: 1.1rem;">
+          Your support secures the legal patent framework for the <strong>BioLoop Gas-Extraction Interface</strong> and funds the precision manufacturing of our <strong>2" x 1" Serialized Frequency Nodes</strong>.
+        </p>
+        <a href="PASTE_YOUR_STRIPE_LINK_HERE" style="display: inline-block; background: linear-gradient(135deg, var(--accent2), var(--accent-magenta)); color: white; padding: 1.4rem 3.5rem; text-decoration: none; font-weight: bold; border-radius: 4px; letter-spacing: 2px;">FUND THE EXTRACTION CORE</a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Halocyberlife // BioLoop Proprietary System // v2.0.4</p>
-  </footer>
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox__panel">
+      <img src="" id="lightboxImg" class="lightbox__img">
+    </div>
+  </div>
 
   <button class="back-to-top">↑</button>
 
   <script>
-    // SMOOTH SCROLL & BACK TO TOP
-    const btt = document.querySelector('.back-to-top');
-    window.onscroll = () => { btt.style.display = window.scrollY > 500 ? 'block' : 'none'; };
-    btt.onclick = () => { window.scrollTo({top: 0, behavior: 'smooth'}); };
+    document.addEventListener('DOMContentLoaded', () => {
+      // SLIDER
+      let index = 0;
+      const track = document.getElementById('visionTrack');
+      const slides = document.querySelectorAll('.vision-slide');
+      window.moveSlide = (n) => {
+        index = (index + n + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      };
+      setInterval(() => moveSlide(1), 6000);
 
-    // SLIDER LOGIC
-    let currentSlide = 0;
-    const track = document.getElementById('visionTrack');
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % 2;
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }, 5000);
+      // LIGHTBOX
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      document.querySelectorAll('.lightbox-trigger').forEach(img => {
+        img.addEventListener('click', () => {
+          lb.classList.add('open');
+          lbImg.src = img.src;
+        });
+      });
+      lb.addEventListener('click', () => lb.classList.remove('open'));
+
+      // BACK TO TOP
+      const btt = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => btt.style.display = window.scrollY > 600 ? 'grid' : 'none');
+      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    });
   </script>
 </body>
 </html>
-
-
-
 
 
 
