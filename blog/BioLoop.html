@@ -373,7 +373,23 @@
       window.addEventListener('scroll', () => btt.style.display = window.scrollY > 600 ? 'grid' : 'none');
       btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     });
+
+    // MOBILE NAV TOGGLE
+      const menuBtn = document.getElementById('mobile-menu');
+      const navList = document.getElementById('nav-list');
+
+      menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        // Optional: Animate hamburger to X
+        menuBtn.classList.toggle('is-active');
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll('.neon-link').forEach(link => {
+        link.addEventListener('click', () => navList.classList.remove('active'));
+      });
   </script>
+  
 </body>
 </html>
 
