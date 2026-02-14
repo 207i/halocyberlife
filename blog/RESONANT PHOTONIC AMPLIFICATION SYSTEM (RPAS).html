@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RESONANT PHOTONIC AMPLIFICATION SYSTEM | (RPAS)</title>
-  <meta name="description" content="A concept technology exploring frequency-driven photonic excitation: how resonance could amplify light emission." />
   <link rel="icon" type="image/png" href="../images/negative_white_halocyberlife_logo.png">
   
   <style>
@@ -15,11 +13,10 @@
       --muted: #9ca3af;
       --soft: #d1d5db;
       --border: rgba(139, 92, 246, 0.3);
-      --accent: #22d3ee; /* Cyan */
-      --accent2: #8b5cf6; /* Electric Purple */
+      --accent: #22d3ee;
+      --accent2: #8b5cf6;
       --accent-magenta: #d946ef;
       --radius: 18px;
-      --shadow: 0 18px 60px rgba(139, 92, 246, 0.25);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,12 +25,11 @@
       background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000000 100%);
       color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     .container { width: 100%; max-width: 980px; margin: 0 auto; padding: 0 1.25rem; }
 
-    /* --- NEON HEADER --- */
+    /* HEADER */
     .neon-header {
       position: sticky; top: 0; z-index: 1000;
       background: rgba(2, 6, 23, 0.9);
@@ -42,53 +38,52 @@
     }
     .neon-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.25rem; }
     .neon-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
-    .neon-logo { width: 40px; filter: drop-shadow(0 0 5px var(--accent2)); }
+    .neon-logo { width: 38px; filter: drop-shadow(0 0 5px var(--accent2)); }
     .neon-nav { display: flex; gap: 0.5rem; }
     .neon-link { padding: 0.5rem 1rem; border-radius: 99px; text-decoration: none; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; color: #fff; }
-    .color-blue { color: #22d3ee; border-color: rgba(34, 211, 238, 0.3); }
-    .neon-link:hover { box-shadow: 0 0 15px currentColor; background: rgba(255,255,255,0.05); }
+    .neon-link:hover { box-shadow: 0 0 15px var(--accent2); background: rgba(255,255,255,0.05); }
 
-    /* --- ARTICLE HEAD --- */
+    /* HEADINGS & TAGS */
     .article-head { text-align: center; margin: 3rem auto; }
     h1 { 
         font-size: clamp(2.2rem, 5vw, 3.2rem); 
         background: linear-gradient(to right, #fff, var(--accent2), var(--accent-magenta));
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
     .tag-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 2rem; }
-    .pill { padding: 6px 14px; border-radius: 999px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--border); font-size: .85rem; color: #e9d5ff; text-decoration: none; }
+    .pill { padding: 6px 14px; border-radius: 999px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--border); font-size: .85rem; color: #e9d5ff; }
 
-    /* --- VISION SLIDER --- */
+    /* SLIDER */
     .vision-slider { margin: 3rem auto; position: relative; }
-    .vision-viewport { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: #000; box-shadow: var(--shadow); position: relative; }
+    .vision-viewport { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: #000; position: relative; }
     .vision-track { display: flex; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
     .vision-slide { flex: 0 0 100%; }
-    .vision-slide img { width: 100%; height: clamp(300px, 50vw, 600px); object-fit: cover; }
-    .vision-slide figcaption { padding: 1.5rem; background: rgba(2,6,23,0.9); border-top: 1px solid var(--border); }
-    .vision-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(139, 92, 246, 0.3); color: #fff; font-size: 1.5rem; cursor: pointer; z-index: 10; backdrop-filter: blur(4px); }
+    .vision-slide img { width: 100%; height: clamp(300px, 50vw, 600px); object-fit: cover; cursor: zoom-in; }
+    .vision-slide figcaption { padding: 1.5rem; background: rgba(2,6,23,0.9); border-top: 1px solid var(--border); font-size: 0.95rem; }
+    .vision-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(139, 92, 246, 0.4); color: #fff; cursor: pointer; z-index: 10; display: grid; place-items: center; }
     .vision-prev { left: 15px; } .vision-next { right: 15px; }
 
-    /* --- CARDS & LIGHTBOX --- */
-    .cards-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 3rem 0; }
+    /* CARDS GRID */
+    .cards-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin: 3rem 0; }
     .feature-card { border: 1px solid var(--border); border-radius: var(--radius); background: rgba(139, 92, 246, 0.03); overflow: hidden; transition: 0.3s; }
     .feature-card:hover { transform: translateY(-5px); border-color: var(--accent2); }
     .card-media { width: 100%; height: 220px; object-fit: cover; cursor: zoom-in; }
     .card-body { padding: 1.5rem; }
-    .tag { display: inline-block; margin-top: 1rem; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--accent2); color: #e9d5ff; font-size: .7rem; font-weight: 700; text-transform: uppercase; }
+    .tag { display: inline-block; margin-top: 1rem; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--accent2); color: #e9d5ff; font-size: .7rem; font-weight: 700; text-transform: uppercase; margin-right: 5px; }
 
-    /* Lightbox Styling */
-    .lightbox { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.9); z-index: 2000; padding: 20px; backdrop-filter: blur(10px); }
+    /* LIGHTBOX */
+    .lightbox { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.95); z-index: 2000; padding: 20px; backdrop-filter: blur(15px); }
     .lightbox.open { display: grid; }
-    .lightbox__img { max-width: 90%; max-height: 80vh; border: 2px solid var(--accent2); border-radius: 10px; }
+    .lightbox__img { max-width: 95%; max-height: 85vh; border: 1px solid var(--accent2); border-radius: 8px; box-shadow: 0 0 40px rgba(139,92,246,0.3); }
     .lightbox__close { position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; }
 
-    /* Buttons */
-    .btn { display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 99px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-    .btn.primary { background: linear-gradient(135deg, var(--accent2), var(--accent-magenta)); color: white; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.2); }
+    /* VIDEO SECTION */
+    .video-container { grid-column: 1 / -1; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--accent2); position: relative; padding-bottom: 56.25%; height: 0; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-    .back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background: var(--accent2); color: white; border: none; border-radius: 50%; display: none; place-items: center; cursor: pointer; z-index: 100; }
+    .btn { display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 99px; text-decoration: none; font-weight: 700; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent2), var(--accent-magenta)); color: white; }
   </style>
 </head>
 
@@ -100,40 +95,38 @@
         <span>Halocyberlife</span>
       </a>
       <nav class="neon-nav">
-        <a href="../index.html" class="neon-link color-blue">Home</a>
-        <a href="../blog.html" class="neon-link color-cyan">Articles</a>
+        <a href="../index.html" class="neon-link">Home</a>
+        <a href="../blog.html" class="neon-link">Articles</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="article-head">
-      <p style="color:var(--accent); text-transform:uppercase; font-size:0.8rem; letter-spacing:2px;">Resonance / Photonics / IP</p>
+      <p style="color:var(--accent); text-transform:uppercase; font-size:0.8rem; letter-spacing:2px; margin-bottom:10px;">Resonance / Photonics / RPAS</p>
       <h1>Resonant Photonic Amplification System</h1>
       <div class="tag-row">
         <span class="pill"><strong>Mechanism:</strong> Resonant excitation</span>
         <span class="pill"><strong>Architecture:</strong> Inward-directed collectors</span>
         <span class="pill"><strong>Response:</strong> Distributed photonic emission</span>
       </div>
-      <div style="display:flex; gap:15px; justify-content:center;">
-        <a href="./Patent_Photonic_Resonant.html" class="btn primary">View Patent ↗</a>
-      </div>
+      <a href="./Patent_Photonic_Resonant.html" class="btn primary">View Official Patent ↗</a>
     </section>
 
     <section class="vision-slider">
       <div class="vision-viewport">
         <div class="vision-track" id="visionTrack">
           <figure class="vision-slide">
-            <img src="./Images/blog_images/Resonance_Amplification/RPAS_Internal_Amplification_Module_Cutaway.png" alt="Cutaway">
-            <figcaption><strong>Inward-Directed Resonant Core:</strong> RPAS uses reflective geometries to redirect photonic emissions inward, increasing signal density.</figcaption>
+            <img src="./Images/blog_images/Resonance_Amplification/RPAS_Internal_Amplification_Module_Cutaway.png" class="lightbox-trigger" alt="Cutaway">
+            <figcaption><strong>Inward-Directed Resonant Core:</strong> Redirecting photonic emissions inward to increase signal density without traditional bulbs.</figcaption>
           </figure>
           <figure class="vision-slide">
-            <img src="./Images/blog_images/Resonance_Amplification/RPAS_CrossSectional_Driver_Interface.png" alt="Interface">
-            <figcaption><strong>Resonant Excitation Interface:</strong> Electromagnetic stimulation applied to engineered layers to increase emission probability.</figcaption>
+            <img src="./Images/blog_images/Resonance_Amplification/RPAS_CrossSectional_Driver_Interface.png" class="lightbox-trigger" alt="Interface">
+            <figcaption><strong>Resonant Excitation Interface:</strong> Electromagnetic and acoustic stimulation applied to engineered layers.</figcaption>
           </figure>
           <figure class="vision-slide">
-            <img src="./Images/blog_images/Resonance_Amplification/RPAS_Core_Amplification_Stack_Render.png" alt="Stack">
-            <figcaption><strong>Multi-Stage Concentration Stack:</strong> Sequential layers guide emissions through staged redirection.</figcaption>
+            <img src="./Images/blog_images/Resonance_Amplification/RPAS_Core_Amplification_Stack_Render.png" class="lightbox-trigger" alt="Stack">
+            <figcaption><strong>Multi-Stage Concentration Stack:</strong> Sequential layers guide weak photonic activity toward a usable response region.</figcaption>
           </figure>
         </div>
         <button class="vision-btn vision-prev" onclick="moveSlide(-1)">‹</button>
@@ -141,81 +134,85 @@
       </div>
     </section>
 
+    <figure style="margin: 4rem auto; text-align: center;">
+        <img src="./Images/blog_images/Resonance_Amplification/Futuristic_Room_Illuminated_By_Resonance.png" class="lightbox-trigger" alt="Room" style="width:100%; border-radius:var(--radius); border: 1px solid var(--border);">
+        <figcaption style="margin-top:1rem; color:var(--muted); font-size:0.9rem;">Figure: RPAS Surface-Integrated Environment (Conceptual Illustration)</figcaption>
+    </figure>
+
     <div class="cards-grid">
+      
+      <article class="video-container">
+        <iframe src="https://www.youtube.com/embed/FE78W69SqYE" frameborder="0" allowfullscreen></iframe>
+      </article>
+
       <article class="feature-card">
-        <img class="card-media lightbox-trigger" src="./Images/blog_images/Resonance_Amplification/RPAS_Internal_Amplification_Module_Cutaway.png" alt="Module">
+        <img class="card-media lightbox-trigger" src="./Images/blog_images/Resonance_Amplification/modular_connected_photonic_network.png">
         <div class="card-body">
-          <h3>Living Architecture (RPAS)</h3>
-          <p>Photonic response emerging through resonance rather than attached fixtures.</p>
-          <span class="tag">Distributed Response</span>
+          <h3>Resonant Network Topology</h3>
+          <p>Interconnected resonant layers forming a coherent photonic network across complex surfaces.</p>
+          <span class="tag">Networked Layers</span>
+          <span class="tag">Topology</span>
         </div>
       </article>
 
       <article class="feature-card">
-        <img class="card-media lightbox-trigger" src="./Images/blog_images/Resonance_Amplification/modular_connected_photonic_network.png" alt="Network">
+        <img class="card-media lightbox-trigger" src="./Images/blog_images/Resonance_Amplification/Futuristic_spatial_resonance_corridor.png">
         <div class="card-body">
-          <h3>Resonant Network Topology</h3>
-          <p>Coherent photonic networks enabling spatially distributed excitation.</p>
-          <span class="tag">System Topology</span>
+          <h3>Spatial Resonance Zoning</h3>
+          <p>Selectively applied excitation intensity across corridors, thresholds, and occupied regions.</p>
+          <span class="tag">Selective Excitation</span>
+          <span class="tag">Zonal Control</span>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <img class="card-media lightbox-trigger" src="./Images/blog_images/Resonance_Amplification/Resonance_Stacking.png">
+        <div class="card-body">
+          <h3>Resonant Stack Architecture</h3>
+          <p>Layered stack driven by coupled acoustic and electromagnetic sources for material-level emission control.</p>
+          <span class="tag">Driver Coupling</span>
+          <span class="tag">Layer Stack</span>
         </div>
       </article>
     </div>
 
-    <section id="support-node" style="margin: 5rem 0; padding: 3rem; background: rgba(10, 10, 15, 0.8); border: 1px solid #333; text-align: center; border-radius: 12px;">
-        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Fuel the Evolution</h2>
-        <p style="margin-bottom: 2rem; color: var(--muted);">Directly funding legal protection and physical engineering of the 2" x 1" frequency nodes.</p>
-        <a href="YOUR_STRIPE_LINK" class="btn primary" style="background:#4ade80; color:#000;">SUPPORT THE RESEARCH</a>
+    <section id="support-node" style="margin: 5rem 0; padding: 3rem; background: rgba(10, 10, 15, 0.9); border: 1px solid var(--accent2); text-align: center; border-radius: 12px;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Fuel the Evolution</h2>
+        <p style="margin-bottom: 2rem; color: var(--soft);">Directly funding legal protection and physical engineering of the **2" x 1" BioGen frequency nodes**.</p>
+        <a href="YOUR_STRIPE_LINK" class="btn primary" style="background:#4ade80; color:#000; border:none;">SUPPORT THE RESEARCH</a>
     </section>
   </main>
 
   <div class="lightbox" id="lightbox">
-    <button class="lightbox__close" id="closeBtn">✕</button>
+    <button class="lightbox__close" onclick="closeLightbox()">✕</button>
     <img src="" id="lightboxImg" class="lightbox__img">
   </div>
 
-  <button class="back-to-top" id="backToTop">↑</button>
-
   <script>
-    /* --- SLIDER LOGIC (Global Scope) --- */
     let currentIndex = 0;
     function moveSlide(n) {
       const track = document.getElementById('visionTrack');
       const slides = document.querySelectorAll('.vision-slide');
-      if (!track) return;
       currentIndex = (currentIndex + n + slides.length) % slides.length;
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      // Auto-slide
-      setInterval(() => moveSlide(1), 6000);
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
 
-      // Lightbox Logic
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lightboxImg');
-      document.querySelectorAll('.lightbox-trigger').forEach(img => {
-        img.addEventListener('click', () => {
-          lb.classList.add('open');
-          lbImg.src = img.src;
-        });
-      });
+    function closeLightbox() { lb.classList.remove('open'); }
 
-      document.getElementById('closeBtn').onclick = () => lb.classList.remove('open');
-      lb.onclick = (e) => { if(e.target === lb) lb.classList.remove('open'); };
-
-      // Back to Top
-      const btt = document.getElementById('backToTop');
-      window.onscroll = () => {
-        btt.style.display = window.scrollY > 500 ? 'grid' : 'none';
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.onclick = () => {
+        lb.classList.add('open');
+        lbImg.src = img.src;
       };
-      btt.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
     });
+
+    lb.onclick = (e) => { if(e.target === lb) closeLightbox(); };
+
+    // Auto-advance slider
+    setInterval(() => moveSlide(1), 8000);
   </script>
 </body>
 </html>
-
-
-
-
-
-
