@@ -5,53 +5,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RESONANT PHOTONIC AMPLIFICATION SYSTEM | (RPAS)</title>
-  <meta name="description" content="Exploring Resonant Photonic Amplification: A novel frequency-driven technology for distributed architectural illumination without LEDs or filaments." />
-  <meta name="author" content="Luis Amaya" />
-  <meta name="keywords" content="photonics, resonant amplification, RPAS technology, frequency excitation, Halocyberlife, luminescent layers, Luis Amaya patents" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/negative_white_halocyberlife_logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/negative_white_halocyberlife_logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/negative_white_halocyberlife_logo.png">
+  <meta name="description" content="A concept technology exploring frequency-driven photonic excitation: how resonance could amplify light emission." />
+  <link rel="icon" type="image/png" href="../images/negative_white_halocyberlife_logo.png">
   
-  <meta name="theme-color" content="#1e1b4b">
   <style>
-    /* =========================
-       CSS ROOT & RESET
-       ========================= */
     :root {
       --bg: #020617;
       --text: #f9fafb;
       --muted: #9ca3af;
       --soft: #d1d5db;
       --border: rgba(139, 92, 246, 0.3);
-      --accent: #22d3ee; 
-      --accent2: #8b5cf6; 
-      --accent-magenta: #d946ef; 
+      --accent: #22d3ee; /* Cyan */
+      --accent2: #8b5cf6; /* Electric Purple */
+      --accent-magenta: #d946ef;
       --radius: 18px;
       --shadow: 0 18px 60px rgba(139, 92, 246, 0.25);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: system-ui, -apple-system, sans-serif;
       background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 55%, #000000 100%);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
-    .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { width: 100%; max-width: 980px; margin: 0 auto; padding: 0 1.25rem; }
 
-    /* =========================
-       HEADER & NAV
-       ========================= */
+    /* --- NEON HEADER --- */
     .neon-header {
       position: sticky; top: 0; z-index: 1000;
       background: rgba(2, 6, 23, 0.9);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
-    .neon-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; }
+    .neon-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.25rem; }
     .neon-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
     .neon-logo { width: 40px; filter: drop-shadow(0 0 5px var(--accent2)); }
     .neon-nav { display: flex; gap: 0.5rem; }
@@ -59,187 +48,173 @@
     .color-blue { color: #22d3ee; border-color: rgba(34, 211, 238, 0.3); }
     .neon-link:hover { box-shadow: 0 0 15px currentColor; background: rgba(255,255,255,0.05); }
 
-    /* =========================
-       TYPOGRAPHY & CONTENT
-       ========================= */
-    h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; }
+    /* --- ARTICLE HEAD --- */
+    .article-head { text-align: center; margin: 3rem auto; }
     h1 { 
-      font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; margin-bottom: 1.5rem;
-      background: linear-gradient(to right, #fff, var(--accent2), var(--accent-magenta));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        font-size: clamp(2.2rem, 5vw, 3.2rem); 
+        background: linear-gradient(to right, #fff, var(--accent2), var(--accent-magenta));
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
     }
-    h2 { font-size: 2rem; margin: 4rem 0 1.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; }
-    p { margin-bottom: 1.5rem; color: var(--soft); font-size: 1.1rem; }
-    .meta { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
-    .subtitle { font-size: 1.25rem; color: var(--muted); max-width: 800px; margin-bottom: 3rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 2rem; }
+    .pill { padding: 6px 14px; border-radius: 999px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--border); font-size: .85rem; color: #e9d5ff; text-decoration: none; }
 
-    /* =========================
-       COMPONENTS (Slider, Cards, Buttons)
-       ========================= */
-    .btn {
-      display: inline-flex; padding: 14px 30px; border-radius: 99px; text-decoration: none; font-weight: 700;
-      text-transform: uppercase; transition: 0.3s; cursor: pointer; border: 1px solid var(--border); color: #fff;
-    }
-    .btn.primary { background: linear-gradient(135deg, var(--accent2), var(--accent-magenta)); border: none; box-shadow: 0 0 20px rgba(139,92,246,0.4); }
-    
-    .vision-slider { margin: 4rem 0; position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-    .vision-track { display: flex; transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
-    .vision-slide { flex: 0 0 100%; position: relative; }
-    .vision-slide img { width: 100%; height: 500px; object-fit: cover; }
-    .vision-slide figcaption { padding: 2rem; background: rgba(2,6,23,0.9); border-top: 1px solid var(--border); }
+    /* --- VISION SLIDER --- */
+    .vision-slider { margin: 3rem auto; position: relative; }
+    .vision-viewport { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: #000; box-shadow: var(--shadow); position: relative; }
+    .vision-track { display: flex; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .vision-slide { flex: 0 0 100%; }
+    .vision-slide img { width: 100%; height: clamp(300px, 50vw, 600px); object-fit: cover; }
+    .vision-slide figcaption { padding: 1.5rem; background: rgba(2,6,23,0.9); border-top: 1px solid var(--border); }
+    .vision-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(139, 92, 246, 0.3); color: #fff; font-size: 1.5rem; cursor: pointer; z-index: 10; backdrop-filter: blur(4px); }
+    .vision-prev { left: 15px; } .vision-next { right: 15px; }
 
-    .cards-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 3rem 0; }
-    .feature-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: 0.3s; }
-    .feature-card:hover { border-color: var(--accent); background: rgba(34,211,238,0.05); }
+    /* --- CARDS & LIGHTBOX --- */
+    .cards-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 3rem 0; }
+    .feature-card { border: 1px solid var(--border); border-radius: var(--radius); background: rgba(139, 92, 246, 0.03); overflow: hidden; transition: 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); border-color: var(--accent2); }
+    .card-media { width: 100%; height: 220px; object-fit: cover; cursor: zoom-in; }
+    .card-body { padding: 1.5rem; }
+    .tag { display: inline-block; margin-top: 1rem; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--accent2); color: #e9d5ff; font-size: .7rem; font-weight: 700; text-transform: uppercase; }
 
-    .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--accent2); color: #fff; border: none; border-radius: 50%; cursor: pointer; display: none; z-index: 2000; }
+    /* Lightbox Styling */
+    .lightbox { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.9); z-index: 2000; padding: 20px; backdrop-filter: blur(10px); }
+    .lightbox.open { display: grid; }
+    .lightbox__img { max-width: 90%; max-height: 80vh; border: 2px solid var(--accent2); border-radius: 10px; }
+    .lightbox__close { position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; }
 
-    /* =========================
-       FOOTER
-       ========================= */
-    .site-footer { padding: 5rem 0; border-top: 1px solid var(--border); margin-top: 6rem; background: #010409; }
-    .footer-inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; }
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 99px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent2), var(--accent-magenta)); color: white; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.2); }
 
-    @media (max-width: 768px) {
-      .neon-nav { display: none; }
-      h1 { font-size: 2.5rem; }
-    }
+    .back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background: var(--accent2); color: white; border: none; border-radius: 50%; display: none; place-items: center; cursor: pointer; z-index: 100; }
   </style>
 </head>
+
 <body>
-
-<header class="neon-header">
-  <div class="container neon-header-inner">
-    <a href="../index.html" class="neon-brand">
-      <img src="../images/negative_white_halocyberlife_logo.png" alt="Logo" class="neon-logo" />
-      <span>Halocyberlife</span>
-    </a>
-    <nav class="neon-nav">
-      <a href="../index.html" class="neon-link color-blue">Home</a>
-      <a href="../blog.html" class="neon-link">Articles</a>
-      <a href="../contact_us.html" class="neon-link">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section class="article-head" style="padding-top: 4rem;">
-    <p class="meta">Experimental Physics • Photonic Engineering</p>
-    <h1>Resonant Photonic Amplification System</h1>
-    <p class="subtitle">Decoding the RPAS Framework: A leap toward frequency-driven environmental luminescence and solid-state photonic concentration.</p>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <a href="./Patent_Photonic_Resonant.html" class="btn primary">View Technical Patent ↗</a>
-      <a href="#theory" class="btn">Learn The Science</a>
+  <header class="neon-header">
+    <div class="container neon-header-inner">
+      <a href="../index.html" class="neon-brand">
+        <img src="../images/negative_white_halocyberlife_logo.png" class="neon-logo" alt="Logo">
+        <span>Halocyberlife</span>
+      </a>
+      <nav class="neon-nav">
+        <a href="../index.html" class="neon-link color-blue">Home</a>
+        <a href="../blog.html" class="neon-link color-cyan">Articles</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="vision-slider">
-    <div class="vision-track" id="visionTrack">
-      <div class="vision-slide">
-        <img src="./Images/blog_images/Resonance_Amplification/RPAS_Internal_Amplification_Module_Cutaway.png" alt="RPAS Module">
-        <figcaption><strong>Phase I: Inward Redirection.</strong> The primary collector shell funnels ambient and stimulated photons into a high-density core.</figcaption>
+  <main class="container">
+    <section class="article-head">
+      <p style="color:var(--accent); text-transform:uppercase; font-size:0.8rem; letter-spacing:2px;">Resonance / Photonics / IP</p>
+      <h1>Resonant Photonic Amplification System</h1>
+      <div class="tag-row">
+        <span class="pill"><strong>Mechanism:</strong> Resonant excitation</span>
+        <span class="pill"><strong>Architecture:</strong> Inward-directed collectors</span>
+        <span class="pill"><strong>Response:</strong> Distributed photonic emission</span>
       </div>
-      <div class="vision-slide">
-        <img src="./Images/blog_images/Resonance_Amplification/RPAS_CrossSectional_Driver_Interface.png" alt="Driver Interface">
-        <figcaption><strong>Phase II: Frequency Coupling.</strong> Merging acoustic and EM waves to achieve "Peak Resonance" in the active photonic layer.</figcaption>
+      <div style="display:flex; gap:15px; justify-content:center;">
+        <a href="./Patent_Photonic_Resonant.html" class="btn primary">View Patent ↗</a>
       </div>
-    </div>
     </section>
 
-  <section id="theory">
-    <h2>The Science of Resonant Excitation</h2>
-    <p>The <strong>Resonant Photonic Amplification System (RPAS)</strong> represents a fundamental shift in how we approach environmental lighting. Unlike traditional incandescent or LED systems that rely on high-current electron injection through a semiconductor junction, RPAS utilizes <strong>stochastic resonance</strong> and engineered photonic bandgaps to elevate the energy state of specialized materials.</p>
-    
-    
-    
-    <p>At its core, the system operates on the principle of <em>coupled frequency excitation</em>. By subjecting a multi-layered photonic stack to precise electromagnetic and acoustic frequencies, the material enters a state of hyper-excitation. In this state, the probability of spontaneous photonic emission increases exponentially. This is not just "glow-in-the-dark" material; it is an active, frequency-tuned amplification of light energy that draws from a distributed resonant field.</p>
-    
-    <h3>Acoustic-Electromagnetic Coupling</h3>
-    <p>One of the most novel aspects of the RPAS framework is its use of <strong>dual-medium drivers</strong>. We have discovered that applying a specific longitudinal acoustic wave (sound) to the photonic substrate can physically modulate the lattice structure of the emission layer. When this physical modulation is synchronized with a transverse electromagnetic field, the "photon trapping" effect within the material is overcome, allowing the amplified light to escape the surface as usable illumination.</p>
-  </section>
+    <section class="vision-slider">
+      <div class="vision-viewport">
+        <div class="vision-track" id="visionTrack">
+          <figure class="vision-slide">
+            <img src="./Images/blog_images/Resonance_Amplification/RPAS_Internal_Amplification_Module_Cutaway.png" alt="Cutaway">
+            <figcaption><strong>Inward-Directed Resonant Core:</strong> RPAS uses reflective geometries to redirect photonic emissions inward, increasing signal density.</figcaption>
+          </figure>
+          <figure class="vision-slide">
+            <img src="./Images/blog_images/Resonance_Amplification/RPAS_CrossSectional_Driver_Interface.png" alt="Interface">
+            <figcaption><strong>Resonant Excitation Interface:</strong> Electromagnetic stimulation applied to engineered layers to increase emission probability.</figcaption>
+          </figure>
+          <figure class="vision-slide">
+            <img src="./Images/blog_images/Resonance_Amplification/RPAS_Core_Amplification_Stack_Render.png" alt="Stack">
+            <figcaption><strong>Multi-Stage Concentration Stack:</strong> Sequential layers guide emissions through staged redirection.</figcaption>
+          </figure>
+        </div>
+        <button class="vision-btn vision-prev" onclick="moveSlide(-1)">‹</button>
+        <button class="vision-btn vision-next" onclick="moveSlide(1)">›</button>
+      </div>
+    </section>
 
-  <section>
-    <h2>Living Architecture & Surface Luminescence</h2>
-    <p>The ultimate goal of Halocyberlife's RPAS research is the elimination of discrete "light fixtures." In the future, every wall, ceiling, and structural pillar becomes a potential source of light. This <strong>Distributed Response</strong> architecture means that illumination is baked into the very fabric of our buildings.</p>
-    
     <div class="cards-grid">
-      <div class="feature-card">
-        <h3>Sub-Dermal Layers</h3>
-        <p>RPAS nodes—measuring as small as 2" x 1"—can be embedded beneath transparent concrete or polymer skins. These nodes act as frequency repeaters, spreading the resonant field across an entire surface.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Zero-Filament Tech</h3>
-        <p>Because there is no filament to burn out and no LED chip to overheat, RPAS surfaces offer a lifespan that far exceeds current solid-state lighting. The system is solid-state in the truest sense.</p>
-      </div>
+      <article class="feature-card">
+        <img class="card-media lightbox-trigger" src="./Images/blog_images/Resonance_Amplification/RPAS_Internal_Amplification_Module_Cutaway.png" alt="Module">
+        <div class="card-body">
+          <h3>Living Architecture (RPAS)</h3>
+          <p>Photonic response emerging through resonance rather than attached fixtures.</p>
+          <span class="tag">Distributed Response</span>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <img class="card-media lightbox-trigger" src="./Images/blog_images/Resonance_Amplification/modular_connected_photonic_network.png" alt="Network">
+        <div class="card-body">
+          <h3>Resonant Network Topology</h3>
+          <p>Coherent photonic networks enabling spatially distributed excitation.</p>
+          <span class="tag">System Topology</span>
+        </div>
+      </article>
     </div>
 
-    <p>Imagine a corridor that detects your presence not through a motion sensor, but through a local disruption in the resonant field. As you walk, the floor and walls increase their photonic output, creating a <strong>Spatial Resonance Zone</strong> that follows you. This isn't just efficiency; it's a symbiotic relationship between human movement and architectural response.</p>
-  </section>
+    <section id="support-node" style="margin: 5rem 0; padding: 3rem; background: rgba(10, 10, 15, 0.8); border: 1px solid #333; text-align: center; border-radius: 12px;">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Fuel the Evolution</h2>
+        <p style="margin-bottom: 2rem; color: var(--muted);">Directly funding legal protection and physical engineering of the 2" x 1" frequency nodes.</p>
+        <a href="YOUR_STRIPE_LINK" class="btn primary" style="background:#4ade80; color:#000;">SUPPORT THE RESEARCH</a>
+    </section>
+  </main>
 
-  <section>
-    <h2>Scaling the RPAS Ecosystem</h2>
-    <p>To move from a laboratory concept to a global standard, the RPAS technology requires a robust <strong>Network Topology</strong>. This involves the deployment of modular frequency drivers that can communicate via low-energy signals to maintain field stability. Our latest 2026 prototypes focus on the "BioGen" frequency nodes—hardware specifically designed to bridge the gap between biological frequency and synthetic photonic response.</p>
-    
-    
-
-    <p>By contributing to this research, you are funding the physical engineering of these nodes. The legal protection of these patents ensures that the technology remains accessible for future-conscious craftsmanship rather than being locked away by legacy energy corporations. The evolution of light is here, and it isn't found in a bulb—it's found in the frequency of the space around us.</p>
-  </section>
-
-  <section class="section-dark" id="support-node" style="background: rgba(139, 92, 246, 0.05); padding: 4rem; border: 1px solid var(--accent2); border-radius: var(--radius); text-align: center; margin: 4rem 0;">
-    <h2 style="margin-top: 0;">Fuel the Evolution</h2>
-    <p>Your contribution directly funds the legal protection of new patents and the physical engineering of the 2" x 1" BioGen frequency nodes. Help scale the Halocyberlife ecosystem.</p>
-    <a href="#" class="btn primary" style="padding: 1.5rem 4rem;">Support The Research</a>
-    <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--muted);">Secure processing via Stripe Gateway</p>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <h3 style="color: #fff; margin-bottom: 1rem;">Halocyberlife</h3>
-      <p style="font-size: 0.9rem;">Esoteric insights and experimental tech concepts for the future-conscious creator.</p>
-    </div>
-    <div>
-      <h3 style="color: #fff; margin-bottom: 1rem;">Navigate</h3>
-      <p><a href="../blog.html" style="color: var(--muted); text-decoration: none;">Articles</a></p>
-      <p><a href="../index.html" style="color: var(--muted); text-decoration: none;">Home</a></p>
-    </div>
-    <div>
-      <h3 style="color: #fff; margin-bottom: 1rem;">Connect</h3>
-      <p style="font-size: 0.9rem; color: var(--accent);">info@halocyberlife.com</p>
-    </div>
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="closeBtn">✕</button>
+    <img src="" id="lightboxImg" class="lightbox__img">
   </div>
-</footer>
 
-<button class="back-to-top" id="backToTop">↑</button>
+  <button class="back-to-top" id="backToTop">↑</button>
 
-<script>
-  /* --- GLOBAL SLIDER LOGIC --- */
-  let slideIndex = 0;
-  function moveSlide(n) {
-    const track = document.getElementById('visionTrack');
-    const slides = document.querySelectorAll('.vision-slide');
-    if (!track || !slides.length) return;
-    slideIndex = (slideIndex + n + slides.length) % slides.length;
-    track.style.transform = `translateX(-${slideIndex * 100}%)`;
-  }
+  <script>
+    /* --- SLIDER LOGIC (Global Scope) --- */
+    let currentIndex = 0;
+    function moveSlide(n) {
+      const track = document.getElementById('visionTrack');
+      const slides = document.querySelectorAll('.vision-slide');
+      if (!track) return;
+      currentIndex = (currentIndex + n + slides.length) % slides.length;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // Auto-slide every 7 seconds
-    setInterval(() => moveSlide(1), 7000);
+    document.addEventListener('DOMContentLoaded', () => {
+      // Auto-slide
+      setInterval(() => moveSlide(1), 6000);
 
-    // Back to top
-    const btt = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btt.style.display = window.scrollY > 800 ? 'block' : 'none';
+      // Lightbox Logic
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      document.querySelectorAll('.lightbox-trigger').forEach(img => {
+        img.addEventListener('click', () => {
+          lb.classList.add('open');
+          lbImg.src = img.src;
+        });
+      });
+
+      document.getElementById('closeBtn').onclick = () => lb.classList.remove('open');
+      lb.onclick = (e) => { if(e.target === lb) lb.classList.remove('open'); };
+
+      // Back to Top
+      const btt = document.getElementById('backToTop');
+      window.onscroll = () => {
+        btt.style.display = window.scrollY > 500 ? 'grid' : 'none';
+      };
+      btt.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
     });
-    btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-  });
-</script>
-
+  </script>
 </body>
 </html>
+
+
 
 
 
