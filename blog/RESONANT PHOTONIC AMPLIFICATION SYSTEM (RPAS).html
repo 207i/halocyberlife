@@ -717,6 +717,23 @@ if (lb) {
   }
 
 });
+
+  /* --- IMPROVED SLIDER LOGIC --- */
+let index = 0;
+function moveSlide(n) {
+  const track = document.getElementById('visionTrack');
+  const slides = document.querySelectorAll('.vision-slide');
+  if (!track || !slides.length) return;
+  index = (index + n + slides.length) % slides.length;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Auto-advance every 6 seconds
+  setInterval(() => moveSlide(1), 6000);
+  
+  // Rest of your Lightbox and Nav code...
+});
 </script>
 </body>
 </html>
