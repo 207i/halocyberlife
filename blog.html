@@ -42,30 +42,99 @@
 
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* --- NAV --- */
-    .neon-header { position: sticky; top: 0; height: 72px; z-index: 1000; background: rgba(2,6,23,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
-    .neon-header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-    .neon-logo { max-height: 40px; display: block; }
-
-    .neon-nav { display: flex; gap: .5rem; }
-    .neon-nav a {
-      padding: .5rem 1rem; border-radius: 999px; font-size: .75rem; text-transform: uppercase;
-      text-decoration: none; border: 1px solid rgba(255,255,255,0.1); color: var(--text); transition: .3s;
+   /* --- UPGRADED COLORFUL NAV --- */
+    .neon-header { 
+      position: sticky; 
+      top: 0; 
+      height: 72px; 
+      z-index: 9999; 
+      background: rgba(2, 6, 23, 0.85); 
+      backdrop-filter: blur(14px); 
+      border-bottom: 1px solid var(--border); 
     }
-    .neon-nav a:hover { box-shadow: 0 0 15px var(--accent-purple); border-color: var(--accent-purple); }
 
-    .neon-nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .neon-nav-toggle span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+    .neon-header-inner { 
+      height: 100%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+    }
+
+    .neon-logo { 
+      max-height: 40px; 
+      display: block; 
+      filter: drop-shadow(0 0 5px var(--accent-purple));
+    }
+
+    .neon-nav { 
+      display: flex; 
+      gap: 0.8rem; 
+      align-items: center; 
+    }
+
+    .neon-link {
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: #fff;
+      border: 2px solid currentColor; /* Pulls from frequency classes */
+      background: rgba(255, 255, 255, 0.03);
+      transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Frequency Identifiers */
+    .color-blue    { color: #4cc3ff; }
+    .color-purple  { color: #c084fc; }
+    .color-cyan    { color: #5ffffa; }
+    .color-magenta { color: #ff5df7; }
+    .color-gold    { color: #ffe27a; }
+
+    .neon-link:hover {
+      box-shadow: 0 0 20px currentColor, inset 0 0 12px currentColor;
+      background: currentColor;
+      color: #000; 
+      transform: translateY(-2px);
+    }
+
+    .neon-nav-toggle { 
+      display: none; 
+      background: none; 
+      border: none; 
+      cursor: pointer; 
+      flex-direction: column; 
+      gap: 5px; 
+      z-index: 10001;
+    }
+    
+    .neon-nav-toggle span { 
+      width: 24px; 
+      height: 3px; 
+      background: #fff; 
+      border-radius: 3px; 
+    }
 
     @media (max-width: 820px) {
       .neon-nav-toggle { display: flex; }
       .neon-nav {
-        position: absolute; top: 72px; left: 0; right: 0; display: none; flex-direction: column;
-        background: rgba(2,6,23,0.98); padding: 2rem; border-bottom: 1px solid var(--border); text-align: center;
+        position: fixed; 
+        top: 0; 
+        right: -100%; 
+        width: 100%; 
+        height: 100vh;
+        background: rgba(2, 6, 23, 0.98); 
+        padding: 2rem; 
+        flex-direction: column; 
+        justify-content: center; 
+        gap: 2rem;
+        transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      .neon-nav.active { display: flex; }
+      .neon-nav.active { right: 0; }
+      .neon-link { width: 80%; text-align: center; font-size: 1.1rem; }
     }
-
     /* --- HERO --- */
     .hero { padding: 4rem 0 2rem; text-align: center; }
     .hero-kicker { color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.3em; font-weight: 700; font-size: 0.75rem; margin-bottom: 1rem; }
