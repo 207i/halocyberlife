@@ -332,11 +332,9 @@
       }
     });
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btt = document.getElementById('backToTop');
-    if(btt) {
-        window.addEventListener('scroll', () => { btt.style.display = window.scrollY > 400 ? 'flex' : 'none'; });
-        btt.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+    const yearEl = document.getElementById('year');
+      if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
     }
 
     const navToggle = document.getElementById('navToggle');
