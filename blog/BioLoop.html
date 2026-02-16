@@ -459,20 +459,22 @@
     });
 
     // MOBILE NAV TOGGLE
-      const menuBtn = document.getElementById('mobile-menu');
-      const navList = document.getElementById('nav-list');
-
-      menuBtn.addEventListener('click', () => {
+     const menuBtn = document.getElementById('mobile-menu');
+     const navList = document.getElementById('nav-list');
+      
+     menuBtn.addEventListener('click', () => {
         navList.classList.toggle('active');
-        // Optional: Animate hamburger to X
         menuBtn.classList.toggle('is-active');
+        document.body.classList.toggle('nav-open');
       });
-
-      // Close menu when clicking a link
+      
       document.querySelectorAll('.neon-link').forEach(link => {
-        link.addEventListener('click', () => navList.classList.remove('active'));
+        link.addEventListener('click', () => {
+          navList.classList.remove('active');
+          menuBtn.classList.remove('is-active');
+          document.body.classList.remove('nav-open');
+        });
       });
   </script>
-  
 </body>
 </html>
