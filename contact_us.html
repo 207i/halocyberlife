@@ -39,6 +39,10 @@
   --radius: 18px;
 }
 
+    html, body {
+  overflow-x: hidden;
+}
+
 /* =========================
    TERMINAL & FORM SPECIFICS
    ========================= */
@@ -413,7 +417,9 @@ const neonNav = document.getElementById('neonNav');
 navToggle.addEventListener('click', () => { 
   neonNav.classList.toggle('active'); 
   navToggle.classList.toggle('is-active');
-});    
+  document.body.classList.toggle('nav-open');
+});
+
   </script>
 </body>
 </html>
