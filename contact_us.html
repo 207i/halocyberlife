@@ -54,63 +54,7 @@
     .success-glow { color: #4ade80 !important; text-shadow: 0 0 8px #4ade80; }
     .error-glow { color: #f87171 !important; text-shadow: 0 0 8px #f87171; }
 
-    /* --- MASTER NEON NAVIGATION --- */
-    .neon-header { 
-      position: sticky; top: 0; height: 72px; z-index: 9999; 
-      background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(14px); 
-      border-bottom: 1px solid var(--border); 
-    }
-    .neon-header-inner { 
-      height: 100%; display: flex; align-items: center; 
-      justify-content: space-between; padding: 0 1.5rem; 
-    }
-    
-    .neon-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .neon-logo { height: 40px; width: auto; filter: drop-shadow(0 0 5px var(--accent-purple)); }
-    .brand-text { font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
-
-    .neon-nav { display: flex; gap: 0.8rem; align-items: center; }
-    
-    .neon-link {
-      padding: 0.5rem 1.2rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      color: #fff;
-      border: 2px solid currentColor;
-      background: rgba(255, 255, 255, 0.03);
-      transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Frequency Identifiers */
-    .color-blue    { color: #4cc3ff; }
-    .color-purple  { color: #c084fc; }
-    .color-cyan    { color: #5ffffa; }
-    .color-magenta { color: #ff5df7; }
-    .color-gold    { color: #ffe27a; }
-
-    .neon-link:hover {
-      box-shadow: 0 0 20px currentColor, inset 0 0 12px currentColor;
-      background: currentColor;
-      color: #000; 
-      transform: translateY(-2px);
-    }
-
-    /* Mobile Toggle Hamburger */
-    .nav-toggle { 
-      display: none; background: none; border: none; cursor: pointer; 
-      flex-direction: column; gap: 5px; z-index: 11000; 
-    }
-    .nav-toggle span { 
-      width: 24px; height: 3px; background: #fff; 
-      border-radius: 3px; transition: 0.3s; 
-    }
-
-    /* --- MOBILE RESPONSIVE ENGINE --- */
-/* --- MOBILE RESPONSIVE ENGINE --- */
+  /* --- MOBILE RESPONSIVE ENGINE --- */
     @media (max-width: 820px) {
       .nav-toggle { 
         display: flex; 
