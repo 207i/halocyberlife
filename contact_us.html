@@ -317,9 +317,11 @@
 
     const navToggle = document.getElementById('navToggle');
     const neonNav = document.getElementById('neonNav');
+    
     navToggle.addEventListener('click', () => { 
-    neonNav.classList.toggle('active'); 
-  });
+      neonNav.classList.toggle('active'); 
+      navToggle.classList.toggle('is-active'); // ADD THIS LINE TO TRIGGER THE X
+    });
   </script>
 </body>
 </html>
