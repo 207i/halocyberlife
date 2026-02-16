@@ -138,10 +138,10 @@
     }
 
     /* --- MOBILE RESPONSIVE ENGINE --- */
-    @media (max-width: 820px) {
-      .nav-toggle { display: flex; position: relative; }
+   @media (max-width: 820px) {
+      .nav-toggle { display: flex; position: relative; z-index: 11000; }
       
-      /* X-Transformation Logic */
+      /* The X-Animation you built */
       .nav-toggle.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
       .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
       .nav-toggle.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -154,7 +154,7 @@
         align-items: center; gap: 2rem;
         transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 10000;
-        visibility: hidden;
+        visibility: hidden; /* This keeps it hidden until clicked */
       }
 
       .neon-nav.active { right: 0; visibility: visible; }
