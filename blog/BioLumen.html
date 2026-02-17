@@ -699,19 +699,7 @@
     document.addEventListener('DOMContentLoaded', () => {
     
       /* ───────── SLIDER SYSTEM ───────── */
-      let index = 0;
-      const track = document.getElementById('visionTrack');
-      const slides = document.querySelectorAll('.vision-slide');
-    
-      function moveSlide(n) {
-        if (!track || !slides.length) return;
-        index = (index + n + slides.length) % slides.length;
-        track.style.transform = `translateX(-${index * 100}%)`;
-      }
-    
-      if (track && slides.length) {
-        setInterval(() => moveSlide(1), 6000);
-      }
+     
     
       /* ───────── LIGHTBOX SYSTEM ───────── */
 const lb = document.getElementById('lightbox');
