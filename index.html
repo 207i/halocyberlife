@@ -56,6 +56,35 @@
     <link rel="preload" href="style_v2_0_0.css?v=203" as="style" onload="this.onload=null;this.rel='stylesheet'">
   </noscript>
   <style>
+
+    /* Update the navigation toggle to have a white circular or rounded border */
+.neon-nav-toggle {
+  /* Existing layout properties usually go here (display, flex, etc.) */
+  border: 2px solid #ffffff; /* The white 360 border */
+  border-radius: 8px;        /* Slightly rounded corners for a technical look */
+  padding: 8px;              /* Space between the stripes and the border */
+  background: transparent;   /* Keeps the background clean */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;                  /* Space between the stripes */
+}
+
+/* Optional: Add a glow effect when hovering to match the "Neon" theme */
+.neon-nav-toggle:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+/* Ensure the spans (the stripes) inside are also white or themed */
+.neon-nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: 0.3s;
+}
   /* ===== SCROLLING MARQUEE ===== */
   .marquee {
     position: relative;
