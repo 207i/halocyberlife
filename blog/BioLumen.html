@@ -696,91 +696,93 @@
       <img id="lightboxImg" alt="" />
     </div>
     
-    <script>
-    /* =========================================================
-       MASTER JS — BioGlow Page
-       Slider • Lightbox • Mobile Nav • Back To Top
-       ========================================================= */
-    
-    document.addEventListener('DOMContentLoaded', () => {
-    
-      /* ───────── SLIDER SYSTEM ───────── */
-     
-    
-      /* ───────── LIGHTBOX SYSTEM ───────── */
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightboxImg');
-const closeBtn = document.querySelector('.lightbox__close');
+    <article class="feature-card" style="grid-column: 1 / -1; border-color: var(--accent2);">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/PLTqaByGeQI" 
+            title="BioLumen™ — Biophotonic Light Extraction from Living Plants" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+  </div>
+</article>
 
-document.querySelectorAll('.lightbox-trigger').forEach(img => {
-  img.addEventListener('click', () => {
-    lb.classList.add('open');
-    lbImg.src = img.src;
-    document.body.style.overflow = 'hidden';
-  });
-});
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" aria-label="Close image">✕</button>
+  <div class="lightbox__panel">
+    <img src="" id="lightboxImg" class="lightbox__img">
+  </div>
+</div>
 
-function closeLightbox() {
-  lb.classList.remove('open');
-  lbImg.src = '';
-  document.body.style.overflow = '';
-}
+<script>
+  /* =========================================================
+     MASTER JS — BioGlow Page
+     Slider • Lightbox • Mobile Nav • Back To Top
+     ========================================================= */
 
-if (closeBtn) {
-  closeBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    closeLightbox();
-  });
-}
+  // 1. GLOBAL SLIDER LOGIC (Must be outside DOMContentLoaded)
+  let index = 0;
+  function moveSlide(n) {
+    const track = document.getElementById('visionTrack');
+    const slides = document.querySelectorAll('.vision-slide');
+    if (!track || slides.length === 0) return;
+    index = (index + n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
 
-if (lb) {
-  lb.addEventListener('click', e => {
-    if (e.target === lb) closeLightbox();
-  });
-}
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // Auto-advance slider every 6 seconds
+    setInterval(() => moveSlide(1), 6000);
 
-      /* ───────── MOBILE NAV TOGGLE ───────── */
-      const navToggle = document.querySelector('.neon-nav-toggle');
-      const nav = document.getElementById('primary-nav');
-    
-      if (navToggle && nav) {
-        navToggle.addEventListener('click', () => {
-          const isOpen = nav.classList.toggle('active');
-          navToggle.setAttribute('aria-expanded', isOpen);
-          document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-    
-        document.querySelectorAll('.neon-nav a').forEach(link => {
-          link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', false);
-            document.body.style.overflow = '';
-          });
-        });
-    
-        document.addEventListener('keydown', e => {
-          if (e.key === 'Escape' && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', false);
-            document.body.style.overflow = '';
-          }
-        });
-      }
-    
-      /* ───────── BACK TO TOP BUTTON ───────── */
-      const backToTop = document.querySelector('.back-to-top');
-    
-      if (backToTop) {
-        window.addEventListener('scroll', () => {
-          backToTop.style.display = window.scrollY > 600 ? 'grid' : 'none';
-        });
-    
-        backToTop.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    
+    // 2. LIGHTBOX SYSTEM
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const closeBtn = document.querySelector('.lightbox__close');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lb.classList.add('open');
+        lbImg.src = img.src;
+        document.body.style.overflow = 'hidden';
+      });
     });
+
+    const closeLightbox = () => {
+      lb.classList.remove('open');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (lb) lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+
+    // 3. MOBILE NAV TOGGLE
+    const navToggle = document.querySelector('.neon-nav-toggle');
+    const nav = document.getElementById('primary-nav');
+
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+    }
+
+    // 4. BACK TO TOP
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        backToTop.style.display = window.scrollY > 600 ? 'grid' : 'none';
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Set dynamic year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  });
 </script>
 </body>
 </html>
