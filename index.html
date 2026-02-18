@@ -315,6 +315,50 @@
   @media (max-width: 768px) {
     .philosophy-grid { grid-template-columns: 1fr; }
   } 
+
+   /* 1. Hide the hamburger toggle by default (Desktop) */
+.neon-nav-toggle {
+  display: none; /* This hides it on desktop */
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 2. Ensure the desktop nav is visible */
+.neon-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* 3. Mobile Logic (Break-point) */
+@media (max-width: 820px) {
+  /* Show the toggle on mobile */
+  .neon-nav-toggle {
+    display: flex; 
+  }
+
+  /* Hide the links until the menu is opened */
+  .neon-nav {
+    display: none; 
+    /* You likely have 'display: flex' triggered by a '.active' class in your JS */
+  }
+  
+  .neon-nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(5, 8, 20, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+} 
   </style>
  </head>
 <body>
