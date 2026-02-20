@@ -1058,18 +1058,30 @@ body {
 
 /* ===== MASONRY FIX (SOLUTION 2) ===== */
 
-/* Turn off grid behavior */
-.two-column-grid {
-  column-count: 2;
-  column-gap: 2rem;
+/* Better Masonry/Grid handling */
+@media (min-width: 768px) {
+  .two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Solid 2-column grid for desktop */
+    gap: 32px;
+    column-count: auto; /* Reset masonry */
+  }
+
+  .column-left, .column-right {
+    display: flex; /* Restore the containers */
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
-/* Flatten columns so cards flow naturally */
-.column-left,
-.column-right {
-  display: contents;
+/* Ensure images have a "Floor" height so they don't vanish */
+.mini-card-image {
+  width: 100%;
+  height: auto;
+  min-height: 180px; /* Forces the image to occupy space even if loading slow */
+  object-fit: cover;
+  display: block;
 }
-
 /* Prevent cards from breaking between columns */
 .mini-card {
   break-inside: avoid;
