@@ -56,35 +56,6 @@
     <link rel="preload" href="style_v2_0_0.css?v=203" as="style" onload="this.onload=null;this.rel='stylesheet'">
   </noscript>
   <style>
-
-    /* Update the navigation toggle to have a white circular or rounded border */
-.neon-nav-toggle {
-  /* Existing layout properties usually go here (display, flex, etc.) */
-  border: 2px solid #ffffff; /* The white 360 border */
-  border-radius: 8px;        /* Slightly rounded corners for a technical look */
-  padding: 8px;              /* Space between the stripes and the border */
-  background: transparent;   /* Keeps the background clean */
-  transition: all 0.3s ease; /* Smooth hover effect */
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;                  /* Space between the stripes */
-}
-
-/* Optional: Add a glow effect when hovering to match the "Neon" theme */
-.neon-nav-toggle:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  transform: scale(1.05);
-}
-
-/* Ensure the spans (the stripes) inside are also white or themed */
-.neon-nav-toggle span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background-color: #ffffff;
-  transition: 0.3s;
-}
   /* ===== SCROLLING MARQUEE ===== */
   .marquee {
     position: relative;
@@ -315,50 +286,6 @@
   @media (max-width: 768px) {
     .philosophy-grid { grid-template-columns: 1fr; }
   } 
-
-   /* 1. Hide the hamburger toggle by default (Desktop) */
-.neon-nav-toggle {
-  display: none; /* This hides it on desktop */
-  border: 2px solid #ffffff;
-  border-radius: 8px;
-  padding: 8px;
-  background: transparent;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* 2. Ensure the desktop nav is visible */
-.neon-nav {
-  display: flex;
-  gap: 20px;
-}
-
-/* 3. Mobile Logic (Break-point) */
-@media (max-width: 820px) {
-  /* Show the toggle on mobile */
-  .neon-nav-toggle {
-    display: flex; 
-  }
-
-  /* Hide the links until the menu is opened */
-  .neon-nav {
-    display: none; 
-    /* You likely have 'display: flex' triggered by a '.active' class in your JS */
-  }
-  
-  .neon-nav.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: rgba(5, 8, 20, 0.95);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-  }
-} 
   </style>
  </head>
 <body>
@@ -551,7 +478,7 @@
             </article>
 
             <article class="mini-card">
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\              <a href="./blog/halofield.html">
+              <a href="./blog/halofield.html">
                 <img src="./blog/images/Human Resonance Field Visualization.png" alt="Halo Field" class="mini-card-image" />
                 <div class="mini-card-body">
                   <p class="mini-card-meta">Energy Field • Jun 20, 2025</p>
@@ -739,6 +666,17 @@
   <script src="main_v2_0_0.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
