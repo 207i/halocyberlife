@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0HZN617CB1');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>432 Hz vs 440 Hz | Halocyberlife</title>
+  <meta name="description" content="An exploration of 432 Hz vs 440 Hz, music tuning, resonance, perception, and whether sound can shape human experience." />
+  <meta name="keywords" content="432 Hz, 440 Hz, music tuning, harmonic resonance, sound frequency, consciousness, Halocyberlife" />
+  <meta name="author" content="Luis Amaya" />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #050814;
+      --panel: rgba(255,255,255,0.03);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: rgba(139,92,246,0.28);
+      --accent-purple: #8b5cf6;
+      --accent-cyan: #22d3ee;
+      --accent-magenta: #d946ef;
+      --accent-gold: #fbbf24;
+      --radius: 20px;
+      --shadow-purple: 0 0 30px rgba(139,92,246,0.15);
+      --shadow-cyan: 0 0 24px rgba(34,211,238,0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, #1e1b4b 0%, #020617 50%, #000 100%);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .neon-header {
+      position: sticky;
+      top: 0;
+      height: 72px;
+      z-index: 9999;
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .neon-header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .neon-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      z-index: 10001;
+    }
+
+    .neon-logo {
+      max-height: 40px;
+      display: block;
+      filter: drop-shadow(0 0 5px var(--accent-purple));
+    }
+
+    .brand-text {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+
+    .neon-nav {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .neon-link {
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: #fff;
+      border: 2px solid currentColor;
+      background: rgba(255, 255, 255, 0.03);
+      transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .color-blue    { color: #4cc3ff; }
+    .color-purple  { color: #c084fc; }
+    .color-cyan    { color: #5ffffa; }
+    .color-magenta { color: #ff5df7; }
+    .color-gold    { color: #ffe27a; }
+
+    .neon-link:hover {
+      box-shadow: 0 0 20px currentColor, inset 0 0 12px currentColor;
+      background: currentColor;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    .neon-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .neon-nav-toggle span {
+      width: 24px;
+      height: 3px;
+      background: #fff;
+      border-radius: 3px;
+    }
+
+    .hero {
+      padding: 4.5rem 0 2rem;
+      text-align: center;
+    }
+
+    .hero-kicker {
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-weight: 700;
+      font-size: 0.74rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.05;
+      background: linear-gradient(to right, #fff, var(--accent-purple), var(--accent-cyan), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      max-width: 850px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
+      margin: 2rem 0 5rem;
+    }
+
+    .article-banner {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(217,70,239,0.14), transparent 28%),
+        linear-gradient(135deg, rgba(139,92,246,0.12), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-purple);
+    }
+
+    .article-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.035), transparent);
+      pointer-events: none;
+    }
+
+    .banner-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta-pill {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--accent-cyan);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .article-banner h1 {
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      line-height: 1.08;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .article-banner p {
+      max-width: 820px;
+      color: #dbe4f0;
+      font-size: 1.06rem;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 95px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .sidebar h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+
+    .toc {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.25s;
+    }
+
+    .toc a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .sidebar-note {
+      margin-top: 1.3rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .article-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-purple);
+    }
+
+    .article-card p {
+      margin-bottom: 1.25rem;
+      color: #e5e7eb;
+      font-size: 1.03rem;
+    }
+
+    .article-card h2 {
+      margin: 2.4rem 0 1rem;
+      color: #fff;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .article-card h3 {
+      margin: 1.7rem 0 0.8rem;
+      color: var(--accent-cyan);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .article-card strong {
+      color: #fff;
+    }
+
+    .article-card blockquote {
+      margin: 1.6rem 0;
+      padding: 1.2rem 1.2rem 1.2rem 1.4rem;
+      border-left: 4px solid var(--accent-purple);
+      background: rgba(139, 92, 246, 0.08);
+      color: #f3f4f6;
+      border-radius: 0 14px 14px 0;
+      font-size: 1.05rem;
+    }
+
+    .article-card ul {
+      margin: 1rem 0 1.5rem 1.2rem;
+      color: #e5e7eb;
+    }
+
+    .article-card li {
+      margin-bottom: 0.6rem;
+    }
+
+    .signal-box {
+      margin: 2rem 0;
+      padding: 1.25rem;
+      border: 1px solid rgba(34,211,238,0.25);
+      border-radius: 16px;
+      background: rgba(34,211,238,0.05);
+    }
+
+    .signal-box h4 {
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.65rem;
+    }
+
+    .article-endcap {
+      margin-top: 2.5rem;
+      padding: 1.6rem;
+      border-radius: 18px;
+      border: 1px solid rgba(251,191,36,0.25);
+      background: rgba(251,191,36,0.05);
+    }
+
+    .article-endcap h3 {
+      color: var(--accent-gold);
+      margin-top: 0;
+    }
+
+    .return-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .return-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.8rem 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.82rem;
+      transition: 0.25s;
+    }
+
+    .return-primary {
+      border: 2px solid var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139,92,246,0.06);
+    }
+
+    .return-primary:hover {
+      background: var(--accent-purple);
+      color: #000;
+      box-shadow: 0 0 22px rgba(139,92,246,0.35);
+    }
+
+    .return-secondary {
+      border: 2px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: rgba(34,211,238,0.05);
+    }
+
+    .return-secondary:hover {
+      background: var(--accent-cyan);
+      color: #000;
+      box-shadow: 0 0 22px rgba(34,211,238,0.35);
+    }
+
+    .site-footer {
+      background: #010409;
+      border-top: 1px solid var(--border);
+      padding: 5rem 0 3rem;
+      margin-top: 6rem;
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      align-items: start;
+    }
+
+    .footer-title {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .footer-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-list li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-list a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-list a:hover {
+      color: var(--accent-cyan);
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(10px);
+      border: 2px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 2000;
+      transition: all 0.35s ease;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #backToTop:hover {
+      background: var(--accent-cyan);
+      color: #000;
+      box-shadow: 0 0 25px var(--accent-cyan);
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 980px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        order: 2;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .neon-nav-toggle { display: flex; }
+
+      .neon-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        visibility: hidden;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        background: rgba(2, 6, 23, 0.98);
+        transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .neon-nav.active {
+        right: 0;
+        visibility: visible;
+      }
+
+      .neon-link {
+        width: 80%;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .article-banner,
+      .article-card {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="neon-header">
+    <div class="container neon-header-inner">
+      <a href="../index.html" class="neon-brand">
+        <img src="../images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo">
+        <span class="brand-text">Halocyberlife</span>
+      </a>
+
+      <button class="neon-nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="neon-nav" id="neonNav">
+        <a href="../index.html" class="neon-link color-blue">Home</a>
+        <a href="../about.html" class="neon-link color-cyan">About</a>
+        <a href="../blog.html" class="neon-link color-purple">Articles</a>
+        <a href="../contact_us.html" class="neon-link color-gold">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="hero-kicker">Sound • Resonance • Conscious Listening</p>
+      <h1 class="hero-title">432 Hz vs 440 Hz</h1>
+      <p class="hero-subtitle">
+        A transmission on tuning, perception, resonance, and whether sound can shape how human beings feel, focus, and connect.
+      </p>
+    </section>
+
+    <section class="article-shell">
+      <div class="article-banner">
+        <div class="banner-meta">
+          <span class="meta-pill">Harmonic Resonance</span>
+          <span class="meta-pill">Sound Theory</span>
+          <span class="meta-pill">Consciousness</span>
+          <span class="meta-pill">Frequency Inquiry</span>
+        </div>
+        <h1>432 Hz vs 440 Hz: Should Music Be Retuned?</h1>
+        <p>
+          What if one of the most overlooked forces in human experience is not just the song itself, but the tuning behind it?
+          What if a subtle shift in pitch changes how music lands in the body, the mind, and the emotional field?
+        </p>
+      </div>
+
+      <div class="article-layout">
+        <aside class="sidebar">
+          <h3>Transmission Map</h3>
+          <ul class="toc">
+            <li><a href="#intro">The Tuning Question</a></li>
+            <li><a href="#standard">Why 440 Hz Dominates</a></li>
+            <li><a href="#432">What Makes 432 Hz Interesting</a></li>
+            <li><a href="#human-system">Sound and the Human System</a></li>
+            <li><a href="#intentional-listening">Conscious Listening</a></li>
+            <li><a href="#artists">A Call to Artists</a></li>
+            <li><a href="#final">Final Transmission</a></li>
+          </ul>
+
+          <div class="sidebar-note">
+            This article is an invitation to explore how tuning may influence perception, emotion, and experience through more intentional listening.
+          </div>
+        </aside>
+
+        <article class="article-card">
+          <section id="intro">
+            <div style="display:flex; justify-content:center; margin-bottom:1.5rem;">
+              <img
+                src="./Images/432hz/432_vs_440_cover.png"
+                alt="432 Hz and 440 Hz sound comparison"
+                style="
+                  max-width: 420px;
+                  width: 100%;
+                  height: auto;
+                  border-radius: 12px;
+                  filter: drop-shadow(0 0 25px rgba(139,92,246,0.45))
+                          drop-shadow(0 0 40px rgba(34,211,238,0.35));
+                  transition: transform 0.4s ease, filter 0.4s ease;
+                "
+                onmouseover="this.style.transform='scale(1.04)'; this.style.filter='drop-shadow(0 0 35px rgba(139,92,246,0.7)) drop-shadow(0 0 60px rgba(34,211,238,0.6))'"
+                onmouseout="this.style.transform='scale(1)'; this.style.filter='drop-shadow(0 0 25px rgba(139,92,246,0.45)) drop-shadow(0 0 40px rgba(34,211,238,0.35))'"
+              >
+            </div>
+
+            <p>
+              What if the difference between tension and calm is not only in melody, rhythm, or lyrics, but in tuning?
+            </p>
+
+            <p>
+              Most modern music is released using a tuning reference known as <strong>440 Hz</strong>. It is the accepted global standard,
+              the industrial language of instruments, recording systems, and performance tuning. It exists for consistency.
+            </p>
+
+            <blockquote>
+              But standard does not always mean sacred. It means agreed upon.
+            </blockquote>
+
+            <p>
+              Beyond that standard exists another tuning that has quietly inspired musicians, listeners, and sound explorers for years:
+              <strong>432 Hz</strong>.
+            </p>
+
+            <p>
+              Only slightly lower. Barely different on paper. Yet many claim it feels warmer, softer, more spacious, and more natural.
+              Others hear little difference at all. That tension is exactly what makes this worth exploring.
+            </p>
+          </section>
+
+          <section id="standard">
+            <h2>Why 440 Hz Dominates</h2>
+            <p>
+              Modern music did not randomly land on 440 Hz. The standard emerged because large-scale performance, instrument building,
+              orchestras, and recording systems needed a shared reference point. Standardization made music easier to reproduce, easier to
+              coordinate, and easier to industrialize.
+            </p>
+
+            <p>
+              In practical terms, 440 Hz became the common operating language of tuning. It optimized music for compatibility.
+            </p>
+
+            <div class="signal-box">
+              <h4>Core Transmission</h4>
+              <p>
+                Standardization solves the problem of uniformity. It does not automatically solve the question of experience.
+              </p>
+            </div>
+
+            <p>
+              That does not make 440 Hz wrong. It simply means it is a system choice, not a final truth.
+            </p>
+          </section>
+
+          <section id="432">
+            <h2>What Makes 432 Hz So Interesting?</h2>
+            <p>
+              432 Hz is not a different note and not a separate genre. It is an alternative tuning reference. Music tuned or retuned to
+              432 Hz sits slightly lower in pitch than 440 Hz. The difference is subtle, but for some listeners it changes the emotional
+              character of the sound.
+            </p>
+
+            <p>
+              That is where the real conversation begins.
+            </p>
+
+            <p>
+              The strongest case for 432 Hz does not require exaggeration. It is enough to ask:
+            </p>
+
+            <blockquote>
+              Does a change in tuning influence human experience?
+            </blockquote>
+
+            <p>
+              That is a serious question. And it deserves more than internet shouting. It deserves listening, comparison, and direct
+              experience.
+            </p>
+          </section>
+
+          <section id="human-system">
+            <h2>Sound and the Human System</h2>
+            <p>
+              Music does not only pass through the ears. It affects mood, breathing, pacing, attention, and emotional state.
+              Rhythm influences the body. Tone influences feeling. Harmonic tension and release influence the nervous system.
+            </p>
+
+            <p>
+              Human beings are responsive systems. We react to patterns, intervals, repetition, pacing, and texture. Whether the
+              explanation is acoustic, psychological, symbolic, or all of the above, sound does not merely play around us.
+            </p>
+
+            <p>
+              It moves through us.
+            </p>
+
+            <ul>
+              <li>Rhythm can regulate or agitate attention.</li>
+              <li>Repetition can deepen immersion.</li>
+              <li>Tone can soften or sharpen the emotional field.</li>
+              <li>Tuning may subtly influence how sound is received.</li>
+            </ul>
+
+            <p>
+              If that is true, then even a slight retuning may be worth exploring for listeners, creators, and anyone interested in
+              more intentional sound.
+            </p>
+          </section>
+
+          <section id="intentional-listening">
+            <h2>Conscious Listening Changes the Conversation</h2>
+            <p>
+              We live in a world flooded with sound but starved for intention. Most people never ask what tuning they are hearing.
+              They consume music passively, the same way they consume noise, stress, and velocity.
+            </p>
+
+            <p>
+              But the moment people begin questioning the architecture behind sound, listening changes.
+            </p>
+
+            <p>
+              New questions start appearing:
+            </p>
+
+            <ul>
+              <li>Why does one version of a song feel more grounding than another?</li>
+              <li>Why do some tunings feel calm while others feel sharper or more pressured?</li>
+              <li>Can tuning affect creative flow, sleep, focus, or emotional regulation?</li>
+              <li>What happens when artists release intentional alternative versions?</li>
+            </ul>
+
+            <p>
+              This is not just about music. It is about awareness.
+            </p>
+          </section>
+
+          <section id="artists">
+            <h2>A Call to Artists, Producers, and Curious Listeners</h2>
+            <p>
+              This is not a command to abandon 440 Hz forever. It is an invitation.
+            </p>
+
+            <p>
+              Experiment. Compare. Listen closely.
+            </p>
+
+            <p>
+              If you are a producer, render a 432 Hz version.  
+              If you are a musician, retune your instrument and feel the shift.  
+              If you are a listener, compare the same piece in both tunings and pay attention to your breath, your body, and your emotional response.
+            </p>
+
+            <blockquote>
+              Do not let the algorithm decide your relationship to sound. Test it for yourself.
+            </blockquote>
+
+            <p>
+              The future of sound may not belong only to louder production, faster consumption, and constant compression.
+              It may belong to deeper listening.
+            </p>
+          </section>
+
+          <section id="final">
+            <h2>Final Transmission</h2>
+            <p>
+              440 Hz may be the standard.
+            </p>
+
+            <p>
+              But standard is not the same as final.
+            </p>
+
+            <p>
+              432 Hz may not be a miracle frequency. It may not validate every claim made online. But if a simple shift in tuning changes
+              how people feel, rest, focus, create, or connect to music, then the conversation is worth having.
+            </p>
+
+            <blockquote>
+              The question is not whether everyone must switch overnight.  
+              The question is whether music can become more intentional again.
+            </blockquote>
+
+            <p>
+              And if it can…
+            </p>
+
+            <p>
+              Maybe the future of sound is not louder.
+            </p>
+
+            <p>
+              Maybe it is better tuned.
+            </p>
+
+            <div class="article-endcap">
+              <h3>Transmission Complete</h3>
+              <p>
+                Try both. Compare them. Feel the difference for yourself. That is where the real transmission begins.
+              </p>
+            </div>
+
+            <div class="return-row">
+              <a href="../blog.html" class="return-btn return-primary">Back to Articles</a>
+              <a href="../contact_us.html" class="return-btn return-secondary">Send Signal</a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1.5rem;">
+          <img src="../blog/Images/BioGlow_images/logo_v4_2.png" alt="Halocyberlife logo" style="width:38px; filter: drop-shadow(0 0 5px var(--accent-cyan));">
+          <span style="font-weight:700; text-transform:uppercase; letter-spacing:2px; font-size:0.85rem; color:#fff;">Halocyberlife</span>
+        </div>
+        <p style="font-size:0.9rem; line-height:1.6; color:var(--muted); margin-bottom:1.5rem;">
+          A living archive of esoteric inquiry, frequency intelligence, symbolic engineering, and future technology.
+        </p>
+        <p style="font-family:monospace; font-size:0.75rem; color:var(--accent-cyan);">v3.0.0 // TRANSMISSION_BUILD</p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Ecosystem</h4>
+        <ul class="footer-list">
+          <li><a href="../index.html">Home Core</a></li>
+          <li><a href="../blog.html">Technical Articles</a></li>
+          <li><a href="../Patents.html">IP Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact Terminals</h4>
+        <ul class="footer-list" style="font-family:monospace; font-size:0.85rem;">
+          <li><a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a></li>
+          <li><a href="mailto:info@halocyberlife.com">info@halocyberlife.com</a></li>
+          <li><a href="https://www.linkedin.com/in/halocyberlife/">LinkedIn: halocyberlife/</a></li>
+          <li><a href="https://www.youtube.com/@Halocyberlife">YouTube: @Halocyberlife</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Integrity</h4>
+        <ul class="footer-list">
+          <li><a href="../Privacy & Terms.html">Privacy & Terms</a></li>
+          <li><a href="https://www.halocyberlife.com/site_map.com">Site Map</a></li>
+          <li style="margin-top:1.5rem; font-size:0.75rem; color:var(--muted);">© 2026 Halocyberlife.<br>All Rights Reserved.</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const neonNav = document.getElementById('neonNav');
+
+    navToggle.addEventListener('click', () => {
+      neonNav.classList.toggle('active');
+    });
+
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
