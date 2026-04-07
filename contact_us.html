@@ -8,299 +8,242 @@
     gtag('js', new Date());
     gtag('config', 'G-0HZN617CB1');
   </script>
-  
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact | Halocyberlife</title>
-  <meta name="description" content="Contact Halocyberlife creator Luis Amaya for collaboration, questions, project ideas, or esoteric and frequency-based explorations.">
+  <title>Contact HaloCyberLife | Projects, Collaborations & Inquiries</title>
+  <meta name="description" content="Contact HaloCyberLife for collaborations, project inquiries, technical questions, and design or technology discussions.">
   <meta name="author" content="Luis Amaya">
-
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://halocyberlife.com/contact_us.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact HaloCyberLife | Projects, Collaborations & Inquiries">
+  <meta property="og:description" content="Reach out to HaloCyberLife for collaborations, project inquiries, and research or technology discussions.">
+  <meta property="og:url" content="https://halocyberlife.com/contact_us.html">
+  <meta property="og:image" content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact HaloCyberLife | Projects, Collaborations & Inquiries">
+  <meta name="twitter:description" content="Reach out to HaloCyberLife for collaborations, project inquiries, and research or technology discussions.">
+  <meta name="twitter:image" content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png">
+
+  <link rel="icon" href="/images/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png">
 
   <link rel="stylesheet" href="style_v2_0_0.css">
   <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
   <style>
-/* =========================================
-   HALOCYBERLIFE MASTER CSS // CONTACT CORE
-   ========================================= */
+    :root {
+      --contact-border: rgba(139, 92, 246, 0.3);
+      --contact-muted: #9ca3af;
+      --contact-success: #4ade80;
+      --contact-error: #f87171;
+    }
 
-:root {
-  --bg: #020617;
-  --bg-soft: #050814;
-  --text: #f9fafb;
-  --muted: #9ca3af;
-  --border: rgba(139,92,246,0.3);
-  --accent-purple: #8b5cf6;
-  --accent-cyan: #22d3ee;
-  --accent-magenta: #d946ef;
-  --accent-gold: #fbbf24;
-  --radius: 18px;
-}
+    html,
+    body {
+      overflow-x: hidden;
+    }
 
-    html, body {
-  overflow-x: hidden;
-}
+    .terminal-box {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #000;
+      border: 1px solid var(--contact-border);
+      border-radius: 8px;
+      font-family: "Courier New", monospace;
+      min-height: 58px;
+    }
 
-/* =========================
-   TERMINAL & FORM SPECIFICS
-   ========================= */
+    #formStatus {
+      color: var(--contact-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
 
-.terminal-box {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: #000;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-family: 'Courier New', monospace;
-  min-height: 50px;
-}
+    .pulse-button:active {
+      transform: scale(0.98);
+    }
 
-#formStatus { 
-  color: var(--muted); 
-  font-size: 0.85rem; 
-}
+    .success-glow {
+      color: var(--contact-success) !important;
+      text-shadow: 0 0 8px var(--contact-success);
+    }
 
-.pulse-button:active { 
-  transform: scale(0.98); 
-}
+    .error-glow {
+      color: var(--contact-error) !important;
+      text-shadow: 0 0 8px var(--contact-error);
+    }
 
-.success-glow { 
-  color: #4ade80 !important; 
-  text-shadow: 0 0 8px #4ade80; 
-}
+    .contact-panel {
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--accent-secondary);
+    }
 
-.error-glow { 
-  color: #f87171 !important; 
-  text-shadow: 0 0 8px #f87171; 
-}
+    .contact-page .section-header p {
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-/* =========================
-   MASTER NEON NAVIGATION
-   ========================= */
+    @media (max-width: 820px) {
+      .nav-toggle {
+        display: flex;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 11000;
+      }
 
-.neon-header { 
-  position: sticky; 
-  top: 0; 
-  height: 72px; 
-  z-index: 9999; 
-  background: rgba(2, 6, 23, 0.85); 
-  backdrop-filter: blur(14px); 
-  border-bottom: 1px solid var(--border); 
-}
+      .nav-toggle span {
+        width: 24px;
+        height: 3px;
+        background: #fff;
+        border-radius: 3px;
+        transition: 0.3s;
+      }
 
-.neon-header-inner { 
-  height: 100%; 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  padding: 0 1.5rem; 
-}
+      .nav-toggle.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
 
-.neon-brand { 
-  display: flex; 
-  align-items: center; 
-  gap: 10px; 
-  text-decoration: none; 
-}
+      .nav-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+      }
 
-.neon-logo { 
-  height: 40px; 
-  width: auto; 
-  filter: drop-shadow(0 0 5px var(--accent-purple)); 
-}
+      .nav-toggle.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
 
-.brand-text { 
-  font-weight: 700; 
-  color: #fff; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-  font-size: 0.9rem; 
-}
+      .neon-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(2, 6, 23, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
+      }
 
-/* Desktop Nav */
+      .neon-nav.active {
+        transform: translateX(0);
+      }
 
-.neon-nav { 
-  display: flex; 
-  gap: 0.8rem; 
-  align-items: center; 
-}
+      .neon-link {
+        width: 80%;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+    }
 
-.neon-link {
-  padding: 0.5rem 1.2rem; 
-  border-radius: 999px; 
-  font-weight: 600;
-  text-decoration: none; 
-  letter-spacing: 0.08em; 
-  font-size: 0.85rem;
-  text-transform: uppercase; 
-  color: #fff; 
-  border: 2px solid currentColor;
-  background: rgba(255, 255, 255, 0.03); 
-  transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Frequency Identifiers */
-
-.color-blue    { color: #4cc3ff; }
-.color-purple  { color: #c084fc; }
-.color-cyan    { color: #5ffffa; }
-.color-magenta { color: #ff5df7; }
-.color-gold    { color: #ffe27a; }
-
-.neon-link:hover {
-  box-shadow: 0 0 20px currentColor, inset 0 0 12px currentColor;
-  background: currentColor; 
-  color: #000; 
-  transform: translateY(-2px);
-}
-
-/* Mobile Toggle Hamburger */
-
-.nav-toggle { 
-  display: none; 
-  background: none; 
-  border: none; 
-  cursor: pointer; 
-  flex-direction: column; 
-  gap: 5px; 
-  z-index: 11000; 
-}
-
-.nav-toggle span { 
-  width: 24px; 
-  height: 3px; 
-  background: #fff; 
-  border-radius: 3px; 
-  transition: 0.3s; 
-}
-
-/* =========================
-   MOBILE RESPONSIVE ENGINE
-   ========================= */
-
-@media (max-width: 820px) {
-
-  .nav-toggle { 
-    display: flex; 
-    position: relative; 
-    z-index: 11000; 
-  }
-
-  /* X Animation */
-
-  .nav-toggle.is-active span:nth-child(1) { 
-    transform: translateY(8px) rotate(45deg); 
-  }
-
-  .nav-toggle.is-active span:nth-child(2) { 
-    opacity: 0; 
-  }
-
-  .nav-toggle.is-active span:nth-child(3) { 
-    transform: translateY(-8px) rotate(-45deg); 
-  }
-
-  /* Mobile Nav Panel */
-
-  .neon-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(2, 6, 23, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-
-    /* GPU Smooth Animation */
-    transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
-  }
-
-  .neon-nav.active {
-    transform: translateX(0);
-  }
-
-  .neon-link { 
-    width: 80%; 
-    text-align: center; 
-    font-size: 1.2rem; 
-  }
-}
-</style>
-
+    @media (min-width: 821px) {
+      .nav-toggle {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
-<body>
- <header class="neon-header">
+<body class="contact-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="neon-header">
     <div class="container neon-header-inner">
-      <a href="index.html" class="neon-brand">
+      <a href="./index.html" class="neon-brand">
         <img src="images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo" class="neon-logo">
         <span class="brand-text">Halocyberlife</span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="neonNav">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <nav class="neon-nav" id="neonNav">
-        <a href="index.html" class="neon-link color-blue">Home</a>
+        <a href="./index.html" class="neon-link color-blue">Home</a>
         <a href="./about.html" class="neon-link color-cyan">About</a>
         <a href="./blog.html" class="neon-link color-purple">Articles</a>
-        <a href="./contact_us.html" class="neon-link color-gold">Contact</a>
+        <a href="./contact_us.html" class="neon-link color-gold" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="section section-dark">
+  <main id="main-content" class="section section-dark">
     <div class="container">
       <header class="section-header">
-        <h1 class="glitch-text">Contact Halocyberlife</h1>
-        <p>Initiate a direct uplink for collaborations or frequency explorations.</p>
+        <h1>Contact HaloCyberLife</h1>
+        <p>Reach out for collaborations, project inquiries, technical questions, research discussions, or original concept development.</p>
       </header>
 
       <section class="section-split" style="margin-top: 2rem;">
         <div class="section-text">
-          <h2>System Interface</h2>
-          <p>Direct communication with <strong>Luis Amaya</strong> for projects involving esoteric architecture and frequency-based tech.</p>
-          <div class="section-card" style="margin-top: 1.5rem; border-left: 3px solid var(--accent2);">
-            <h3>Uplink Details</h3>
+          <h2>Direct Contact</h2>
+          <p>
+            Contact <strong>Luis Amaya</strong> for conversations related to architecture, experimental technology,
+            concept systems, future tools, research ideas, and collaboration opportunities.
+          </p>
+
+          <div class="section-card contact-panel">
+            <h3>Contact Details</h3>
             <ul class="bullet-list">
-              <li><strong>Node:</strong> <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a></li>
-              <li><strong>Protocols:</strong> BioGen, Halo Ecosystem, App Dev.</li>
+              <li><strong>Email:</strong> <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a></li>
+              <li><strong>Topics:</strong> Architecture concepts, BioGen, Halo ecosystem, product ideas, and app development</li>
             </ul>
+          </div>
+
+          <div class="section-card" style="margin-top: 1rem;">
+            <h3>Best Use Cases</h3>
+            <p>
+              Use this page for partnership outreach, project discussions, technical questions,
+              media inquiries, or thoughtful conversations around systems, design, and emerging technology.
+            </p>
           </div>
         </div>
 
         <div>
           <form class="contact-form card card-soft" id="contactForm">
             <div class="card-body">
-              <h2 class="card-title">Initiate Transmission</h2>
+              <h2 class="card-title">Send a Message</h2>
+              <p class="card-text">Fill out the form below and your message will be sent directly.</p>
+
               <div class="form-group">
-                <label>Operator Identity</label>
-                <input type="text" name="fi-sender-firstName" required placeholder="Your name">
+                <label for="senderName">Your Name</label>
+                <input id="senderName" type="text" name="fi-sender-firstName" required placeholder="Your name">
               </div>
+
               <div class="form-group">
-                <label>Return Frequency (Email)</label>
-                <input type="email" name="fi-sender-email" required placeholder="you@example.com">
+                <label for="senderEmail">Your Email</label>
+                <input id="senderEmail" type="email" name="fi-sender-email" required placeholder="you@example.com">
               </div>
+
               <div class="form-group">
-                <label>Signal Subject</label>
-                <input type="text" name="fi-text-subject" required placeholder="Topic of interest">
+                <label for="messageSubject">Subject</label>
+                <input id="messageSubject" type="text" name="fi-text-subject" required placeholder="What is this about?">
               </div>
+
               <div class="form-group">
-                <label>Data Payload</label>
-                <textarea name="fi-text-message" rows="5" required placeholder="Enter message..."></textarea>
+                <label for="messageBody">Message</label>
+                <textarea id="messageBody" name="fi-text-message" rows="5" required placeholder="Enter your message..."></textarea>
               </div>
-              <button type="submit" class="btn primary-btn pulse-button" style="width: 100%;">EXECUTE SEND</button>
-              <div id="terminalOutput" class="terminal-box">
-                <span id="formStatus">> System Ready...</span>
+
+              <button type="submit" class="btn primary-btn pulse-button" style="width: 100%;">Send Message</button>
+
+              <div id="terminalOutput" class="terminal-box" aria-live="polite">
+                <span id="formStatus">&gt; System Ready...</span>
               </div>
             </div>
           </form>
@@ -309,117 +252,111 @@
     </div>
   </main>
 
-    <footer class="site-footer" style="background: #010409; border-top: 1px solid var(--border); padding: 5rem 0 3rem; margin-top: 6rem; color: var(--soft);">
-      <div class="container" style="display: grid; gap: 3rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: start;">
-        
-        <div class="footer-column">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
-            <img src="./blog/Images/BioGlow_images/logo_v4_2.png" alt="Halocyberlife logo" style="width: 38px; filter: drop-shadow(0 0 5px var(--accent2));">
-            <span style="font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; color: #fff;">Halocyberlife</span>
-          </div>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--muted); margin-bottom: 1.5rem;">
-            Proprietary resource recovery systems and serialized frequency node architecture. Engineering the bridge between biological signals and utility extraction.
-          </p>
-          <p style="font-family: monospace; font-size: 0.75rem; color: var(--accent2);">v2.0.4 // STABLE_BUILD</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-column">
+        <div class="footer-brand">
+          <img src="images/negative_white_halocyberlife_logo.png" alt="Halocyberlife logo small" class="footer-logo">
+          <span class="footer-brand-text">Halocyberlife</span>
         </div>
-
-        <div class="footer-column">
-          <h4 style="color: #fff; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1.5rem; letter-spacing: 1px;">Ecosystem</h4>
-          <ul style="list-style: none; font-size: 0.9rem;">
-            <li style="margin-bottom: 0.8rem;"><a href="../index.html" style="color: var(--muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Home Core</a></li>
-            <li style="margin-bottom: 0.8rem;"><a href="../blog.html" style="color: var(--muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Technical Articles</a></li>
-            <li style="margin-bottom: 0.8rem;"><a href="../Patents.html" style="color: var(--muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">IP Portfolio</a></li>
-            <li style="margin-bottom: 0.8rem;"><a href="../about.html" style="color: var(--muted); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">About</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4 style="color: #fff; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1.5rem; letter-spacing: 1px;">Contact Terminals</h4>
-          <ul style="list-style: none; font-size: 0.85rem; font-family: monospace;">
-            <li style="margin-bottom: 0.8rem; color: var(--accent);">
-              <a href="mailto:luisamaya@halocyberlife.com" style="color: inherit; text-decoration: none;">luisamaya@halocyberlife.com</a>
-            </li>
-            <li style="margin-bottom: 0.8rem; color: var(--accent);">
-              <a href="mailto:info@halocyberlife.com" style="color: inherit; text-decoration: none;">info@halocyberlife.com</a>
-            </li>
-            <li style="margin-bottom: 0.8rem;">
-              <a href="https://www.linkedin.com/in/halocyberlife/" style="color: var(--muted); text-decoration: none;">LinkedIn: halocyberlife/</a>
-            </li>
-            <li style="margin-bottom: 0.8rem;">
-              <a href="https://www.youtube.com/@Halocyberlife" style="color: var(--muted); text-decoration: none;">YouTube: @Halocyberlife</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4 style="color: #fff; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1.5rem; letter-spacing: 1px;">Integrity</h4>
-          <ul style="list-style: none; font-size: 0.9rem;">
-            <li style="margin-bottom: 0.8rem;"><a href="../Privacy & Terms.html" style="color: var(--muted); text-decoration: none;">Privacy & Terms</a></li>
-            <li style="margin-bottom: 0.8rem;"><a href="https://www.halocyberlife.com/site_map.com" style="color: var(--muted); text-decoration: none;">Site Map</a></li>
-            <li style="margin-top: 1.5rem; font-size: 0.75rem; color: var(--muted);">© 2026 Halocyberlife.<br>All Rights Reserved.</li>
-          </ul>
-        </div>
-
+        <p class="footer-text">
+          Architecture concepts, experimental technology, original systems thinking, and future-focused research.
+        </p>
+        <p class="footer-meta">v4.0.0.426 · © <span id="year"></span> Halocyberlife.com</p>
       </div>
-      
-      <div style="text-align: center; margin-top: 4rem;">
-        <button class="back-to-top" style="position: static; display: inline-flex; width: 40px; height: 40px; justify-content: center; align-items: center; border-radius: 50%; border: 1px solid var(--border); background: rgba(139, 92, 246, 0.1); color: #fff; cursor: pointer;">↑</button>
-      </div>
-    </footer>
 
-  <button id="backToTop" class="back-to-top">↑</button>
+      <div class="footer-column">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./blog.html">All Articles</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact_us.html">Contact</a></li>
+          <li><a href="./Privacy & Terms.html">Privacy &amp; Terms</a></li>
+          <li><a href="./sitemap.html">Site Map</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">Contact &amp; Social</h3>
+        <div class="footer-social">
+          <a href="mailto:luisamaya@halocyberlife.com">luisamaya@halocyberlife.com</a>
+        </div>
+        <div class="footer-social">
+          <a href="mailto:info@halocyberlife.com">info@halocyberlife.com</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/halocyberlife/">LinkedIn: halocyberlife</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@Halocyberlife">YouTube: @Halocyberlife</a>
+        </div>
+      </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  </footer>
 
   <script src="main_v2_0_0.js"></script>
   <script>
     const forminit = new Forminit();
     const FORM_ID = "f295jh7t54d";
 
-    document.getElementById("contactForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const status = document.getElementById("formStatus");
-      const btn = e.target.querySelector('button');
-      if (btn.disabled) return;
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+    const navToggle = document.getElementById("navToggle");
+    const neonNav = document.getElementById("neonNav");
+    const yearEl = document.getElementById("year");
 
-      btn.textContent = 'TRANSMITTING...';
-      btn.disabled = true;
-      status.innerHTML = "> Syncing frequency...<br>> Securing tunnel...";
-      status.className = "";
-
-      const formData = new FormData(e.target);
-      try {
-        const { data, error } = await forminit.submit(FORM_ID, formData);
-        if (error) {
-          status.innerHTML = "> ERROR: Uplink Failed.<br>> Reason: " + error.message;
-          status.classList.add("error-glow");
-          btn.textContent = 'RETRY SEND';
-          btn.disabled = false;
-        } else {
-          status.innerHTML = "> SUCCESS: Data Packet Relayed.<br>> BioGen Interface Confirmed.";
-          status.classList.add("success-glow");
-          btn.textContent = 'TRANSMISSION COMPLETE';
-          e.target.reset();
-        }
-      } catch (err) {
-        status.innerHTML = "> CRITICAL: Protocol Interrupted.";
-        status.classList.add("error-glow");
-        btn.disabled = false;
-      }
-    });
-
-    const yearEl = document.getElementById('year');
-      if (yearEl) {
+    if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
     }
 
-    const navToggle = document.getElementById('navToggle');
-const neonNav = document.getElementById('neonNav');
+    if (navToggle && neonNav) {
+      navToggle.addEventListener("click", () => {
+        const isActive = neonNav.classList.toggle("active");
+        navToggle.classList.toggle("is-active", isActive);
+        navToggle.setAttribute("aria-expanded", isActive ? "true" : "false");
+        document.body.classList.toggle("nav-open", isActive);
+      });
+    }
 
-navToggle.addEventListener('click', () => { 
-  neonNav.classList.toggle('active'); 
-  navToggle.classList.toggle('is-active');
-  document.body.classList.toggle('nav-open');
-});
+    if (contactForm) {
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
+        const btn = e.target.querySelector('button[type="submit"]');
+        if (!btn || btn.disabled) return;
+
+        btn.textContent = "SENDING...";
+        btn.disabled = true;
+        formStatus.innerHTML = "&gt; Sending message...<br>&gt; Securing connection...";
+        formStatus.className = "";
+
+        const formData = new FormData(e.target);
+
+        try {
+          const { error } = await forminit.submit(FORM_ID, formData);
+
+          if (error) {
+            formStatus.innerHTML = "&gt; ERROR: Message failed to send.<br>&gt; Reason: " + error.message;
+            formStatus.classList.add("error-glow");
+            btn.textContent = "Retry Send";
+            btn.disabled = false;
+          } else {
+            formStatus.innerHTML = "&gt; SUCCESS: Message delivered.<br>&gt; Transmission confirmed.";
+            formStatus.classList.add("success-glow");
+            btn.textContent = "Message Sent";
+            e.target.reset();
+          }
+        } catch (err) {
+          formStatus.innerHTML = "&gt; CRITICAL: Transmission interrupted.";
+          formStatus.classList.add("error-glow");
+          btn.textContent = "Retry Send";
+          btn.disabled = false;
+        }
+      });
+    }
   </script>
 </body>
 </html>
