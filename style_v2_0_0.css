@@ -279,6 +279,30 @@ body {
   } */
 }
 
+   /* ===== Corner Ribbon (Coming Soon) ===== */
+   .ribbon {
+     position: absolute;
+     top: 14px;
+     right: -40px;
+     width: 150px;
+     padding: 6px 0;
+     background: linear-gradient(135deg, #22c55e, #16a34a);
+     color: #fff;
+     text-align: center;
+     font-size: 0.7rem;
+     font-weight: 700;
+     letter-spacing: 0.08em;
+     transform: rotate(45deg);
+     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+     z-index: 10;
+     pointer-events: none;
+   }
+   
+   /* Make sure parent allows positioning */
+   .ribbon-wrap {
+     position: relative;
+     overflow: hidden;
+   }
 
 /* ---------- Hero ---------- */
 
@@ -1038,6 +1062,31 @@ body {
     display: none;
   }
 } */
+
+/* ===== Corner Ribbon (Coming Soon) ===== */
+.ribbon {
+  position: absolute;
+  top: 14px;
+  right: -40px;
+  width: 150px;
+  padding: 6px 0;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Make sure parent allows positioning */
+.ribbon-wrap {
+  position: relative;
+  overflow: hidden;
+}
 
 /* ==============================
    Mobile tweak: 4 cards + 1 column
