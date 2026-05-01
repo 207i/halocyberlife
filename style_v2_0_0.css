@@ -1435,5 +1435,62 @@ body {
   border: 1px solid var(--accent2);
   padding: 2px 6px;
   margin-bottom: 0.5rem;
+
+/*--------------------- Sacre Geometry ----------------------------*/ 
+   .sacred-circuit-section {
+  padding: 2.5rem 1rem;
+  background: radial-gradient(circle at center, rgba(34,211,238,0.08), transparent 55%);
+}
+
+.sacred-circuit-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.sacred-symbol-card {
+  width: 180px;
+  height: 180px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: rgba(2, 6, 23, 0.45);
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.sacred-symbol {
+  width: 135px;
+  height: 135px;
+  fill: none;
+  stroke: rgba(255,255,255,0.92);
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(34,211,238,0.45));
+}
+
+.sacred-symbol-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 0 45px rgba(34, 211, 238, 0.35);
+}
+
+.sacred-symbol-card:hover .sacred-symbol {
+  animation: sacredPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes sacredPulse {
+  0%, 100% {
+    stroke: rgba(255,255,255,0.92);
+    filter: drop-shadow(0 0 10px rgba(34,211,238,0.45));
+  }
+  50% {
+    stroke: rgba(103,232,249,1);
+    filter: drop-shadow(0 0 22px rgba(34,211,238,0.9));
+  }
+}
   display: inline-block;
 }
