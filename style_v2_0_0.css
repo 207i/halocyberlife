@@ -1494,3 +1494,45 @@ body {
 }
   display: inline-block;
 }
+
+/* BioLung page hero image fix */
+.hero {
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 560px);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero .section-card {
+  max-width: 560px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero .article-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 18px;
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero .section-card {
+    max-width: 100%;
+  }
+
+  .hero .article-figure img {
+    max-height: none;
+  }
+}
