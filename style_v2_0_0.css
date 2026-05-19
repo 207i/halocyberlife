@@ -1614,3 +1614,62 @@ body {
     min-width: 0;
   }
 }
+
+/* BioLung 4 system philosophy image cards */
+.system-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 430px;
+  padding: 0;
+}
+
+.system-card-image {
+  height: 185px;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+}
+
+.system-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+.system-card .card-body {
+  padding: 1.35rem;
+  flex: 1;
+}
+
+.system-card .card-meta {
+  margin-bottom: 0.9rem;
+  color: #9b8cff;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.system-card .card-title {
+  color: #00d9ff;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  text-wrap: balance;
+}
+
+.system-card .card-text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+@media (max-width: 700px) {
+  .system-card {
+    min-height: auto;
+  }
+
+  .system-card-image {
+    height: 220px;
+  }
+}
