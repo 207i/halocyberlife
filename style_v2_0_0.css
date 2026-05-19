@@ -1575,3 +1575,42 @@ body {
     min-width: 0;
   }
 }
+
+/*------------------- Global BioLung image containment fix -------------------*/
+.article-figure,
+.mini-card {
+  overflow: hidden;
+}
+
+.article-figure img,
+.mini-card-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.section-card {
+  overflow: hidden;
+}
+
+.section-card img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.two-column-grid {
+  overflow: hidden;
+}
+
+@media (min-width: 901px) {
+  .section-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .section-split > * {
+    min-width: 0;
+  }
+}
