@@ -207,113 +207,116 @@
         “Some structures are not only built to occupy space. They are designed to organize attention, direction, memory, and symbolic energy.”
       </div>
 
-     <section class="upgrade-section">
+     <section class="rot-blog">
   <style>
-    .upgrade-section {
-      background: #0b0f14;
-      color: #ffffff;
-      padding: 80px 24px;
-      font-family: Arial, sans-serif;
+    .rot-blog{
+      background:#07090d;
+      color:#fff;
+      font-family:Arial,sans-serif;
+      padding:0;
     }
-
-    .upgrade-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
+    .rot-hero{
+      min-height:620px;
+      padding:80px 28px;
+      display:flex;
+      align-items:end;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.15),#07090d 92%),
+        url("images/rotratix-hero.jpg") center/cover no-repeat;
     }
-
-    .upgrade-label {
-      color: #4da3ff;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    .rot-inner{max-width:1180px;margin:auto;width:100%}
+    .rot-tag{color:#58a6ff;text-transform:uppercase;font-weight:800;letter-spacing:2px}
+    .rot-title{font-size:clamp(44px,7vw,92px);line-height:.92;margin:14px 0}
+    .rot-sub{max-width:720px;color:#c7d0da;font-size:20px;line-height:1.7}
+    .rot-grid{
+      max-width:1180px;
+      margin:0 auto;
+      padding:70px 28px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
     }
-
-    .upgrade-title {
-      font-size: clamp(36px, 5vw, 68px);
-      line-height: 1;
-      margin: 0 0 20px;
+    .rot-card{
+      background:#101722;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 30px 80px rgba(0,0,0,.45);
     }
-
-    .upgrade-text {
-      max-width: 720px;
-      color: #b8c2cc;
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 42px;
+    .rot-card img{width:100%;height:240px;object-fit:cover;display:block}
+    .rot-card div{padding:26px}
+    .rot-card h3{font-size:24px;margin:0 0 10px}
+    .rot-card p{color:#aeb8c2;line-height:1.65;margin:0}
+    .rot-feature{
+      max-width:1180px;
+      margin:0 auto;
+      padding:40px 28px 90px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      align-items:center;
     }
-
-    .upgrade-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+    .rot-feature img{
+      width:100%;
+      border-radius:28px;
+      box-shadow:0 40px 100px rgba(0,0,0,.55);
     }
-
-    .upgrade-card {
-      background: linear-gradient(180deg, #121a24, #0f151d);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-    }
-
-    .upgrade-card h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-    }
-
-    .upgrade-card p {
-      margin: 0;
-      color: #aeb8c2;
-      line-height: 1.6;
-    }
-
-    .upgrade-cta {
-      margin-top: 44px;
-      display: inline-block;
-      background: #4da3ff;
-      color: #06101c;
-      padding: 16px 26px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
+    .rot-feature h2{font-size:clamp(34px,5vw,64px);margin:0 0 18px}
+    .rot-feature p{color:#c1cad3;font-size:18px;line-height:1.8}
+    @media(max-width:850px){
+      .rot-grid,.rot-feature{grid-template-columns:1fr}
+      .rot-hero{min-height:520px}
     }
   </style>
 
-  <div class="upgrade-wrap">
-    <div class="upgrade-label">New Upgrades</div>
-
-    <h2 class="upgrade-title">Smarter, faster, and built for what comes next.</h2>
-
-    <p class="upgrade-text">
-      We’ve upgraded the experience with improved visuals, faster performance,
-      cleaner navigation, and a more powerful design system built to make every
-      interaction feel sharper and more intuitive.
-    </p>
-
-    <div class="upgrade-grid">
-      <div class="upgrade-card">
-        <h3>Modern Interface</h3>
-        <p>A cleaner layout with better spacing, stronger hierarchy, and a more premium visual style.</p>
-      </div>
-
-      <div class="upgrade-card">
-        <h3>Faster Performance</h3>
-        <p>Optimized pages, smoother loading, and a more responsive experience across devices.</p>
-      </div>
-
-      <div class="upgrade-card">
-        <h3>Better Navigation</h3>
-        <p>Improved structure so visitors can find what they need quickly and confidently.</p>
-      </div>
-
-      <div class="upgrade-card">
-        <h3>Future-Ready Design</h3>
-        <p>A flexible foundation built to support new features, content, visuals, and growth.</p>
-      </div>
+  <div class="rot-hero">
+    <div class="rot-inner">
+      <div class="rot-tag">Pyramid Rotratix</div>
+      <h1 class="rot-title">The Hidden Engine Beneath the Pyramid</h1>
+      <p class="rot-sub">
+        A cinematic exploration of secret corridors, false walls, rotating chambers,
+        and the ancient-tech logic powering the Rotratix system.
+      </p>
     </div>
+  </div>
 
-    <a class="upgrade-cta" href="#contact">Explore the Upgrades</a>
+  <div class="rot-grid">
+    <article class="rot-card">
+      <img src="images/hidden-passage.jpg" alt="Hidden passage behind false wall">
+      <div>
+        <h3>Hidden Passage</h3>
+        <p>A seamless stone wall conceals the route into the deeper Rotratix mechanism.</p>
+      </div>
+    </article>
+
+    <article class="rot-card">
+      <img src="images/long-hallway.jpg" alt="Long pyramid hallway">
+      <div>
+        <h3>The Long Hallway</h3>
+        <p>A narrow corridor pulls the viewer forward with light, shadow, and mystery.</p>
+      </div>
+    </article>
+
+    <article class="rot-card">
+      <img src="images/rotratix-core.jpg" alt="Rotratix core chamber">
+      <div>
+        <h3>Core Chamber</h3>
+        <p>The inner system glows like an ancient machine awakened beneath the pyramid.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="rot-feature">
+    <img src="images/fake-wall-door.jpg" alt="Fake wall opening into secret door">
+    <div>
+      <div class="rot-tag">Secret Mechanism</div>
+      <h2>The wall was never a wall.</h2>
+      <p>
+        Behind the carved surface is a disguised passage door. When the Rotratix
+        alignment activates, the false wall separates, revealing the hidden route
+        into the pyramid’s mechanical interior.
+      </p>
+    </div>
   </div>
 </section>
     </article>
