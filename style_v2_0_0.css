@@ -1729,3 +1729,24 @@ body {
     height: auto;
   }
 }
+
+/* =================================
+   HaloCyberLife Gradient Typography
+   ================================= */
+
+.halo-gradient-text {
+  display: inline-block;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #22d3ee 48%,
+    #8b5cf6 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
