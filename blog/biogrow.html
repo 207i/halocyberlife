@@ -9,20 +9,29 @@
 
 <body>
   <!-- shared header -->
-  <header class="neon-header">
+ <header class="neon-header">
     <div class="container neon-header-inner">
       <a href="index.html" class="neon-brand">
-        <img src="/images/negative_white_halocyberlife_logo.png" class="main-logo" alt="HaloCyberlife"/>
-        <span class="neon-brand-text">BioGrow™</span>
+        <h1 class="logo-h1">
+          <div class="logo-pair">
+            <img src="./images/negative_white_halocyberlife_logo.png" alt="HaloCyberLife logo" class="neon-logo main-logo" />
+          </div>
+        </h1>
       </a>
 
-      <nav class="neon-nav">
-        <a href="/biogen.html" class="neon-link color-blue">BioGen</a>
-        <a href="/biogrow.html" class="neon-link color-purple" aria-current="page">BioGrow</a>
-        <a href="/bioglow.html" class="neon-link color-cyan">BioGlow</a>
+      <button class="neon-nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="neon-nav">
+        <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
+        <a href="/blog.html" class="neon-link color-cyan">Articles</a>
+        <a href="/about.html" class="neon-link color-magenta">About</a>
+        <a href="/contact_us.html" class="neon-link color-gold">Contact</a>
       </nav>
     </div>
   </header>
+
 
   <!-- Hero -->
   <section class="hero container" style="text-align:center;padding-top:4rem;">
