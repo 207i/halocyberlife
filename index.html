@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8214545730626805"
-     crossorigin="anonymous"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8214545730626805"
-     crossorigin="anonymous"></script>
+  <!-- Google AdSense: keep exactly one loader per page -->
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8214545730626805"
+    crossorigin="anonymous">
+  </script>
 
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HZN617CB1"></script>
   <script>
-    window.addEventListener('load', () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0HZN617CB1');
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-0HZN617CB1");
   </script>
 
   <meta charset="UTF-8" />
@@ -21,42 +24,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>HaloCyberLife™ | Architecture, Technology, and Original Research</title>
-  <meta name="description" content="HaloCyberLife publishes original articles on architecture, air systems, future technology, sound, design concepts, and independent research." />
+  <meta
+    name="description"
+    content="HaloCyberLife publishes original articles on architecture, environmental systems, future technology, sound, design concepts, and independent research."
+  />
   <meta name="author" content="Luis Amaya" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:description" content="Original articles and visual research on architecture, future systems, air purification, sound, and independent design concepts." />
-  <meta property="og:url" content="https://halocyberlife.com/" />
-  <meta property="og:image" content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="HaloCyberLife | Architecture, Technology, and Original Research" />
   <link rel="canonical" href="https://halocyberlife.com/" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HaloCyberLife" />
   <meta property="og:title" content="HaloCyberLife | Architecture, Technology, and Original Research" />
-  <meta name="twitter:description" content="Original articles and visual research on architecture, future systems, air purification, sound, and independent design concepts." />
-  <meta name="twitter:image" content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png" />
+  <meta
+    property="og:description"
+    content="Original articles and visual research on architecture, environmental systems, future technology, sound, and independent design concepts."
+  />
+  <meta property="og:url" content="https://halocyberlife.com/" />
+  <meta
+    property="og:image"
+    content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png"
+  />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HaloCyberLife | Architecture, Technology, and Original Research" />
+  <meta
+    name="twitter:description"
+    content="Original articles and visual research on architecture, environmental systems, future technology, sound, and independent design concepts."
+  />
+  <meta
+    name="twitter:image"
+    content="https://halocyberlife.com/images/negative_white_halocyberlife_logo.png"
+  />
 
   <link rel="icon" href="/images/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="preload" href="style_v2_0_0.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="style_v2_0_0.css?v=204">
-  </noscript>
+  <!-- Normal stylesheet loading is more reliable than preload/onload swapping -->
+  <link rel="stylesheet" href="/style_v2_0_0.css?v=204" />
 
   <style>
     .marquee {
       position: relative;
       width: 100%;
       overflow: hidden;
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background: rgba(5,8,20,.65);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(5, 8, 20, 0.65);
       backdrop-filter: blur(8px);
     }
 
@@ -69,7 +90,7 @@
     .marquee span {
       padding: 14px 32px;
       font-size: 13px;
-      letter-spacing: .14em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #aab3d6;
       white-space: nowrap;
@@ -101,43 +122,79 @@
       position: absolute;
       right: 5px;
       top: 50%;
-      transform: translateY(-50%);
       width: 120px;
       height: 2px;
-      background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
+      transform: translateY(-50%);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
     }
 
-    .comet-1 { animation: fly-back 15s linear infinite; }
-    .comet-2 { animation: fly-weave 18s linear infinite; animation-delay: 6s; }
-    .comet-3 { animation: fly-front 20s linear infinite; animation-delay: 12s; }
+    .comet-1 {
+      animation: fly-back 15s linear infinite;
+    }
+
+    .comet-2 {
+      animation: fly-weave 18s linear infinite;
+      animation-delay: 6s;
+    }
+
+    .comet-3 {
+      animation: fly-front 20s linear infinite;
+      animation-delay: 12s;
+    }
 
     @keyframes fly-back {
-      0%   { transform: translate(-30vw, 20vh) translateZ(-250px); opacity: 0; }
-      10%  { opacity: 0.6; }
-      90%  { opacity: 0.6; }
-      100% { transform: translate(130vw, -40vh) translateZ(-250px); opacity: 0; }
+      0% {
+        transform: translate(-30vw, 20vh) translateZ(-250px);
+        opacity: 0;
+      }
+      10%, 90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translate(130vw, -40vh) translateZ(-250px);
+        opacity: 0;
+      }
     }
 
     @keyframes fly-weave {
-      0%   { transform: translate(-30vw, 10vh) translateZ(0); opacity: 0; filter: brightness(0.6); }
-      15%  { opacity: 1; }
-      50%  { transform: translate(50vw, 0) translateZ(0); filter: brightness(1.6); box-shadow: 0 0 20px #fff, 0 0 40px #22d3ee; }
-      85%  { opacity: 1; }
-      100% { transform: translate(130vw, -10vh) translateZ(0); opacity: 0; }
+      0% {
+        transform: translate(-30vw, 10vh) translateZ(0);
+        opacity: 0;
+        filter: brightness(0.6);
+      }
+      15%, 85% {
+        opacity: 1;
+      }
+      50% {
+        transform: translate(50vw, 0) translateZ(0);
+        filter: brightness(1.6);
+        box-shadow: 0 0 20px #fff, 0 0 40px #22d3ee;
+      }
+      100% {
+        transform: translate(130vw, -10vh) translateZ(0);
+        opacity: 0;
+      }
     }
 
     @keyframes fly-front {
-      0%   { transform: translate(-30vw, -10vh) translateZ(250px); opacity: 0; }
-      10%  { opacity: 1; }
-      90%  { opacity: 1; }
-      100% { transform: translate(130vw, 40vh) translateZ(250px); opacity: 0; }
+      0% {
+        transform: translate(-30vw, -10vh) translateZ(250px);
+        opacity: 0;
+      }
+      10%, 90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(130vw, 40vh) translateZ(250px);
+        opacity: 0;
+      }
     }
 
     .editorial-section {
       padding: 80px 20px;
-      background: linear-gradient(180deg, #050814 0%, #0a0f25 100%);
       color: #e2e8f0;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #050814 0%, #0a0f25 100%);
     }
 
     .editorial-content {
@@ -147,29 +204,29 @@
     }
 
     .editorial-content h2 {
+      margin-bottom: 24px;
       font-size: 2.5rem;
       letter-spacing: -0.02em;
       background: linear-gradient(90deg, #fff, #aab3d6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 24px;
     }
 
     .editorial-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      margin: 44px 0 0;
+      margin-top: 44px;
       text-align: left;
     }
 
     .editorial-item {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
       padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .editorial-item:hover {
@@ -178,49 +235,59 @@
     }
 
     .editorial-item h3 {
-      color: #22d3ee;
       margin-bottom: 15px;
-      text-transform: uppercase;
+      color: #22d3ee;
       font-size: 0.9rem;
       letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track,
+      .comet {
+        animation: none;
+      }
+
+      .editorial-item {
+        transition: none;
+      }
     }
 
     @media (max-width: 768px) {
-      .editorial-grid { grid-template-columns: 1fr; }
-    }
-
-    .live-build-note{
-      margin-top:1.4rem;
-      padding:0.9rem 1rem;
-      border:1px solid rgba(34,211,238,0.18);
-      background:rgba(255,255,255,0.03);
-      border-radius:12px;
-      color:#aab3d6;
-      font-size:0.92rem;
-      line-height:1.6;
-      max-width:760px;
-      backdrop-filter:blur(10px);
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="neon-header">
     <div class="container neon-header-inner">
-      <a href="index.html" class="neon-brand">
-        <h1 class="logo-h1">
-          <div class="logo-pair">
-            <img src="images/negative_white_halocyberlife_logo.png" alt="HaloCyberLife logo" class="neon-logo main-logo" />
-          </div>
-        </h1>
+      <a href="/index.html" class="neon-brand" aria-label="HaloCyberLife home">
+        <div class="logo-pair">
+          <img
+            src="/images/negative_white_halocyberlife_logo.png"
+            alt="HaloCyberLife"
+            class="neon-logo main-logo"
+          />
+        </div>
       </a>
 
-      <button class="neon-nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span>
+      <button
+        class="neon-nav-toggle"
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
-      <nav id="primary-nav" class="neon-nav">
+      <nav id="primary-nav" class="neon-nav" aria-label="Primary navigation">
         <a href="/index.html#insights" class="neon-link color-blue">Insights</a>
         <a href="/blog.html" class="neon-link color-cyan">Articles</a>
         <a href="/about.html" class="neon-link color-magenta">About</a>
@@ -232,23 +299,29 @@
   <main id="main-content">
     <section class="brand-h1-section" aria-label="HaloCyberLife brand">
       <div class="brand-h1">
-        <img src="./images/HaloCyberLife_logo_TM.png" alt="HaloCyberLife™ logo" class="brand-h1-logo" />
+        <img
+          src="/images/HaloCyberLife_logo_TM.png"
+          alt="HaloCyberLife™"
+          class="brand-h1-logo"
+        />
       </div>
     </section>
 
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h2 class="hero-kicker">Independent Publication · Architecture · Technology · Research</h2>
+          <p class="hero-kicker">
+            Independent Publication · Architecture · Technology · Research
+          </p>
 
           <h1 class="hero-title halo-gradient-text">
-           Original Articles on Architecture, Future Systems, and Design Thinking
+            Original Articles on Architecture, Future Systems, and Design Thinking
           </h1>
 
           <p class="hero-subtitle">
             HaloCyberLife is an independent publication featuring original writing,
             concept analysis, visual research, and technology-focused articles on
-            architecture, air systems, energy ideas, sound, and design.
+            architecture, environmental systems, sound, and design.
           </p>
 
           <div class="hero-actions">
@@ -260,6 +333,7 @@
         <div class="hero-visual" aria-hidden="true">
           <div class="orb orb-outer"></div>
           <div class="orb orb-inner"></div>
+
           <div class="comet-layer">
             <div class="comet comet-1"></div>
             <div class="comet comet-2"></div>
@@ -269,72 +343,42 @@
       </div>
     </section>
 
-      <section class="sacred-circuit-section" aria-label="Sacred circuit geometry">
-    <div class="sacred-circuit-wrap">
-  
-      <!-- <div class="sacred-symbol-card">
-        <svg class="sacred-symbol sacred-symbol-a" viewBox="0 0 300 300" aria-hidden="true">
-          <path d="M150 35 L235 205 H65 Z" />
-          <path d="M80 90 L150 140 L220 90" />
-          <path d="M150 140 V245" />
-          <circle cx="72" cy="80" r="22" />
-          <circle cx="228" cy="80" r="22" />
-          <circle cx="150" cy="255" r="22" />
-        </svg>
-      </div> -->
-  
-      <!-- <div class="sacred-symbol-card">
-        <svg class="sacred-symbol sacred-symbol-b" viewBox="0 0 300 300" aria-hidden="true">
-          <path d="M150 45 V130" />
-          <circle cx="150" cy="145" r="24" />
-          <path d="M150 70 L225 115" />
-          <path d="M225 115 L195 102" />
-          <path d="M130 155 L65 210" />
-          <path d="M65 210 V95" />
-          <path d="M170 160 L235 210" />
-          <path d="M235 210 L140 265" />
-        </svg>
-      </div> -->
-  
-    </div>
-  </section>
-    
-    <div class="marquee">
+    <div class="marquee" aria-label="HaloCyberLife topics">
       <div class="marquee-track">
         <span>Architecture</span>
         <span>Air Purification</span>
         <span>Sound &amp; Frequency</span>
         <span>System Design</span>
         <span>Independent Research</span>
-        <span>Architecture</span>
-        <span>Air Purification</span>
-        <span>Sound &amp; Frequency</span>
-        <span>System Design</span>
-        <span>Independent Research</span>
+
+        <!-- Repeated only to create a continuous visual loop -->
+        <span aria-hidden="true">Architecture</span>
+        <span aria-hidden="true">Air Purification</span>
+        <span aria-hidden="true">Sound &amp; Frequency</span>
+        <span aria-hidden="true">System Design</span>
+        <span aria-hidden="true">Independent Research</span>
       </div>
     </div>
 
-    <div class="live-build-note">
-    HaloCyberLife™ is actively being developed live.
-    New systems, articles, visual research, and experimental frameworks are added continuously as the platform evolves.
-    </div>
-    
     <section id="insights" class="section section-dark">
       <div class="container">
         <header class="section-header">
           <h2 style="color: #4169e1;">Featured Articles &amp; Research</h2>
-          <p>Selected writing from HaloCyberLife covering future systems, visual concepts, and original technical thought.</p>
+          <p>
+            Selected HaloCyberLife writing covering original systems, visual concepts,
+            and independent technical thought.
+          </p>
         </header>
 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8214545730626805"
-        crossorigin="anonymous">
-        </script>
-        
         <div class="two-column-grid">
           <div class="column-left" aria-label="Featured articles">
             <article class="mini-card tech-card">
-              <a href="./blog/BioGlow_resonance_light_energy.html">
-                <img src="./images/downtownla_bioglow.webp" alt="BioGlow resonance illumination concept on 4th street downtown LA Bridge" class="mini-card-image" />
+              <a href="/blog/BioGlow_resonance_light_energy.html">
+                <img
+                  src="/images/downtownla_bioglow.webp"
+                  alt="BioGlow resonance illumination concept on the Fourth Street bridge in downtown Los Angeles"
+                  class="mini-card-image"
+                />
                 <div class="mini-card-body">
                   <p class="mini-card-meta">Technology Concept</p>
                   <h3>BioGlow™ Resonance Light</h3>
@@ -343,40 +387,42 @@
             </article>
 
             <article class="mini-card">
-              <a href="./blog/BioLung.html">
-                <img src="blog/Images/BioLung/BioLung_purifying_the_city_air.webp" alt="BioLung air purification tower concept" class="mini-card-image" />
-                <div class="mini-card-body">
-                  <p class="mini-card-meta">Environmental Systems</p>
-                  <h3>BioLung™: A New Vision for Air Purification and Cleaner Environments</h3>
-                </div>
-              </a>
-            </article>
-
-            <article class="mini-card">
-              <a href="./432hz_vs_440hz.html">
-                <img src="./blog/Images/blog/Tuning frequencies and cosmic harmony.webp" alt="Visualization comparing 432 Hz and 440 Hz tuning" class="mini-card-image" />
+              <a href="/432hz_vs_440hz.html">
+                <img
+                  src="/blog/Images/blog/Tuning frequencies and cosmic harmony.webp"
+                  alt="Visualization comparing 432 Hz and 440 Hz tuning"
+                  class="mini-card-image"
+                />
                 <div class="mini-card-body">
                   <p class="mini-card-meta">Sound &amp; Frequency</p>
-                  <h3>432 Hz vs 440 Hz: The Tuning Debate</h3>
+                  <h3>432 Hz vs. 440 Hz: The Tuning Debate</h3>
                 </div>
               </a>
             </article>
 
-            <article class="mini-card">
-              <a href="./blog/biogrow.html">
-                <img src="blog/Images/BioGrow/fiber_optic_building.webp" alt="Photonic greenhouse tower concept" class="mini-card-image" />
+            <article class="mini-card tech-card">
+              <a href="/blog/BioLoop.html">
+                <img
+                  src="/blog/Images/blog_images/BioLoop_img/Toilet_Seat.webp"
+                  alt="BioLoop micro-vent capture concept"
+                  class="mini-card-image"
+                />
                 <div class="mini-card-body">
-                  <p class="mini-card-meta">Concept Study</p>
-                  <h3>BioGrow: Light Distribution and Controlled Environment Agriculture</h3>
+                  <p class="mini-card-meta">Sanitation Systems</p>
+                  <h3>BioLoop™ Micro-Vent Capture</h3>
                 </div>
               </a>
             </article>
           </div>
 
-          <div class="column-right" aria-label="Technology concepts">   
+          <div class="column-right" aria-label="Technology concepts">
             <article class="mini-card tech-card">
-              <a href="./blog/RESONANT PHOTONIC AMPLIFICATION SYSTEM (RPAS).html">
-                <img src="blog/Images/blog_images/Layers_Bio_Glow.webp" alt="Resonant photonic system concept interior" class="mini-card-image" />
+              <a href="/blog/RESONANT PHOTONIC AMPLIFICATION SYSTEM (RPAS).html">
+                <img
+                  src="/blog/Images/blog_images/Layers_Bio_Glow.webp"
+                  alt="Resonant photonic system concept interior"
+                  class="mini-card-image"
+                />
                 <div class="mini-card-body">
                   <p class="mini-card-meta">Systems Research</p>
                   <h3>RPAS Photonic System</h3>
@@ -384,47 +430,24 @@
               </a>
             </article>
 
-             <article class="mini-card tech-card">
-              <a href="./blog/BioLumen.html">
+            <article class="mini-card tech-card">
+              <a href="/blog/AquaSentinel.html">
                 <img
-                  src="./blog/Images/blog_images/BioLumen_img/BioLumen_system_overview.png"
-                  alt="BioLumen TRIA-CORE biophotonic extraction system"
-                  class="mini-card-image" />
+                  src="/blog/Images/BioSentinel/Dual_System.webp"
+                  alt="AI rescue pod concept for flood conditions in the Los Angeles River"
+                  class="mini-card-image"
+                />
                 <div class="mini-card-body">
-                  <p class="mini-card-meta">Biophotonic Systems</p>
-                  <h3>BioLumen™: TRIA-CORE Biophotonic Extraction</h3>
+                  <p class="mini-card-meta">AI Rescue &amp; Flood Safety</p>
+                  <h3>BioSentinel™: AI Rescue Pods for the Los Angeles River</h3>
                 </div>
               </a>
             </article>
-
-            <article class="mini-card tech-card">
-              <a href="./blog/BioLoop.html">
-                <img src="blog/Images/blog_images/BioLoop_img/Toilet_Seat.webp" alt="BioLoop micro-vent capture concept" class="mini-card-image" />
-                <div class="mini-card-body">
-                  <p class="mini-card-meta">Sanitation Systems</p>
-                  <h3>BioLoop™ Micro-Vent Capture</h3>
-                </div>
-              </a>
-            </article>
-
-            <article class="mini-card tech-card">
-            <a href="./blog/AquaSentinel.html">
-              <img 
-                src="./blog/Images/BioSentinel/Dual_System.webp" 
-                alt="AI rescue pod system concept for flood conditions in the LA River" 
-                class="mini-card-image" 
-              />
-              <div class="mini-card-body">
-                <p class="mini-card-meta">AI Rescue &amp; Flood Safety Concepts</p>
-                <h3>BioSentinel™: AI Rescue Pods for the LA River</h3>
-              </div>
-            </a>
-          </article>
           </div>
         </div>
 
         <div class="section-actions">
-          <a href="./blog.html" class="btn ghost-btn">Explore All Articles</a>
+          <a href="/blog.html" class="btn ghost-btn">Explore All Articles</a>
         </div>
       </div>
     </section>
@@ -432,66 +455,75 @@
     <section class="section section-light">
       <div class="container section-split">
         <div class="section-text">
-          <h2>What is HaloCyberLife?</h2>
+          <h2>What Is HaloCyberLife?</h2>
+
           <p>
             HaloCyberLife is an independent website focused on architecture,
             emerging technology, environmental systems, sound, design concepts,
             and visual research.
           </p>
+
           <p>
-            The site is created and maintained by Luis Amaya and is built around
-            original articles, structured concept exploration, and long-form
-            publishing for readers interested in new systems and future-facing ideas.
+            The site is created and maintained by Luis Amaya. It documents original
+            ideas, design reasoning, prototypes, diagrams, and long-form research for
+            readers interested in future-facing systems.
           </p>
+
           <ul class="bullet-list">
             <li>Original articles and concept analysis</li>
             <li>Architecture and environmental design ideas</li>
             <li>Sound, frequency, and systems thinking</li>
             <li>Visual research, diagrams, and technical storytelling</li>
           </ul>
+
           <p>
-            The goal of HaloCyberLife is to make unusual ideas easier to understand
-            through clear writing, better presentation, and organized research.
+            The goal is to make unusual ideas easier to examine through clear writing,
+            transparent concept labeling, and organized research.
           </p>
         </div>
 
-        <div class="section-card">
+        <aside class="section-card" aria-label="Site focus">
           <h3>Site Focus</h3>
-          <p><strong>Primary emphasis:</strong> articles, research, and independent publishing.</p>
           <p>
-            HaloCyberLife is organized as a content-first knowledge hub where visitors
-            can explore original topics, technical ideas, and visual concept work in one place.
+            <strong>Primary emphasis:</strong>
+            original articles, independent research, and design documentation.
           </p>
-        </div>
+          <p>
+            Conceptual material is identified as conceptual. Experimental work is
+            presented with its assumptions, limitations, and stage of development.
+          </p>
+        </aside>
       </div>
     </section>
 
-    <section class="editorial-section">
+    <section class="editorial-section" aria-labelledby="editorial-title">
       <div class="editorial-content">
-        <h2>Editorial Focus</h2>
+        <h2 id="editorial-title">Editorial Focus</h2>
+
         <p>
           HaloCyberLife covers topics where architecture, technology, environment,
-          design, and systems thinking overlap. The site emphasizes original writing,
-          concept exploration, and organized presentation over short-form promotion.
+          design, and systems thinking overlap. Articles are intended to add original
+          reasoning, visual explanation, and firsthand project context.
         </p>
 
         <div class="editorial-grid">
-          <div class="editorial-item">
+          <article class="editorial-item">
             <h3>Original Writing</h3>
             <p>
-              Articles are written to explore ideas in a structured way, giving readers
-              context, practical framing, visual support, and a clearer path through
-              complex concepts.
+              Each article should explain the idea in the author's own words, identify
+              the problem being explored, and provide useful context beyond a gallery,
+              embedded media item, or promotional statement.
             </p>
-          </div>
-          <div class="editorial-item">
+          </article>
+
+          <article class="editorial-item">
             <h3>Research Presentation</h3>
             <p>
-              Visual concepts, diagrams, and technical themes are presented as part of
-              a larger research narrative so visitors can follow the reasoning behind
-              each topic rather than just viewing isolated images.
+              Diagrams, prototype images, and technical themes are placed inside a
+              larger narrative so readers can understand the reasoning, limitations,
+              and intended application of each concept.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -500,13 +532,15 @@
       <div class="container newsletter-inner">
         <div class="newsletter-copy">
           <h2>Stay Updated</h2>
-          <p>Get new articles and research updates from HaloCyberLife.</p>
+          <p>Receive new articles and research updates from HaloCyberLife.</p>
         </div>
+
         <div class="newsletter-form">
           <iframe
             src="https://embeds.beehiiv.com/f40c03c1-8e91-4175-9bc5-7dd5a092c366?slim=true"
-            data-test-id="beehiiv-embed"
+            title="Subscribe to HaloCyberLife updates"
             height="52"
+            loading="lazy"
             frameborder="0"
             scrolling="no"
             style="width: 100%; margin: 0; border-radius: 6px; background-color: transparent;">
@@ -520,44 +554,70 @@
     <div class="container footer-inner">
       <div class="footer-column">
         <div class="footer-brand">
-          <img src="images/negative_white_halocyberlife_logo.png" alt="HaloCyberLife logo small" class="footer-logo" />
+          <img
+            src="/images/negative_white_halocyberlife_logo.png"
+            alt=""
+            class="footer-logo"
+          />
           <span class="footer-brand-text">HaloCyberLife</span>
         </div>
-        <p class="footer-text">Original articles on architecture, technology, systems, and design concepts.</p>
-        <p class="footer-meta">© <span id="year"></span> HaloCyberLife.com</p>
+
+        <p class="footer-text">
+          Original articles on architecture, technology, environmental systems,
+          and design concepts.
+        </p>
+
+        <p class="footer-meta">
+          © <span id="year"></span> HaloCyberLife.com
+        </p>
       </div>
 
       <div class="footer-column">
-        <h3 class="footer-heading">Navigate</h3>
+        <h2 class="footer-heading">Navigate</h2>
         <ul class="footer-links">
-          <li><a href="#insights">Featured Articles</a></li>
-          <li><a href="./blog.html">All Articles</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./contact_us.html">Contact</a></li>
-          <li><a href="./Privacy & Terms.html">Privacy &amp; Terms</a></li>
-          <li><a href="./sitemap.html">Site Map</a></li>
+          <li><a href="/index.html#insights">Featured Articles</a></li>
+          <li><a href="/blog.html">All Articles</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact_us.html">Contact</a></li>
+          <li><a href="/Privacy%20%26%20Terms.html">Privacy &amp; Terms</a></li>
+          <li><a href="/sitemap.html">Site Map</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
-        <h3 class="footer-heading">Contact &amp; Social</h3>
+        <h2 class="footer-heading">Contact &amp; Social</h2>
+
         <div class="footer-social">
-          <a href="mailto:luisamaya@halocyberlife.com" aria-label="email">luisamaya@halocyberlife.com</a>
+          <a href="mailto:luisamaya@halocyberlife.com">
+            luisamaya@halocyberlife.com
+          </a>
         </div>
+
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/halocyberlife/" aria-label="linkedin">LinkedIn: halocyberlife</a>
+          <a
+            href="https://www.linkedin.com/in/halocyberlife/"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn: halocyberlife
+          </a>
         </div>
+
         <div class="footer-social">
-          <a href="../sitemap.html" aria-label="sitemap">Site Map</a>
+          <a href="/sitemap.html">Site Map</a>
         </div>
       </div>
     </div>
-    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
   </footer>
 
-  <script src="main_v2_0_0.js"></script>
+  <script src="/main_v2_0_0.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 
